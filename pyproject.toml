@@ -1,0 +1,75 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "a11y-lint"
+version = "0.1.0"
+description = "Accessibility linter for CLI output - validates error messages follow accessible patterns"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+authors = [
+    { name = "mcp-tool-shop", email = "64996768+mcp-tool-shop@users.noreply.github.com" }
+]
+keywords = [
+    "accessibility",
+    "a11y",
+    "cli",
+    "linter",
+    "validation",
+    "wcag",
+    "low-vision",
+    "error-messages",
+    "testing",
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Software Development :: Quality Assurance",
+    "Topic :: Software Development :: Testing",
+]
+dependencies = [
+    "jsonschema>=4.20.0",
+    "click>=8.1.0",
+    "rich>=13.0.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.4.0",
+    "pytest-cov>=4.1.0",
+    "pyright>=1.1.350",
+]
+
+[project.scripts]
+a11y-lint = "a11y_lint.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/mcp-tool-shop/a11y-lint"
+Repository = "https://github.com/mcp-tool-shop/a11y-lint"
+Issues = "https://github.com/mcp-tool-shop/a11y-lint/issues"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["a11y_lint*"]
+
+[tool.setuptools.package-data]
+a11y_lint = ["schemas/*.json"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+python_functions = ["test_*"]
+addopts = "-v --tb=short"
+
+[tool.pyright]
+include = ["a11y_lint", "tests"]
+pythonVersion = "3.10"
+typeCheckingMode = "standard"
