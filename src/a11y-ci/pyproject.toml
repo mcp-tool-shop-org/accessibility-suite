@@ -54,6 +54,9 @@ Homepage = "https://github.com/mcp-tool-shop/a11y-ci"
 Repository = "https://github.com/mcp-tool-shop/a11y-ci"
 Issues = "https://github.com/mcp-tool-shop/a11y-ci/issues"
 
+[tool.setuptools.packages.find]
+include = ["a11y_ci*"]
+
 [tool.ruff]
 line-length = 100
 
