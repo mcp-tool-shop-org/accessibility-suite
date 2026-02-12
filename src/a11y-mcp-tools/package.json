@@ -30,7 +30,7 @@
     "directory": "src/a11y-mcp-tools"
   },
   "bugs": {
-    "url": "https://github.com/mcp-tool-shop/a11y-mcp-tools/issues"
+    "url": "https://github.com/mcp-tool-shop-org/accessibility-suite/issues"
   },
   "engines": {
     "node": ">=18.0.0"
