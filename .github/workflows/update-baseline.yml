@@ -1,0 +1,49 @@
+name: Update Baseline
+
+on:
+  workflow_dispatch:
+    inputs:
+      reason:
+        description: 'Reason for updating baseline (e.g., new feature, temporary failure)'
+        required: true
+
+permissions:
+  contents: write
+
+jobs:
+  update-baseline:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      # Install Tools
+      - name: Install Tools (Local)
+        run: |
+          pip install ./src/a11y-lint
+          pip install ./src/a11y-ci
+          
+      # Scan
+      - name: Generate Scorecard (Scan)
+        run: |
+          a11y-lint scan docs --format json > docs/baselines/a11y.scorecard.json
+          
+      # Detect changes and commit
+      - name: Commit Baseline
+        run: |
+          git config --global user.name 'a11y-ci-bot'
+          git config --global user.email 'a11y-ci-bot@users.noreply.github.com'
+          
+          if git diff --quiet docs/baselines/a11y.scorecard.json; then
+            echo "No changes in baseline."
+          else
+            git add docs/baselines/a11y.scorecard.json
+            git commit -m "chore(baseline): update a11y baseline" -m "${{ github.event.inputs.reason }}"
+            git push
+            echo "Baseline updated."
+          fi
