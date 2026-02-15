@@ -1,3 +1,8 @@
+
+<p align="center">
+  <img src="../../assets/a11y-logo.png" alt="a11y suite logo" width="150"/>
+</p>
+
 # a11y-mcp-tools
 
 MCP (Model Context Protocol) tools for accessibility evidence capture and diagnosis.

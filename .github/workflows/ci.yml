@@ -39,7 +39,18 @@ jobs:
 
       - name: Run tests
         working-directory: src/${{ matrix.project }}
-        run: pytest -v || echo "No tests or tests failed"
+        # Check if tests exist (exit code 5 = no tests). If they exist, run them and fail on error.
+        run: |
+          pytest --collect-only > /dev/null 2>&1
+          EXIT_CODE=$?
+          if [ $EXIT_CODE -eq 5 ]; then
+            echo "::warning::No tests found for ${{ matrix.project }}."
+            exit 0
+          elif [ $EXIT_CODE -ne 0 ]; then
+            echo "::error::Error collecting tests."
+            exit 1
+          fi
+          pytest -v
 
   # Node.js projects: a11y-evidence-engine, a11y-mcp-tools
   nodejs:
@@ -64,6 +75,53 @@ jobs:
         working-directory: src/${{ matrix.project }}
         run: npm ci
 
-      - name: Run tests
+      - name: Run tests (CI Must Fail)
         working-directory: src/${{ matrix.project }}
-        run: npm test || echo "No tests or tests failed"
+        # If npm test script exits non-zero, fail the build.
+        # This prevents accidental regressions from being swallowed.
+        run: npm test
+
+  # Integration fixture verification for a11y-ci
+  gate-verification:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      
+      - name: Install a11y-ci
+        working-directory: src/a11y-ci
+        run: pip install .
+        
+      - name: Gate Pass Check
+        working-directory: src/a11y-ci
+        run: a11y-ci gate --current tests/fixtures/current_ok.json
+        
+      - name: Gate Fail Check (JSON Report)
+        id: fail_check
+        working-directory: src/a11y-ci
+        # We expect failure (exit code 3), so we use || true to prevent job failure, 
+        # but capture output. In a real pipeline, we'd want to fail if it DOESN'T fail.
+        run: |
+          set +e
+          a11y-ci gate --current tests/fixtures/current_fail.json --format json > report.json
+          EXIT_CODE=$?
+          set -e
+          
+          echo "Exit Code: $EXIT_CODE"
+          if [ $EXIT_CODE -ne 3 ]; then
+            echo "::error::Expected exit code 3 for partial failure, got $EXIT_CODE"
+            exit 1
+          fi
+          
+          echo "::group::JSON Report"
+          cat report.json
+          echo "::endgroup::"
+          
+      - name: Upload Gate Artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: a11y-gate-report
+          path: src/a11y-ci/report.json

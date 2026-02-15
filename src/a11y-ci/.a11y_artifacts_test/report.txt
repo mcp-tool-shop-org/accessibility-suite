@@ -1,0 +1,19 @@
+[ERROR] Accessibility gate failed (ID: A11Y.CI.GATE.FAIL)
+
+What:
+  Accessibility policy violations were detected.
+  
+  Summary:
+    Serious: 3
+
+Why:
+  Current run has 3 finding(s) at or above 'serious'.
+
+Fix:
+  Address the listed findings or update the baseline.
+  Run local check: a11y-ci gate --current <path>
+  
+  Blocking IDs (Top 10):
+  - TEST.001
+  - TEST.002
+  - TEST.003

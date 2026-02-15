@@ -1,3 +1,8 @@
+
+<p align="center">
+  <img src="../../assets/a11y-logo.png" alt="a11y suite logo" width="150"/>
+</p>
+
 # a11y-evidence-engine
 
 Headless accessibility evidence engine that emits [prov-spec](https://github.com/mcp-tool-shop-org/prov-spec) provenance records.

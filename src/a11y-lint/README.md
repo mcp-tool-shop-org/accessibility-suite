@@ -1,3 +1,8 @@
+
+<p align="center">
+  <img src="../../assets/a11y-logo.png" alt="a11y suite logo" width="150"/>
+</p>
+
 # a11y-lint
 
 ![a11y](https://img.shields.io/badge/a11y-low--vision--first-blue)

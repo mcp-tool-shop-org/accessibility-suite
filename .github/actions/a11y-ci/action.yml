@@ -1,17 +1,19 @@
 name: 'Accessibility Gate (a11y-ci)'
-description: 'Runs a11y-ci policy gate, evidence generation, and reporting.'
+description: 'Runs a11y-ci policy gate with unified artifact handling.'
 inputs:
+  artifact-dir:
+    description: 'Directory to store artifacts'
+    required: false
+    default: '.a11y_artifacts'
   current:
-    description: 'Path to current scorecard JSON'
-    required: true
+    description: 'Path to current scorecard JSON (optional if in artifact-dir)'
+    required: false
   baseline:
-    description: 'Path to baseline scorecard JSON'
+    description: 'Path to baseline scorecard JSON (optional if in artifact-dir)'
     required: false
-    default: ''
   allowlist:
-    description: 'Path to allowlist JSON'
+    description: 'Path to allowlist JSON (optional if in artifact-dir)'
     required: false
-    default: ''
   fail-on:
     description: 'Minimum severity to fail on (info, minor, moderate, serious, critical)'
     required: false
@@ -20,11 +22,7 @@ inputs:
     description: 'Limit N blocking findings in output'
     required: false
     default: '10'
-  emit-mcp:
-    description: 'Emit MCP evidence payload'
-    required: false
-    default: 'true'
-  comment-platform:
+  platform:
     description: 'Markdown flavor for PR comments (github or ado)'
     required: false
     default: 'github'
@@ -35,20 +33,17 @@ inputs:
 
 outputs:
   exit_code:
-    description: 'Exit code of the gate (0=Pass, 3=Fail, etc.)'
+    description: 'Exit code of the gate'
     value: ${{ steps.gate.outputs.exit_code }}
-  decision:
-    description: 'Gate decision (pass or fail)'
-    value: ${{ steps.gate.outputs.decision }}
-  report_json_path:
-    description: 'Path to the generated JSON report'
-    value: ${{ steps.gate.outputs.report_json_path }}
-  mcp_payload_path:
-    description: 'Path to the generated MCP evidence payload'
-    value: ${{ steps.gate.outputs.mcp_payload_path }}
-  comment_md_path:
+  evidence_path:
+    description: 'Path to the generated evidence JSON'
+    value: ${{ steps.gate.outputs.evidence_path }}
+  comment_path:
     description: 'Path to the generated PR comment markdown'
-    value: ${{ steps.gate.outputs.comment_md_path }}
+    value: ${{ steps.gate.outputs.comment_path }}
+  gate_result_path:
+    description: 'Path to the generated gate result JSON'
+    value: ${{ steps.gate.outputs.gate_result_path }}
 
 runs:
   using: "composite"
@@ -56,77 +51,56 @@ runs:
     - name: Run Accessibility Gate
       id: gate
       shell: bash
-      env:
-        CURRENT: ${{ inputs.current }}
-        BASELINE: ${{ inputs.baseline }}
-        ALLOWLIST: ${{ inputs.allowlist }}
-        FAIL_ON: ${{ inputs.fail-on }}
-        TOP: ${{ inputs.top }}
-        EMIT_MCP: ${{ inputs.emit-mcp }}
-        PLATFORM: ${{ inputs.comment-platform }}
       run: |
-        # Set output paths in temp dir for cleanliness, or workspace?
-        # Using workspace makes artifact upload easier.
-        REPORT_JSON="a11y-report.json"
-        MCP_JSON="a11y-evidence.json"
-        COMMENT_MD="a11y-comment.md"
+        # 1. Setup Artifacts
+        ARTIFACT_DIR="${{ inputs.artifact-dir }}"
+        mkdir -p "$ARTIFACT_DIR"
+        echo "Using artifact directory: $ARTIFACT_DIR"
         
-        echo "report_json_path=$REPORT_JSON" >> $GITHUB_OUTPUT
-        echo "mcp_payload_path=$MCP_JSON" >> $GITHUB_OUTPUT
-        echo "comment_md_path=$COMMENT_MD" >> $GITHUB_OUTPUT
-
-        # Build command args
-        ARGS="--current \"$CURRENT\" --fail-on \"$FAIL_ON\" --top \"$TOP\""
+        # 2. Construct Arguments
+        ARGS="gate --artifact-dir $ARTIFACT_DIR"
         
-        if [ -n "$BASELINE" ]; then
-          ARGS="$ARGS --baseline \"$BASELINE\""
+        if [ -n "${{ inputs.current }}" ]; then
+          ARGS="$ARGS --current ${{ inputs.current }}"
         fi
         
-        if [ -n "$ALLOWLIST" ]; then
-          ARGS="$ARGS --allowlist \"$ALLOWLIST\""
+        if [ -n "${{ inputs.baseline }}" ]; then
+          ARGS="$ARGS --baseline ${{ inputs.baseline }}"
         fi
         
-        if [ "$EMIT_MCP" = "true" ]; then
-          ARGS="$ARGS --emit-mcp --mcp-out \"$MCP_JSON\""
+        if [ -n "${{ inputs.allowlist }}" ]; then
+          ARGS="$ARGS --allowlist ${{ inputs.allowlist }}"
         fi
         
-        # Also always generate report.json for artifacts
-        # We run once. Gate checks exit code.
-        # To get report.json AND text output to console, we might need two runs or just rely on mcp for json?
-        # But a11y-ci gate produces one format.
-        # Strategy: Run gate with text to stdout (for logs) + emit-mcp for data.
-        # If we need report.json specifically (separate from mcp), we might need to exact it or run again.
-        # But mcp has everything. Let's assume mcp is enough for data.
-        # Wait, inputs say "report_json_path". If user wants specific report.json.
-        # Let's run with --mcp-out which writes the file.
-        # The stdout will be text (default).
+        ARGS="$ARGS --fail-on ${{ inputs.fail-on }}"
+        ARGS="$ARGS --top ${{ inputs.top }}"
         
-        echo "::group::Run a11y-ci gate"
+        # 3. Run Gate
+        echo "Running: a11y-ci $ARGS"
+        
+        # Run and capture exit code, but don't fail immediately so we can process artifacts
         set +e
-        a11y-ci gate $ARGS
+        a11y-ci $ARGS
         EXIT_CODE=$?
         set -e
-        echo "::endgroup::"
         
+        echo "Gate Exit Code: $EXIT_CODE"
         echo "exit_code=$EXIT_CODE" >> $GITHUB_OUTPUT
         
-        if [ $EXIT_CODE -eq 0 ]; then
-          echo "decision=pass" >> $GITHUB_OUTPUT
-        else
-          echo "decision=fail" >> $GITHUB_OUTPUT
+        # 4. Generate Comment (if requested and evidence exists)
+        EVIDENCE_JSON="$ARTIFACT_DIR/evidence.json"
+        COMMENT_MD="$ARTIFACT_DIR/comment.md"
+        GATE_RESULT="$ARTIFACT_DIR/gate-result.json"
+        
+        if [ "${{ inputs.post-comment }}" = "true" ] && [ -f "$EVIDENCE_JSON" ]; then
+           echo "Generating PR Comment..."
+           a11y-ci comment --mcp "$EVIDENCE_JSON" --platform "${{ inputs.platform }}" --top "${{ inputs.top }}" > "$COMMENT_MD"
+           echo "comment_path=$COMMENT_MD" >> $GITHUB_OUTPUT
         fi
         
-        # Generate Comment if requested and MCP exists
-        if [ "${{ inputs.post-comment }}" = "true" ] && [ -f "$MCP_JSON" ]; then
-          echo "::group::Generate PR Comment"
-          a11y-ci comment --mcp "$MCP_JSON" \
-                          --platform "$PLATFORM" \
-                          --top "$TOP" > "$COMMENT_MD"
-          echo "::endgroup::"
-        fi
+        # 5. Set Outputs
+        echo "evidence_path=$EVIDENCE_JSON" >> $GITHUB_OUTPUT
+        echo "gate_result_path=$GATE_RESULT" >> $GITHUB_OUTPUT
         
-        # Fail the action if gate failed, BUT only after generating artifacts
-        if [ $EXIT_CODE -ne 0 ]; then
-          echo "::error::Accessibility Gate Failed! See logs for details."
-          exit $EXIT_CODE
-        fi
+        # 6. Exit with code
+        exit $EXIT_CODE

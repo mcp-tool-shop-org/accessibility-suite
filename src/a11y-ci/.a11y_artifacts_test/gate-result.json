@@ -1,0 +1,41 @@
+{
+  "gate": "FAIL",
+  "timestamp": "ISO8601-TODO",
+  "counts": {
+    "info": 0,
+    "minor": 0,
+    "moderate": 0,
+    "serious": 3,
+    "critical": 0
+  },
+  "baseline_counts": null,
+  "reasons": [
+    "Current run has 3 finding(s) at or above 'serious'."
+  ],
+  "blocking": {
+    "current_ids": [
+      "TEST.001",
+      "TEST.002",
+      "TEST.003"
+    ],
+    "details": [
+      {
+        "id": "TEST.001",
+        "help_url": null,
+        "help_hint": null
+      },
+      {
+        "id": "TEST.002",
+        "help_url": null,
+        "help_hint": null
+      },
+      {
+        "id": "TEST.003",
+        "help_url": null,
+        "help_hint": null
+      }
+    ],
+    "new_ids": [],
+    "new_fingerprints": []
+  }
+}

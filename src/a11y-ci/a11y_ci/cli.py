@@ -5,6 +5,7 @@ from __future__ import annotations
 import click
 import json
 import jsonschema
+from pathlib import Path
 
 from . import __version__
 from .allowlist import Allowlist, AllowlistError

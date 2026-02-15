@@ -1,3 +1,8 @@
+
+<p align="center">
+  <img src="../../assets/a11y-logo.png" alt="a11y suite logo" width="150"/>
+</p>
+
 # a11y-assist
 
 ![assist](https://img.shields.io/badge/assist-low--vision--first-blue)

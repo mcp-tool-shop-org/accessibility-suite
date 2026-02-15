@@ -1,0 +1,52 @@
+{
+  "tool": "a11y-ci",
+  "tool_version": "0.1.0",
+  "run_id": "56a4a7ea-f8e8-40a9-a27b-aec92f9c96aa",
+  "timestamp": "2026-02-15T02:15:35.804358+00:00",
+  "repo": null,
+  "commit_sha": null,
+  "workflow": null,
+  "gate": {
+    "decision": "fail",
+    "exit_code": 3,
+    "fail_on": "serious",
+    "counts": {
+      "info": 0,
+      "minor": 0,
+      "moderate": 0,
+      "serious": 3,
+      "critical": 0
+    },
+    "deltas": {}
+  },
+  "blocking": [
+    {
+      "id": "TEST.001",
+      "fingerprint": "7c61e0b75cae921316221a4e5c756285e3e8837086df60a627332fbdf53c7196",
+      "severity": "serious",
+      "message": "msg",
+      "location": null
+    },
+    {
+      "id": "TEST.002",
+      "fingerprint": "ed70b4e75a112074812a72be997ffe074ff9d0eec48fe4b0a7d00fc15d546782",
+      "severity": "serious",
+      "message": "msg",
+      "location": null
+    },
+    {
+      "id": "TEST.003",
+      "fingerprint": "1fb34777b302157e998e8db92c9be20c9e1316649c2edfb825151dcaca45df56",
+      "severity": "serious",
+      "message": "msg",
+      "location": null
+    }
+  ],
+  "artifacts": [
+    {
+      "kind": "scorecard",
+      "path": "tests/fixtures/current_failures_many.json",
+      "sha256": "93d6c211476cb614b30e30256c9644d7b7694d0a67ca72bfc0a872cb4fb57196"
+    }
+  ]
+}

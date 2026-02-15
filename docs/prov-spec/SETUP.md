@@ -70,7 +70,7 @@ Third-party engines declare support using a capability manifest:
 
 ```json
 {
-  "schema": "mcp-tool-shop/prov-capabilities@v0.1",
+  "schema": "mcp-tool-shop-org/prov-capabilities@v0.1",
   "engine": {
     "name": "example-engine",
     "version": "1.0.0"

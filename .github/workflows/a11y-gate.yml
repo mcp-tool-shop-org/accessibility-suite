@@ -42,21 +42,21 @@ jobs:
 
       - name: Generate Scorecard (Scan)
         run: |
+          mkdir -p .a11y_artifacts
           # Scanning docs for demonstration
-          a11y-lint scan docs --format json > a11y.scorecard.json
-          echo "Generated scorecard for docs/"
+          # Uses --artifact-dir to automatically write current.scorecard.json
+          a11y-lint scan docs --artifact-dir .a11y_artifacts
+          echo "Generated scorecard in .a11y_artifacts/"
 
       # The reusable Action
       - name: Run Accessibility Gate
         id: gate
         uses: ./.github/actions/a11y-ci
         with:
-          current: a11y.scorecard.json
+          artifact-dir: .a11y_artifacts
           baseline: docs/baselines/a11y.scorecard.json
           fail-on: serious
-          emit-mcp: true
-          comment-platform: github
-          post-comment: true
+          platform: github
 
       - name: Post PR Comment
         if: github.event_name == 'pull_request' && (success() || failure())
@@ -65,10 +65,9 @@ jobs:
           script: |
             const fs = require('fs');
             // Read the generated comment file
-            // Note: The action output path is "a11y-comment.md" by default
-            const commentPath = '${{ steps.gate.outputs.comment_md_path }}';
-            if (!fs.existsSync(commentPath)) {
-              console.log('No comment file found, skipping.');
+            const commentPath = '${{ steps.gate.outputs.comment_path }}';
+            if (!commentPath || !fs.existsSync(commentPath)) {
+              console.log('No comment file to post.');
               return;
             }
             const body = fs.readFileSync(commentPath, 'utf8');
@@ -106,12 +105,8 @@ jobs:
             }
 
       - name: Upload Artifacts
-
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: accessibility-artifacts
-          path: |
-            a11y.scorecard.json
-            a11y-evidence.json
-            a11y-comment.md
+          path: .a11y_artifacts/**

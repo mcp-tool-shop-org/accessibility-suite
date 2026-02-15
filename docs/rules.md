@@ -6,10 +6,16 @@ This document provides explanations and remediation steps for common accessibili
 
 - [Image Missing Alt Text](#a11yimgalt)
 - [Form Missing Label](#a11yformlabel)
+- [Duplicate Form Label ID](#a11yformduplicate)
 - [Button Missing Name](#a11ybtnname)
 - [Link Missing Name](#a11ylinkname)
 - [Color Contrast](#a11ycolorcontrast)
 - [Document Title](#a11ydoctitle)
+- [Document Language](#a11yhtmllang)
+- [Area Alt Text](#a11yareaalt)
+- [ARIA Roles](#a11yariaroles)
+- [Heading Order](#a11yheadingorder)
+- [Viewport Zoom](#a11ymetaviewport)
 
 ---
 
@@ -89,3 +95,38 @@ conveying information only via color (like red for error) excludes users who are
 **How to fix:**
 - Add text prefixes (e.g., `Error:`, `Warning:`).
 - Use icons or symbols alongside color.
+
+---
+
+### <a id="a11yhtmllang"></a>Document Language (A11Y.HTML.LANG)
+
+**Why it matters:**  
+Screen readers use the page language to select the correct pronunciation and voice. Without it, the reader might read French content with an English accent.
+
+**How to fix:**
+- Add a `lang` attribute to `<html>` (e.g., `<html lang="en">`).
+
+### <a id="a11yareaalt"></a>Area Alt Text (A11Y.AREA.ALT)
+
+**Why it matters:**  
+Image map areas are interactive. Without alt text, keyboard and screen reader users won't know where the link leads.
+
+**How to fix:**
+- Add an `alt` attribute to every `<area>` element.
+
+### <a id="a11yariaroles"></a>Invalid ARIA Roles (A11Y.ARIA.ROLES)
+
+**Why it matters:**  
+Assistive technologies rely on standard role definitions. Made-up roles (e.g., `role="login-button"`) are ignored, leaving the user without context.
+
+**How to fix:**
+- Use only valid WAI-ARIA roles (e.g., `button`, `search`, `navigation`).
+
+### <a id="a11yheadingorder"></a>Heading Order (A11Y.HEADING.ORDER)
+
+**Why it matters:**  
+Headings provide the main navigation structure for screen reader users. Skipping levels (h1 -> h4) creates a confusing mental model.
+
+**How to fix:**
+- Ensure headings increment by one level at a time (h2 follows h1, h3 follows h2).
+

@@ -1,25 +1,24 @@
 <#
 .SYNOPSIS
-    Runs the a11y-ci gate, generates artifacts, and prepares a PR comment.
+    Runs the a11y-ci gate with unified artifact handling.
     Designed for Azure DevOps pipelines but can be run locally.
 
 .DESCRIPTION
-    Wrapper around a11y-ci CLI tools to standardize execution in CI environments.
-    Handles:
-    - Input validation
-    - Directory setup (artifacts/a11y)
-    - Running the gate (with or without baseline/allowlist)
-    - Generating the PR comment markdown
-    - Setting pipeline output variables (if in ADO)
+    Wrapper around a11y-ci CLI tools.
+    Standardizes on the use of --artifact-dir (defaulting to .a11y_artifacts).
+    Encourages "Convention over Configuration" by inferring scorecard paths.
+
+.PARAMETER ArtifactDir
+    Directory to output artifacts. Default: $(Build.SourcesDirectory)/.a11y_artifacts.
 
 .PARAMETER Current
-    Path to the current scorecard JSON. Required.
+    Path to current scorecard. Optional if present in ArtifactDir.
 
 .PARAMETER Baseline
-    Path to the baseline scorecard JSON. Optional.
+    Path to baseline scorecard. Optional if present in ArtifactDir.
 
 .PARAMETER Allowlist
-    Path to the allowlist JSON. Optional.
+    Path to allowlist. Optional if present in ArtifactDir.
 
 .PARAMETER FailOn
     Minimum severity to fail the build. Default: serious.
@@ -30,19 +29,23 @@
 .PARAMETER Platform
     Markdown flavor for PR comments (github or ado). Default: ado.
 
-.PARAMETER ArtifactDir
-    Directory to output artifacts. Default: artifacts/a11y.
-
 .PARAMETER PostComment
     Whether to generate the PR comment file. Default: true.
 
 .EXAMPLE
-    .\a11y-ci.ps1 -Current "scorecard.json" -FailOn "minor"
+    .\a11y-ci.ps1
+    (Infers everything from .a11y_artifacts/)
+
+.EXAMPLE
+    .\a11y-ci.ps1 -Current "custom.json" -FailOn "minor"
 #>
 
 [CmdletBinding()]
 param(
-    [Parameter(Mandatory=$true)]
+    [Parameter(Mandatory=$false)]
+    [string]$ArtifactDir = "$(Build.SourcesDirectory)/.a11y_artifacts",
+
+    [Parameter(Mandatory=$false)]
     [string]$Current,
 
     [Parameter(Mandatory=$false)]
@@ -61,9 +64,6 @@ param(
     [string]$Platform = "ado",
 
     [Parameter(Mandatory=$false)]
-    [string]$ArtifactDir = "artifacts/a11y",
-
-    [Parameter(Mandatory=$false)]
     [switch]$PostComment
 )
 
@@ -79,26 +79,18 @@ function Log-Error {
     Write-Host "##[error]$Message"
 }
 
-# 1. Validate Inputs
-Log-Section "Validating Inputs"
-
-if (-not (Test-Path $Current)) {
-    Log-Error "Current scorecard not found: $Current"
-    exit 2 # A11Y.CI.INPUT.MISSING.FILE
+function Log-Warning {
+    param([string]$Message)
+    Write-Host "##[warning]$Message"
 }
 
-if ($Baseline -and (-not (Test-Path $Baseline))) {
-    Log-Error "Baseline scorecard not found: $Baseline"
-    exit 2
-}
-
-if ($Allowlist -and (-not (Test-Path $Allowlist))) {
-    Log-Error "Allowlist file not found: $Allowlist"
-    exit 2
-}
-
-# 2. Setup Artifacts
+# 1. Setup Artifacts
 Log-Section "Setting up Artifacts"
+
+# Clean path robustly
+$ArtifactDir = $ArtifactDir.TrimEnd("\").TrimEnd("/")
+Write-Host "Using artifact directory: $ArtifactDir"
+
 if (-not (Test-Path $ArtifactDir)) {
     New-Item -ItemType Directory -Path $ArtifactDir -Force | Out-Null
 }
@@ -106,72 +98,78 @@ if (-not (Test-Path $ArtifactDir)) {
 $Global:ReportJson = Join-Path $ArtifactDir "report.json"
 $Global:EvidenceJson = Join-Path $ArtifactDir "evidence.json"
 $Global:CommentMd = Join-Path $ArtifactDir "comment.md"
+$Global:GateResultJson = Join-Path $ArtifactDir "gate-result.json"
 
-# Copy input artifacts for traceability?
-# Maybe later. For now just generate new ones.
+# 2. Resolve Inputs (Wrapper encourages standard paths)
+Log-Section "Resolving Inputs"
+
+# If Current is not provided, check the artifact dir
+if (-not $Current -or $Current.Trim() -eq "") {
+    $candidate = Join-Path $ArtifactDir "current.scorecard.json"
+    if (Test-Path $candidate) {
+        $Current = $candidate
+        Write-Host "Defaulted Current to: $Current"
+    } else {
+        # Valid: a11y-ci will throw error if it can"t find it, or we rely on CLI inference
+        Log-Warning "Current not provided and $candidate not found. CLI will attempt inference."
+    }
+}
 
 # 3. Run Gate & Generate Evidence
 Log-Section "Running Accessibility Gate"
 
+# Build arguments favoring --artifact-dir
 $gateArgs = @(
     "gate",
-    "--current", $Current,
+    "--artifact-dir", $ArtifactDir,
     "--fail-on", $FailOn,
-    "--top", $Top,
-    "--emit-mcp",
-    "--mcp-out", $Global:EvidenceJson
+    "--top", $Top
 )
 
-if ($Baseline) {
-    $gateArgs += "--baseline", $Baseline
-}
+# Back-compat: Only pass explicit flags if provided (or inferred above)
+if ($Current) { $gateArgs += "--current", $Current }
+if ($Baseline) { $gateArgs += "--baseline", $Baseline }
+if ($Allowlist) { $gateArgs += "--allowlist", $Allowlist }
 
-if ($Allowlist) {
-    $gateArgs += "--allowlist", $Allowlist
-}
+Write-Host "Running: a11y-ci $($gateArgs -join " ")"
 
-Write-Host "Running: a11y-ci $gateArgs"
-
-# Capture exit code carefully
 $exitCode = 0
 try {
-    # We want stdout to go to console (text report), and json report to file?
-    # CLI handles --mcp-out to file.
-    # Text report goes to stdout.
-    
-    # Run the command. If it fails (exit 3), it might look like a script failure.
-    # We use Invoke-Expression or Start-Process to capture exit code without throwing immediately.
-    
-    # Direct execution:
-    & a11y-ci $gateArgs
-    if ($LASTEXITCODE -gt 0) {
-        $exitCode = $LASTEXITCODE
-    }
+    # Execute a11y-ci using explicit call to ensure argument passing works
+    # We use Start-Process to properly wait and capture exit code
+    $proc = Start-Process -FilePath "a11y-ci" -ArgumentList $gateArgs -NoNewWindow -PassThru -Wait
+    $exitCode = $proc.ExitCode
 }
 catch {
     Log-Error "Execution failed: $_"
     exit 1 # Internal error
 }
 
-# 4. Generate PR Comment
+# 4. Generate PR Comment (if requested and evidence exists)
 if ($PostComment) {
     Log-Section "Generating PR Comment"
-    
+
     if (Test-Path $Global:EvidenceJson) {
         try {
-            # Use CLI to render
-            $commentStart = Get-Content $Global:EvidenceJson | ConvertFrom-Json
+            # Use CLI to render comment using "comment" command
+            # This ensures consistent formatting (Markdown, sticky markers, etc.)
             
-            # Or simpler:
-            a11y-ci comment --mcp $Global:EvidenceJson --platform $Platform --top $Top | Out-File -FilePath $Global:CommentMd -Encoding utf8
+            $commentArgs = "comment", "--mcp", $Global:EvidenceJson, "--platform", $Platform, "--top", $Top
+            
+            # Using call operator & for capturing output
+            # Need to be careful with args array vs string
+            $commentStart = & a11y-ci $commentArgs
+            
+            # Write to file
+            $commentStart | Out-File -FilePath $Global:CommentMd -Encoding utf8
             Write-Host "Comment generated at $Global:CommentMd"
         }
         catch {
-            Write-Warning "Failed to generate PR comment: $_"
+            Log-Warning "Failed to generate PR comment: $_"
         }
     }
     else {
-        Write-Warning "Evidence file missing, cannot generate comment."
+        Log-Warning "Evidence file missing ($Global:EvidenceJson), cannot generate comment."
     }
 }
 
@@ -179,11 +177,19 @@ Log-Section "Summary"
 Write-Host "Gate Exit Code: $exitCode"
 Write-Host "Artifacts location: $ArtifactDir"
 
-# Set ADO output variables if supported
+# Set ADO output variables
 if ($env:TF_BUILD) {
     Write-Host "##vso[task.setvariable variable=A11yExitCode]$exitCode"
     Write-Host "##vso[task.setvariable variable=A11yReportPath]$Global:EvidenceJson"
     Write-Host "##vso[task.setvariable variable=A11yCommentPath]$Global:CommentMd"
+    Write-Host "##vso[task.setvariable variable=A11yGateResultPath]$Global:GateResultJson"
+}
+
+# Verify key artifacts exist for user visibility
+$expectedArtifacts = @("gate-result.json", "evidence.json", "report.txt")
+foreach ($f in $expectedArtifacts) {
+    $p = Join-Path $ArtifactDir $f
+    if (Test-Path $p) { Write-Host "Artifact present: $p" } else { Log-Warning "Artifact missing: $p" }
 }
 
 exit $exitCode

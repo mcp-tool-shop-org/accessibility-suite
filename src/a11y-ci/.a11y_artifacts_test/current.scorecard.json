@@ -1,0 +1,11 @@
+{
+  "meta": {
+    "tool": "a11y-lint",
+    "version": "0.1.0"
+  },
+  "findings": [
+    { "severity": "serious", "id": "TEST.001", "message": "msg" },
+    { "severity": "serious", "id": "TEST.002", "message": "msg" },
+    { "severity": "serious", "id": "TEST.003", "message": "msg" }
+  ]
+}

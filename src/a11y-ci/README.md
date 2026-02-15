@@ -37,50 +37,67 @@ Fails the build (Exit Code 3) if:
 
 ## Usage
 
-### Check Single Run
+### 1. Basic Gate Check
+
+Simply block if serious/critical issues exist:
 
 ```bash
 a11y-ci gate --current a11y.scorecard.json
 ```
 
-### Check Against Baseline
+### 2. Regression Testing (with Baseline)
+
+Pass if current findings <= baseline, Fail if new issues appear:
 
 ```bash
-a11y-ci gate --current a11y.scorecard.json --baseline baseline/a11y.scorecard.json
+a11y-ci gate --current a11y.scorecard.json --baseline baseline.json
 ```
 
-## Install
+### 3. Generate Evidence (MCP Paradigm)
+
+Separate data generation from presentation. Generate a signed evidence bundle:
 
 ```bash
-pip install .
+a11y-ci gate --current score.json --emit-mcp --mcp-out evidence.json
 ```
 
-### Allowlist
+### 4. Create PR Comment
+
+Render the evidence into a platform-native comment (GitHub or Azure DevOps):
 
 ```bash
-a11y-ci gate --current a11y.scorecard.json --baseline baseline/a11y.scorecard.json --allowlist a11y-ci.allowlist.json
+# GitHub Format
+a11y-ci comment --mcp evidence.json --platform github > comment.md
+
+# Azure DevOps Format
+a11y-ci comment --mcp evidence.json --platform ado > comment.md
 ```
 
-### Fail severity
+### CLI Options
 
-```bash
-a11y-ci gate --current a11y.scorecard.json --fail-on moderate
-```
+| Flag | Description | Default |
+|------|-------------|---------|
+| `--fail-on` | Minimum severity to fail the build (info/minor/moderate/serious/critical) | `serious` |
+| `--top N` | Limit number of blocking findings shown (0 for summary only) | `10` |
+| `--format` | Output format (`text` or `json`) | `text` |
+| `--emit-mcp` | Output structured evidence payload to stdout | `False` |
+| `--mcp-out` | Write evidence payload to file path | - |
 
-## Exit codes
+## Exit Codes
 
-| Code | Meaning |
-|------|---------|
-| 0 | Pass |
-| 2 | Input/validation error |
-| 3 | Policy gate failed |
+| Code | Meaning | ID (in logs) |
+|------|---------|--------------|
+| `0` | **Success** | `A11Y.CI.GATE.PASS` |
+| `1` | **Internal Error** | `A11Y.CI.INTERNAL.ERROR` |
+| `2` | **Input Error** | `A11Y.CI.INPUT.*` |
+| `3` | **Gate Failed** | `A11Y.CI.GATE.FAIL` |
 
 ## Output Contract
 
-All output follows the low-vision-first contract:
+All text output follows the low-vision-first contract:
 
 ```
-[OK] Title (ID: NAMESPACE.CATEGORY.DETAIL)
+[OK] Title (ID: ERROR_ID)
 
 What:
   What happened.

@@ -2,6 +2,19 @@
 
 Unified monorepo for accessibility testing, evidence generation, and compliance tooling.
 
+## Migrated Repositories
+
+The following repositories have been merged into this monorepo. Please file all issues and PRs here.
+
+| Original Repo | New Location |
+|---------------|--------------|
+| `a11y-assist` | [`src/a11y-assist/`](src/a11y-assist/) |
+| `a11y-ci` | [`src/a11y-ci/`](src/a11y-ci/) |
+| `a11y-lint` | [`src/a11y-lint/`](src/a11y-lint/) |
+| `a11y-evidence-engine` | [`src/a11y-evidence-engine/`](src/a11y-evidence-engine/) |
+| `a11y-mcp-tools` | [`src/a11y-mcp-tools/`](src/a11y-mcp-tools/) |
+| `a11y-demo-site` | [`examples/a11y-demo-site/`](examples/a11y-demo-site/) |
+
 ## Projects
 
 | Project | Description | Tech |

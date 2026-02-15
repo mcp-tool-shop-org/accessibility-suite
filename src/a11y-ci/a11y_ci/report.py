@@ -31,10 +31,10 @@ def _format_counts(counts: Dict[str, int], baseline: Dict[str, int] | None) -> L
     return lines
 
 
-def print_text_report(result: GateResult):
-    """Print human-readable report using CliMessage."""
+def render_text_report(result: GateResult, top: int = 10) -> str:
+    """Render human-readable report using CliMessage."""
     counts_lines = _format_counts(result.current_counts, result.baseline_counts)
-    
+
     if result.ok:
         msg = CliMessage(
             status="OK",
@@ -44,59 +44,65 @@ def print_text_report(result: GateResult):
             why=["Current findings meet the configured threshold."],
             fix=["Proceed with merge/release."],
         )
-        print(render(msg), end="")
-        return
+        return render(msg)
 
     # Failure case
     what_lines = ["Accessibility policy violations were detected."]
     what_lines.append("")
     what_lines.append("Summary:")
     what_lines.extend([f"  {line}" for line in counts_lines])
-    
+
     why_lines = result.reasons[:]
-    
+
     fix_lines = [
         "Address the listed findings or update the baseline.",
         "Run local check: a11y-ci gate --current <path>",
     ]
-    
-    if result.current_blocking_ids:
+
+    if result.current_blocking_ids and top > 0:
         fix_lines.append("")
-        fix_lines.append("Blocking IDs (Top 10):")
-        
-        for bid in result.current_blocking_ids[:10]:
-            line = f"- {bid}"
+        fix_lines.append(f"Blocking IDs (Top {top}):")
+
+        limit = min(len(result.current_blocking_ids), top)
+        for bid in result.current_blocking_ids[:limit]:
             info = get_help(bid)
             if info:
                 # Add hint and link
-                fix_lines.append(f"  {line}")
+                fix_lines.append(f"- {bid}")
                 fix_lines.append(f"    Fix: {info.hint}")
                 fix_lines.append(f"    Docs: {info.url}")
             else:
-                fix_lines.append(line)
-                
-        if len(result.current_blocking_ids) > 10:
-             fix_lines.append(f"... and {len(result.current_blocking_ids) - 10} more.")
+                fix_lines.append(f"- {bid}")
 
-    if result.new_blocking_ids:
+        remaining = len(result.current_blocking_ids) - limit
+        if remaining > 0:
+             fix_lines.append(f"... and {remaining} more.")
+
+    if result.new_blocking_ids and top > 0:
         fix_lines.append("")
-        fix_lines.append("New Regression IDs (Top 10):")
-        fix_lines.extend([f"- {bid}" for bid in result.new_blocking_ids[:10]])
+        fix_lines.append(f"New Regression IDs (Top {top}):")
+        fix_lines.extend([f"- {bid}" for bid in result.new_blocking_ids[:top]]) 
+
 
     msg = CliMessage(
         status="ERROR",
         id="A11Y.CI.GATE.FAIL",
         title="Accessibility gate failed",
         what=what_lines,
-        why=why_lines if why_lines else ["Gate policy was not satisfied."],
+        why=why_lines if why_lines else ["Gate policy was not satisfied."],     
         fix=fix_lines,
     )
-    print(render(msg), end="")
+    return render(msg)
 
 
-def print_json_report(result: GateResult):
-    """Print machine-readable JSON report."""
-    
+def print_text_report(result: GateResult, top: int = 10):
+    """Print human-readable report (backward compatibility)."""
+    print(render_text_report(result, top), end="")
+
+
+def get_json_report(result: GateResult) -> Dict[str, Any]:
+    """Get machine-readable JSON report dict."""
+
     # Enrich blocking findings with help
     blocking_details = []
     for bid in result.current_blocking_ids:
@@ -123,4 +129,9 @@ def print_json_report(result: GateResult):
             "new_fingerprints": result.new_fingerprints if hasattr(result, "new_fingerprints") else [],
         }
     }
-    print(json.dumps(payload, indent=2))
+    return payload
+
+
+def print_json_report(result: GateResult):
+    """Print machine-readable JSON report."""
+    print(json.dumps(get_json_report(result), indent=2))
