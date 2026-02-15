@@ -59,6 +59,13 @@ def main() -> None:
     help="Enable only specific rules (can be used multiple times).",
 )
 @click.option("--strict", is_flag=True, help="Treat warnings as errors.")
+@click.option(
+    "--artifact-dir",
+    "artifact_dir",
+    type=click.Path(file_okay=False, writable=True),
+    required=False,
+    help="Directory to write unified artifacts (result.json, current.scorecard.json).",
+)
 def scan(
     input: str | None,
     stdin: bool,
@@ -68,6 +75,7 @@ def scan(
     disable: tuple[str, ...],
     enable: tuple[str, ...],
     strict: bool,
+    artifact_dir: str | None,
 ) -> None:
     """Scan CLI text for accessibility issues.
 
@@ -136,6 +144,27 @@ def scan(
         renderer = Renderer(color=color_enabled)
         renderer.write_batch(messages)
         renderer.write_summary()
+
+    # Artifact generation
+    if artifact_dir:
+        out_dir = Path(artifact_dir)
+        out_dir.mkdir(parents=True, exist_ok=True)
+        
+        # 1. result.json (full findings)
+        result = {
+            "source": source,
+            "messages": [msg.to_dict() for msg in messages],
+            "summary": {
+                "total": len(messages),
+                "errors": scanner.error_count,
+                "warnings": scanner.warn_count,
+            },
+        }
+        (out_dir / "result.json").write_text(json.dumps(result, indent=2), encoding="utf-8")
+        
+        # 2. current.scorecard.json (for a11y-ci gate)
+        card = create_scorecard(messages, name=f"Scan: {Path(source).name}")
+        (out_dir / "current.scorecard.json").write_text(json.dumps(card.to_dict(), indent=2), encoding="utf-8")
 
     # Exit with error if issues found
     exit_code = 0
