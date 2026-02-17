@@ -1,5 +1,8 @@
 # accessibility-suite
 
+> Part of [MCP Tool Shop](https://mcptoolshop.com)
+
+
 Unified monorepo for accessibility testing, evidence generation, and compliance tooling.
 
 ## Migrated Repositories
