@@ -57,6 +57,10 @@ Issues = "https://github.com/mcp-tool-shop-org/a11y-ci/issues"
 [tool.setuptools.packages.find]
 include = ["a11y_ci*"]
 
+[tool.setuptools.package-data]
+"a11y_ci.schemas" = ["*.json"]
+"a11y_ci.schema" = ["*.json"]
+
 [tool.ruff]
 line-length = 100
 
