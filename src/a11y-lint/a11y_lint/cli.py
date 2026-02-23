@@ -79,11 +79,13 @@ def scan(
 ) -> None:
     """Scan CLI text for accessibility issues.
 
-    Reads from a file or stdin and checks for common accessibility problems.
+    Reads from a file, directory, or stdin and checks for common accessibility problems.
 
     Examples:
 
         a11y-lint scan output.txt
+
+        a11y-lint scan docs/
 
         echo "ERROR: It failed" | a11y-lint scan --stdin
 
@@ -95,8 +97,19 @@ def scan(
         source = "<stdin>"
     elif input:
         path = Path(input)
-        text = path.read_text(encoding="utf-8")
-        source = str(path)
+        if path.is_dir():
+            parts = []
+            for f in sorted(path.rglob("*")):
+                if f.is_file() and f.suffix in (".md", ".txt", ".html", ".htm", ".json", ".yaml", ".yml"):
+                    try:
+                        parts.append(f.read_text(encoding="utf-8"))
+                    except (UnicodeDecodeError, PermissionError):
+                        pass
+            text = "\n".join(parts)
+            source = str(path)
+        else:
+            text = path.read_text(encoding="utf-8")
+            source = str(path)
     else:
         click.echo("Error: Must specify INPUT file or --stdin.", err=True)
         sys.exit(1)

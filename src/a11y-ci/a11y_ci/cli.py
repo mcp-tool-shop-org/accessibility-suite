@@ -240,3 +240,31 @@ def gate_cmd(
         print_text_report(result, top=top)
     
     raise SystemExit(EXIT_FAIL)
+
+
+@main.command("comment")
+@click.option(
+    "--mcp",
+    "mcp_path",
+    required=True,
+    type=click.Path(exists=True, dir_okay=False),
+    help="Path to MCP evidence JSON.",
+)
+@click.option(
+    "--platform",
+    default="github",
+    type=click.Choice(["github", "ado"], case_sensitive=False),
+    help="Markdown flavor for PR comments.",
+)
+@click.option(
+    "--top",
+    default=10,
+    type=int,
+    help="Limit blocking findings in output (default: 10).",
+)
+def comment_cmd(mcp_path: str, platform: str, top: int):
+    """Generate a PR comment from MCP evidence JSON."""
+    from .pr_comment import render_pr_comment
+
+    payload = json.loads(Path(mcp_path).read_text(encoding="utf-8"))
+    click.echo(render_pr_comment(payload, platform=platform, top=top))
