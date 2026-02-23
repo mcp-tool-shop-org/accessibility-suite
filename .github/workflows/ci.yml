@@ -264,13 +264,13 @@ jobs:
 
       - name: Assert Artifacts
         run: |
-          if [ ! -f "${{ steps.gate.outputs.report_json_path }}" ]; then exit 1; fi
-          if [ ! -f "${{ steps.gate.outputs.mcp_payload_path }}" ]; then exit 1; fi
-          if [ ! -f "${{ steps.gate.outputs.comment_md_path }}" ]; then exit 1; fi
+          if [ ! -f "${{ steps.gate.outputs.gate_result_path }}" ]; then echo "Missing gate_result_path"; exit 1; fi
+          if [ ! -f "${{ steps.gate.outputs.evidence_path }}" ]; then echo "Missing evidence_path"; exit 1; fi
+          if [ ! -f "${{ steps.gate.outputs.comment_path }}" ]; then echo "Missing comment_path"; exit 1; fi
 
-          if ! grep -q "Accessibility Gate: PASS" "${{ steps.gate.outputs.comment_md_path }}"; then
+          if ! grep -q "Accessibility Gate: PASS" "${{ steps.gate.outputs.comment_path }}"; then
             echo "Comment does not indicate PASS"
-            cat "${{ steps.gate.outputs.comment_md_path }}"
+            cat "${{ steps.gate.outputs.comment_path }}"
             exit 1
           fi
 
@@ -305,7 +305,7 @@ jobs:
 
       - name: Assert Comment Content
         run: |
-          if ! grep -q "Accessibility Gate: FAIL" "${{ steps.gate.outputs.comment_md_path }}"; then
+          if ! grep -q "Accessibility Gate: FAIL" "${{ steps.gate.outputs.comment_path }}"; then
             echo "Comment does not indicate FAIL"
             exit 1
           fi
