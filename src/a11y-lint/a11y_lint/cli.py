@@ -175,9 +175,22 @@ def scan(
         }
         (out_dir / "result.json").write_text(json.dumps(result, indent=2), encoding="utf-8")
         
-        # 2. current.scorecard.json (for a11y-ci gate)
-        card = create_scorecard(messages, name=f"Scan: {Path(source).name}")
-        (out_dir / "current.scorecard.json").write_text(json.dumps(card.to_dict(), indent=2), encoding="utf-8")
+        # 2. current.scorecard.json (a11y-ci gate-compatible format)
+        severity_map = {"ERROR": "serious", "WARN": "moderate", "OK": "info"}
+        findings = []
+        for msg in messages:
+            if msg.level.value == "OK":
+                continue
+            findings.append({
+                "id": msg.code or msg.rule or "UNKNOWN",
+                "severity": severity_map.get(msg.level.value, "info"),
+                "message": msg.what or "",
+            })
+        gate_scorecard = {
+            "meta": {"tool": "a11y-lint", "version": __version__},
+            "findings": findings,
+        }
+        (out_dir / "current.scorecard.json").write_text(json.dumps(gate_scorecard, indent=2), encoding="utf-8")
 
     # Exit with error if issues found
     exit_code = 0

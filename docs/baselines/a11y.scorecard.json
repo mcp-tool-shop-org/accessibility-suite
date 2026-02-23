@@ -1,2050 +1,808 @@
 {
-  "name": "Baseline",
-  "overall_score": 50.0,
-  "overall_grade": "F",
-  "is_passing": true,
-  "totals": {
-    "checks": 160,
-    "passed": 0,
-    "warnings": 160,
-    "errors": 0
+  "meta": {
+    "tool": "a11y-lint",
+    "version": "0.1.0"
   },
-  "rules": {
-    "line-length": {
-      "score": 50.0,
-      "grade": "F",
-      "passed": 0,
-      "warnings": 40,
-      "errors": 0
-    },
-    "punctuation": {
-      "score": 50.0,
-      "grade": "F",
-      "passed": 0,
-      "warnings": 36,
-      "errors": 0
-    },
-    "error-structure": {
-      "score": 50.0,
-      "grade": "F",
-      "passed": 0,
-      "warnings": 35,
-      "errors": 0
-    },
-    "no-all-caps": {
-      "score": 50.0,
-      "grade": "F",
-      "passed": 0,
-      "warnings": 46,
-      "errors": 0
-    },
-    "no-ambiguous-pronouns": {
-      "score": 50.0,
-      "grade": "F",
-      "passed": 0,
-      "warnings": 3,
-      "errors": 0
-    }
-  },
-  "messages": [
-    {
-      "level": "WARN",
-      "code": "FMT001",
-      "what": "Line 3 is 133 characters long",
-      "why": "Long lines are difficult to read, especially for users with cognitive disabilities or those using screen magnification.",
-      "fix": "Break the line into multiple lines of 120 characters or fewer.",
-      "location": {
-        "file": "docs",
-        "line": 3,
-        "context": "Deterministic assistance for fixing accessibility failures. Think: \u201cgiven a know..."
-      },
-      "rule": "line-length"
-    },
-    {
-      "level": "WARN",
-      "code": "LNG003",
-      "what": "Error message lacks ending punctuation",
-      "why": "Proper punctuation helps screen readers use appropriate pauses and intonation, improving comprehension.",
-      "fix": "End error messages with appropriate punctuation (period, exclamation, or colon).",
-      "location": {
-        "file": "docs",
-        "line": 3,
-        "context": "ailure signature, suggest safe remediation steps.\u201d"
-      },
-      "rule": "punctuation"
-    },
-    {
-      "level": "WARN",
-      "code": "LNG003",
-      "what": "Error message lacks ending punctuation",
-      "why": "Proper punctuation helps screen readers use appropriate pauses and intonation, improving comprehension.",
-      "fix": "End error messages with appropriate punctuation (period, exclamation, or colon).",
-      "location": {
-        "file": "docs",
-        "line": 22,
-        "context": "i` tells you what failed and links to `docs/hints`"
-      },
-      "rule": "punctuation"
-    },
-    {
-      "level": "WARN",
-      "code": "A11Y003",
-      "what": "Error message lacks explanation or fix suggestion",
-      "why": "Users benefit from understanding why an error occurred and how to fix it. This is especially important for users with cognitive disabilities.",
-      "fix": "Add context explaining why the error occurred and suggest how to resolve it.",
-      "location": {
-        "file": "docs",
-        "line": 22
-      },
-      "rule": "error-structure"
-    },
-    {
-      "level": "WARN",
-      "code": "FMT001",
-      "what": "Line 35 is 137 characters long",
-      "why": "Long lines are difficult to read, especially for users with cognitive disabilities or those using screen magnification.",
-      "fix": "Break the line into multiple lines of 120 characters or fewer.",
-      "location": {
-        "file": "docs",
-        "line": 35,
-        "context": "The policy gate. It turns findings into a pass/fail decision, detects regression..."
-      },
-      "rule": "line-length"
-    },
-    {
-      "level": "WARN",
-      "code": "A11Y003",
-      "what": "Error message lacks explanation or fix suggestion",
-      "why": "Users benefit from understanding why an error occurred and how to fix it. This is especially important for users with cognitive disabilities.",
-      "fix": "Add context explaining why the error occurred and suggest how to resolve it.",
-      "location": {
-        "file": "docs",
-        "line": 35
-      },
-      "rule": "error-structure"
-    },
-    {
-      "level": "WARN",
-      "code": "LNG003",
-      "what": "Error message lacks ending punctuation",
-      "why": "Proper punctuation helps screen readers use appropriate pauses and intonation, improving comprehension.",
-      "fix": "End error messages with appropriate punctuation (period, exclamation, or colon).",
-      "location": {
-        "file": "docs",
-        "line": 54,
-        "context": "**Common Failures**"
-      },
-      "rule": "punctuation"
-    },
-    {
-      "level": "WARN",
-      "code": "A11Y003",
-      "what": "Error message lacks explanation or fix suggestion",
-      "why": "Users benefit from understanding why an error occurred and how to fix it. This is especially important for users with cognitive disabilities.",
-      "fix": "Add context explaining why the error occurred and suggest how to resolve it.",
-      "location": {
-        "file": "docs",
-        "line": 54
-      },
-      "rule": "error-structure"
-    },
-    {
-      "level": "WARN",
-      "code": "LNG003",
-      "what": "Error message lacks ending punctuation",
-      "why": "Proper punctuation helps screen readers use appropriate pauses and intonation, improving comprehension.",
-      "fix": "End error messages with appropriate punctuation (period, exclamation, or colon).",
-      "location": {
-        "file": "docs",
-        "line": 55,
-        "context": "chema.Invalid` (Exit 2): Scorecard JSON is mangled"
-      },
-      "rule": "punctuation"
-    },
-    {
-      "level": "WARN",
-      "code": "LNG003",
-      "what": "Error message lacks ending punctuation",
-      "why": "Proper punctuation helps screen readers use appropriate pauses and intonation, improving comprehension.",
-      "fix": "End error messages with appropriate punctuation (period, exclamation, or colon).",
-      "location": {
-        "file": "docs",
-        "line": 56,
-        "context": "1Y.CI.Gate.Failed` (Exit 3): Open violations found"
-      },
-      "rule": "punctuation"
-    },
-    {
-      "level": "WARN",
-      "code": "A11Y003",
-      "what": "Error message lacks explanation or fix suggestion",
-      "why": "Users benefit from understanding why an error occurred and how to fix it. This is especially important for users with cognitive disabilities.",
-      "fix": "Add context explaining why the error occurred and suggest how to resolve it.",
-      "location": {
-        "file": "docs",
-        "line": 56
-      },
-      "rule": "error-structure"
-    },
-    {
-      "level": "WARN",
-      "code": "LNG003",
-      "what": "Error message lacks ending punctuation",
-      "why": "Proper punctuation helps screen readers use appropriate pauses and intonation, improving comprehension.",
-      "fix": "End error messages with appropriate punctuation (period, exclamation, or colon).",
-      "location": {
-        "file": "docs",
-        "line": 63,
-        "context": "e --artifact-dir .a11y_artifacts --fail-on serious"
-      },
-      "rule": "punctuation"
-    },
-    {
-      "level": "WARN",
-      "code": "A11Y003",
-      "what": "Error message lacks explanation or fix suggestion",
-      "why": "Users benefit from understanding why an error occurred and how to fix it. This is especially important for users with cognitive disabilities.",
-      "fix": "Add context explaining why the error occurred and suggest how to resolve it.",
-      "location": {
-        "file": "docs",
-        "line": 63
-      },
-      "rule": "error-structure"
-    },
-    {
-      "level": "WARN",
-      "code": "LNG003",
-      "what": "Error message lacks ending punctuation",
-      "why": "Proper punctuation helps screen readers use appropriate pauses and intonation, improving comprehension.",
-      "fix": "End error messages with appropriate punctuation (period, exclamation, or colon).",
-      "location": {
-        "file": "docs",
-        "line": 96,
-        "context": "## Error IDs and exit codes"
-      },
-      "rule": "punctuation"
-    },
-    {
-      "level": "WARN",
-      "code": "A11Y003",
-      "what": "Error message lacks explanation or fix suggestion",
-      "why": "Users benefit from understanding why an error occurred and how to fix it. This is especially important for users with cognitive disabilities.",
-      "fix": "Add context explaining why the error occurred and suggest how to resolve it.",
-      "location": {
-        "file": "docs",
-        "line": 96
-      },
-      "rule": "error-structure"
-    },
-    {
-      "level": "WARN",
-      "code": "LNG003",
-      "what": "Error message lacks ending punctuation",
-      "why": "Proper punctuation helps screen readers use appropriate pauses and intonation, improving comprehension.",
-      "fix": "End error messages with appropriate punctuation (period, exclamation, or colon).",
-      "location": {
-        "file": "docs",
-        "line": 99,
-        "context": " Input error (schema, missing required file, etc.)"
-      },
-      "rule": "punctuation"
-    },
-    {
-      "level": "WARN",
-      "code": "A11Y003",
-      "what": "Error message lacks explanation or fix suggestion",
-      "why": "Users benefit from understanding why an error occurred and how to fix it. This is especially important for users with cognitive disabilities.",
-      "fix": "Add context explaining why the error occurred and suggest how to resolve it.",
-      "location": {
-        "file": "docs",
-        "line": 99
-      },
-      "rule": "error-structure"
-    },
-    {
-      "level": "WARN",
-      "code": "LNG003",
-      "what": "Error message lacks ending punctuation",
-      "why": "Proper punctuation helps screen readers use appropriate pauses and intonation, improving comprehension.",
-      "fix": "End error messages with appropriate punctuation (period, exclamation, or colon).",
-      "location": {
-        "file": "docs",
-        "line": 100,
-        "context": "d (policy violation / regression / expired waiver)"
-      },
-      "rule": "punctuation"
-    },
-    {
-      "level": "WARN",
-      "code": "A11Y003",
-      "what": "Error message lacks explanation or fix suggestion",
-      "why": "Users benefit from understanding why an error occurred and how to fix it. This is especially important for users with cognitive disabilities.",
-      "fix": "Add context explaining why the error occurred and suggest how to resolve it.",
-      "location": {
-        "file": "docs",
-        "line": 100
-      },
-      "rule": "error-structure"
-    },
-    {
-      "level": "WARN",
-      "code": "LNG003",
-      "what": "Error message lacks ending punctuation",
-      "why": "Proper punctuation helps screen readers use appropriate pauses and intonation, improving comprehension.",
-      "fix": "End error messages with appropriate punctuation (period, exclamation, or colon).",
-      "location": {
-        "file": "docs",
-        "line": 101,
-        "context": "* `1`: Internal tool error"
-      },
-      "rule": "punctuation"
-    },
-    {
-      "level": "WARN",
-      "code": "A11Y003",
-      "what": "Error message lacks explanation or fix suggestion",
-      "why": "Users benefit from understanding why an error occurred and how to fix it. This is especially important for users with cognitive disabilities.",
-      "fix": "Add context explaining why the error occurred and suggest how to resolve it.",
-      "location": {
-        "file": "docs",
-        "line": 101
-      },
-      "rule": "error-structure"
-    },
-    {
-      "level": "WARN",
-      "code": "A11Y003",
-      "what": "Error message lacks explanation or fix suggestion",
-      "why": "Users benefit from understanding why an error occurred and how to fix it. This is especially important for users with cognitive disabilities.",
-      "fix": "Add context explaining why the error occurred and suggest how to resolve it.",
-      "location": {
-        "file": "docs",
-        "line": 103
-      },
-      "rule": "error-structure"
-    },
-    {
-      "level": "WARN",
-      "code": "LNG003",
-      "what": "Error message lacks ending punctuation",
-      "why": "Proper punctuation helps screen readers use appropriate pauses and intonation, improving comprehension.",
-      "fix": "End error messages with appropriate punctuation (period, exclamation, or colon).",
-      "location": {
-        "file": "docs",
-        "line": 127,
-        "context": "* See how gates fail/pass"
-      },
-      "rule": "punctuation"
-    },
-    {
-      "level": "WARN",
-      "code": "A11Y003",
-      "what": "Error message lacks explanation or fix suggestion",
-      "why": "Users benefit from understanding why an error occurred and how to fix it. This is especially important for users with cognitive disabilities.",
-      "fix": "Add context explaining why the error occurred and suggest how to resolve it.",
-      "location": {
-        "file": "docs",
-        "line": 127
-      },
-      "rule": "error-structure"
-    },
-    {
-      "level": "WARN",
-      "code": "FMT001",
-      "what": "Line 137 is 152 characters long",
-      "why": "Long lines are difficult to read, especially for users with cognitive disabilities or those using screen magnification.",
-      "fix": "Break the line into multiple lines of 120 characters or fewer.",
-      "location": {
-        "file": "docs",
-        "line": 137,
-        "context": "A headless engine that generates traceable, structured accessibility evidence (o..."
-      },
-      "rule": "line-length"
-    },
-    {
-      "level": "WARN",
-      "code": "LNG003",
-      "what": "Error message lacks ending punctuation",
-      "why": "Proper punctuation helps screen readers use appropriate pauses and intonation, improving comprehension.",
-      "fix": "End error messages with appropriate punctuation (period, exclamation, or colon).",
-      "location": {
-        "file": "docs",
-        "line": 187,
-        "context": "**Common Failures**"
-      },
-      "rule": "punctuation"
-    },
-    {
-      "level": "WARN",
-      "code": "A11Y003",
-      "what": "Error message lacks explanation or fix suggestion",
-      "why": "Users benefit from understanding why an error occurred and how to fix it. This is especially important for users with cognitive disabilities.",
-      "fix": "Add context explaining why the error occurred and suggest how to resolve it.",
-      "location": {
-        "file": "docs",
-        "line": 187
-      },
-      "rule": "error-structure"
-    },
-    {
-      "level": "WARN",
-      "code": "LNG002",
-      "what": "All-caps text detected: SCHEMA",
-      "why": "All-caps text is harder to read and may be interpreted as shouting. Screen readers may spell out each letter instead of reading words.",
-      "fix": "Use sentence case or title case instead of all caps.",
-      "location": {
-        "file": "docs",
-        "line": 189
-      },
-      "rule": "no-all-caps"
-    },
-    {
-      "level": "WARN",
-      "code": "LNG004",
-      "what": "Ambiguous pronoun 'this' without clear referent",
-      "why": "Pronouns without clear referents can confuse users, especially those with cognitive disabilities or those using screen readers.",
-      "fix": "Replace the pronoun with the specific thing being referenced.",
-      "location": {
-        "file": "docs",
-        "line": 267,
-        "context": "this is"
-      },
-      "rule": "no-ambiguous-pronouns"
-    },
-    {
-      "level": "WARN",
-      "code": "LNG002",
-      "what": "All-caps text detected: COMMON, CONCEPTS",
-      "why": "All-caps text is harder to read and may be interpreted as shouting. Screen readers may spell out each letter instead of reading words.",
-      "fix": "Use sentence case or title case instead of all caps.",
-      "location": {
-        "file": "docs",
-        "line": 272
-      },
-      "rule": "no-all-caps"
-    },
-    {
-      "level": "WARN",
-      "code": "LNG002",
-      "what": "All-caps text detected: TOOLS",
-      "why": "All-caps text is harder to read and may be interpreted as shouting. Screen readers may spell out each letter instead of reading words.",
-      "fix": "Use sentence case or title case instead of all caps.",
-      "location": {
-        "file": "docs",
-        "line": 275
-      },
-      "rule": "no-all-caps"
-    },
-    {
-      "level": "WARN",
-      "code": "LNG002",
-      "what": "All-caps text detected: ASSIST",
-      "why": "All-caps text is harder to read and may be interpreted as shouting. Screen readers may spell out each letter instead of reading words.",
-      "fix": "Use sentence case or title case instead of all caps.",
-      "location": {
-        "file": "docs",
-        "line": 276
-      },
-      "rule": "no-all-caps"
-    },
-    {
-      "level": "WARN",
-      "code": "LNG002",
-      "what": "All-caps text detected: EVIDENCE, ENGINE",
-      "why": "All-caps text is harder to read and may be interpreted as shouting. Screen readers may spell out each letter instead of reading words.",
-      "fix": "Use sentence case or title case instead of all caps.",
-      "location": {
-        "file": "docs",
-        "line": 277
-      },
-      "rule": "no-all-caps"
-    },
-    {
-      "level": "WARN",
-      "code": "LNG002",
-      "what": "All-caps text detected: PYTHON",
-      "why": "All-caps text is harder to read and may be interpreted as shouting. Screen readers may spell out each letter instead of reading words.",
-      "fix": "Use sentence case or title case instead of all caps.",
-      "location": {
-        "file": "docs",
-        "line": 279
-      },
-      "rule": "no-all-caps"
-    },
-    {
-      "level": "WARN",
-      "code": "LNG002",
-      "what": "All-caps text detected: CURSORASSIST",
-      "why": "All-caps text is harder to read and may be interpreted as shouting. Screen readers may spell out each letter instead of reading words.",
-      "fix": "Use sentence case or title case instead of all caps.",
-      "location": {
-        "file": "docs",
-        "line": 280
-      },
-      "rule": "no-all-caps"
-    },
-    {
-      "level": "WARN",
-      "code": "FMT001",
-      "what": "Line 368 is 140 characters long",
-      "why": "Long lines are difficult to read, especially for users with cognitive disabilities or those using screen magnification.",
-      "fix": "Break the line into multiple lines of 120 characters or fewer.",
-      "location": {
-        "file": "docs",
-        "line": 368,
-        "context": "Assistive cursor control and UI benchmarking. It\u2019s adjacent to accessibility, bu..."
-      },
-      "rule": "line-length"
-    },
-    {
-      "level": "WARN",
-      "code": "FMT001",
-      "what": "Line 387 is 131 characters long",
-      "why": "Long lines are difficult to read, especially for users with cognitive disabilities or those using screen magnification.",
-      "fix": "Break the line into multiple lines of 120 characters or fewer.",
-      "location": {
-        "file": "docs",
-        "line": 387,
-        "context": "These handbooks are the authoritative documentation for the Accessibility Suite...."
-      },
-      "rule": "line-length"
-    },
-    {
-      "level": "WARN",
-      "code": "FMT001",
-      "what": "Line 392 is 136 characters long",
-      "why": "Long lines are difficult to read, especially for users with cognitive disabilities or those using screen magnification.",
-      "fix": "Break the line into multiple lines of 120 characters or fewer.",
-      "location": {
-        "file": "docs",
-        "line": 392,
-        "context": "* [Universal Concepts](COMMON-CONCEPTS.md) - **Read this first.** Explains `.a11..."
-      },
-      "rule": "line-length"
-    },
-    {
-      "level": "WARN",
-      "code": "LNG002",
-      "what": "All-caps text detected: COMMON, CONCEPTS",
-      "why": "All-caps text is harder to read and may be interpreted as shouting. Screen readers may spell out each letter instead of reading words.",
-      "fix": "Use sentence case or title case instead of all caps.",
-      "location": {
-        "file": "docs",
-        "line": 392
-      },
-      "rule": "no-all-caps"
-    },
-    {
-      "level": "WARN",
-      "code": "LNG002",
-      "what": "All-caps text detected: TOOLS",
-      "why": "All-caps text is harder to read and may be interpreted as shouting. Screen readers may spell out each letter instead of reading words.",
-      "fix": "Use sentence case or title case instead of all caps.",
-      "location": {
-        "file": "docs",
-        "line": 397
-      },
-      "rule": "no-all-caps"
-    },
-    {
-      "level": "WARN",
-      "code": "LNG002",
-      "what": "All-caps text detected: ASSIST",
-      "why": "All-caps text is harder to read and may be interpreted as shouting. Screen readers may spell out each letter instead of reading words.",
-      "fix": "Use sentence case or title case instead of all caps.",
-      "location": {
-        "file": "docs",
-        "line": 400
-      },
-      "rule": "no-all-caps"
-    },
-    {
-      "level": "WARN",
-      "code": "LNG002",
-      "what": "All-caps text detected: EVIDENCE, ENGINE",
-      "why": "All-caps text is harder to read and may be interpreted as shouting. Screen readers may spell out each letter instead of reading words.",
-      "fix": "Use sentence case or title case instead of all caps.",
-      "location": {
-        "file": "docs",
-        "line": 401
-      },
-      "rule": "no-all-caps"
-    },
-    {
-      "level": "WARN",
-      "code": "LNG002",
-      "what": "All-caps text detected: PYTHON",
-      "why": "All-caps text is harder to read and may be interpreted as shouting. Screen readers may spell out each letter instead of reading words.",
-      "fix": "Use sentence case or title case instead of all caps.",
-      "location": {
-        "file": "docs",
-        "line": 403
-      },
-      "rule": "no-all-caps"
-    },
-    {
-      "level": "WARN",
-      "code": "LNG002",
-      "what": "All-caps text detected: CURSORASSIST",
-      "why": "All-caps text is harder to read and may be interpreted as shouting. Screen readers may spell out each letter instead of reading words.",
-      "fix": "Use sentence case or title case instead of all caps.",
-      "location": {
-        "file": "docs",
-        "line": 404
-      },
-      "rule": "no-all-caps"
-    },
-    {
-      "level": "WARN",
-      "code": "FMT001",
-      "what": "Line 414 is 121 characters long",
-      "why": "Long lines are difficult to read, especially for users with cognitive disabilities or those using screen magnification.",
-      "fix": "Break the line into multiple lines of 120 characters or fewer.",
-      "location": {
-        "file": "docs",
-        "line": 414,
-        "context": "- **Evidence over assertions** -- every finding is backed by a prov-spec provena..."
-      },
-      "rule": "line-length"
-    },
-    {
-      "level": "WARN",
-      "code": "LNG003",
-      "what": "Error message lacks ending punctuation",
-      "why": "Proper punctuation helps screen readers use appropriate pauses and intonation, improving comprehension.",
-      "fix": "End error messages with appropriate punctuation (period, exclamation, or colon).",
-      "location": {
-        "file": "docs",
-        "line": 415,
-        "context": "e the `[OK]/[WARN]/[FAIL] + What/Why/Fix` contract"
-      },
-      "rule": "punctuation"
-    },
-    {
-      "level": "WARN",
-      "code": "LNG003",
-      "what": "Error message lacks ending punctuation",
-      "why": "Proper punctuation helps screen readers use appropriate pauses and intonation, improving comprehension.",
-      "fix": "End error messages with appropriate punctuation (period, exclamation, or colon).",
-      "location": {
-        "file": "docs",
-        "line": 452,
-        "context": "# Get fix guidance for a CLI failure"
-      },
-      "rule": "punctuation"
-    },
-    {
-      "level": "WARN",
-      "code": "LNG003",
-      "what": "Error message lacks ending punctuation",
-      "why": "Proper punctuation helps screen readers use appropriate pauses and intonation, improving comprehension.",
-      "fix": "End error messages with appropriate punctuation (period, exclamation, or colon).",
-      "location": {
-        "file": "docs",
-        "line": 453,
-        "context": " explain --json error.json --profile screen-reader"
-      },
-      "rule": "punctuation"
-    },
-    {
-      "level": "WARN",
-      "code": "A11Y003",
-      "what": "Error message lacks explanation or fix suggestion",
-      "why": "Users benefit from understanding why an error occurred and how to fix it. This is especially important for users with cognitive disabilities.",
-      "fix": "Add context explaining why the error occurred and suggest how to resolve it.",
-      "location": {
-        "file": "docs",
-        "line": 453
-      },
-      "rule": "error-structure"
-    },
-    {
-      "level": "WARN",
-      "code": "LNG002",
-      "what": "All-caps text detected: CHANGELOG",
-      "why": "All-caps text is harder to read and may be interpreted as shouting. Screen readers may spell out each letter instead of reading words.",
-      "fix": "Use sentence case or title case instead of all caps.",
-      "location": {
-        "file": "docs",
-        "line": 463
-      },
-      "rule": "no-all-caps"
-    },
-    {
-      "level": "WARN",
-      "code": "LNG003",
-      "what": "Error message lacks ending punctuation",
-      "why": "Proper punctuation helps screen readers use appropriate pauses and intonation, improving comprehension.",
-      "fix": "End error messages with appropriate punctuation (period, exclamation, or colon).",
-      "location": {
-        "file": "docs",
-        "line": 507,
-        "context": "  - Negative vectors for must-fail cases"
-      },
-      "rule": "punctuation"
-    },
-    {
-      "level": "WARN",
-      "code": "A11Y003",
-      "what": "Error message lacks explanation or fix suggestion",
-      "why": "Users benefit from understanding why an error occurred and how to fix it. This is especially important for users with cognitive disabilities.",
-      "fix": "Add context explaining why the error occurred and suggest how to resolve it.",
-      "location": {
-        "file": "docs",
-        "line": 507
-      },
-      "rule": "error-structure"
-    },
-    {
-      "level": "WARN",
-      "code": "LNG002",
-      "what": "All-caps text detected: INSERT, CONTACT, METHOD",
-      "why": "All-caps text is harder to read and may be interpreted as shouting. Screen readers may spell out each letter instead of reading words.",
-      "fix": "Use sentence case or title case instead of all caps.",
-      "location": {
-        "file": "docs",
-        "line": 597
-      },
-      "rule": "no-all-caps"
-    },
-    {
-      "level": "WARN",
-      "code": "LNG003",
-      "what": "Error message lacks ending punctuation",
-      "why": "Proper punctuation helps screen readers use appropriate pauses and intonation, improving comprehension.",
-      "fix": "End error messages with appropriate punctuation (period, exclamation, or colon).",
-      "location": {
-        "file": "docs",
-        "line": 614,
-        "context": " written warning from community leaders, providing"
-      },
-      "rule": "punctuation"
-    },
-    {
-      "level": "WARN",
-      "code": "LNG003",
-      "what": "Error message lacks ending punctuation",
-      "why": "Proper punctuation helps screen readers use appropriate pauses and intonation, improving comprehension.",
-      "fix": "End error messages with appropriate punctuation (period, exclamation, or colon).",
-      "location": {
-        "file": "docs",
-        "line": 618,
-        "context": "### 2. Warning"
-      },
-      "rule": "punctuation"
-    },
-    {
-      "level": "WARN",
-      "code": "LNG003",
-      "what": "Error message lacks ending punctuation",
-      "why": "Proper punctuation helps screen readers use appropriate pauses and intonation, improving comprehension.",
-      "fix": "End error messages with appropriate punctuation (period, exclamation, or colon).",
-      "location": {
-        "file": "docs",
-        "line": 623,
-        "context": "rning with consequences for continued behavior. No"
-      },
-      "rule": "punctuation"
-    },
-    {
-      "level": "WARN",
-      "code": "FMT001",
-      "what": "Line 679 is 134 characters long",
-      "why": "Long lines are difficult to read, especially for users with cognitive disabilities or those using screen magnification.",
-      "fix": "Break the line into multiple lines of 120 characters or fewer.",
-      "location": {
-        "file": "docs",
-        "line": 679,
-        "context": "| **1** | Integrity | ![Level 1](https://img.shields.io/badge/prov--spec-L1%20In..."
-      },
-      "rule": "line-length"
-    },
-    {
-      "level": "WARN",
-      "code": "FMT001",
-      "what": "Line 680 is 133 characters long",
-      "why": "Long lines are difficult to read, especially for users with cognitive disabilities or those using screen magnification.",
-      "fix": "Break the line into multiple lines of 120 characters or fewer.",
-      "location": {
-        "file": "docs",
-        "line": 680,
-        "context": "| **2** | Engine | ![Level 2](https://img.shields.io/badge/prov--spec-L2%20Engin..."
-      },
-      "rule": "line-length"
-    },
-    {
-      "level": "WARN",
-      "code": "FMT001",
-      "what": "Line 681 is 141 characters long",
-      "why": "Long lines are difficult to read, especially for users with cognitive disabilities or those using screen magnification.",
-      "fix": "Break the line into multiple lines of 120 characters or fewer.",
-      "location": {
-        "file": "docs",
-        "line": 681,
-        "context": "| **3** | Lineage | ![Level 3](https://img.shields.io/badge/prov--spec-L3%20Line..."
-      },
-      "rule": "line-length"
-    },
-    {
-      "level": "WARN",
-      "code": "LNG002",
-      "what": "All-caps text detected: SHOULD",
-      "why": "All-caps text is harder to read and may be interpreted as shouting. Screen readers may spell out each letter instead of reading words.",
-      "fix": "Use sentence case or title case instead of all caps.",
-      "location": {
-        "file": "docs",
-        "line": 767
-      },
-      "rule": "no-all-caps"
-    },
-    {
-      "level": "WARN",
-      "code": "LNG002",
-      "what": "All-caps text detected: README",
-      "why": "All-caps text is harder to read and may be interpreted as shouting. Screen readers may spell out each letter instead of reading words.",
-      "fix": "Use sentence case or title case instead of all caps.",
-      "location": {
-        "file": "docs",
-        "line": 848
-      },
-      "rule": "no-all-caps"
-    },
-    {
-      "level": "WARN",
-      "code": "FMT001",
-      "what": "Line 891 is 140 characters long",
-      "why": "Long lines are difficult to read, especially for users with cognitive disabilities or those using screen magnification.",
-      "fix": "Break the line into multiple lines of 120 characters or fewer.",
-      "location": {
-        "file": "docs",
-        "line": 891,
-        "context": "Thank you for your interest in contributing to prov-spec! This is a formal speci..."
-      },
-      "rule": "line-length"
-    },
-    {
-      "level": "WARN",
-      "code": "LNG002",
-      "what": "All-caps text detected: CHANGELOG",
-      "why": "All-caps text is harder to read and may be interpreted as shouting. Screen readers may spell out each letter instead of reading words.",
-      "fix": "Use sentence case or title case instead of all caps.",
-      "location": {
-        "file": "docs",
-        "line": 921
-      },
-      "rule": "no-all-caps"
-    },
-    {
-      "level": "WARN",
-      "code": "LNG002",
-      "what": "All-caps text detected: SHOULD",
-      "why": "All-caps text is harder to read and may be interpreted as shouting. Screen readers may spell out each letter instead of reading words.",
-      "fix": "Use sentence case or title case instead of all caps.",
-      "location": {
-        "file": "docs",
-        "line": 969
-      },
-      "rule": "no-all-caps"
-    },
-    {
-      "level": "WARN",
-      "code": "FMT001",
-      "what": "Line 1021 is 138 characters long",
-      "why": "Long lines are difficult to read, especially for users with cognitive disabilities or those using screen magnification.",
-      "fix": "Break the line into multiple lines of 120 characters or fewer.",
-      "location": {
-        "file": "docs",
-        "line": 1021,
-        "context": "Please note that this project is released with a [Code of Conduct](CODE_OF_CONDU..."
-      },
-      "rule": "line-length"
-    },
-    {
-      "level": "WARN",
-      "code": "A11Y003",
-      "what": "Error message lacks explanation or fix suggestion",
-      "why": "Users benefit from understanding why an error occurred and how to fix it. This is especially important for users with cognitive disabilities.",
-      "fix": "Add context explaining why the error occurred and suggest how to resolve it.",
-      "location": {
-        "file": "docs",
-        "line": 1086
-      },
-      "rule": "error-structure"
-    },
-    {
-      "level": "WARN",
-      "code": "LNG003",
-      "what": "Error message lacks ending punctuation",
-      "why": "Proper punctuation helps screen readers use appropriate pauses and intonation, improving comprehension.",
-      "fix": "End error messages with appropriate punctuation (period, exclamation, or colon).",
-      "location": {
-        "file": "docs",
-        "line": 1106,
-        "context": "ll **negative** (must-fail) vectors fail correctly"
-      },
-      "rule": "punctuation"
-    },
-    {
-      "level": "WARN",
-      "code": "A11Y003",
-      "what": "Error message lacks explanation or fix suggestion",
-      "why": "Users benefit from understanding why an error occurred and how to fix it. This is especially important for users with cognitive disabilities.",
-      "fix": "Add context explaining why the error occurred and suggest how to resolve it.",
-      "location": {
-        "file": "docs",
-        "line": 1106
-      },
-      "rule": "error-structure"
-    },
-    {
-      "level": "WARN",
-      "code": "LNG003",
-      "what": "Error message lacks ending punctuation",
-      "why": "Proper punctuation helps screen readers use appropriate pauses and intonation, improving comprehension.",
-      "fix": "End error messages with appropriate punctuation (period, exclamation, or colon).",
-      "location": {
-        "file": "docs",
-        "line": 1107,
-        "context": "s are **explicit** (errors), not silent acceptance"
-      },
-      "rule": "punctuation"
-    },
-    {
-      "level": "WARN",
-      "code": "A11Y003",
-      "what": "Error message lacks explanation or fix suggestion",
-      "why": "Users benefit from understanding why an error occurred and how to fix it. This is especially important for users with cognitive disabilities.",
-      "fix": "Add context explaining why the error occurred and suggest how to resolve it.",
-      "location": {
-        "file": "docs",
-        "line": 1107
-      },
-      "rule": "error-structure"
-    },
-    {
-      "level": "WARN",
-      "code": "A11Y003",
-      "what": "Error message lacks explanation or fix suggestion",
-      "why": "Users benefit from understanding why an error occurred and how to fix it. This is especially important for users with cognitive disabilities.",
-      "fix": "Add context explaining why the error occurred and suggest how to resolve it.",
-      "location": {
-        "file": "docs",
-        "line": 1109
-      },
-      "rule": "error-structure"
-    },
-    {
-      "level": "WARN",
-      "code": "FMT001",
-      "what": "Line 1296 is 164 characters long",
-      "why": "Long lines are difficult to read, especially for users with cognitive disabilities or those using screen magnification.",
-      "fix": "Break the line into multiple lines of 120 characters or fewer.",
-      "location": {
-        "file": "docs",
-        "line": 1296,
-        "context": "Today marks the release of **prov-spec v0.1.0**, a formal, versioned specificati..."
-      },
-      "rule": "line-length"
-    },
-    {
-      "level": "WARN",
-      "code": "FMT001",
-      "what": "Line 1298 is 235 characters long",
-      "why": "Long lines are difficult to read, especially for users with cognitive disabilities or those using screen magnification.",
-      "fix": "Break the line into multiple lines of 120 characters or fewer.",
-      "location": {
-        "file": "docs",
-        "line": 1298,
-        "context": "prov-spec defines a minimal, stable interoperability surface for provenance syst..."
-      },
-      "rule": "line-length"
-    },
-    {
-      "level": "WARN",
-      "code": "FMT001",
-      "what": "Line 1328 is 300 characters long",
-      "why": "Long lines are difficult to read, especially for users with cognitive disabilities or those using screen magnification.",
-      "fix": "Break the line into multiple lines of 120 characters or fewer.",
-      "location": {
-        "file": "docs",
-        "line": 1328,
-        "context": "To demonstrate language neutrality, a zero-dependency Node.js provenance engine ..."
-      },
-      "rule": "line-length"
-    },
-    {
-      "level": "WARN",
-      "code": "FMT001",
-      "what": "Line 1357 is 126 characters long",
-      "why": "Long lines are difficult to read, especially for users with cognitive disabilities or those using screen magnification.",
-      "fix": "Break the line into multiple lines of 120 characters or fewer.",
-      "location": {
-        "file": "docs",
-        "line": 1357,
-        "context": "- Node.js Reference Engine: [github.com/mcp-tool-shop-org/prov-engine-js](https:..."
-      },
-      "rule": "line-length"
-    },
-    {
-      "level": "WARN",
-      "code": "LNG002",
-      "what": "All-caps text detected: LICENSE",
-      "why": "All-caps text is harder to read and may be interpreted as shouting. Screen readers may spell out each letter instead of reading words.",
-      "fix": "Use sentence case or title case instead of all caps.",
-      "location": {
-        "file": "docs",
-        "line": 1368
-      },
-      "rule": "no-all-caps"
-    },
-    {
-      "level": "WARN",
-      "code": "LNG002",
-      "what": "All-caps text detected: CHANGELOG",
-      "why": "All-caps text is harder to read and may be interpreted as shouting. Screen readers may spell out each letter instead of reading words.",
-      "fix": "Use sentence case or title case instead of all caps.",
-      "location": {
-        "file": "docs",
-        "line": 1483
-      },
-      "rule": "no-all-caps"
-    },
-    {
-      "level": "WARN",
-      "code": "LNG002",
-      "what": "All-caps text detected: LICENSE, LICENSE",
-      "why": "All-caps text is harder to read and may be interpreted as shouting. Screen readers may spell out each letter instead of reading words.",
-      "fix": "Use sentence case or title case instead of all caps.",
-      "location": {
-        "file": "docs",
-        "line": 1535
-      },
-      "rule": "no-all-caps"
-    },
-    {
-      "level": "WARN",
-      "code": "A11Y003",
-      "what": "Error message lacks explanation or fix suggestion",
-      "why": "Users benefit from understanding why an error occurred and how to fix it. This is especially important for users with cognitive disabilities.",
-      "fix": "Add context explaining why the error occurred and suggest how to resolve it.",
-      "location": {
-        "file": "docs",
-        "line": 1606
-      },
-      "rule": "error-structure"
-    },
-    {
-      "level": "WARN",
-      "code": "LNG004",
-      "what": "Ambiguous pronoun 'this' without clear referent",
-      "why": "Pronouns without clear referents can confuse users, especially those with cognitive disabilities or those using screen readers.",
-      "fix": "Replace the pronoun with the specific thing being referenced.",
-      "location": {
-        "file": "docs",
-        "line": 1768,
-        "context": "this is"
-      },
-      "rule": "no-ambiguous-pronouns"
-    },
-    {
-      "level": "WARN",
-      "code": "FMT001",
-      "what": "Line 1774 is 124 characters long",
-      "why": "Long lines are difficult to read, especially for users with cognitive disabilities or those using screen magnification.",
-      "fix": "Break the line into multiple lines of 120 characters or fewer.",
-      "location": {
-        "file": "docs",
-        "line": 1774,
-        "context": "If the legacy payload is an object with its own `schema_version` (e.g., `assist...."
-      },
-      "rule": "line-length"
-    },
-    {
-      "level": "WARN",
-      "code": "LNG003",
-      "what": "Error message lacks ending punctuation",
-      "why": "Proper punctuation helps screen readers use appropriate pauses and intonation, improving comprehension.",
-      "fix": "End error messages with appropriate punctuation (period, exclamation, or colon).",
-      "location": {
-        "file": "docs",
-        "line": 1788,
-        "context": "## 4. Error Handling"
-      },
-      "rule": "punctuation"
-    },
-    {
-      "level": "WARN",
-      "code": "A11Y003",
-      "what": "Error message lacks explanation or fix suggestion",
-      "why": "Users benefit from understanding why an error occurred and how to fix it. This is especially important for users with cognitive disabilities.",
-      "fix": "Add context explaining why the error occurred and suggest how to resolve it.",
-      "location": {
-        "file": "docs",
-        "line": 1788
-      },
-      "rule": "error-structure"
-    },
-    {
-      "level": "WARN",
-      "code": "A11Y003",
-      "what": "Error message lacks explanation or fix suggestion",
-      "why": "Users benefit from understanding why an error occurred and how to fix it. This is especially important for users with cognitive disabilities.",
-      "fix": "Add context explaining why the error occurred and suggest how to resolve it.",
-      "location": {
-        "file": "docs",
-        "line": 1790
-      },
-      "rule": "error-structure"
-    },
-    {
-      "level": "WARN",
-      "code": "A11Y003",
-      "what": "Error message lacks explanation or fix suggestion",
-      "why": "Users benefit from understanding why an error occurred and how to fix it. This is especially important for users with cognitive disabilities.",
-      "fix": "Add context explaining why the error occurred and suggest how to resolve it.",
-      "location": {
-        "file": "docs",
-        "line": 1791
-      },
-      "rule": "error-structure"
-    },
-    {
-      "level": "WARN",
-      "code": "LNG003",
-      "what": "Error message lacks ending punctuation",
-      "why": "Proper punctuation helps screen readers use appropriate pauses and intonation, improving comprehension.",
-      "fix": "End error messages with appropriate punctuation (period, exclamation, or colon).",
-      "location": {
-        "file": "docs",
-        "line": 1797,
-        "context": "rors[]`: At least one entry describing the failure"
-      },
-      "rule": "punctuation"
-    },
-    {
-      "level": "WARN",
-      "code": "LNG003",
-      "what": "Error message lacks ending punctuation",
-      "why": "Proper punctuation helps screen readers use appropriate pauses and intonation, improving comprehension.",
-      "fix": "End error messages with appropriate punctuation (period, exclamation, or colon).",
-      "location": {
-        "file": "docs",
-        "line": 1805,
-        "context": "  \"errors\": ["
-      },
-      "rule": "punctuation"
-    },
-    {
-      "level": "WARN",
-      "code": "A11Y003",
-      "what": "Error message lacks explanation or fix suggestion",
-      "why": "Users benefit from understanding why an error occurred and how to fix it. This is especially important for users with cognitive disabilities.",
-      "fix": "Add context explaining why the error occurred and suggest how to resolve it.",
-      "location": {
-        "file": "docs",
-        "line": 1805
-      },
-      "rule": "error-structure"
-    },
-    {
-      "level": "WARN",
-      "code": "LNG002",
-      "what": "All-caps text detected: ADAPTER, EXECUTION, FAILED",
-      "why": "All-caps text is harder to read and may be interpreted as shouting. Screen readers may spell out each letter instead of reading words.",
-      "fix": "Use sentence case or title case instead of all caps.",
-      "location": {
-        "file": "docs",
-        "line": 1807
-      },
-      "rule": "no-all-caps"
-    },
-    {
-      "level": "WARN",
-      "code": "LNG003",
-      "what": "Error message lacks ending punctuation",
-      "why": "Proper punctuation helps screen readers use appropriate pauses and intonation, improving comprehension.",
-      "fix": "End error messages with appropriate punctuation (period, exclamation, or colon).",
-      "location": {
-        "file": "docs",
-        "line": 1807,
-        "context": "      \"code\": \"ADAPTER.EXECUTION.FAILED\","
-      },
-      "rule": "punctuation"
-    },
-    {
-      "level": "WARN",
-      "code": "A11Y003",
-      "what": "Error message lacks explanation or fix suggestion",
-      "why": "Users benefit from understanding why an error occurred and how to fix it. This is especially important for users with cognitive disabilities.",
-      "fix": "Add context explaining why the error occurred and suggest how to resolve it.",
-      "location": {
-        "file": "docs",
-        "line": 1807
-      },
-      "rule": "error-structure"
-    },
-    {
-      "level": "WARN",
-      "code": "LNG003",
-      "what": "Error message lacks ending punctuation",
-      "why": "Proper punctuation helps screen readers use appropriate pauses and intonation, improving comprehension.",
-      "fix": "End error messages with appropriate punctuation (period, exclamation, or colon).",
-      "location": {
-        "file": "docs",
-        "line": 1808,
-        "context": "ssage\": \"Tool execution failed with exit code 2.\","
-      },
-      "rule": "punctuation"
-    },
-    {
-      "level": "WARN",
-      "code": "A11Y003",
-      "what": "Error message lacks explanation or fix suggestion",
-      "why": "Users benefit from understanding why an error occurred and how to fix it. This is especially important for users with cognitive disabilities.",
-      "fix": "Add context explaining why the error occurred and suggest how to resolve it.",
-      "location": {
-        "file": "docs",
-        "line": 1808
-      },
-      "rule": "error-structure"
-    },
-    {
-      "level": "WARN",
-      "code": "A11Y003",
-      "what": "Error message lacks explanation or fix suggestion",
-      "why": "Users benefit from understanding why an error occurred and how to fix it. This is especially important for users with cognitive disabilities.",
-      "fix": "Add context explaining why the error occurred and suggest how to resolve it.",
-      "location": {
-        "file": "docs",
-        "line": 1816
-      },
-      "rule": "error-structure"
-    },
-    {
-      "level": "WARN",
-      "code": "LNG002",
-      "what": "All-caps text detected: SHOULD",
-      "why": "All-caps text is harder to read and may be interpreted as shouting. Screen readers may spell out each letter instead of reading words.",
-      "fix": "Use sentence case or title case instead of all caps.",
-      "location": {
-        "file": "docs",
-        "line": 1822
-      },
-      "rule": "no-all-caps"
-    },
-    {
-      "level": "WARN",
-      "code": "LNG002",
-      "what": "All-caps text detected: SHOULD",
-      "why": "All-caps text is harder to read and may be interpreted as shouting. Screen readers may spell out each letter instead of reading words.",
-      "fix": "Use sentence case or title case instead of all caps.",
-      "location": {
-        "file": "docs",
-        "line": 1845
-      },
-      "rule": "no-all-caps"
-    },
-    {
-      "level": "WARN",
-      "code": "LNG002",
-      "what": "All-caps text detected: SHOULD",
-      "why": "All-caps text is harder to read and may be interpreted as shouting. Screen readers may spell out each letter instead of reading words.",
-      "fix": "Use sentence case or title case instead of all caps.",
-      "location": {
-        "file": "docs",
-        "line": 1846
-      },
-      "rule": "no-all-caps"
-    },
-    {
-      "level": "WARN",
-      "code": "LNG003",
-      "what": "Error message lacks ending punctuation",
-      "why": "Proper punctuation helps screen readers use appropriate pauses and intonation, improving comprehension.",
-      "fix": "End error messages with appropriate punctuation (period, exclamation, or colon).",
-      "location": {
-        "file": "docs",
-        "line": 1976,
-        "context": "### `adapter.errors.capture`"
-      },
-      "rule": "punctuation"
-    },
-    {
-      "level": "WARN",
-      "code": "A11Y003",
-      "what": "Error message lacks explanation or fix suggestion",
-      "why": "Users benefit from understanding why an error occurred and how to fix it. This is especially important for users with cognitive disabilities.",
-      "fix": "Add context explaining why the error occurred and suggest how to resolve it.",
-      "location": {
-        "file": "docs",
-        "line": 1976
-      },
-      "rule": "error-structure"
-    },
-    {
-      "level": "WARN",
-      "code": "A11Y003",
-      "what": "Error message lacks explanation or fix suggestion",
-      "why": "Users benefit from understanding why an error occurred and how to fix it. This is especially important for users with cognitive disabilities.",
-      "fix": "Add context explaining why the error occurred and suggest how to resolve it.",
-      "location": {
-        "file": "docs",
-        "line": 1977
-      },
-      "rule": "error-structure"
-    },
-    {
-      "level": "WARN",
-      "code": "A11Y003",
-      "what": "Error message lacks explanation or fix suggestion",
-      "why": "Users benefit from understanding why an error occurred and how to fix it. This is especially important for users with cognitive disabilities.",
-      "fix": "Add context explaining why the error occurred and suggest how to resolve it.",
-      "location": {
-        "file": "docs",
-        "line": 1978
-      },
-      "rule": "error-structure"
-    },
-    {
-      "level": "WARN",
-      "code": "LNG003",
-      "what": "Error message lacks ending punctuation",
-      "why": "Proper punctuation helps screen readers use appropriate pauses and intonation, improving comprehension.",
-      "fix": "End error messages with appropriate punctuation (period, exclamation, or colon).",
-      "location": {
-        "file": "docs",
-        "line": 1980,
-        "context": "### `adapter.warnings.capture`"
-      },
-      "rule": "punctuation"
-    },
-    {
-      "level": "WARN",
-      "code": "FMT001",
-      "what": "Line 2075 is 145 characters long",
-      "why": "Long lines are difficult to read, especially for users with cognitive disabilities or those using screen magnification.",
-      "fix": "Break the line into multiple lines of 120 characters or fewer.",
-      "location": {
-        "file": "docs",
-        "line": 2075,
-        "context": "**This specification defines the grammar, semantics, and conformance requirement..."
-      },
-      "rule": "line-length"
-    },
-    {
-      "level": "WARN",
-      "code": "LNG002",
-      "what": "All-caps text detected: SHOULD",
-      "why": "All-caps text is harder to read and may be interpreted as shouting. Screen readers may spell out each letter instead of reading words.",
-      "fix": "Use sentence case or title case instead of all caps.",
-      "location": {
-        "file": "docs",
-        "line": 2104
-      },
-      "rule": "no-all-caps"
-    },
-    {
-      "level": "WARN",
-      "code": "LNG003",
-      "what": "Error message lacks ending punctuation",
-      "why": "Proper punctuation helps screen readers use appropriate pauses and intonation, improving comprehension.",
-      "fix": "End error messages with appropriate punctuation (period, exclamation, or colon).",
-      "location": {
-        "file": "docs",
-        "line": 2104,
-        "context": "ations SHOULD emit warnings for deprecated methods"
-      },
-      "rule": "punctuation"
-    },
-    {
-      "level": "WARN",
-      "code": "FMT001",
-      "what": "Line 2127 is 235 characters long",
-      "why": "Long lines are difficult to read, especially for users with cognitive disabilities or those using screen magnification.",
-      "fix": "Break the line into multiple lines of 120 characters or fewer.",
-      "location": {
-        "file": "docs",
-        "line": 2127,
-        "context": "The key words \"MUST\", \"MUST NOT\", \"REQUIRED\", \"SHALL\", \"SHALL NOT\", \"SHOULD\", \"S..."
-      },
-      "rule": "line-length"
-    },
-    {
-      "level": "WARN",
-      "code": "LNG002",
-      "what": "All-caps text detected: REQUIRED, SHALL, SHALL",
-      "why": "All-caps text is harder to read and may be interpreted as shouting. Screen readers may spell out each letter instead of reading words.",
-      "fix": "Use sentence case or title case instead of all caps.",
-      "location": {
-        "file": "docs",
-        "line": 2127
-      },
-      "rule": "no-all-caps"
-    },
-    {
-      "level": "WARN",
-      "code": "LNG002",
-      "what": "All-caps text detected: ALPHA, ALPHA, DIGIT",
-      "why": "All-caps text is harder to read and may be interpreted as shouting. Screen readers may spell out each letter instead of reading words.",
-      "fix": "Use sentence case or title case instead of all caps.",
-      "location": {
-        "file": "docs",
-        "line": 2149
-      },
-      "rule": "no-all-caps"
-    },
-    {
-      "level": "WARN",
-      "code": "LNG002",
-      "what": "All-caps text detected: DIGIT",
-      "why": "All-caps text is harder to read and may be interpreted as shouting. Screen readers may spell out each letter instead of reading words.",
-      "fix": "Use sentence case or title case instead of all caps.",
-      "location": {
-        "file": "docs",
-        "line": 2151
-      },
-      "rule": "no-all-caps"
-    },
-    {
-      "level": "WARN",
-      "code": "LNG002",
-      "what": "All-caps text detected: DIGIT",
-      "why": "All-caps text is harder to read and may be interpreted as shouting. Screen readers may spell out each letter instead of reading words.",
-      "fix": "Use sentence case or title case instead of all caps.",
-      "location": {
-        "file": "docs",
-        "line": 2152
-      },
-      "rule": "no-all-caps"
-    },
-    {
-      "level": "WARN",
-      "code": "LNG002",
-      "what": "All-caps text detected: ALPHA",
-      "why": "All-caps text is harder to read and may be interpreted as shouting. Screen readers may spell out each letter instead of reading words.",
-      "fix": "Use sentence case or title case instead of all caps.",
-      "location": {
-        "file": "docs",
-        "line": 2153
-      },
-      "rule": "no-all-caps"
-    },
-    {
-      "level": "WARN",
-      "code": "LNG002",
-      "what": "All-caps text detected: DIGIT",
-      "why": "All-caps text is harder to read and may be interpreted as shouting. Screen readers may spell out each letter instead of reading words.",
-      "fix": "Use sentence case or title case instead of all caps.",
-      "location": {
-        "file": "docs",
-        "line": 2154
-      },
-      "rule": "no-all-caps"
-    },
-    {
-      "level": "WARN",
-      "code": "LNG002",
-      "what": "All-caps text detected: RESERVED",
-      "why": "All-caps text is harder to read and may be interpreted as shouting. Screen readers may spell out each letter instead of reading words.",
-      "fix": "Use sentence case or title case instead of all caps.",
-      "location": {
-        "file": "docs",
-        "line": 2194
-      },
-      "rule": "no-all-caps"
-    },
-    {
-      "level": "WARN",
-      "code": "LNG002",
-      "what": "All-caps text detected: SHOULD",
-      "why": "All-caps text is harder to read and may be interpreted as shouting. Screen readers may spell out each letter instead of reading words.",
-      "fix": "Use sentence case or title case instead of all caps.",
-      "location": {
-        "file": "docs",
-        "line": 2226
-      },
-      "rule": "no-all-caps"
-    },
-    {
-      "level": "WARN",
-      "code": "LNG003",
-      "what": "Error message lacks ending punctuation",
-      "why": "Proper punctuation helps screen readers use appropriate pauses and intonation, improving comprehension.",
-      "fix": "End error messages with appropriate punctuation (period, exclamation, or colon).",
-      "location": {
-        "file": "docs",
-        "line": 2228,
-        "context": "#### `adapter.errors.capture`"
-      },
-      "rule": "punctuation"
-    },
-    {
-      "level": "WARN",
-      "code": "A11Y003",
-      "what": "Error message lacks explanation or fix suggestion",
-      "why": "Users benefit from understanding why an error occurred and how to fix it. This is especially important for users with cognitive disabilities.",
-      "fix": "Add context explaining why the error occurred and suggest how to resolve it.",
-      "location": {
-        "file": "docs",
-        "line": 2228
-      },
-      "rule": "error-structure"
-    },
-    {
-      "level": "WARN",
-      "code": "A11Y003",
-      "what": "Error message lacks explanation or fix suggestion",
-      "why": "Users benefit from understanding why an error occurred and how to fix it. This is especially important for users with cognitive disabilities.",
-      "fix": "Add context explaining why the error occurred and suggest how to resolve it.",
-      "location": {
-        "file": "docs",
-        "line": 2229
-      },
-      "rule": "error-structure"
-    },
-    {
-      "level": "WARN",
-      "code": "LNG003",
-      "what": "Error message lacks ending punctuation",
-      "why": "Proper punctuation helps screen readers use appropriate pauses and intonation, improving comprehension.",
-      "fix": "End error messages with appropriate punctuation (period, exclamation, or colon).",
-      "location": {
-        "file": "docs",
-        "line": 2230,
-        "context": "lope.errors` MUST contain at least one error entry"
-      },
-      "rule": "punctuation"
-    },
-    {
-      "level": "WARN",
-      "code": "LNG003",
-      "what": "Error message lacks ending punctuation",
-      "why": "Proper punctuation helps screen readers use appropriate pauses and intonation, improving comprehension.",
-      "fix": "End error messages with appropriate punctuation (period, exclamation, or colon).",
-      "location": {
-        "file": "docs",
-        "line": 2231,
-        "context": " Error entry MUST have `code` and `message` fields"
-      },
-      "rule": "punctuation"
-    },
-    {
-      "level": "WARN",
-      "code": "LNG003",
-      "what": "Error message lacks ending punctuation",
-      "why": "Proper punctuation helps screen readers use appropriate pauses and intonation, improving comprehension.",
-      "fix": "End error messages with appropriate punctuation (period, exclamation, or colon).",
-      "location": {
-        "file": "docs",
-        "line": 2233,
-        "context": "#### `adapter.warnings.capture`"
-      },
-      "rule": "punctuation"
-    },
-    {
-      "level": "WARN",
-      "code": "LNG003",
-      "what": "Error message lacks ending punctuation",
-      "why": "Proper punctuation helps screen readers use appropriate pauses and intonation, improving comprehension.",
-      "fix": "End error messages with appropriate punctuation (period, exclamation, or colon).",
-      "location": {
-        "file": "docs",
-        "line": 2235,
-        "context": ".warnings` MUST contain at least one warning entry"
-      },
-      "rule": "punctuation"
-    },
-    {
-      "level": "WARN",
-      "code": "LNG002",
-      "what": "All-caps text detected: SHOULD",
-      "why": "All-caps text is harder to read and may be interpreted as shouting. Screen readers may spell out each letter instead of reading words.",
-      "fix": "Use sentence case or title case instead of all caps.",
-      "location": {
-        "file": "docs",
-        "line": 2306
-      },
-      "rule": "no-all-caps"
-    },
-    {
-      "level": "WARN",
-      "code": "LNG004",
-      "what": "Ambiguous pronoun 'this' without clear referent",
-      "why": "Pronouns without clear referents can confuse users, especially those with cognitive disabilities or those using screen readers.",
-      "fix": "Replace the pronoun with the specific thing being referenced.",
-      "location": {
-        "file": "docs",
-        "line": 2328,
-        "context": "this is"
-      },
-      "rule": "no-ambiguous-pronouns"
-    },
-    {
-      "level": "WARN",
-      "code": "LNG002",
-      "what": "All-caps text detected: SHOULD",
-      "why": "All-caps text is harder to read and may be interpreted as shouting. Screen readers may spell out each letter instead of reading words.",
-      "fix": "Use sentence case or title case instead of all caps.",
-      "location": {
-        "file": "docs",
-        "line": 2389
-      },
-      "rule": "no-all-caps"
-    },
-    {
-      "level": "WARN",
-      "code": "LNG002",
-      "what": "All-caps text detected: SHOULD",
-      "why": "All-caps text is harder to read and may be interpreted as shouting. Screen readers may spell out each letter instead of reading words.",
-      "fix": "Use sentence case or title case instead of all caps.",
-      "location": {
-        "file": "docs",
-        "line": 2390
-      },
-      "rule": "no-all-caps"
-    },
-    {
-      "level": "WARN",
-      "code": "LNG002",
-      "what": "All-caps text detected: SHOULD",
-      "why": "All-caps text is harder to read and may be interpreted as shouting. Screen readers may spell out each letter instead of reading words.",
-      "fix": "Use sentence case or title case instead of all caps.",
-      "location": {
-        "file": "docs",
-        "line": 2402
-      },
-      "rule": "no-all-caps"
-    },
-    {
-      "level": "WARN",
-      "code": "LNG002",
-      "what": "All-caps text detected: SHOULD",
-      "why": "All-caps text is harder to read and may be interpreted as shouting. Screen readers may spell out each letter instead of reading words.",
-      "fix": "Use sentence case or title case instead of all caps.",
-      "location": {
-        "file": "docs",
-        "line": 2439
-      },
-      "rule": "no-all-caps"
-    },
-    {
-      "level": "WARN",
-      "code": "FMT001",
-      "what": "Line 2469 is 228 characters long",
-      "why": "Long lines are difficult to read, especially for users with cognitive disabilities or those using screen magnification.",
-      "fix": "Break the line into multiple lines of 120 characters or fewer.",
-      "location": {
-        "file": "docs",
-        "line": 2469,
-        "context": "Provenance is everywhere. Every pipeline, every tool, every system generates som..."
-      },
-      "rule": "line-length"
-    },
-    {
-      "level": "WARN",
-      "code": "FMT001",
-      "what": "Line 2471 is 288 characters long",
-      "why": "Long lines are difficult to read, especially for users with cognitive disabilities or those using screen magnification.",
-      "fix": "Break the line into multiple lines of 120 characters or fewer.",
-      "location": {
-        "file": "docs",
-        "line": 2471,
-        "context": "But it's informal, implicit, unverifiable. Strings without contracts. Field name..."
-      },
-      "rule": "line-length"
-    },
-    {
-      "level": "WARN",
-      "code": "FMT001",
-      "what": "Line 2481 is 197 characters long",
-      "why": "Long lines are difficult to read, especially for users with cognitive disabilities or those using screen magnification.",
-      "fix": "Break the line into multiple lines of 120 characters or fewer.",
-      "location": {
-        "file": "docs",
-        "line": 2481,
-        "context": "This creates a problem: verification becomes impossible without \"the original sy..."
-      },
-      "rule": "line-length"
-    },
-    {
-      "level": "WARN",
-      "code": "FMT001",
-      "what": "Line 2483 is 163 characters long",
-      "why": "Long lines are difficult to read, especially for users with cognitive disabilities or those using screen magnification.",
-      "fix": "Break the line into multiple lines of 120 characters or fewer.",
-      "location": {
-        "file": "docs",
-        "line": 2483,
-        "context": "The result is that most provenance is write-only. Systems generate it, but nothi..."
-      },
-      "rule": "line-length"
-    },
-    {
-      "level": "WARN",
-      "code": "FMT001",
-      "what": "Line 2512 is 178 characters long",
-      "why": "Long lines are difficult to read, especially for users with cognitive disabilities or those using screen magnification.",
-      "fix": "Break the line into multiple lines of 120 characters or fewer.",
-      "location": {
-        "file": "docs",
-        "line": 2512,
-        "context": "This restraint is a feature. Every additional thing a spec standardizes is anoth..."
-      },
-      "rule": "line-length"
-    },
-    {
-      "level": "WARN",
-      "code": "FMT001",
-      "what": "Line 2522 is 191 characters long",
-      "why": "Long lines are difficult to read, especially for users with cognitive disabilities or those using screen magnification.",
-      "fix": "Break the line into multiple lines of 120 characters or fewer.",
-      "location": {
-        "file": "docs",
-        "line": 2522,
-        "context": "> \"I computed a SHA-256 hash. The hash is over canonical JSON bytes. The bytes w..."
-      },
-      "rule": "line-length"
-    },
-    {
-      "level": "WARN",
-      "code": "FMT001",
-      "what": "Line 2536 is 206 characters long",
-      "why": "Long lines are difficult to read, especially for users with cognitive disabilities or those using screen magnification.",
-      "fix": "Break the line into multiple lines of 120 characters or fewer.",
-      "location": {
-        "file": "docs",
-        "line": 2536,
-        "context": "A Python tool produces a provenance record. A Rust verifier checks it. A Node.js..."
-      },
-      "rule": "line-length"
-    },
-    {
-      "level": "WARN",
-      "code": "FMT001",
-      "what": "Line 2538 is 146 characters long",
-      "why": "Long lines are difficult to read, especially for users with cognitive disabilities or those using screen magnification.",
-      "fix": "Break the line into multiple lines of 120 characters or fewer.",
-      "location": {
-        "file": "docs",
-        "line": 2538,
-        "context": "That's the goal. Not \"everyone uses our SDK.\" Not \"everyone adopts our framework..."
-      },
-      "rule": "line-length"
-    },
-    {
-      "level": "WARN",
-      "code": "FMT001",
-      "what": "Line 2544 is 130 characters long",
-      "why": "Long lines are difficult to read, especially for users with cognitive disabilities or those using screen magnification.",
-      "fix": "Break the line into multiple lines of 120 characters or fewer.",
-      "location": {
-        "file": "docs",
-        "line": 2544,
-        "context": "prov-spec is **not a governance body**. We don't certify implementations, don't ..."
-      },
-      "rule": "line-length"
-    },
-    {
-      "level": "WARN",
-      "code": "FMT001",
-      "what": "Line 2546 is 194 characters long",
-      "why": "Long lines are difficult to read, especially for users with cognitive disabilities or those using screen magnification.",
-      "fix": "Break the line into multiple lines of 120 characters or fewer.",
-      "location": {
-        "file": "docs",
-        "line": 2546,
-        "context": "prov-spec is **not an endorsement mechanism**. A valid provenance record doesn't..."
-      },
-      "rule": "line-length"
-    },
-    {
-      "level": "WARN",
-      "code": "FMT001",
-      "what": "Line 2554 is 124 characters long",
-      "why": "Long lines are difficult to read, especially for users with cognitive disabilities or those using screen magnification.",
-      "fix": "Break the line into multiple lines of 120 characters or fewer.",
-      "location": {
-        "file": "docs",
-        "line": 2554,
-        "context": "This document provides explanations and remediation steps for common accessibili..."
-      },
-      "rule": "line-length"
-    },
-    {
-      "level": "WARN",
-      "code": "FMT001",
-      "what": "Line 2576 is 162 characters long",
-      "why": "Long lines are difficult to read, especially for users with cognitive disabilities or those using screen magnification.",
-      "fix": "Break the line into multiple lines of 120 characters or fewer.",
-      "location": {
-        "file": "docs",
-        "line": 2576,
-        "context": "Screen reader users rely on alternative text to understand the content and funct..."
-      },
-      "rule": "line-length"
-    },
-    {
-      "level": "WARN",
-      "code": "LNG002",
-      "what": "All-caps text detected: LABEL",
-      "why": "All-caps text is harder to read and may be interpreted as shouting. Screen readers may spell out each letter instead of reading words.",
-      "fix": "Use sentence case or title case instead of all caps.",
-      "location": {
-        "file": "docs",
-        "line": 2585
-      },
-      "rule": "no-all-caps"
-    },
-    {
-      "level": "WARN",
-      "code": "FMT001",
-      "what": "Line 2588 is 173 characters long",
-      "why": "Long lines are difficult to read, especially for users with cognitive disabilities or those using screen magnification.",
-      "fix": "Break the line into multiple lines of 120 characters or fewer.",
-      "location": {
-        "file": "docs",
-        "line": 2588,
-        "context": "Users need to know what data is expected in a form field. Visual labels help eve..."
-      },
-      "rule": "line-length"
-    },
-    {
-      "level": "WARN",
-      "code": "FMT001",
-      "what": "Line 2600 is 130 characters long",
-      "why": "Long lines are difficult to read, especially for users with cognitive disabilities or those using screen magnification.",
-      "fix": "Break the line into multiple lines of 120 characters or fewer.",
-      "location": {
-        "file": "docs",
-        "line": 2600,
-        "context": "Buttons without names are often announced as just \"Button\" to screen reader user..."
-      },
-      "rule": "line-length"
-    },
-    {
-      "level": "WARN",
-      "code": "FMT001",
-      "what": "Line 2611 is 121 characters long",
-      "why": "Long lines are difficult to read, especially for users with cognitive disabilities or those using screen magnification.",
-      "fix": "Break the line into multiple lines of 120 characters or fewer.",
-      "location": {
-        "file": "docs",
-        "line": 2611,
-        "context": "Links must have discernable text so users can understand the destination. \"Click..."
-      },
-      "rule": "line-length"
-    },
-    {
-      "level": "WARN",
-      "code": "LNG002",
-      "what": "All-caps text detected: COLOR, CONTRAST",
-      "why": "All-caps text is harder to read and may be interpreted as shouting. Screen readers may spell out each letter instead of reading words.",
-      "fix": "Use sentence case or title case instead of all caps.",
-      "location": {
-        "file": "docs",
-        "line": 2619
-      },
-      "rule": "no-all-caps"
-    },
-    {
-      "level": "WARN",
-      "code": "LNG002",
-      "what": "All-caps text detected: TITLE",
-      "why": "All-caps text is harder to read and may be interpreted as shouting. Screen readers may spell out each letter instead of reading words.",
-      "fix": "Use sentence case or title case instead of all caps.",
-      "location": {
-        "file": "docs",
-        "line": 2630
-      },
-      "rule": "no-all-caps"
-    },
-    {
-      "level": "WARN",
-      "code": "FMT001",
-      "what": "Line 2633 is 133 characters long",
-      "why": "Long lines are difficult to read, especially for users with cognitive disabilities or those using screen magnification.",
-      "fix": "Break the line into multiple lines of 120 characters or fewer.",
-      "location": {
-        "file": "docs",
-        "line": 2633,
-        "context": "The page title is the first thing a screen reader user hears. It allows users to..."
-      },
-      "rule": "line-length"
-    },
-    {
-      "level": "WARN",
-      "code": "LNG002",
-      "what": "All-caps text detected: COLOR",
-      "why": "All-caps text is harder to read and may be interpreted as shouting. Screen readers may spell out each letter instead of reading words.",
-      "fix": "Use sentence case or title case instead of all caps.",
-      "location": {
-        "file": "docs",
-        "line": 2641
-      },
-      "rule": "no-all-caps"
-    },
-    {
-      "level": "WARN",
-      "code": "FMT001",
-      "what": "Line 2644 is 122 characters long",
-      "why": "Long lines are difficult to read, especially for users with cognitive disabilities or those using screen magnification.",
-      "fix": "Break the line into multiple lines of 120 characters or fewer.",
-      "location": {
-        "file": "docs",
-        "line": 2644,
-        "context": "conveying information only via color (like red for error) excludes users who are..."
-      },
-      "rule": "line-length"
-    },
-    {
-      "level": "WARN",
-      "code": "A11Y003",
-      "what": "Error message lacks explanation or fix suggestion",
-      "why": "Users benefit from understanding why an error occurred and how to fix it. This is especially important for users with cognitive disabilities.",
-      "fix": "Add context explaining why the error occurred and suggest how to resolve it.",
-      "location": {
-        "file": "docs",
-        "line": 2644
-      },
-      "rule": "error-structure"
-    },
-    {
-      "level": "WARN",
-      "code": "FMT001",
-      "what": "Line 2655 is 156 characters long",
-      "why": "Long lines are difficult to read, especially for users with cognitive disabilities or those using screen magnification.",
-      "fix": "Break the line into multiple lines of 120 characters or fewer.",
-      "location": {
-        "file": "docs",
-        "line": 2655,
-        "context": "Screen readers use the page language to select the correct pronunciation and voi..."
-      },
-      "rule": "line-length"
-    },
-    {
-      "level": "WARN",
-      "code": "LNG002",
-      "what": "All-caps text detected: ROLES",
-      "why": "All-caps text is harder to read and may be interpreted as shouting. Screen readers may spell out each letter instead of reading words.",
-      "fix": "Use sentence case or title case instead of all caps.",
-      "location": {
-        "file": "docs",
-        "line": 2668
-      },
-      "rule": "no-all-caps"
-    },
-    {
-      "level": "WARN",
-      "code": "LNG003",
-      "what": "Error message lacks ending punctuation",
-      "why": "Proper punctuation helps screen readers use appropriate pauses and intonation, improving comprehension.",
-      "fix": "End error messages with appropriate punctuation (period, exclamation, or colon).",
-      "location": {
-        "file": "docs",
-        "line": 2668,
-        "context": "riaroles\"></a>Invalid ARIA Roles (A11Y.ARIA.ROLES)"
-      },
-      "rule": "punctuation"
-    },
-    {
-      "level": "WARN",
-      "code": "FMT001",
-      "what": "Line 2671 is 148 characters long",
-      "why": "Long lines are difficult to read, especially for users with cognitive disabilities or those using screen magnification.",
-      "fix": "Break the line into multiple lines of 120 characters or fewer.",
-      "location": {
-        "file": "docs",
-        "line": 2671,
-        "context": "Assistive technologies rely on standard role definitions. Made-up roles (e.g., `..."
-      },
-      "rule": "line-length"
-    },
-    {
-      "level": "WARN",
-      "code": "LNG002",
-      "what": "All-caps text detected: HEADING, ORDER",
-      "why": "All-caps text is harder to read and may be interpreted as shouting. Screen readers may spell out each letter instead of reading words.",
-      "fix": "Use sentence case or title case instead of all caps.",
-      "location": {
-        "file": "docs",
-        "line": 2676
-      },
-      "rule": "no-all-caps"
-    },
-    {
-      "level": "WARN",
-      "code": "FMT001",
-      "what": "Line 2679 is 132 characters long",
-      "why": "Long lines are difficult to read, especially for users with cognitive disabilities or those using screen magnification.",
-      "fix": "Break the line into multiple lines of 120 characters or fewer.",
-      "location": {
-        "file": "docs",
-        "line": 2679,
-        "context": "Headings provide the main navigation structure for screen reader users. Skipping..."
-      },
-      "rule": "line-length"
-    },
-    {
-      "level": "WARN",
-      "code": "FMT001",
-      "what": "Line 2688 is 135 characters long",
-      "why": "Long lines are difficult to read, especially for users with cognitive disabilities or those using screen magnification.",
-      "fix": "Break the line into multiple lines of 120 characters or fewer.",
-      "location": {
-        "file": "docs",
-        "line": 2688,
-        "context": "Standardize artifact generation, storage, and consumption across all Accessibili..."
-      },
-      "rule": "line-length"
-    },
-    {
-      "level": "WARN",
-      "code": "LNG003",
-      "what": "Error message lacks ending punctuation",
-      "why": "Proper punctuation helps screen readers use appropriate pauses and intonation, improving comprehension.",
-      "fix": "End error messages with appropriate punctuation (period, exclamation, or colon).",
-      "location": {
-        "file": "docs",
-        "line": 2696,
-        "context": "       # Raw lint results (schema: cli.error.v0.1)"
-      },
-      "rule": "punctuation"
-    },
-    {
-      "level": "WARN",
-      "code": "A11Y003",
-      "what": "Error message lacks explanation or fix suggestion",
-      "why": "Users benefit from understanding why an error occurred and how to fix it. This is especially important for users with cognitive disabilities.",
-      "fix": "Add context explaining why the error occurred and suggest how to resolve it.",
-      "location": {
-        "file": "docs",
-        "line": 2696
-      },
-      "rule": "error-structure"
-    },
-    {
-      "level": "WARN",
-      "code": "A11Y003",
-      "what": "Error message lacks explanation or fix suggestion",
-      "why": "Users benefit from understanding why an error occurred and how to fix it. This is especially important for users with cognitive disabilities.",
-      "fix": "Add context explaining why the error occurred and suggest how to resolve it.",
-      "location": {
-        "file": "docs",
-        "line": 2714
-      },
-      "rule": "error-structure"
-    },
-    {
-      "level": "WARN",
-      "code": "A11Y003",
-      "what": "Error message lacks explanation or fix suggestion",
-      "why": "Users benefit from understanding why an error occurred and how to fix it. This is especially important for users with cognitive disabilities.",
-      "fix": "Add context explaining why the error occurred and suggest how to resolve it.",
-      "location": {
-        "file": "docs",
-        "line": 2719
-      },
-      "rule": "error-structure"
+  "findings": [
+    {
+      "id": "FMT001",
+      "severity": "moderate",
+      "message": "Line 3 is 133 characters long"
+    },
+    {
+      "id": "LNG003",
+      "severity": "moderate",
+      "message": "Error message lacks ending punctuation"
+    },
+    {
+      "id": "LNG003",
+      "severity": "moderate",
+      "message": "Error message lacks ending punctuation"
+    },
+    {
+      "id": "A11Y003",
+      "severity": "moderate",
+      "message": "Error message lacks explanation or fix suggestion"
+    },
+    {
+      "id": "FMT001",
+      "severity": "moderate",
+      "message": "Line 35 is 137 characters long"
+    },
+    {
+      "id": "A11Y003",
+      "severity": "moderate",
+      "message": "Error message lacks explanation or fix suggestion"
+    },
+    {
+      "id": "LNG003",
+      "severity": "moderate",
+      "message": "Error message lacks ending punctuation"
+    },
+    {
+      "id": "A11Y003",
+      "severity": "moderate",
+      "message": "Error message lacks explanation or fix suggestion"
+    },
+    {
+      "id": "LNG003",
+      "severity": "moderate",
+      "message": "Error message lacks ending punctuation"
+    },
+    {
+      "id": "LNG003",
+      "severity": "moderate",
+      "message": "Error message lacks ending punctuation"
+    },
+    {
+      "id": "A11Y003",
+      "severity": "moderate",
+      "message": "Error message lacks explanation or fix suggestion"
+    },
+    {
+      "id": "LNG003",
+      "severity": "moderate",
+      "message": "Error message lacks ending punctuation"
+    },
+    {
+      "id": "A11Y003",
+      "severity": "moderate",
+      "message": "Error message lacks explanation or fix suggestion"
+    },
+    {
+      "id": "LNG003",
+      "severity": "moderate",
+      "message": "Error message lacks ending punctuation"
+    },
+    {
+      "id": "A11Y003",
+      "severity": "moderate",
+      "message": "Error message lacks explanation or fix suggestion"
+    },
+    {
+      "id": "LNG003",
+      "severity": "moderate",
+      "message": "Error message lacks ending punctuation"
+    },
+    {
+      "id": "A11Y003",
+      "severity": "moderate",
+      "message": "Error message lacks explanation or fix suggestion"
+    },
+    {
+      "id": "LNG003",
+      "severity": "moderate",
+      "message": "Error message lacks ending punctuation"
+    },
+    {
+      "id": "A11Y003",
+      "severity": "moderate",
+      "message": "Error message lacks explanation or fix suggestion"
+    },
+    {
+      "id": "LNG003",
+      "severity": "moderate",
+      "message": "Error message lacks ending punctuation"
+    },
+    {
+      "id": "A11Y003",
+      "severity": "moderate",
+      "message": "Error message lacks explanation or fix suggestion"
+    },
+    {
+      "id": "A11Y003",
+      "severity": "moderate",
+      "message": "Error message lacks explanation or fix suggestion"
+    },
+    {
+      "id": "LNG003",
+      "severity": "moderate",
+      "message": "Error message lacks ending punctuation"
+    },
+    {
+      "id": "A11Y003",
+      "severity": "moderate",
+      "message": "Error message lacks explanation or fix suggestion"
+    },
+    {
+      "id": "FMT001",
+      "severity": "moderate",
+      "message": "Line 137 is 152 characters long"
+    },
+    {
+      "id": "LNG003",
+      "severity": "moderate",
+      "message": "Error message lacks ending punctuation"
+    },
+    {
+      "id": "A11Y003",
+      "severity": "moderate",
+      "message": "Error message lacks explanation or fix suggestion"
+    },
+    {
+      "id": "LNG002",
+      "severity": "moderate",
+      "message": "All-caps text detected: SCHEMA"
+    },
+    {
+      "id": "LNG004",
+      "severity": "moderate",
+      "message": "Ambiguous pronoun 'this' without clear referent"
+    },
+    {
+      "id": "LNG002",
+      "severity": "moderate",
+      "message": "All-caps text detected: COMMON, CONCEPTS"
+    },
+    {
+      "id": "LNG002",
+      "severity": "moderate",
+      "message": "All-caps text detected: TOOLS"
+    },
+    {
+      "id": "LNG002",
+      "severity": "moderate",
+      "message": "All-caps text detected: ASSIST"
+    },
+    {
+      "id": "LNG002",
+      "severity": "moderate",
+      "message": "All-caps text detected: EVIDENCE, ENGINE"
+    },
+    {
+      "id": "LNG002",
+      "severity": "moderate",
+      "message": "All-caps text detected: PYTHON"
+    },
+    {
+      "id": "LNG002",
+      "severity": "moderate",
+      "message": "All-caps text detected: CURSORASSIST"
+    },
+    {
+      "id": "FMT001",
+      "severity": "moderate",
+      "message": "Line 368 is 140 characters long"
+    },
+    {
+      "id": "FMT001",
+      "severity": "moderate",
+      "message": "Line 387 is 131 characters long"
+    },
+    {
+      "id": "FMT001",
+      "severity": "moderate",
+      "message": "Line 392 is 136 characters long"
+    },
+    {
+      "id": "LNG002",
+      "severity": "moderate",
+      "message": "All-caps text detected: COMMON, CONCEPTS"
+    },
+    {
+      "id": "LNG002",
+      "severity": "moderate",
+      "message": "All-caps text detected: TOOLS"
+    },
+    {
+      "id": "LNG002",
+      "severity": "moderate",
+      "message": "All-caps text detected: ASSIST"
+    },
+    {
+      "id": "LNG002",
+      "severity": "moderate",
+      "message": "All-caps text detected: EVIDENCE, ENGINE"
+    },
+    {
+      "id": "LNG002",
+      "severity": "moderate",
+      "message": "All-caps text detected: PYTHON"
+    },
+    {
+      "id": "LNG002",
+      "severity": "moderate",
+      "message": "All-caps text detected: CURSORASSIST"
+    },
+    {
+      "id": "FMT001",
+      "severity": "moderate",
+      "message": "Line 414 is 121 characters long"
+    },
+    {
+      "id": "LNG003",
+      "severity": "moderate",
+      "message": "Error message lacks ending punctuation"
+    },
+    {
+      "id": "LNG003",
+      "severity": "moderate",
+      "message": "Error message lacks ending punctuation"
+    },
+    {
+      "id": "LNG003",
+      "severity": "moderate",
+      "message": "Error message lacks ending punctuation"
+    },
+    {
+      "id": "A11Y003",
+      "severity": "moderate",
+      "message": "Error message lacks explanation or fix suggestion"
+    },
+    {
+      "id": "LNG002",
+      "severity": "moderate",
+      "message": "All-caps text detected: CHANGELOG"
+    },
+    {
+      "id": "LNG003",
+      "severity": "moderate",
+      "message": "Error message lacks ending punctuation"
+    },
+    {
+      "id": "A11Y003",
+      "severity": "moderate",
+      "message": "Error message lacks explanation or fix suggestion"
+    },
+    {
+      "id": "LNG002",
+      "severity": "moderate",
+      "message": "All-caps text detected: INSERT, CONTACT, METHOD"
+    },
+    {
+      "id": "LNG003",
+      "severity": "moderate",
+      "message": "Error message lacks ending punctuation"
+    },
+    {
+      "id": "LNG003",
+      "severity": "moderate",
+      "message": "Error message lacks ending punctuation"
+    },
+    {
+      "id": "LNG003",
+      "severity": "moderate",
+      "message": "Error message lacks ending punctuation"
+    },
+    {
+      "id": "FMT001",
+      "severity": "moderate",
+      "message": "Line 679 is 134 characters long"
+    },
+    {
+      "id": "FMT001",
+      "severity": "moderate",
+      "message": "Line 680 is 133 characters long"
+    },
+    {
+      "id": "FMT001",
+      "severity": "moderate",
+      "message": "Line 681 is 141 characters long"
+    },
+    {
+      "id": "LNG002",
+      "severity": "moderate",
+      "message": "All-caps text detected: SHOULD"
+    },
+    {
+      "id": "LNG002",
+      "severity": "moderate",
+      "message": "All-caps text detected: README"
+    },
+    {
+      "id": "FMT001",
+      "severity": "moderate",
+      "message": "Line 891 is 140 characters long"
+    },
+    {
+      "id": "LNG002",
+      "severity": "moderate",
+      "message": "All-caps text detected: CHANGELOG"
+    },
+    {
+      "id": "LNG002",
+      "severity": "moderate",
+      "message": "All-caps text detected: SHOULD"
+    },
+    {
+      "id": "FMT001",
+      "severity": "moderate",
+      "message": "Line 1021 is 138 characters long"
+    },
+    {
+      "id": "A11Y003",
+      "severity": "moderate",
+      "message": "Error message lacks explanation or fix suggestion"
+    },
+    {
+      "id": "LNG003",
+      "severity": "moderate",
+      "message": "Error message lacks ending punctuation"
+    },
+    {
+      "id": "A11Y003",
+      "severity": "moderate",
+      "message": "Error message lacks explanation or fix suggestion"
+    },
+    {
+      "id": "LNG003",
+      "severity": "moderate",
+      "message": "Error message lacks ending punctuation"
+    },
+    {
+      "id": "A11Y003",
+      "severity": "moderate",
+      "message": "Error message lacks explanation or fix suggestion"
+    },
+    {
+      "id": "A11Y003",
+      "severity": "moderate",
+      "message": "Error message lacks explanation or fix suggestion"
+    },
+    {
+      "id": "FMT001",
+      "severity": "moderate",
+      "message": "Line 1296 is 164 characters long"
+    },
+    {
+      "id": "FMT001",
+      "severity": "moderate",
+      "message": "Line 1298 is 235 characters long"
+    },
+    {
+      "id": "FMT001",
+      "severity": "moderate",
+      "message": "Line 1328 is 300 characters long"
+    },
+    {
+      "id": "FMT001",
+      "severity": "moderate",
+      "message": "Line 1357 is 126 characters long"
+    },
+    {
+      "id": "LNG002",
+      "severity": "moderate",
+      "message": "All-caps text detected: LICENSE"
+    },
+    {
+      "id": "LNG002",
+      "severity": "moderate",
+      "message": "All-caps text detected: CHANGELOG"
+    },
+    {
+      "id": "LNG002",
+      "severity": "moderate",
+      "message": "All-caps text detected: LICENSE, LICENSE"
+    },
+    {
+      "id": "A11Y003",
+      "severity": "moderate",
+      "message": "Error message lacks explanation or fix suggestion"
+    },
+    {
+      "id": "LNG004",
+      "severity": "moderate",
+      "message": "Ambiguous pronoun 'this' without clear referent"
+    },
+    {
+      "id": "FMT001",
+      "severity": "moderate",
+      "message": "Line 1774 is 124 characters long"
+    },
+    {
+      "id": "LNG003",
+      "severity": "moderate",
+      "message": "Error message lacks ending punctuation"
+    },
+    {
+      "id": "A11Y003",
+      "severity": "moderate",
+      "message": "Error message lacks explanation or fix suggestion"
+    },
+    {
+      "id": "A11Y003",
+      "severity": "moderate",
+      "message": "Error message lacks explanation or fix suggestion"
+    },
+    {
+      "id": "A11Y003",
+      "severity": "moderate",
+      "message": "Error message lacks explanation or fix suggestion"
+    },
+    {
+      "id": "LNG003",
+      "severity": "moderate",
+      "message": "Error message lacks ending punctuation"
+    },
+    {
+      "id": "LNG003",
+      "severity": "moderate",
+      "message": "Error message lacks ending punctuation"
+    },
+    {
+      "id": "A11Y003",
+      "severity": "moderate",
+      "message": "Error message lacks explanation or fix suggestion"
+    },
+    {
+      "id": "LNG002",
+      "severity": "moderate",
+      "message": "All-caps text detected: ADAPTER, EXECUTION, FAILED"
+    },
+    {
+      "id": "LNG003",
+      "severity": "moderate",
+      "message": "Error message lacks ending punctuation"
+    },
+    {
+      "id": "A11Y003",
+      "severity": "moderate",
+      "message": "Error message lacks explanation or fix suggestion"
+    },
+    {
+      "id": "LNG003",
+      "severity": "moderate",
+      "message": "Error message lacks ending punctuation"
+    },
+    {
+      "id": "A11Y003",
+      "severity": "moderate",
+      "message": "Error message lacks explanation or fix suggestion"
+    },
+    {
+      "id": "A11Y003",
+      "severity": "moderate",
+      "message": "Error message lacks explanation or fix suggestion"
+    },
+    {
+      "id": "LNG002",
+      "severity": "moderate",
+      "message": "All-caps text detected: SHOULD"
+    },
+    {
+      "id": "LNG002",
+      "severity": "moderate",
+      "message": "All-caps text detected: SHOULD"
+    },
+    {
+      "id": "LNG002",
+      "severity": "moderate",
+      "message": "All-caps text detected: SHOULD"
+    },
+    {
+      "id": "LNG003",
+      "severity": "moderate",
+      "message": "Error message lacks ending punctuation"
+    },
+    {
+      "id": "A11Y003",
+      "severity": "moderate",
+      "message": "Error message lacks explanation or fix suggestion"
+    },
+    {
+      "id": "A11Y003",
+      "severity": "moderate",
+      "message": "Error message lacks explanation or fix suggestion"
+    },
+    {
+      "id": "A11Y003",
+      "severity": "moderate",
+      "message": "Error message lacks explanation or fix suggestion"
+    },
+    {
+      "id": "LNG003",
+      "severity": "moderate",
+      "message": "Error message lacks ending punctuation"
+    },
+    {
+      "id": "FMT001",
+      "severity": "moderate",
+      "message": "Line 2075 is 145 characters long"
+    },
+    {
+      "id": "LNG002",
+      "severity": "moderate",
+      "message": "All-caps text detected: SHOULD"
+    },
+    {
+      "id": "LNG003",
+      "severity": "moderate",
+      "message": "Error message lacks ending punctuation"
+    },
+    {
+      "id": "FMT001",
+      "severity": "moderate",
+      "message": "Line 2127 is 235 characters long"
+    },
+    {
+      "id": "LNG002",
+      "severity": "moderate",
+      "message": "All-caps text detected: REQUIRED, SHALL, SHALL"
+    },
+    {
+      "id": "LNG002",
+      "severity": "moderate",
+      "message": "All-caps text detected: ALPHA, ALPHA, DIGIT"
+    },
+    {
+      "id": "LNG002",
+      "severity": "moderate",
+      "message": "All-caps text detected: DIGIT"
+    },
+    {
+      "id": "LNG002",
+      "severity": "moderate",
+      "message": "All-caps text detected: DIGIT"
+    },
+    {
+      "id": "LNG002",
+      "severity": "moderate",
+      "message": "All-caps text detected: ALPHA"
+    },
+    {
+      "id": "LNG002",
+      "severity": "moderate",
+      "message": "All-caps text detected: DIGIT"
+    },
+    {
+      "id": "LNG002",
+      "severity": "moderate",
+      "message": "All-caps text detected: RESERVED"
+    },
+    {
+      "id": "LNG002",
+      "severity": "moderate",
+      "message": "All-caps text detected: SHOULD"
+    },
+    {
+      "id": "LNG003",
+      "severity": "moderate",
+      "message": "Error message lacks ending punctuation"
+    },
+    {
+      "id": "A11Y003",
+      "severity": "moderate",
+      "message": "Error message lacks explanation or fix suggestion"
+    },
+    {
+      "id": "A11Y003",
+      "severity": "moderate",
+      "message": "Error message lacks explanation or fix suggestion"
+    },
+    {
+      "id": "LNG003",
+      "severity": "moderate",
+      "message": "Error message lacks ending punctuation"
+    },
+    {
+      "id": "LNG003",
+      "severity": "moderate",
+      "message": "Error message lacks ending punctuation"
+    },
+    {
+      "id": "LNG003",
+      "severity": "moderate",
+      "message": "Error message lacks ending punctuation"
+    },
+    {
+      "id": "LNG003",
+      "severity": "moderate",
+      "message": "Error message lacks ending punctuation"
+    },
+    {
+      "id": "LNG002",
+      "severity": "moderate",
+      "message": "All-caps text detected: SHOULD"
+    },
+    {
+      "id": "LNG004",
+      "severity": "moderate",
+      "message": "Ambiguous pronoun 'this' without clear referent"
+    },
+    {
+      "id": "LNG002",
+      "severity": "moderate",
+      "message": "All-caps text detected: SHOULD"
+    },
+    {
+      "id": "LNG002",
+      "severity": "moderate",
+      "message": "All-caps text detected: SHOULD"
+    },
+    {
+      "id": "LNG002",
+      "severity": "moderate",
+      "message": "All-caps text detected: SHOULD"
+    },
+    {
+      "id": "LNG002",
+      "severity": "moderate",
+      "message": "All-caps text detected: SHOULD"
+    },
+    {
+      "id": "FMT001",
+      "severity": "moderate",
+      "message": "Line 2469 is 228 characters long"
+    },
+    {
+      "id": "FMT001",
+      "severity": "moderate",
+      "message": "Line 2471 is 288 characters long"
+    },
+    {
+      "id": "FMT001",
+      "severity": "moderate",
+      "message": "Line 2481 is 197 characters long"
+    },
+    {
+      "id": "FMT001",
+      "severity": "moderate",
+      "message": "Line 2483 is 163 characters long"
+    },
+    {
+      "id": "FMT001",
+      "severity": "moderate",
+      "message": "Line 2512 is 178 characters long"
+    },
+    {
+      "id": "FMT001",
+      "severity": "moderate",
+      "message": "Line 2522 is 191 characters long"
+    },
+    {
+      "id": "FMT001",
+      "severity": "moderate",
+      "message": "Line 2536 is 206 characters long"
+    },
+    {
+      "id": "FMT001",
+      "severity": "moderate",
+      "message": "Line 2538 is 146 characters long"
+    },
+    {
+      "id": "FMT001",
+      "severity": "moderate",
+      "message": "Line 2544 is 130 characters long"
+    },
+    {
+      "id": "FMT001",
+      "severity": "moderate",
+      "message": "Line 2546 is 194 characters long"
+    },
+    {
+      "id": "FMT001",
+      "severity": "moderate",
+      "message": "Line 2554 is 124 characters long"
+    },
+    {
+      "id": "FMT001",
+      "severity": "moderate",
+      "message": "Line 2576 is 162 characters long"
+    },
+    {
+      "id": "LNG002",
+      "severity": "moderate",
+      "message": "All-caps text detected: LABEL"
+    },
+    {
+      "id": "FMT001",
+      "severity": "moderate",
+      "message": "Line 2588 is 173 characters long"
+    },
+    {
+      "id": "FMT001",
+      "severity": "moderate",
+      "message": "Line 2600 is 130 characters long"
+    },
+    {
+      "id": "FMT001",
+      "severity": "moderate",
+      "message": "Line 2611 is 121 characters long"
+    },
+    {
+      "id": "LNG002",
+      "severity": "moderate",
+      "message": "All-caps text detected: COLOR, CONTRAST"
+    },
+    {
+      "id": "LNG002",
+      "severity": "moderate",
+      "message": "All-caps text detected: TITLE"
+    },
+    {
+      "id": "FMT001",
+      "severity": "moderate",
+      "message": "Line 2633 is 133 characters long"
+    },
+    {
+      "id": "LNG002",
+      "severity": "moderate",
+      "message": "All-caps text detected: COLOR"
+    },
+    {
+      "id": "FMT001",
+      "severity": "moderate",
+      "message": "Line 2644 is 122 characters long"
+    },
+    {
+      "id": "A11Y003",
+      "severity": "moderate",
+      "message": "Error message lacks explanation or fix suggestion"
+    },
+    {
+      "id": "FMT001",
+      "severity": "moderate",
+      "message": "Line 2655 is 156 characters long"
+    },
+    {
+      "id": "LNG002",
+      "severity": "moderate",
+      "message": "All-caps text detected: ROLES"
+    },
+    {
+      "id": "LNG003",
+      "severity": "moderate",
+      "message": "Error message lacks ending punctuation"
+    },
+    {
+      "id": "FMT001",
+      "severity": "moderate",
+      "message": "Line 2671 is 148 characters long"
+    },
+    {
+      "id": "LNG002",
+      "severity": "moderate",
+      "message": "All-caps text detected: HEADING, ORDER"
+    },
+    {
+      "id": "FMT001",
+      "severity": "moderate",
+      "message": "Line 2679 is 132 characters long"
+    },
+    {
+      "id": "FMT001",
+      "severity": "moderate",
+      "message": "Line 2688 is 135 characters long"
+    },
+    {
+      "id": "LNG003",
+      "severity": "moderate",
+      "message": "Error message lacks ending punctuation"
+    },
+    {
+      "id": "A11Y003",
+      "severity": "moderate",
+      "message": "Error message lacks explanation or fix suggestion"
+    },
+    {
+      "id": "A11Y003",
+      "severity": "moderate",
+      "message": "Error message lacks explanation or fix suggestion"
+    },
+    {
+      "id": "A11Y003",
+      "severity": "moderate",
+      "message": "Error message lacks explanation or fix suggestion"
     }
   ]
 }
