@@ -69,3 +69,8 @@ venv.bak/
 # OS
 .DS_Store
 Thumbs.db
+
+# Site
+site/.astro/
+site/node_modules/
+site/dist/
