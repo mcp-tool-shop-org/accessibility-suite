@@ -3,9 +3,7 @@
 </p>
 
 <p align="center">
-  
-            <img src="https://raw.githubusercontent.com/mcp-tool-shop-org/brand/main/logos/accessibility-suite/readme.png"
-           alt="Accessibility Suite" width="400">
+  <img src="assets/logo.png" alt="Accessibility Suite" width="400">
 </p>
 
 <p align="center">
