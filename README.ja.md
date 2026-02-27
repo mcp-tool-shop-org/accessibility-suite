@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="README.ja.md">日本語</a> | <a href="README.zh.md">中文</a> | <a href="README.es.md">Español</a> | <a href="README.fr.md">Français</a> | <a href="README.hi.md">हिन्दी</a> | <a href="README.it.md">Italiano</a> | <a href="README.pt-BR.md">Português (BR)</a>
+  <a href="README.md">English</a> | <a href="README.zh.md">中文</a> | <a href="README.es.md">Español</a> | <a href="README.fr.md">Français</a> | <a href="README.hi.md">हिन्दी</a> | <a href="README.it.md">Italiano</a> | <a href="README.pt-BR.md">Português (BR)</a>
 </p>
 
 <p align="center">
@@ -21,40 +21,40 @@
 
 多くのアクセシビリティツールは「12件の違反があります」というメッセージで終わります。しかし、Accessibility Suiteはさらに進んでおり、テスト内容の改ざん防止機能付きの証拠を収集し、CIパイプラインでのリグレッションを検出し、視覚障碍者、スクリーンリーダー、読字障害、認知負荷の特性に合わせた修正方法を提示します。
 
-このスイートは、アクセシブルなパターンをCLI出力で検証し、暗号学的プロビナンス情報付きでHTMLのWCAG違反をスキャンし、CI環境で品質ゲートを適用し、すべての情報をMCPを通じて公開することで、AIアシスタントが修正プロセスに参加できるようにします。
+このスイートは、アクセシブルなパターンをCLI出力で検証し、暗号学的プロビナンス情報付きでHTMLのWCAG違反をスキャンし、CI環境での品質ゲートを適用し、すべての情報をMCPを通じて公開することで、AIアシスタントが修正プロセスに参加できるようにします。
 
 **主な原則：**
 
-- **主張ではなく証拠:** すべての検出結果は、SHA-256整合性チェックサムを持つプロビナンスレコードによって裏付けられています。
+- **主張ではなく証拠:** すべての検出結果は、SHA-256整合性チェックサムを含むプロビナンスレコードによって裏付けられています。
 - **視覚障碍者向けの出力:** すべてのCLIツールは、`[OK]/[WARN]/[FAIL] + 何が/なぜ/修正方法`という形式を使用します。
 - **決定性:** 同じ入力は常に同じ出力を生成します。ネットワーク接続やランダム性は使用しません。
-- **CI環境との連携:** 終了コード、スコアカードJSON、プルリクエストコメントは、自動化されたパイプライン向けに設計されています。
+- **CIネイティブ:** 自動化パイプライン向けに、終了コード、スコアカードJSON、およびプルリクエストコメントが設計されています。
 
 ---
 
 ## プロジェクト
 
-| プロジェクト | 説明 | Stack | パッケージ |
-| --------- | ------------- | ------- | --------- |
-| [a11y-lint](src/a11y-lint/) | CLI出力のアクセシビリティリンター：エラーメッセージがアクセシブルなパターンに従っているか検証します。 | Python 3.10以降 | [PyPI](https://pypi.org/project/a11y-lint/) |
-| [a11y-ci](src/a11y-ci/) | アクセシビリティスコアカードのCIゲート：リグレッション検出と許可リスト機能付き。 | Python 3.10以降 | [PyPI](https://pypi.org/project/a11y-ci/) / [npm](https://www.npmjs.com/package/@mcptoolshop/a11y-ci) |
-| [a11y-assist](src/a11y-assist/) | 5つのアクセシビリティプロファイルに対応した、視覚障碍者向けのCLIアシスタント。 | Python 3.10以降 | [PyPI](https://pypi.org/project/a11y-assist/) |
-| [a11y-evidence-engine](src/a11y-evidence-engine/) | プロビナンス情報付きのヘッドレスHTMLスキャナ。 | Node.js 18以降 | [npm](https://www.npmjs.com/package/@mcptoolshop/a11y-evidence-engine) |
-| [a11y-mcp-tools](src/a11y-mcp-tools/) | アクセシビリティの証拠収集と診断を行うMCPサーバー。 | Node.js 18以降 | [npm](https://www.npmjs.com/package/@mcptoolshop/a11y-mcp-tools) |
+| プロジェクト | 説明 | 技術スタック | パッケージ |
+|---------|-------------|-------|---------|
+| [a11y-lint](src/a11y-lint/) | CLI出力のアクセシビリティリンター：エラーメッセージがアクセシブルなパターンに従っているか検証します。 | Python 3.10+ | [PyPI](https://pypi.org/project/a11y-lint/) |
+| [a11y-ci](src/a11y-ci/) | アクセシビリティスコアカードのCIゲート：リグレッション検出と許可リスト機能付き。 | Python 3.10+ | [PyPI](https://pypi.org/project/a11y-ci/) / [npm](https://www.npmjs.com/package/@mcptoolshop/a11y-ci) |
+| [a11y-assist](src/a11y-assist/) | 5つのアクセシビリティプロファイルに対応した、視覚障碍者向けのCLIアシスタント。 | Python 3.10+ | [PyPI](https://pypi.org/project/a11y-assist/) |
+| [a11y-evidence-engine](src/a11y-evidence-engine/) | プロビナンス情報付きのヘッドレスHTMLスキャナ。 | Node.js 18+ | [npm](https://www.npmjs.com/package/@mcptoolshop/a11y-evidence-engine) |
+| [a11y-mcp-tools](src/a11y-mcp-tools/) | アクセシビリティの証拠収集と診断を行うMCPサーバー。 | Node.js 18+ | [npm](https://www.npmjs.com/package/@mcptoolshop/a11y-mcp-tools) |
 | [a11y-demo-site](examples/a11y-demo-site/) | 意図的に違反を含んだデモサイト：エンドツーエンドテスト用。 | HTML | -- |
 
 ---
 
 ## クイックスタート
 
-### アクセシブルなパターンを持つCLI出力を検証します
+### CLI出力のアクセシブルなパターンを検証します
 
 ```bash
 pip install a11y-lint
 a11y-lint scan output.txt
 ```
 
-### アクセシビリティの不具合によるCIの失敗を検出し、CIパイプラインで制御します
+### アクセシビリティのリグレッションを検出し、CIパイプラインを制御します
 
 ```bash
 pip install a11y-ci
@@ -69,7 +69,7 @@ npm install -g @mcptoolshop/a11y-evidence-engine
 a11y-engine scan ./html --out ./results
 ```
 
-### CLIの失敗に対する修正方法を取得します
+### CLIエラーに対する修正方法を取得します
 
 ```bash
 pip install a11y-assist
@@ -134,9 +134,9 @@ cd examples/a11y-demo-site
 **共通のインターフェース：**
 
 - `cli.error.schema.v0.1.json`: すべてのPythonツールで使用される構造化されたエラー形式。
-- `evidence.bundle.schema.v0.1.json`: プロビナンスチェーン付きの証拠バンドル。
-- `.a11y_artifacts/`: CIパイプラインで使用される統一されたアーティファクトディレクトリ。
-- prov-specメソッドID: すべてのプロビナンスステップに対して、安定したバージョン管理された識別子。
+- `evidence.bundle.schema.v0.1.json`: プロビナンスチェーンを含む証拠バンドル。
+- `.a11y_artifacts/`: CIパイプライン用の統一されたアーティファクトディレクトリ。
+- prov-specメソッドID：すべてのプロビナンスステップに、安定したバージョン管理された識別子を使用。
 
 ---
 
@@ -167,16 +167,16 @@ a11y-mcp-toolsをMCPクライアント（Claude Desktop、Cursor、VS Codeなど
 }
 ```
 
-サーバーは2つのツールを公開しています。
+サーバーは以下の2つのツールを提供します。
 
-| Tool | 説明 |
-| ------ | ------------- |
-| `a11y.evidence` | HTML、CLIログ、またはその他の入力から、改ざん防止機能を持つ証拠データを収集します。 |
-| `a11y.diagnose` | 証拠データに対して、出所検証を行いながら、WCAGのルールチェックを実行します。 |
+| ツール | 説明 |
+|------|-------------|
+| `a11y.evidence` | HTML、CLIログ、またはその他の入力から、改ざん防止機能付きの証拠バンドルを収集します。 |
+| `a11y.diagnose` | プロビナンス検証付きで、証拠バンドルに対してWCAGルールチェックを実行します。 |
 
 ---
 
-## CI連携（GitHub Actions）
+## CI統合（GitHub Actions）
 
 ```yaml
 jobs:
@@ -197,22 +197,42 @@ jobs:
           fail-on: serious
 ```
 
-Azure DevOpsの例やトラブルシューティングについては、[GETTING_STARTED.md](GETTING_STARTED.md) を参照してください。
+[GETTING_STARTED.md](GETTING_STARTED.md) を参照して、Azure DevOps の例やトラブルシューティングについて確認してください。
 
 ---
 
 ## ドキュメント
 
 | ドキュメント | 説明 |
-| ---------- | ------------- |
-| [HANDBOOK.md](HANDBOOK.md) | アーキテクチャの詳細、連携パターン、および開発ガイド |
-| [GETTING_STARTED.md](GETTING_STARTED.md) | 3つのコマンドでローカル環境を構築する方法、CIテンプレート、およびトラブルシューティング |
-| [CHANGELOG.md](CHANGELOG.md) | Keep a Changelog形式でのリリース履歴 |
+|----------|-------------|
+| [HANDBOOK.md](HANDBOOK.md) | アーキテクチャの詳細、統合パターン、および開発ガイド |
+| [GETTING_STARTED.md](GETTING_STARTED.md) | 3つのコマンドでローカル環境を構築する方法、CI テンプレート、およびトラブルシューティング |
+| [CHANGELOG.md](CHANGELOG.md) | Keep a Changelog 形式でのリリース履歴 |
 | [docs/unified-artifacts.md](docs/unified-artifacts.md) | 統合された成果物ディレクトリ戦略 |
-| [docs/prov-spec/](docs/prov-spec/) | 出所に関する仕様 |
+| [docs/prov-spec/](docs/prov-spec/) | プロヴェナンス仕様 |
 
 ---
+
+## セキュリティとデータ範囲
+
+- **アクセスするデータ:** アクセシビリティ分析のために、HTML ファイル、CLI の出力、およびスコアカードの JSON データを読み込みます。 DOM のスナップショットをキャプチャし、証拠バンドルを生成します。
+- **アクセスしないデータ:** ネットワークリクエストは行いません。テレメトリーも行いません。ユーザーデータの保存も行いません。認証情報やトークンも使用しません。
+- **必要な権限:** ターゲットファイルへの読み取りアクセス権。証拠/成果物出力ディレクトリへの書き込みアクセス権。
+
+## スコアカード
+
+| ゲート | ステータス |
+|------|--------|
+| A. セキュリティ基準 | 合格 |
+| B. エラー処理 | 合格 |
+| C. オペレーターのドキュメント | 合格 |
+| D. リリースの品質 | 合格 |
+| E. 認証 | 合格 |
 
 ## ライセンス
 
 [MIT](LICENSE)
+
+---
+
+<a href="https://mcp-tool-shop.github.io/">MCP Tool Shop</a> が作成しました。
