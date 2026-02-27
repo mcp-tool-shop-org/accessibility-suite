@@ -213,6 +213,26 @@ See [GETTING_STARTED.md](GETTING_STARTED.md) for Azure DevOps examples and troub
 
 ---
 
+## Security & Data Scope
+
+- **Data accessed:** Reads HTML files, CLI output, and scorecard JSON for accessibility analysis. Captures DOM snapshots and generates evidence bundles.
+- **Data NOT accessed:** No network requests. No telemetry. No user data storage. No credentials or tokens.
+- **Permissions required:** Read access to target files. Write access for evidence/artifact output directories.
+
+## Scorecard
+
+| Gate | Status |
+|------|--------|
+| A. Security Baseline | PASS |
+| B. Error Handling | PASS |
+| C. Operator Docs | PASS |
+| D. Shipping Hygiene | PASS |
+| E. Identity | PASS |
+
 ## License
 
 [MIT](LICENSE)
+
+---
+
+Built by <a href="https://mcp-tool-shop.github.io/">MCP Tool Shop</a>
