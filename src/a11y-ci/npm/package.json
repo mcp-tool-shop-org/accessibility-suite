@@ -1,5 +1,5 @@
 {
-  "name": "@mcptoolshop/a11y-ci",
+  "name": "@accessibility-suite/ci",
   "version": "0.2.2",
   "description": "npm wrapper for a11y-ci - CI gate for accessibility scorecards",
   "bin": {

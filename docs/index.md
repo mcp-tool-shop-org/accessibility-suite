@@ -26,7 +26,7 @@ pip install a11y-lint a11y-ci a11y-assist
 ### Node.js tools
 
 ```bash
-npm install -g @mcptoolshop/a11y-evidence-engine @mcptoolshop/a11y-mcp-tools
+npm install -g @accessibility-suite/evidence-engine @accessibility-suite/mcp-tools
 ```
 
 ---

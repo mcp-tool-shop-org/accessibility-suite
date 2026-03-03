@@ -159,7 +159,7 @@ card = create_scorecard(messages)
 
 **Location:** `src/a11y-ci/`
 **Language:** Python 3.10+
-**Install:** `pip install a11y-ci` (Python) or `npm install @mcptoolshop/a11y-ci` (npm wrapper)
+**Install:** `pip install a11y-ci` (Python) or `npm install @accessibility-suite/ci` (npm wrapper)
 **CLI entry point:** `a11y-ci`
 
 The CI gate consumes scorecards produced by `a11y-lint` and enforces quality thresholds. It supports baseline regression detection, severity-based gating, temporary allowlists with mandatory expiration dates, and PR comment generation for GitHub and Azure DevOps.
@@ -249,7 +249,7 @@ a11y-assist last
 
 **Location:** `src/a11y-evidence-engine/`
 **Language:** Node.js 18+
-**Install:** `npm install -g @mcptoolshop/a11y-evidence-engine`
+**Install:** `npm install -g @accessibility-suite/evidence-engine`
 **CLI entry point:** `a11y-engine`
 
 The evidence engine scans HTML files for WCAG violations and produces findings with full prov-spec provenance chains. Unlike typical scanners, every finding includes cryptographically verifiable evidence: the exact content that was tested, a SHA-256 digest over the canonicalized evidence, and a provenance record documenting the extraction method.
@@ -288,7 +288,7 @@ results/
 
 **Location:** `src/a11y-mcp-tools/`
 **Language:** Node.js 18+
-**Install:** `npm install -g @mcptoolshop/a11y-mcp-tools`
+**Install:** `npm install -g @accessibility-suite/mcp-tools`
 **CLI entry points:** `a11y` (CLI), `a11y-mcp` (MCP server)
 
 MCP tools that expose accessibility evidence capture and diagnosis to AI assistants via the Model Context Protocol. This is the bridge between the suite's scanning capabilities and AI-powered remediation workflows.
@@ -481,7 +481,7 @@ Scan HTML files and upload evidence as a build artifact:
 ```yaml
       - name: Scan HTML
         run: |
-          npm install -g @mcptoolshop/a11y-evidence-engine
+          npm install -g @accessibility-suite/evidence-engine
           a11y-engine scan ./html --out ./results
 
       - uses: actions/upload-artifact@v4
@@ -541,14 +541,14 @@ The Model Context Protocol (MCP) is a standard for AI assistants to interact wit
 Install and start the MCP server:
 
 ```bash
-npm install -g @mcptoolshop/a11y-mcp-tools
+npm install -g @accessibility-suite/mcp-tools
 a11y-mcp
 ```
 
 Or run without installing:
 
 ```bash
-npx @mcptoolshop/a11y-mcp-tools
+npx @accessibility-suite/mcp-tools
 ```
 
 ### Client Configuration
@@ -562,7 +562,7 @@ Add to your MCP client's configuration file:
   "mcpServers": {
     "a11y": {
       "command": "npx",
-      "args": ["-y", "@mcptoolshop/a11y-mcp-tools"]
+      "args": ["-y", "@accessibility-suite/mcp-tools"]
     }
   }
 }
@@ -728,7 +728,7 @@ Every allowlist entry requires an `expires` date. When the date passes, the entr
 
 **Q: Can AI assistants use the suite?**
 
-Yes. Install `@mcptoolshop/a11y-mcp-tools` and configure your MCP client. The AI assistant can then capture evidence from HTML files, run WCAG checks, and receive fix guidance -- all within the conversation.
+Yes. Install `@accessibility-suite/mcp-tools` and configure your MCP client. The AI assistant can then capture evidence from HTML files, run WCAG checks, and receive fix guidance -- all within the conversation.
 
 **Q: What is the relationship between a11y-evidence-engine and a11y-mcp-tools?**
 

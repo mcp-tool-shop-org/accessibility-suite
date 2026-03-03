@@ -8,7 +8,7 @@
 
 <p align="center">
   <a href="https://github.com/mcp-tool-shop-org/accessibility-suite/actions/workflows/ci.yml"><img src="https://github.com/mcp-tool-shop-org/accessibility-suite/actions/workflows/ci.yml/badge.svg" alt="CI"></a>
-  <a href="https://www.npmjs.com/package/@mcptoolshop/accessibility-suite"><img src="https://img.shields.io/npm/v/@mcptoolshop/accessibility-suite" alt="npm"></a>
+  <a href="https://www.npmjs.com/package/@accessibility-suite/core"><img src="https://img.shields.io/npm/v/@accessibility-suite/core" alt="npm"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue" alt="MIT License"></a>
   <a href="https://mcp-tool-shop-org.github.io/accessibility-suite/"><img src="https://img.shields.io/badge/Landing_Page-live-blue" alt="Landing Page"></a>
 </p>
@@ -37,10 +37,10 @@
 | 项目 | 描述 | 技术栈 | 包 |
 |---------|-------------|-------|---------|
 | [a11y-lint](src/a11y-lint/) | 用于命令行输出的辅助功能检查器，验证错误消息是否符合辅助功能标准。 | Python 3.10+ | [PyPI](https://pypi.org/project/a11y-lint/) |
-| [a11y-ci](src/a11y-ci/) | 用于辅助功能 scorecard 的 CI 质量控制，具有回归检测和白名单功能。 | Python 3.10+ | [PyPI](https://pypi.org/project/a11y-ci/) / [npm](https://www.npmjs.com/package/@mcptoolshop/a11y-ci) |
+| [a11y-ci](src/a11y-ci/) | 用于辅助功能 scorecard 的 CI 质量控制，具有回归检测和白名单功能。 | Python 3.10+ | [PyPI](https://pypi.org/project/a11y-ci/) / [npm](https://www.npmjs.com/package/@accessibility-suite/ci) |
 | [a11y-assist](src/a11y-assist/) | 具有五种辅助功能配置的命令行助手，专为低视力用户设计。 | Python 3.10+ | [PyPI](https://pypi.org/project/a11y-assist/) |
-| [a11y-evidence-engine](src/a11y-evidence-engine/) | 无头 HTML 扫描器，记录包含可追溯信息的报告。 | Node.js 18+ | [npm](https://www.npmjs.com/package/@mcptoolshop/a11y-evidence-engine) |
-| [a11y-mcp-tools](src/a11y-mcp-tools/) | 用于捕获辅助功能证据和诊断的 MCP 服务器。 | Node.js 18+ | [npm](https://www.npmjs.com/package/@mcptoolshop/a11y-mcp-tools) |
+| [a11y-evidence-engine](src/a11y-evidence-engine/) | 无头 HTML 扫描器，记录包含可追溯信息的报告。 | Node.js 18+ | [npm](https://www.npmjs.com/package/@accessibility-suite/evidence-engine) |
+| [a11y-mcp-tools](src/a11y-mcp-tools/) | 用于捕获辅助功能证据和诊断的 MCP 服务器。 | Node.js 18+ | [npm](https://www.npmjs.com/package/@accessibility-suite/mcp-tools) |
 | [a11y-demo-site](examples/a11y-demo-site/) | 包含故意违规的演示站点，用于端到端测试。 | HTML | -- |
 
 ---
@@ -65,7 +65,7 @@ a11y-ci gate --artifact-dir .a11y_artifacts
 ### 扫描 HTML 并记录其来源
 
 ```bash
-npm install -g @mcptoolshop/a11y-evidence-engine
+npm install -g @accessibility-suite/evidence-engine
 a11y-engine scan ./html --out ./results
 ```
 
@@ -79,7 +79,7 @@ a11y-assist explain --json error.json --profile screen-reader
 ### 通过 MCP 捕获证据并进行诊断
 
 ```bash
-npm install -g @mcptoolshop/a11y-mcp-tools
+npm install -g @accessibility-suite/mcp-tools
 a11y evidence --target page.html --dom-snapshot --out evidence.json
 a11y diagnose --bundle evidence.json --verify-provenance --fix
 ```
@@ -149,7 +149,7 @@ cd examples/a11y-demo-site
   "mcpServers": {
     "a11y": {
       "command": "npx",
-      "args": ["-y", "@mcptoolshop/a11y-mcp-tools"]
+      "args": ["-y", "@accessibility-suite/mcp-tools"]
     }
   }
 }

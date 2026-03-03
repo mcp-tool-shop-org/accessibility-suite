@@ -1,0 +1,1860 @@
+{
+  "version": 1,
+  "entries": {
+    "1645c1eb6329bf30": {
+      "translation": "六つのツール。一つの目標：アクセシビリティテストを検証可能にし、自動化し、無視できないものにする。",
+      "model": "translategemma:12b",
+      "timestamp": 1772037069289
+    },
+    "6de5d61029c43de7": {
+      "translation": "概要",
+      "model": "translategemma:12b",
+      "timestamp": 1772037069289
+    },
+    "8056e2ff72ec7291": {
+      "translation": "多くのアクセシビリティツールは「12件の違反があります」というメッセージで終わります。しかし、Accessibility Suiteはさらに進んでおり、テスト内容の改ざん防止機能付きの証拠を収集し、CIパイプラインでのリグレッションを検出し、視覚障碍者、スクリーンリーダー、読字障害、認知負荷の特性に合わせた修正方法を提示します。",
+      "model": "translategemma:12b",
+      "timestamp": 1772037069289
+    },
+    "6db96960f031ef8a": {
+      "translation": "このスイートは、アクセシブルなパターンをCLI出力で検証し、暗号学的プロビナンス情報付きでHTMLのWCAG違反をスキャンし、CI環境で品質ゲートを適用し、すべての情報をMCPを通じて公開することで、AIアシスタントが修正プロセスに参加できるようにします。",
+      "model": "translategemma:12b",
+      "timestamp": 1772037069289
+    },
+    "bd18f2119c019bea": {
+      "translation": "**主な原則：**",
+      "model": "translategemma:12b",
+      "timestamp": 1772037069289
+    },
+    "87a6a34217fb6b06": {
+      "translation": "- **主張ではなく証拠:** すべての検出結果は、SHA-256整合性チェックサムを持つプロビナンスレコードによって裏付けられています。\n- **視覚障碍者向けの出力:** すべてのCLIツールは、`[OK]/[WARN]/[FAIL] + 何が/なぜ/修正方法`という形式を使用します。\n- **決定性:** 同じ入力は常に同じ出力を生成します。ネットワーク接続やランダム性は使用しません。\n- **CI環境との連携:** 終了コード、スコアカードJSON、プルリクエストコメントは、自動化されたパイプライン向けに設計されています。",
+      "model": "translategemma:12b",
+      "timestamp": 1772037069289
+    },
+    "568acecebde83832": {
+      "translation": "プロジェクト",
+      "model": "translategemma:12b",
+      "timestamp": 1772037069289
+    },
+    "674ae6f5f3a5e2c7": {
+      "translation": "プロジェクト",
+      "model": "translategemma:12b",
+      "timestamp": 1772037069289
+    },
+    "67731479bd4e364b": {
+      "translation": "説明",
+      "model": "translategemma:12b",
+      "timestamp": 1772037069289
+    },
+    "f7385a64b51d0b36": {
+      "translation": "パッケージ",
+      "model": "translategemma:12b",
+      "timestamp": 1772037069289
+    },
+    "2a56d6ea96d9fd14": {
+      "translation": "---------",
+      "model": "translategemma:12b",
+      "timestamp": 1772037069289
+    },
+    "651826877e732548": {
+      "translation": "-------------",
+      "model": "translategemma:12b",
+      "timestamp": 1772037069289
+    },
+    "59196af31abc0d4d": {
+      "translation": "-------",
+      "model": "translategemma:12b",
+      "timestamp": 1772037069289
+    },
+    "5df9d19d0d1dcf4b": {
+      "translation": "CLI出力のアクセシビリティリンター：エラーメッセージがアクセシブルなパターンに従っているか検証します。",
+      "model": "translategemma:12b",
+      "timestamp": 1772037069289
+    },
+    "a8945920438bfb6b": {
+      "translation": "Python 3.10以降",
+      "model": "translategemma:12b",
+      "timestamp": 1772037069289
+    },
+    "17d2def22a52ec46": {
+      "translation": "アクセシビリティスコアカードのCIゲート：リグレッション検出と許可リスト機能付き。",
+      "model": "translategemma:12b",
+      "timestamp": 1772037069289
+    },
+    "0b6a61ba3c4c6599": {
+      "translation": "5つのアクセシビリティプロファイルに対応した、視覚障碍者向けのCLIアシスタント。",
+      "model": "translategemma:12b",
+      "timestamp": 1772037069289
+    },
+    "ae002c91d3ffa7d3": {
+      "translation": "プロビナンス情報付きのヘッドレスHTMLスキャナ。",
+      "model": "translategemma:12b",
+      "timestamp": 1772037069289
+    },
+    "0b21734d042db50e": {
+      "translation": "Node.js 18以降",
+      "model": "translategemma:12b",
+      "timestamp": 1772037069289
+    },
+    "c8302647272dab17": {
+      "translation": "アクセシビリティの証拠収集と診断を行うMCPサーバー。",
+      "model": "translategemma:12b",
+      "timestamp": 1772037069289
+    },
+    "68ca84b39f32ff47": {
+      "translation": "意図的に違反を含んだデモサイト：エンドツーエンドテスト用。",
+      "model": "translategemma:12b",
+      "timestamp": 1772037069289
+    },
+    "d182d24c54cc50a7": {
+      "translation": "クイックスタート",
+      "model": "translategemma:12b",
+      "timestamp": 1772037069289
+    },
+    "4ef538256edbcb17": {
+      "translation": "アクセシブルなパターンを持つCLI出力を検証します。",
+      "model": "translategemma:12b",
+      "timestamp": 1772037069289
+    },
+    "8c3892e835530a02": {
+      "translation": "アクセシビリティの不具合によるCIの失敗を検出し、CIパイプラインで制御します。",
+      "model": "translategemma:12b",
+      "timestamp": 1772037069289
+    },
+    "d179a2859012e211": {
+      "translation": "HTMLをスキャンし、プロビナンス情報を収集します。",
+      "model": "translategemma:12b",
+      "timestamp": 1772037069289
+    },
+    "a628f98d706e30e7": {
+      "translation": "CLIの失敗に対する修正方法を取得します。",
+      "model": "translategemma:12b",
+      "timestamp": 1772037069289
+    },
+    "ca85f5528c801cec": {
+      "translation": "MCPを通じて証拠を収集し、診断を行います。",
+      "model": "translategemma:12b",
+      "timestamp": 1772037069289
+    },
+    "15fdaee1f06e4b7c": {
+      "translation": "デモサイトをエンドツーエンドで実行します。",
+      "model": "translategemma:12b",
+      "timestamp": 1772037069289
+    },
+    "7b1fedad86f33fe3": {
+      "translation": "アーキテクチャ",
+      "model": "translategemma:12b",
+      "timestamp": 1772037069289
+    },
+    "e53b464c3ddbcf4e": {
+      "translation": "これらの6つのツールは、検出から修正までのパイプラインを構成します。",
+      "model": "translategemma:12b",
+      "timestamp": 1772037069289
+    },
+    "a68f2b4ad31bacad": {
+      "translation": "**データフロー：**",
+      "model": "translategemma:12b",
+      "timestamp": 1772037069289
+    },
+    "c5c44dc428617d09": {
+      "translation": "1. **a11y-lint:** CLIテキストをスキャンし、アクセシブルなエラーメッセージパターンを検出し、スコアカードを生成します。\n2. **a11y-evidence-engine:** HTMLファイルをスキャンし、プロビナンス情報付きの検出結果を生成します。\n3. **a11y-ci:** スコアカードを消費し、閾値を適用し、リグレッションを検出し、プルリクエストコメントを生成します。\n4. **a11y-mcp-tools:** 証拠の収集と診断をMCPツールとしてラップし、AIアシスタントとの連携を可能にします。\n5. **a11y-assist:** 検出結果（構造化されたJSONまたは生のテキスト）を受け取り、5つのアクセシビリティプロファイルで修正方法を生成します。\n6. **a11y-demo-site:** これらすべてを統合し、意図的に違反を含んだ実行可能な例として提供します。",
+      "model": "translategemma:12b",
+      "timestamp": 1772037069289
+    },
+    "96305b51a786ef9b": {
+      "translation": "**共通のインターフェース：**",
+      "model": "translategemma:12b",
+      "timestamp": 1772037069289
+    },
+    "21d772306f42a3bd": {
+      "translation": "- `cli.error.schema.v0.1.json`: すべてのPythonツールで使用される構造化されたエラー形式。\n- `evidence.bundle.schema.v0.1.json`: プロビナンスチェーン付きの証拠バンドル。\n- `.a11y_artifacts/`: CIパイプラインで使用される統一されたアーティファクトディレクトリ。\n- prov-specメソッドID: すべてのプロビナンスステップに対して、安定したバージョン管理された識別子。",
+      "model": "translategemma:12b",
+      "timestamp": 1772037069289
+    },
+    "a71f611a18dd0c21": {
+      "translation": "MCPクライアントの設定",
+      "model": "translategemma:12b",
+      "timestamp": 1772037069289
+    },
+    "14266467f86a4ba0": {
+      "translation": "a11y-mcp-toolsをMCPクライアント（Claude Desktop、Cursor、VS Codeなど）に接続するには：",
+      "model": "translategemma:12b",
+      "timestamp": 1772037069289
+    },
+    "f73b3ac8fc7ffae8": {
+      "translation": "または、グローバルにインストールされている場合は：",
+      "model": "translategemma:12b",
+      "timestamp": 1772037069289
+    },
+    "3d48df61a78be2f5": {
+      "translation": "サーバーは2つのツールを公開しています。",
+      "model": "translategemma:12b",
+      "timestamp": 1772037069289
+    },
+    "69e70b451ff65bf9": {
+      "translation": "------",
+      "model": "translategemma:12b",
+      "timestamp": 1772037069289
+    },
+    "e54c94ddcfe56107": {
+      "translation": "HTML、CLIログ、またはその他の入力から、改ざん防止機能を持つ証拠データを収集します。",
+      "model": "translategemma:12b",
+      "timestamp": 1772037069289
+    },
+    "0c21c6f55d959ae0": {
+      "translation": "証拠データに対して、出所検証を行いながら、WCAGのルールチェックを実行します。",
+      "model": "translategemma:12b",
+      "timestamp": 1772037069289
+    },
+    "fcfdaa58e1560783": {
+      "translation": "CI連携（GitHub Actions）",
+      "model": "translategemma:12b",
+      "timestamp": 1772037069289
+    },
+    "da13dfe9279ff9b8": {
+      "translation": "Azure DevOpsの例やトラブルシューティングについては、[GETTING_STARTED.md](GETTING_STARTED.md) を参照してください。",
+      "model": "translategemma:12b",
+      "timestamp": 1772037069289
+    },
+    "80f80f9b2d0ddf56": {
+      "translation": "ドキュメント",
+      "model": "translategemma:12b",
+      "timestamp": 1772037069289
+    },
+    "9534531ac4a933ab": {
+      "translation": "ドキュメント",
+      "model": "translategemma:12b",
+      "timestamp": 1772037069289
+    },
+    "52494e60f0fbc76b": {
+      "translation": "----------",
+      "model": "translategemma:12b",
+      "timestamp": 1772037069289
+    },
+    "563b5f163200a61f": {
+      "translation": "アーキテクチャの詳細、連携パターン、および開発ガイド",
+      "model": "translategemma:12b",
+      "timestamp": 1772037069289
+    },
+    "e449828a297bbe23": {
+      "translation": "3つのコマンドでローカル環境を構築する方法、CIテンプレート、およびトラブルシューティング",
+      "model": "translategemma:12b",
+      "timestamp": 1772037069289
+    },
+    "12bb643833988817": {
+      "translation": "Keep a Changelog形式でのリリース履歴",
+      "model": "translategemma:12b",
+      "timestamp": 1772037069289
+    },
+    "3c5ceb18d298d768": {
+      "translation": "統合された成果物ディレクトリ戦略",
+      "model": "translategemma:12b",
+      "timestamp": 1772037069289
+    },
+    "00952a602bfebab6": {
+      "translation": "出所に関する仕様",
+      "model": "translategemma:12b",
+      "timestamp": 1772037069289
+    },
+    "08ea9dfbe36d981b": {
+      "translation": "ライセンス",
+      "model": "translategemma:12b",
+      "timestamp": 1772037069289
+    },
+    "5e7c5653fc3efae7": {
+      "translation": "[MIT](LICENSE)",
+      "model": "translategemma:12b",
+      "timestamp": 1772037069289
+    },
+    "29c9587fce93d258": {
+      "translation": "六个工具，一个目标：使辅助功能测试可验证、自动化，并且难以被忽视。",
+      "model": "translategemma:12b",
+      "timestamp": 1772037102821
+    },
+    "095216ac7532923c": {
+      "translation": "概述",
+      "model": "translategemma:12b",
+      "timestamp": 1772037102821
+    },
+    "77c6af0900c6b647": {
+      "translation": "大多数辅助功能工具只能指出“您有 12 个问题”。辅助功能套件做得更多：它记录了经过验证的测试结果，在持续集成（CI）流水线中检测回归问题，并提供针对低视力、屏幕阅读器、阅读障碍和认知负荷的修复建议。",
+      "model": "translategemma:12b",
+      "timestamp": 1772037102821
+    },
+    "7c9ede8070b99e21": {
+      "translation": "该套件涵盖整个生命周期：检查命令行输出以查找符合辅助功能标准的模式，扫描 HTML 以查找符合 WCAG 标准的违规情况并记录其来源，在 CI 中强制执行质量控制，并通过 MCP 将所有内容暴露出来，以便人工智能助手参与到修复过程中。",
+      "model": "translategemma:12b",
+      "timestamp": 1772037102821
+    },
+    "af017c5b7fffaa61": {
+      "translation": "**核心原则：**",
+      "model": "translategemma:12b",
+      "timestamp": 1772037102821
+    },
+    "2a89bad32abe3455": {
+      "translation": "- **以证据为基础，而非断言**：每个发现都伴随一个包含 SHA-256 完整性校验的“prov-spec”来源记录。\n- **以低视力为优先的输出**：所有命令行工具都使用 `[OK]/[WARN]/[FAIL] + 问题/原因/解决方案` 的格式。\n- **确定性**：相同的输入始终产生相同的输出；没有网络调用，没有随机性。\n- **原生 CI 支持**：提供退出码、 scorecard JSON 格式以及用于自动化流水线的代码提交评论。",
+      "model": "translategemma:12b",
+      "timestamp": 1772037102821
+    },
+    "fdaae825422aa01a": {
+      "translation": "项目",
+      "model": "translategemma:12b",
+      "timestamp": 1772037102821
+    },
+    "48c4fa732ecb79a1": {
+      "translation": "项目",
+      "model": "translategemma:12b",
+      "timestamp": 1772037102821
+    },
+    "601d6e570e22e932": {
+      "translation": "描述",
+      "model": "translategemma:12b",
+      "timestamp": 1772037102821
+    },
+    "97bc0d67ab262be6": {
+      "translation": "包",
+      "model": "translategemma:12b",
+      "timestamp": 1772037102821
+    },
+    "3c50ad19fc6c359b": {
+      "translation": "---------",
+      "model": "translategemma:12b",
+      "timestamp": 1772037102821
+    },
+    "dd5b28ff24f8cbdb": {
+      "translation": "-------------",
+      "model": "translategemma:12b",
+      "timestamp": 1772037102821
+    },
+    "d75d743091909926": {
+      "translation": "-------",
+      "model": "translategemma:12b",
+      "timestamp": 1772037102821
+    },
+    "329f9ceba2f3ef65": {
+      "translation": "用于命令行输出的辅助功能检查器，用于验证错误消息是否符合辅助功能标准。",
+      "model": "translategemma:12b",
+      "timestamp": 1772037102821
+    },
+    "164e694ca6fcd625": {
+      "translation": "Python 3.10+",
+      "model": "translategemma:12b",
+      "timestamp": 1772037102821
+    },
+    "6e84bf65c5c24f82": {
+      "translation": "用于辅助功能 scorecard 的 CI 质量控制，具有回归检测和白名单功能。",
+      "model": "translategemma:12b",
+      "timestamp": 1772037102821
+    },
+    "4ce4ac98e7e97592": {
+      "translation": "具有五种辅助功能配置的命令行辅助工具，优先考虑低视力用户。",
+      "model": "translategemma:12b",
+      "timestamp": 1772037102821
+    },
+    "c21741bfa67a7753": {
+      "translation": "无头 HTML 扫描器，具有“prov-spec”来源记录。",
+      "model": "translategemma:12b",
+      "timestamp": 1772037102821
+    },
+    "625fd87cc0f13695": {
+      "translation": "Node.js 18+",
+      "model": "translategemma:12b",
+      "timestamp": 1772037102821
+    },
+    "6f2d143922963498": {
+      "translation": "用于捕获辅助功能证据和诊断的 MCP 服务器。",
+      "model": "translategemma:12b",
+      "timestamp": 1772037102821
+    },
+    "853d429c67de04ba": {
+      "translation": "包含故意违规的演示站点，用于端到端测试。",
+      "model": "translategemma:12b",
+      "timestamp": 1772037102821
+    },
+    "3e6394397900eaa1": {
+      "translation": "快速开始",
+      "model": "translategemma:12b",
+      "timestamp": 1772037102821
+    },
+    "3b6ccb9237ce764d": {
+      "translation": "检查命令行输出以查找符合辅助功能标准的模式。",
+      "model": "translategemma:12b",
+      "timestamp": 1772037102821
+    },
+    "5d5ed70eae770ede": {
+      "translation": "在持续集成中检测辅助功能回归问题。",
+      "model": "translategemma:12b",
+      "timestamp": 1772037102821
+    },
+    "2f9c0c65efd25d7e": {
+      "translation": "扫描 HTML 并捕获来源信息。",
+      "model": "translategemma:12b",
+      "timestamp": 1772037102821
+    },
+    "3b4f4ac0a16b50a6": {
+      "translation": "获取命令行错误修复建议。",
+      "model": "translategemma:12b",
+      "timestamp": 1772037102821
+    },
+    "78c3c31a2e38d0df": {
+      "translation": "通过 MCP 捕获证据并进行诊断。",
+      "model": "translategemma:12b",
+      "timestamp": 1772037102821
+    },
+    "17b2832f8c4dac6d": {
+      "translation": "运行演示站进行端到端测试。",
+      "model": "translategemma:12b",
+      "timestamp": 1772037102821
+    },
+    "ec8506a5dbb06220": {
+      "translation": "架构",
+      "model": "translategemma:12b",
+      "timestamp": 1772037102821
+    },
+    "9ecc2fed90e47637": {
+      "translation": "这六个工具形成一个从检测到修复的流水线：",
+      "model": "translategemma:12b",
+      "timestamp": 1772037102821
+    },
+    "abfd2aae92825126": {
+      "translation": "**数据流：**",
+      "model": "translategemma:12b",
+      "timestamp": 1772037102821
+    },
+    "e8f280c26a43f854": {
+      "translation": "1. **a11y-lint** 扫描命令行文本，查找符合辅助功能标准的错误消息，并生成 scorecard。\n2. **a11y-evidence-engine** 扫描 HTML 文件，并输出包含“prov-spec”来源记录的发现结果。\n3. **a11y-ci** 消费 scorecard，强制执行阈值，检测回归问题，并生成代码提交评论。\n4. **a11y-mcp-tools** 将证据捕获和诊断包装为 MCP 工具，以便与人工智能助手集成。\n5. **a11y-assist** 接收发现结果（结构化的 JSON 或原始文本），并生成针对五种辅助功能配置的修复建议。\n6. **a11y-demo-site** 将所有内容整合到一个可运行的示例中，其中包含故意添加的违规情况。",
+      "model": "translategemma:12b",
+      "timestamp": 1772037102821
+    },
+    "bd85e8fc9e53fd36": {
+      "translation": "**共享接口：**",
+      "model": "translategemma:12b",
+      "timestamp": 1772037102821
+    },
+    "470ddbc6f1c129b3": {
+      "translation": "- `cli.error.schema.v0.1.json`：所有 Python 工具使用的结构化错误格式。\n- `evidence.bundle.schema.v0.1.json`：包含来源链的证据包。\n- `.a11y_artifacts/`：用于 CI 流水线的统一工件目录。\n- prov-spec 方法 ID：用于每个来源步骤的稳定、版本化的标识符。",
+      "model": "translategemma:12b",
+      "timestamp": 1772037102821
+    },
+    "5b0a9cb527aaa38e": {
+      "translation": "MCP 客户端配置",
+      "model": "translategemma:12b",
+      "timestamp": 1772037102821
+    },
+    "115d2cfcbac45628": {
+      "translation": "要将 a11y-mcp-tools 连接到您的 MCP 客户端（Claude Desktop、Cursor、VS Code 等）：",
+      "model": "translategemma:12b",
+      "timestamp": 1772037102821
+    },
+    "d22d1398f2fbcf70": {
+      "translation": "或者，如果已全局安装：",
+      "model": "translategemma:12b",
+      "timestamp": 1772037102821
+    },
+    "22736bf57512d9bc": {
+      "translation": "服务器暴露了两个工具：",
+      "model": "translategemma:12b",
+      "timestamp": 1772037102821
+    },
+    "7b7596c3d1d0c899": {
+      "translation": "------",
+      "model": "translategemma:12b",
+      "timestamp": 1772037102821
+    },
+    "77d677a14eaaf71c": {
+      "translation": "从HTML、命令行日志或其他输入源捕获具有防篡改功能的证据包。",
+      "model": "translategemma:12b",
+      "timestamp": 1772037102821
+    },
+    "5d073aeb8cc37d9b": {
+      "translation": "对带有来源验证的证据包进行WCAG规则检查。",
+      "model": "translategemma:12b",
+      "timestamp": 1772037102821
+    },
+    "ae42afc3f2c76ebd": {
+      "translation": "CI集成（GitHub Actions）。",
+      "model": "translategemma:12b",
+      "timestamp": 1772037102821
+    },
+    "31f6a3a8273ced59": {
+      "translation": "请参阅[GETTING_STARTED.md](GETTING_STARTED.md)，其中包含Azure DevOps的示例和故障排除指南。",
+      "model": "translategemma:12b",
+      "timestamp": 1772037102821
+    },
+    "250492556e6757d7": {
+      "translation": "文档",
+      "model": "translategemma:12b",
+      "timestamp": 1772037102821
+    },
+    "b5a9b6513b5608f3": {
+      "translation": "文档",
+      "model": "translategemma:12b",
+      "timestamp": 1772037102821
+    },
+    "7bc35c26567fc0cb": {
+      "translation": "----------",
+      "model": "translategemma:12b",
+      "timestamp": 1772037102821
+    },
+    "e46fa02701b20959": {
+      "translation": "深入了解架构、集成模式和开发指南。",
+      "model": "translategemma:12b",
+      "timestamp": 1772037102821
+    },
+    "8bc3227a88d82152": {
+      "translation": "三步本地配置、CI模板和故障排除。",
+      "model": "translategemma:12b",
+      "timestamp": 1772037102821
+    },
+    "55bae9004595529f": {
+      "translation": "以Keep a Changelog格式记录的发布历史。",
+      "model": "translategemma:12b",
+      "timestamp": 1772037102821
+    },
+    "b283aa2e21957a24": {
+      "translation": "统一的构建产物目录策略。",
+      "model": "translategemma:12b",
+      "timestamp": 1772037102821
+    },
+    "681f78d8609504df": {
+      "translation": "来源规范。",
+      "model": "translategemma:12b",
+      "timestamp": 1772037102821
+    },
+    "1fb815b9a436fadb": {
+      "translation": "许可证",
+      "model": "translategemma:12b",
+      "timestamp": 1772037102821
+    },
+    "892c2aa834c19cc2": {
+      "translation": "[MIT](LICENSE)",
+      "model": "translategemma:12b",
+      "timestamp": 1772037102821
+    },
+    "0bdd8070e6c2d856": {
+      "translation": "Seis herramientas. Una misión: hacer que las pruebas de accesibilidad sean verificables, automatizadas y difíciles de ignorar.",
+      "model": "translategemma:12b",
+      "timestamp": 1772037140762
+    },
+    "5c3a23ef5ea9f9f8": {
+      "translation": "En resumen",
+      "model": "translategemma:12b",
+      "timestamp": 1772037140762
+    },
+    "c51bb6a4f338aa68": {
+      "translation": "La mayoría de las herramientas de accesibilidad se limitan a indicar \"tiene 12 infracciones\". El conjunto de herramientas de accesibilidad va más allá: captura evidencia verificable de lo que se ha probado, integra las pruebas en su canal de integración continua (CI) para detectar regresiones y proporciona sugerencias de corrección adaptadas a perfiles de baja visión, lectores de pantalla, dislexia y carga cognitiva.",
+      "model": "translategemma:12b",
+      "timestamp": 1772037140762
+    },
+    "cc696c7171f14292": {
+      "translation": "Este conjunto de herramientas abarca todo el ciclo de vida: analiza la salida de la línea de comandos (CLI) en busca de patrones accesibles, analiza el código HTML en busca de infracciones de las WCAG con información de origen verificable, aplica controles de calidad en el CI y expone todo a través de MCP para que los asistentes de IA puedan participar en el proceso de corrección.",
+      "model": "translategemma:12b",
+      "timestamp": 1772037140762
+    },
+    "b2a6581be83f544f": {
+      "translation": "**Principios clave:**",
+      "model": "translategemma:12b",
+      "timestamp": 1772037140762
+    },
+    "a380f486ef7e1423": {
+      "translation": "- **Evidencia sobre afirmaciones:** cada resultado está respaldado por un registro de origen verificable con sumas de comprobación de integridad SHA-256.\n- **Salida prioritaria para personas con baja visión:** todas las herramientas de la línea de comandos utilizan el contrato `[OK]/[WARN]/[FAIL] + ¿Qué/Por qué/Cómo solucionar?`.\n- **Determinista:** la misma entrada siempre produce la misma salida; no hay llamadas a la red, ni aleatoriedad.\n- **Nativo de CI:** códigos de salida, archivos JSON de puntuación y comentarios de solicitudes de extracción (PR) diseñados para canales de automatización.",
+      "model": "translategemma:12b",
+      "timestamp": 1772037140762
+    },
+    "89614e39349c5698": {
+      "translation": "Proyectos",
+      "model": "translategemma:12b",
+      "timestamp": 1772037140762
+    },
+    "80b0208fd48feaf8": {
+      "translation": "Proyecto",
+      "model": "translategemma:12b",
+      "timestamp": 1772037140762
+    },
+    "a0102622d03d4c0f": {
+      "translation": "Descripción.",
+      "model": "translategemma:12b",
+      "timestamp": 1772037140762
+    },
+    "ef67c99142677838": {
+      "translation": "Paquete",
+      "model": "translategemma:12b",
+      "timestamp": 1772037140762
+    },
+    "f2088caa76d4a948": {
+      "translation": "---------",
+      "model": "translategemma:12b",
+      "timestamp": 1772037140762
+    },
+    "184e6ce2c9237895": {
+      "translation": "-------------",
+      "model": "translategemma:12b",
+      "timestamp": 1772037140762
+    },
+    "58e46b91ebfb210e": {
+      "translation": "-------",
+      "model": "translategemma:12b",
+      "timestamp": 1772037140762
+    },
+    "6a14328f99c49913": {
+      "translation": "Analizador de la línea de comandos (CLI) para detectar patrones accesibles en la salida: valida que los mensajes de error sigan patrones accesibles.",
+      "model": "translategemma:12b",
+      "timestamp": 1772037140762
+    },
+    "237d6df27ae9cf48": {
+      "translation": "Python 3.10+",
+      "model": "translategemma:12b",
+      "timestamp": 1772037140762
+    },
+    "c8e5bb929bdf22cd": {
+      "translation": "Control de calidad (gate) para las puntuaciones de accesibilidad en el CI, con detección de regresiones y listas de permisos.",
+      "model": "translategemma:12b",
+      "timestamp": 1772037140762
+    },
+    "84367d5073e8bfec": {
+      "translation": "Asistente de la línea de comandos (CLI) priorizado para personas con baja visión, con cinco perfiles de accesibilidad.",
+      "model": "translategemma:12b",
+      "timestamp": 1772037140762
+    },
+    "f203ce832abe41c9": {
+      "translation": "Analizador de código HTML sin interfaz gráfica con registros de origen verificable.",
+      "model": "translategemma:12b",
+      "timestamp": 1772037140762
+    },
+    "6469a202859c04fa": {
+      "translation": "Node.js 18+",
+      "model": "translategemma:12b",
+      "timestamp": 1772037140762
+    },
+    "c31ecdcb12ca1809": {
+      "translation": "Servidor MCP para la captura y el diagnóstico de evidencia de accesibilidad.",
+      "model": "translategemma:12b",
+      "timestamp": 1772037140762
+    },
+    "07006eacf1c8d614": {
+      "translation": "Sitio de demostración con infracciones intencionales para pruebas de extremo a extremo.",
+      "model": "translategemma:12b",
+      "timestamp": 1772037140762
+    },
+    "785321ff8279266b": {
+      "translation": "Cómo empezar",
+      "model": "translategemma:12b",
+      "timestamp": 1772037140762
+    },
+    "ba6e151fcc6e3278": {
+      "translation": "Analiza la salida de la línea de comandos (CLI) en busca de patrones accesibles.",
+      "model": "translategemma:12b",
+      "timestamp": 1772037140762
+    },
+    "f1bb7ddcb3ba79c3": {
+      "translation": "Integra las pruebas de accesibilidad en tu canal de integración continua (CI) para detectar regresiones.",
+      "model": "translategemma:12b",
+      "timestamp": 1772037140762
+    },
+    "0b41e811aff729e9": {
+      "translation": "Analiza el código HTML y captura la información de origen.",
+      "model": "translategemma:12b",
+      "timestamp": 1772037140762
+    },
+    "7aef61dbd92bc8b4": {
+      "translation": "Obtén sugerencias de corrección para un error en la línea de comandos.",
+      "model": "translategemma:12b",
+      "timestamp": 1772037140762
+    },
+    "7e654a256d2bba22": {
+      "translation": "Captura evidencia y realiza diagnósticos a través de MCP.",
+      "model": "translategemma:12b",
+      "timestamp": 1772037140762
+    },
+    "869db1dc634c8967": {
+      "translation": "Ejecuta el sitio de demostración de extremo a extremo.",
+      "model": "translategemma:12b",
+      "timestamp": 1772037140762
+    },
+    "020594f2ddb90222": {
+      "translation": "Arquitectura",
+      "model": "translategemma:12b",
+      "timestamp": 1772037140762
+    },
+    "40f874add75b3f28": {
+      "translation": "Las seis herramientas forman una cadena de procesamiento desde la detección hasta la corrección:",
+      "model": "translategemma:12b",
+      "timestamp": 1772037140762
+    },
+    "11929e3f463d6912": {
+      "translation": "**Flujo de datos:**",
+      "model": "translategemma:12b",
+      "timestamp": 1772037140762
+    },
+    "88e1cd73b3078b1a": {
+      "translation": "1. **a11y-lint** analiza el texto de la línea de comandos (CLI) en busca de patrones de mensajes de error accesibles y genera un informe de puntuación.\n2. **a11y-evidence-engine** analiza archivos HTML y genera resultados con registros de origen verificable.\n3. **a11y-ci** consume los informes de puntuación, aplica umbrales, detecta regresiones y genera comentarios para solicitudes de extracción (PR).\n4. **a11y-mcp-tools** integra la captura de evidencia y el diagnóstico como herramientas MCP para la integración con asistentes de IA.\n5. **a11y-assist** toma los resultados (JSON estructurado o texto sin formato) y genera sugerencias de corrección en cinco perfiles de accesibilidad.\n6. **a11y-demo-site** integra todo como un ejemplo funcional con infracciones intencionales.",
+      "model": "translategemma:12b",
+      "timestamp": 1772037140762
+    },
+    "3f27970ecfb43100": {
+      "translation": "**Contratos comunes:**",
+      "model": "translategemma:12b",
+      "timestamp": 1772037140762
+    },
+    "c150257def4d4183": {
+      "translation": "- `cli.error.schema.v0.1.json` -- formato de error estructurado para todas las herramientas de Python.\n- `evidence.bundle.schema.v0.1.json` -- paquetes de evidencia con cadenas de origen.\n- `.a11y_artifacts/` -- directorio unificado de artefactos para canales de CI.\n- ID de métodos prov-spec -- identificadores estables y versionados para cada paso de origen.",
+      "model": "translategemma:12b",
+      "timestamp": 1772037140762
+    },
+    "06f69ee0b76020e3": {
+      "translation": "Configuración del cliente MCP",
+      "model": "translategemma:12b",
+      "timestamp": 1772037140762
+    },
+    "6b7866e0110575fa": {
+      "translation": "Para conectar a11y-mcp-tools a tu cliente MCP (Claude Desktop, Cursor, VS Code, etc.):",
+      "model": "translategemma:12b",
+      "timestamp": 1772037140762
+    },
+    "836e7b06221c0d9a": {
+      "translation": "O si está instalado globalmente:",
+      "model": "translategemma:12b",
+      "timestamp": 1772037140762
+    },
+    "6186ae164b0a591f": {
+      "translation": "El servidor expone dos herramientas:",
+      "model": "translategemma:12b",
+      "timestamp": 1772037140762
+    },
+    "4110d0f8faecdeab": {
+      "translation": "------",
+      "model": "translategemma:12b",
+      "timestamp": 1772037140762
+    },
+    "247be5f18b63efc6": {
+      "translation": "Captura paquetes de evidencia con protección contra manipulación desde HTML, registros de la línea de comandos u otras fuentes.",
+      "model": "translategemma:12b",
+      "timestamp": 1772037140762
+    },
+    "03c65e7e8196daff": {
+      "translation": "Realiza comprobaciones de las normas WCAG sobre los paquetes de evidencia, con verificación de su origen.",
+      "model": "translategemma:12b",
+      "timestamp": 1772037140762
+    },
+    "ebc39033395d0e6a": {
+      "translation": "Integración con CI (GitHub Actions).",
+      "model": "translategemma:12b",
+      "timestamp": 1772037140762
+    },
+    "475c5f54ed090674": {
+      "translation": "Consulte [GETTING_STARTED.md](GETTING_STARTED.md) para obtener ejemplos de Azure DevOps y para solucionar problemas.",
+      "model": "translategemma:12b",
+      "timestamp": 1772037140762
+    },
+    "00cab4713b0edf9d": {
+      "translation": "Documentación.",
+      "model": "translategemma:12b",
+      "timestamp": 1772037140762
+    },
+    "6a8844036324be82": {
+      "translation": "Documento.",
+      "model": "translategemma:12b",
+      "timestamp": 1772037140762
+    },
+    "7566658296739da2": {
+      "translation": "----------",
+      "model": "translategemma:12b",
+      "timestamp": 1772037140762
+    },
+    "a859f511f82daefc": {
+      "translation": "Análisis profundo de la arquitectura, patrones de integración y guía de desarrollo.",
+      "model": "translategemma:12b",
+      "timestamp": 1772037140762
+    },
+    "c174ce31e9b4525b": {
+      "translation": "Configuración local con tres comandos, plantillas de CI y solución de problemas.",
+      "model": "translategemma:12b",
+      "timestamp": 1772037140762
+    },
+    "0af89ba5a0b764cc": {
+      "translation": "Historial de versiones en formato \"Keep a Changelog\".",
+      "model": "translategemma:12b",
+      "timestamp": 1772037140762
+    },
+    "acf753df1dd5c8ec": {
+      "translation": "Estrategia unificada para el directorio de artefactos.",
+      "model": "translategemma:12b",
+      "timestamp": 1772037140762
+    },
+    "5532bbf1ad341b53": {
+      "translation": "Especificación de origen.",
+      "model": "translategemma:12b",
+      "timestamp": 1772037140762
+    },
+    "9572f74b6d3f62b1": {
+      "translation": "Licencia.",
+      "model": "translategemma:12b",
+      "timestamp": 1772037140762
+    },
+    "e4731ea7699353e4": {
+      "translation": "[MIT](LICENSE)",
+      "model": "translategemma:12b",
+      "timestamp": 1772037140762
+    },
+    "d6cb12ab34aa7fc0": {
+      "translation": "Six outils. Une mission : rendre les tests d'accessibilité vérifiables, automatisés et difficiles à ignorer.",
+      "model": "translategemma:12b",
+      "timestamp": 1772037188417
+    },
+    "3bbbe551691b0611": {
+      "translation": "Aperçu",
+      "model": "translategemma:12b",
+      "timestamp": 1772037188417
+    },
+    "555d9cba3b0dd286": {
+      "translation": "La plupart des outils d'accessibilité s'arrêtent à \"vous avez 12 violations\". La suite d'accessibilité va plus loin : elle capture des preuves irréfutables de ce qui a été testé, elle intègre les tests d'accessibilité dans votre pipeline CI pour détecter les régressions, et elle fournit des conseils de correction adaptés aux profils de personnes ayant une faible vision, utilisant des lecteurs d'écran, atteintes de dyslexie ou ayant des difficultés cognitives.",
+      "model": "translategemma:12b",
+      "timestamp": 1772037188417
+    },
+    "99cda94b93c85297": {
+      "translation": "Cette suite couvre l'ensemble du cycle de vie : analyse de la sortie de la ligne de commande pour détecter les modèles d'accessibilité, analyse du code HTML pour détecter les violations des WCAG avec une provenance cryptographique, application de règles de qualité dans le CI, et exposition de tout cela via MCP afin que les assistants IA puissent participer au processus de correction.",
+      "model": "translategemma:12b",
+      "timestamp": 1772037188417
+    },
+    "b0aadfac2d3e3142": {
+      "translation": "**Principes clés :**",
+      "model": "translategemma:12b",
+      "timestamp": 1772037188417
+    },
+    "fade94b35c9d7a7c": {
+      "translation": "- **Preuves plutôt que simples affirmations** : chaque constatation est étayée par un enregistrement de provenance avec des sommes de contrôle SHA-256.\n- **Priorité aux utilisateurs ayant une faible vision** : tous les outils de ligne de commande utilisent le format `[OK]/[WARN]/[FAIL] + What/Why/Fix`.\n- **Déterministe** : la même entrée produit toujours la même sortie ; aucun appel réseau, aucune aléatoire.\n- **Intégré au CI** : codes de sortie, fichiers JSON de score, et commentaires de pull requests conçus pour les pipelines automatisés.",
+      "model": "translategemma:12b",
+      "timestamp": 1772037188417
+    },
+    "00c5a465f7ac97fb": {
+      "translation": "Projets",
+      "model": "translategemma:12b",
+      "timestamp": 1772037188417
+    },
+    "bf3fc00471a0c581": {
+      "translation": "Projet",
+      "model": "translategemma:12b",
+      "timestamp": 1772037188417
+    },
+    "9a51c5b4f05710c0": {
+      "translation": "Description",
+      "model": "translategemma:12b",
+      "timestamp": 1772037188417
+    },
+    "389b9f8ae41dc4ab": {
+      "translation": "Package",
+      "model": "translategemma:12b",
+      "timestamp": 1772037188417
+    },
+    "9c7087410e6c6801": {
+      "translation": "---------",
+      "model": "translategemma:12b",
+      "timestamp": 1772037188417
+    },
+    "42738f280dbf39b2": {
+      "translation": "-------------",
+      "model": "translategemma:12b",
+      "timestamp": 1772037188417
+    },
+    "b8a31ebdae787756": {
+      "translation": "-------",
+      "model": "translategemma:12b",
+      "timestamp": 1772037188417
+    },
+    "35cc8571bce3f6da": {
+      "translation": "Analyseur de ligne de commande pour détecter les modèles d'accessibilité dans la sortie. Il valide que les messages d'erreur suivent les bonnes pratiques d'accessibilité.",
+      "model": "translategemma:12b",
+      "timestamp": 1772037188417
+    },
+    "160cad80e0d2b71b": {
+      "translation": "Python 3.10+",
+      "model": "translategemma:12b",
+      "timestamp": 1772037188417
+    },
+    "d86e8be8472d396b": {
+      "translation": "Vérification d'accessibilité pour les tableaux de bord CI, avec détection de régressions et listes blanches.",
+      "model": "translategemma:12b",
+      "timestamp": 1772037188417
+    },
+    "63b9f9daa8acd37c": {
+      "translation": "Assistant de ligne de commande priorisant les utilisateurs ayant une faible vision, avec cinq profils d'accessibilité.",
+      "model": "translategemma:12b",
+      "timestamp": 1772037188417
+    },
+    "64ea559288ca60dc": {
+      "translation": "Analyseur HTML sans interface graphique, avec enregistrements de provenance.",
+      "model": "translategemma:12b",
+      "timestamp": 1772037188417
+    },
+    "ae2b0c56d0994974": {
+      "translation": "Node.js 18+",
+      "model": "translategemma:12b",
+      "timestamp": 1772037188417
+    },
+    "aacdd90cf2e69807": {
+      "translation": "Serveur MCP pour la capture de preuves et le diagnostic de l'accessibilité.",
+      "model": "translategemma:12b",
+      "timestamp": 1772037188417
+    },
+    "aa1b83589817d118": {
+      "translation": "Site de démonstration avec des violations intentionnelles pour les tests de bout en bout.",
+      "model": "translategemma:12b",
+      "timestamp": 1772037188417
+    },
+    "caef1b750e85e405": {
+      "translation": "Démarrage rapide",
+      "model": "translategemma:12b",
+      "timestamp": 1772037188417
+    },
+    "9077d6d403d617a4": {
+      "translation": "Analyse de la sortie de la ligne de commande pour détecter les modèles d'accessibilité.",
+      "model": "translategemma:12b",
+      "timestamp": 1772037188417
+    },
+    "cb0d2a247b25e501": {
+      "translation": "Intégration des tests d'accessibilité dans votre pipeline CI pour détecter les régressions.",
+      "model": "translategemma:12b",
+      "timestamp": 1772037188417
+    },
+    "bc338ebd5a3c698c": {
+      "translation": "Analyse du code HTML et capture de la provenance.",
+      "model": "translategemma:12b",
+      "timestamp": 1772037188417
+    },
+    "1d3fd8944021e90e": {
+      "translation": "Obtention de conseils de correction pour une erreur de ligne de commande.",
+      "model": "translategemma:12b",
+      "timestamp": 1772037188417
+    },
+    "f257ce3971dded90": {
+      "translation": "Capture de preuves et diagnostic via MCP.",
+      "model": "translategemma:12b",
+      "timestamp": 1772037188417
+    },
+    "e272a03c67bdef15": {
+      "translation": "Exécution du site de démonstration de bout en bout.",
+      "model": "translategemma:12b",
+      "timestamp": 1772037188417
+    },
+    "2ced690b13b08b76": {
+      "translation": "Architecture",
+      "model": "translategemma:12b",
+      "timestamp": 1772037188417
+    },
+    "8241b96a5695e94a": {
+      "translation": "Les six outils forment une chaîne de traitement, de la détection à la correction :",
+      "model": "translategemma:12b",
+      "timestamp": 1772037188417
+    },
+    "6f91bbe5e7396e50": {
+      "translation": "**Flux de données :**",
+      "model": "translategemma:12b",
+      "timestamp": 1772037188417
+    },
+    "b0ef48ec52dd77c2": {
+      "translation": "1. **a11y-lint** analyse le texte de la ligne de commande pour détecter les modèles d'accessibilité dans les messages d'erreur et génère un tableau de bord.\n2. **a11y-evidence-engine** analyse les fichiers HTML et signale les problèmes avec des enregistrements de provenance.\n3. **a11y-ci** utilise les tableaux de bord, applique des seuils, détecte les régressions et génère des commentaires pour les pull requests.\n4. **a11y-mcp-tools** encapsule la capture de preuves et le diagnostic en tant qu'outils MCP pour l'intégration avec les assistants IA.\n5. **a11y-assist** prend les résultats (JSON structuré ou texte brut) et génère des conseils de correction en fonction de cinq profils d'accessibilité.\n6. **a11y-demo-site** regroupe tout cela dans un exemple exécutable avec des violations intentionnelles.",
+      "model": "translategemma:12b",
+      "timestamp": 1772037188417
+    },
+    "d2d4069c07be453f": {
+      "translation": "**Contrats communs :**",
+      "model": "translategemma:12b",
+      "timestamp": 1772037188417
+    },
+    "28474cd410c3bd66": {
+      "translation": "- `cli.error.schema.v0.1.json` : format d'erreur structuré utilisé par tous les outils Python.\n- `evidence.bundle.schema.v0.1.json` : ensembles de preuves avec chaînes de provenance.\n- `.a11y_artifacts/` : répertoire unifié pour les artefacts utilisés dans les pipelines CI.\n- identifiants de méthode de provenance : identifiants stables et versionnés pour chaque étape de la provenance.",
+      "model": "translategemma:12b",
+      "timestamp": 1772037188417
+    },
+    "819fd0ee6c9ee9b1": {
+      "translation": "Configuration du client MCP",
+      "model": "translategemma:12b",
+      "timestamp": 1772037188417
+    },
+    "42372eb058ef3cb3": {
+      "translation": "Pour connecter a11y-mcp-tools à votre client MCP (Claude Desktop, Cursor, VS Code, etc.) :",
+      "model": "translategemma:12b",
+      "timestamp": 1772037188417
+    },
+    "457f53c98c5c6c5a": {
+      "translation": "Ou si installé globalement :",
+      "model": "translategemma:12b",
+      "timestamp": 1772037188417
+    },
+    "ca97517e219bd42f": {
+      "translation": "Le serveur expose deux outils :",
+      "model": "translategemma:12b",
+      "timestamp": 1772037188417
+    },
+    "86d5118e773cafab": {
+      "translation": "------",
+      "model": "translategemma:12b",
+      "timestamp": 1772037188417
+    },
+    "6730cc9b689089fe": {
+      "translation": "Capturez des ensembles de preuves inviolables à partir de fichiers HTML, de journaux de ligne de commande ou d'autres sources.",
+      "model": "translategemma:12b",
+      "timestamp": 1772037188417
+    },
+    "e6a4140fa1e60e8e": {
+      "translation": "Effectuez des vérifications des règles WCAG sur les ensembles de preuves avec vérification de l'origine.",
+      "model": "translategemma:12b",
+      "timestamp": 1772037188417
+    },
+    "4724e2be92111093": {
+      "translation": "Intégration continue (GitHub Actions).",
+      "model": "translategemma:12b",
+      "timestamp": 1772037188417
+    },
+    "37fc52f7b4d6f8e0": {
+      "translation": "Consultez le fichier [GETTING_STARTED.md](GETTING_STARTED.md) pour des exemples Azure DevOps et des conseils de dépannage.",
+      "model": "translategemma:12b",
+      "timestamp": 1772037188417
+    },
+    "dd09f1b81c3f6ef5": {
+      "translation": "Documentation",
+      "model": "translategemma:12b",
+      "timestamp": 1772037188417
+    },
+    "65959cae6e85c0ef": {
+      "translation": "Documentation",
+      "model": "translategemma:12b",
+      "timestamp": 1772037188417
+    },
+    "6b553dd92e93e2b8": {
+      "translation": "----------",
+      "model": "translategemma:12b",
+      "timestamp": 1772037188417
+    },
+    "6827322652bed8fe": {
+      "translation": "Analyse approfondie de l'architecture, des modèles d'intégration et du guide de développement.",
+      "model": "translategemma:12b",
+      "timestamp": 1772037188417
+    },
+    "5a0e0aa5204b8f31": {
+      "translation": "Configuration locale en trois étapes, modèles d'intégration continue et conseils de dépannage.",
+      "model": "translategemma:12b",
+      "timestamp": 1772037188417
+    },
+    "9c0bca849a2a75d5": {
+      "translation": "Historique des versions au format \"Keep a Changelog\".",
+      "model": "translategemma:12b",
+      "timestamp": 1772037188417
+    },
+    "853b52175929e6c8": {
+      "translation": "Stratégie de répertoire d'artefacts unifiée.",
+      "model": "translategemma:12b",
+      "timestamp": 1772037188417
+    },
+    "c993c8babd86841d": {
+      "translation": "Spécification de l'origine.",
+      "model": "translategemma:12b",
+      "timestamp": 1772037188417
+    },
+    "0174ffc9d6992c72": {
+      "translation": "Licence",
+      "model": "translategemma:12b",
+      "timestamp": 1772037188417
+    },
+    "c19c2b7dfc530297": {
+      "translation": "[MIT](LICENSE)",
+      "model": "translategemma:12b",
+      "timestamp": 1772037188417
+    },
+    "0e5ce1c12f6b407f": {
+      "translation": "छह उपकरण। एक मिशन: पहुंच परीक्षण को सत्यापन योग्य, स्वचालित और अनदेखा करने में मुश्किल बनाना।",
+      "model": "translategemma:12b",
+      "timestamp": 1772037233532
+    },
+    "7980aa8a02ee565e": {
+      "translation": "एक नज़र में",
+      "model": "translategemma:12b",
+      "timestamp": 1772037233532
+    },
+    "9d99fc8b106f10d5": {
+      "translation": "अधिकांश पहुंच उपकरणों का अंत \"आपके पास 12 उल्लंघन हैं\" पर होता है। एक्सेसिबिलिटी सूट इससे आगे जाता है: यह परीक्षण किए गए तत्वों के छेड़छाड़-रोधी प्रमाण एकत्र करता है, आपके CI पाइपलाइन में प्रतिगमन (regression) को रोकता है, और कम दृष्टि वाले, स्क्रीन रीडर, डिस्लेक्सिया (dyslexia) और संज्ञानात्मक भार (cognitive-load) प्रोफाइल के लिए अनुकूलित समाधान प्रदान करता है।",
+      "model": "translategemma:12b",
+      "timestamp": 1772037233532
+    },
+    "1475e76f1a974118": {
+      "translation": "यह सूट पूरे जीवनचक्र को कवर करता है - सुलभ पैटर्न के लिए CLI आउटपुट का विश्लेषण करें, WCAG उल्लंघनों के लिए HTML को स्कैन करें जिसमें क्रिप्टोग्राफिक प्रमाण हों, CI में गुणवत्ता नियंत्रण लागू करें, और सब कुछ MCP के माध्यम से प्रदर्शित करें ताकि AI सहायक इसमें भाग ले सकें।",
+      "model": "translategemma:12b",
+      "timestamp": 1772037233532
+    },
+    "e97cd460a703f99a": {
+      "translation": "**मुख्य सिद्धांत:**",
+      "model": "translategemma:12b",
+      "timestamp": 1772037233532
+    },
+    "98ec118d53e13eaa": {
+      "translation": "- **दावों से अधिक प्रमाण:** प्रत्येक निष्कर्ष एक प्रामाणिक रिकॉर्ड द्वारा समर्थित है जिसमें SHA-256 अखंडता डाइजेस्ट (integrity digests) शामिल हैं।\n- **कम दृष्टि वाले उपयोगकर्ताओं के लिए प्राथमिकता:** सभी CLI उपकरण `[OK]/[WARN]/[FAIL] + What/Why/Fix` प्रारूप का उपयोग करते हैं।\n- **निश्चित:** समान इनपुट हमेशा समान आउटपुट उत्पन्न करता है; कोई नेटवर्क कॉल नहीं, कोई यादृच्छिकता नहीं।\n- **CI-अनुकूल:** स्वचालित पाइपलाइन के लिए डिज़ाइन किए गए एग्जिट कोड, स्कोरकार्ड JSON और PR टिप्पणियां।",
+      "model": "translategemma:12b",
+      "timestamp": 1772037233532
+    },
+    "2d40f2dcd9abedd2": {
+      "translation": "परियोजनाएं",
+      "model": "translategemma:12b",
+      "timestamp": 1772037233532
+    },
+    "0002e34dd675ccc9": {
+      "translation": "परियोजना",
+      "model": "translategemma:12b",
+      "timestamp": 1772037233532
+    },
+    "b8423b5b4842cbda": {
+      "translation": "विवरण",
+      "model": "translategemma:12b",
+      "timestamp": 1772037233533
+    },
+    "52acc40745c60b33": {
+      "translation": "पैकेज",
+      "model": "translategemma:12b",
+      "timestamp": 1772037233532
+    },
+    "1a20fc4dc8ce3304": {
+      "translation": "---------",
+      "model": "translategemma:12b",
+      "timestamp": 1772037233532
+    },
+    "bc35e1f9228e8622": {
+      "translation": "-------------",
+      "model": "translategemma:12b",
+      "timestamp": 1772037233533
+    },
+    "6da5100c388f6595": {
+      "translation": "-------",
+      "model": "translategemma:12b",
+      "timestamp": 1772037233532
+    },
+    "2209fb01d92091b0": {
+      "translation": "CLI आउटपुट के लिए एक्सेसिबिलिटी लिंटर - त्रुटि संदेशों को सत्यापित करता है कि वे सुलभ पैटर्न का पालन करते हैं।",
+      "model": "translategemma:12b",
+      "timestamp": 1772037233532
+    },
+    "0095c6e90496fbc2": {
+      "translation": "Python 3.10+",
+      "model": "translategemma:12b",
+      "timestamp": 1772037233532
+    },
+    "436e993e53c4f5d5": {
+      "translation": "एक्सेसिबिलिटी स्कोरकार्ड के लिए CI गेट, जिसमें प्रतिगमन का पता लगाना और अनुमति सूची शामिल है।",
+      "model": "translategemma:12b",
+      "timestamp": 1772037233532
+    },
+    "f42a483a5604f9df": {
+      "translation": "पांच एक्सेसिबिलिटी प्रोफाइल के साथ कम दृष्टि वाले उपयोगकर्ताओं के लिए CLI सहायक।",
+      "model": "translategemma:12b",
+      "timestamp": 1772037233532
+    },
+    "f26ee13f78611ea6": {
+      "translation": "प्रमाण-आधारित रिकॉर्ड के साथ हेडलेस HTML स्कैनर।",
+      "model": "translategemma:12b",
+      "timestamp": 1772037233532
+    },
+    "42fda70b6a487582": {
+      "translation": "Node.js 18+",
+      "model": "translategemma:12b",
+      "timestamp": 1772037233532
+    },
+    "e695b7e1296e10ec": {
+      "translation": "एक्सेसिबिलिटी प्रमाण कैप्चर और निदान के लिए MCP सर्वर।",
+      "model": "translategemma:12b",
+      "timestamp": 1772037233532
+    },
+    "c161407c0c39da35": {
+      "translation": "एंड-टू-एंड परीक्षण के लिए जानबूझकर उल्लंघनों वाली डेमो साइट।",
+      "model": "translategemma:12b",
+      "timestamp": 1772037233532
+    },
+    "abb619d8b0588257": {
+      "translation": "शुरुआत कैसे करें",
+      "model": "translategemma:12b",
+      "timestamp": 1772037233532
+    },
+    "095ebd5775d197e8": {
+      "translation": "सुलभ पैटर्न के लिए CLI आउटपुट का विश्लेषण करें।",
+      "model": "translategemma:12b",
+      "timestamp": 1772037233532
+    },
+    "3ae9bc0ec48d0f43": {
+      "translation": "एक्सेसिबिलिटी प्रतिगमन पर अपने CI को रोकें।",
+      "model": "translategemma:12b",
+      "timestamp": 1772037233532
+    },
+    "37532c7945165856": {
+      "translation": "HTML को स्कैन करें और प्रमाण कैप्चर करें।",
+      "model": "translategemma:12b",
+      "timestamp": 1772037233532
+    },
+    "bb608ab5437b4c43": {
+      "translation": "CLI विफलता के लिए समाधान प्राप्त करें।",
+      "model": "translategemma:12b",
+      "timestamp": 1772037233532
+    },
+    "60b9bcd7f06af05c": {
+      "translation": "MCP के माध्यम से प्रमाण कैप्चर करें और निदान करें।",
+      "model": "translategemma:12b",
+      "timestamp": 1772037233532
+    },
+    "71be201e09dc3f20": {
+      "translation": "डेमो साइट को एंड-टू-एंड चलाएं।",
+      "model": "translategemma:12b",
+      "timestamp": 1772037233532
+    },
+    "c601496221a20045": {
+      "translation": "आर्किटेक्चर",
+      "model": "translategemma:12b",
+      "timestamp": 1772037233532
+    },
+    "68e47a441ffcdf98": {
+      "translation": "ये छह उपकरण एक पाइपलाइन का निर्माण करते हैं जो पता लगाने से लेकर समाधान तक है:",
+      "model": "translategemma:12b",
+      "timestamp": 1772037233532
+    },
+    "810b00e3a92dbfd8": {
+      "translation": "**डेटा प्रवाह:**",
+      "model": "translategemma:12b",
+      "timestamp": 1772037233532
+    },
+    "802c5aba5e45f737": {
+      "translation": "1. **a11y-lint:** CLI टेक्स्ट को स्कैन करता है ताकि सुलभ त्रुटि संदेश पैटर्न का पता चल सके और एक स्कोरकार्ड उत्पन्न किया जा सके।\n2. **a11y-evidence-engine:** HTML फ़ाइलों को स्कैन करता है और प्रमाण-आधारित रिकॉर्ड के साथ निष्कर्षों को प्रदर्शित करता है।\n3. **a11y-ci:** स्कोरकार्ड का उपयोग करता है, सीमाएं लागू करता है, प्रतिगमन का पता लगाता है और PR टिप्पणियां उत्पन्न करता है।\n4. **a11y-mcp-tools:** प्रमाण कैप्चर और निदान को MCP उपकरणों के रूप में लपेटता है ताकि AI सहायकों को एकीकृत किया जा सके।\n5. **a11y-assist:** निष्कर्षों (संरचित JSON या कच्चे पाठ) को लेता है और पांच एक्सेसिबिलिटी प्रोफाइल में समाधान प्रदान करता है।\n6. **a11y-demo-site:** यह सब एक साथ जोड़ता है ताकि यह एक रन करने योग्य उदाहरण के रूप में प्रदर्शित हो सके जिसमें जानबूझकर उल्लंघन शामिल हैं।",
+      "model": "translategemma:12b",
+      "timestamp": 1772037233532
+    },
+    "a6e1c450fc2ff59d": {
+      "translation": "**साझा प्रारूप:**",
+      "model": "translategemma:12b",
+      "timestamp": 1772037233532
+    },
+    "5a904a324ff78f0c": {
+      "translation": "- `cli.error.schema.v0.1.json` - सभी Python उपकरणों में संरचित त्रुटि प्रारूप।\n- `evidence.bundle.schema.v0.1.json` - प्रमाण बंडल जिसमें प्रमाण श्रृंखला शामिल हैं।\n- `.a11y_artifacts/` - CI पाइपलाइन के लिए एकीकृत आर्टिफैक्ट निर्देशिका।\n- prov-spec विधि आईडी - प्रत्येक प्रमाण चरण के लिए स्थिर, संस्करणित पहचानकर्ता।",
+      "model": "translategemma:12b",
+      "timestamp": 1772037233533
+    },
+    "b8cd0088a4cf705d": {
+      "translation": "MCP क्लाइंट कॉन्फ़िगरेशन",
+      "model": "translategemma:12b",
+      "timestamp": 1772037233533
+    },
+    "376f0084fd2cb46a": {
+      "translation": "a11y-mcp-tools को अपने MCP क्लाइंट (क्लाउड डेस्कटॉप, कर्सर, VS कोड, आदि) से कनेक्ट करने के लिए:",
+      "model": "translategemma:12b",
+      "timestamp": 1772037233533
+    },
+    "2de05946ae487a96": {
+      "translation": "या यदि इसे वैश्विक रूप से स्थापित किया गया है:",
+      "model": "translategemma:12b",
+      "timestamp": 1772037233533
+    },
+    "03f37349c978784a": {
+      "translation": "सर्वर दो उपकरण प्रदर्शित करता है:",
+      "model": "translategemma:12b",
+      "timestamp": 1772037233533
+    },
+    "1cb2d43271f2ec1d": {
+      "translation": "------",
+      "model": "translategemma:12b",
+      "timestamp": 1772037233533
+    },
+    "34181d8ac53af931": {
+      "translation": "एचटीएमएल, कमांड-लाइन लॉग या अन्य स्रोतों से छेड़छाड़-रोधी साक्ष्य संग्रह प्राप्त करें।",
+      "model": "translategemma:12b",
+      "timestamp": 1772037233533
+    },
+    "3a677ab06a7456f0": {
+      "translation": "साक्ष्य संग्रह पर WCAG नियमों की जांच करें, जिसमें उत्पत्ति सत्यापन शामिल है।",
+      "model": "translategemma:12b",
+      "timestamp": 1772037233533
+    },
+    "04021fd424b19c0b": {
+      "translation": "सीआई एकीकरण (GitHub Actions)",
+      "model": "translategemma:12b",
+      "timestamp": 1772037233533
+    },
+    "1cce69b543c42db1": {
+      "translation": "एज़्योर DevOps के उदाहरणों और समस्या निवारण के लिए [GETTING_STARTED.md](GETTING_STARTED.md) देखें।",
+      "model": "translategemma:12b",
+      "timestamp": 1772037233533
+    },
+    "e0513a26e56e1df3": {
+      "translation": "दस्तावेज़",
+      "model": "translategemma:12b",
+      "timestamp": 1772037233533
+    },
+    "fc547e3694d376ce": {
+      "translation": "दस्तावेज़",
+      "model": "translategemma:12b",
+      "timestamp": 1772037233533
+    },
+    "3b88b43261c1c270": {
+      "translation": "----------",
+      "model": "translategemma:12b",
+      "timestamp": 1772037233533
+    },
+    "ccb16b6e302fab0e": {
+      "translation": "आर्किटेक्चर की गहन जानकारी, एकीकरण पैटर्न और विकास मार्गदर्शिका।",
+      "model": "translategemma:12b",
+      "timestamp": 1772037233533
+    },
+    "cec4c348add201b1": {
+      "translation": "तीन-कमांड वाला स्थानीय सेटअप, सीआई टेम्पलेट और समस्या निवारण।",
+      "model": "translategemma:12b",
+      "timestamp": 1772037233533
+    },
+    "008caed236b8660e": {
+      "translation": "कीप अ चेंजलॉग प्रारूप में रिलीज़ इतिहास।",
+      "model": "translategemma:12b",
+      "timestamp": 1772037233533
+    },
+    "ce68e09eecd8df77": {
+      "translation": "एकीकृत आर्टिफैक्ट निर्देशिका रणनीति।",
+      "model": "translategemma:12b",
+      "timestamp": 1772037233533
+    },
+    "dba67acb3b6a3275": {
+      "translation": "उत्पत्ति विनिर्देश।",
+      "model": "translategemma:12b",
+      "timestamp": 1772037233533
+    },
+    "cfbc372f8058f151": {
+      "translation": "लाइसेंस",
+      "model": "translategemma:12b",
+      "timestamp": 1772037233533
+    },
+    "69121a20c478d6f4": {
+      "translation": "[MIT](LICENSE)",
+      "model": "translategemma:12b",
+      "timestamp": 1772037233533
+    },
+    "3c5fd9c63d6d6d96": {
+      "translation": "Sei strumenti. Un'unica missione: rendere i test di accessibilità verificabili, automatizzati e difficili da ignorare.",
+      "model": "translategemma:12b",
+      "timestamp": 1772037284199
+    },
+    "610cd7e854f9c8e9": {
+      "translation": "Panoramica",
+      "model": "translategemma:12b",
+      "timestamp": 1772037284199
+    },
+    "b194e49c83704139": {
+      "translation": "La maggior parte degli strumenti di accessibilità si limita a indicare \"hai 12 violazioni\". Accessibility Suite va oltre: registra prove verificabili di ciò che è stato testato, integra i test di accessibilità nel tuo flusso di lavoro CI (Continuous Integration) e fornisce suggerimenti per la correzione, ottimizzati per utenti con problemi di vista, lettori di schermo, dislessia e per ridurre il carico cognitivo.",
+      "model": "translategemma:12b",
+      "timestamp": 1772037284199
+    },
+    "8fd8c68497e426b5": {
+      "translation": "Questa suite copre l'intero ciclo di vita: analizza l'output della riga di comando per individuare modelli di accessibilità, esamina il codice HTML per rilevare violazioni delle linee guida WCAG, applica controlli di qualità nel flusso di lavoro CI e rende tutto disponibile tramite MCP (Metadata Center Protocol) in modo che gli assistenti AI possano partecipare al processo di correzione.",
+      "model": "translategemma:12b",
+      "timestamp": 1772037284199
+    },
+    "a8874c3e8bdcdf01": {
+      "translation": "**Principi chiave:**",
+      "model": "translategemma:12b",
+      "timestamp": 1772037284199
+    },
+    "7b9a5a384f9f6523": {
+      "translation": "- **Prove, non semplici asserzioni:** ogni riscontro è supportato da un record di provenienza con checksum SHA-256 per garantirne l'integrità.\n- **Priorità agli utenti con problemi di vista:** tutti gli strumenti della riga di comando utilizzano la convenzione `[OK]/[WARN]/[FAIL] + Cosa/Perché/Come risolvere`.\n- **Determinismo:** lo stesso input produce sempre lo stesso output; non ci sono chiamate di rete né elementi casuali.\n- **Integrazione nativa con CI:** codici di uscita, file JSON per i report e commenti per le richieste di pull (PR) progettati per i flussi di lavoro automatizzati.",
+      "model": "translategemma:12b",
+      "timestamp": 1772037284199
+    },
+    "9ac4ffe29486ed4f": {
+      "translation": "Progetti",
+      "model": "translategemma:12b",
+      "timestamp": 1772037284199
+    },
+    "3e55bfc0749708b5": {
+      "translation": "Progetto",
+      "model": "translategemma:12b",
+      "timestamp": 1772037284199
+    },
+    "3af38881e7f28db0": {
+      "translation": "Descrizione.",
+      "model": "translategemma:12b",
+      "timestamp": 1772037284199
+    },
+    "3ae0023ebd7e4d7b": {
+      "translation": "Pacchetto",
+      "model": "translategemma:12b",
+      "timestamp": 1772037284199
+    },
+    "859008cc19c8d7e4": {
+      "translation": "---------",
+      "model": "translategemma:12b",
+      "timestamp": 1772037284199
+    },
+    "5acc6809afb159f0": {
+      "translation": "-------------",
+      "model": "translategemma:12b",
+      "timestamp": 1772037284199
+    },
+    "4f16a25e942668c8": {
+      "translation": "-------",
+      "model": "translategemma:12b",
+      "timestamp": 1772037284199
+    },
+    "d3d4a3ac6ca5db6c": {
+      "translation": "Analizzatore della riga di comando per individuare modelli di accessibilità nell'output -- verifica che i messaggi di errore seguano schemi accessibili.",
+      "model": "translategemma:12b",
+      "timestamp": 1772037284199
+    },
+    "e2a9be4a63a4e6cd": {
+      "translation": "Python 3.10+",
+      "model": "translategemma:12b",
+      "timestamp": 1772037284199
+    },
+    "8dda64350bdf79f8": {
+      "translation": "Controllo di accessibilità per i report CI con rilevamento di regressioni e liste di consentiti.",
+      "model": "translategemma:12b",
+      "timestamp": 1772037284199
+    },
+    "192eca58d7b9d742": {
+      "translation": "Assistente per la riga di comando ottimizzato per utenti con problemi di vista, con cinque profili di accessibilità.",
+      "model": "translategemma:12b",
+      "timestamp": 1772037284199
+    },
+    "dfb30641530bdd7a": {
+      "translation": "Scanner HTML senza interfaccia grafica con record di provenienza.",
+      "model": "translategemma:12b",
+      "timestamp": 1772037284199
+    },
+    "7d0297e8c595155f": {
+      "translation": "Node.js 18+",
+      "model": "translategemma:12b",
+      "timestamp": 1772037284199
+    },
+    "77249b9ab49c7736": {
+      "translation": "Server MCP per la raccolta di prove e la diagnosi di problemi di accessibilità.",
+      "model": "translategemma:12b",
+      "timestamp": 1772037284199
+    },
+    "422cd3d0ef6bd775": {
+      "translation": "Sito dimostrativo con violazioni intenzionali per test end-to-end.",
+      "model": "translategemma:12b",
+      "timestamp": 1772037284199
+    },
+    "d7e9780fb2074bec": {
+      "translation": "Guida rapida",
+      "model": "translategemma:12b",
+      "timestamp": 1772037284199
+    },
+    "78f725c3b238850b": {
+      "translation": "Analizza l'output della riga di comando per individuare modelli di accessibilità.",
+      "model": "translategemma:12b",
+      "timestamp": 1772037284199
+    },
+    "ca9db771d8dd49ae": {
+      "translation": "Integra i test di accessibilità nel tuo flusso di lavoro CI per rilevare regressioni.",
+      "model": "translategemma:12b",
+      "timestamp": 1772037284199
+    },
+    "46dbe6b23aba706c": {
+      "translation": "Scansiona il codice HTML e registra la provenienza dei dati.",
+      "model": "translategemma:12b",
+      "timestamp": 1772037284199
+    },
+    "e6be3a7cd24c42d4": {
+      "translation": "Ottieni suggerimenti per risolvere un errore della riga di comando.",
+      "model": "translategemma:12b",
+      "timestamp": 1772037284199
+    },
+    "70049034fe775c4f": {
+      "translation": "Raccogli prove e diagnostica i problemi tramite MCP.",
+      "model": "translategemma:12b",
+      "timestamp": 1772037284199
+    },
+    "58844f515a58a9b4": {
+      "translation": "Esegui il sito dimostrativo per test end-to-end.",
+      "model": "translategemma:12b",
+      "timestamp": 1772037284199
+    },
+    "2467ff9891958ea0": {
+      "translation": "Architettura",
+      "model": "translategemma:12b",
+      "timestamp": 1772037284199
+    },
+    "7437ea919ef524b3": {
+      "translation": "I sei strumenti formano una pipeline che va dalla rilevazione alla correzione:",
+      "model": "translategemma:12b",
+      "timestamp": 1772037284199
+    },
+    "800d97cdc7fcebeb": {
+      "translation": "**Flusso dei dati:**",
+      "model": "translategemma:12b",
+      "timestamp": 1772037284199
+    },
+    "7d74f1329f8196dd": {
+      "translation": "1. **a11y-lint** analizza il testo della riga di comando per individuare modelli di messaggi di errore accessibili e genera un report.\n2. **a11y-evidence-engine** analizza i file HTML e segnala i problemi, registrando la provenienza dei dati.\n3. **a11y-ci** elabora i report, applica le soglie, rileva le regressioni e genera commenti per le richieste di pull.\n4. **a11y-mcp-tools** integra la raccolta di prove e la diagnosi come strumenti MCP per l'integrazione con gli assistenti AI.\n5. **a11y-assist** riceve i risultati (in formato JSON strutturato o testo semplice) e genera suggerimenti per la correzione, basati su cinque profili di accessibilità.\n6. **a11y-demo-site** mette insieme tutti gli elementi in un esempio funzionante con violazioni intenzionali.",
+      "model": "translategemma:12b",
+      "timestamp": 1772037284199
+    },
+    "c8a709f550ea407e": {
+      "translation": "**Interfacce standard:**",
+      "model": "translategemma:12b",
+      "timestamp": 1772037284199
+    },
+    "8a134955ced316c4": {
+      "translation": "- `cli.error.schema.v0.1.json` -- formato standardizzato per i messaggi di errore in tutti gli strumenti Python.\n- `evidence.bundle.schema.v0.1.json` -- pacchetti di prove con catene di provenienza.\n- `.a11y_artifacts/` -- directory unificata per gli artefatti utilizzati nei flussi di lavoro CI.\n- ID dei metodi di provenienza -- identificatori stabili e versionati per ogni passaggio di provenienza.",
+      "model": "translategemma:12b",
+      "timestamp": 1772037284199
+    },
+    "1ca3264997d5dda6": {
+      "translation": "Configurazione del client MCP",
+      "model": "translategemma:12b",
+      "timestamp": 1772037284199
+    },
+    "37feed3d03134217": {
+      "translation": "Per collegare a11y-mcp-tools al tuo client MCP (Claude Desktop, Cursor, VS Code, ecc.):",
+      "model": "translategemma:12b",
+      "timestamp": 1772037284199
+    },
+    "2eb0d06dca099508": {
+      "translation": "Oppure, se installato globalmente:",
+      "model": "translategemma:12b",
+      "timestamp": 1772037284199
+    },
+    "49768d0b2e5e5145": {
+      "translation": "Il server espone due strumenti:",
+      "model": "translategemma:12b",
+      "timestamp": 1772037284199
+    },
+    "a8e2cbb75c81ee97": {
+      "translation": "------",
+      "model": "translategemma:12b",
+      "timestamp": 1772037284199
+    },
+    "56dca6e6ab046b1e": {
+      "translation": "Acquisizione di pacchetti di prove con protezione anti-manomissione da HTML, log della riga di comando o altre fonti.",
+      "model": "translategemma:12b",
+      "timestamp": 1772037284199
+    },
+    "eb15aa7739af9648": {
+      "translation": "Esecuzione di controlli delle regole WCAG sui pacchetti di prove con verifica della provenienza.",
+      "model": "translategemma:12b",
+      "timestamp": 1772037284199
+    },
+    "eaa0f4f3ddfa3ce5": {
+      "translation": "Integrazione con CI (GitHub Actions).",
+      "model": "translategemma:12b",
+      "timestamp": 1772037284199
+    },
+    "6dc5562725c488e9": {
+      "translation": "Consultare il file [GETTING_STARTED.md](GETTING_STARTED.md) per esempi di Azure DevOps e per la risoluzione dei problemi.",
+      "model": "translategemma:12b",
+      "timestamp": 1772037284199
+    },
+    "2cebf666d270d0e8": {
+      "translation": "Documentazione.",
+      "model": "translategemma:12b",
+      "timestamp": 1772037284199
+    },
+    "ad2f9dd03bf3716c": {
+      "translation": "Documento.",
+      "model": "translategemma:12b",
+      "timestamp": 1772037284199
+    },
+    "db5b48a0e074d983": {
+      "translation": "----------",
+      "model": "translategemma:12b",
+      "timestamp": 1772037284199
+    },
+    "7ddbeecc5390ec0f": {
+      "translation": "Analisi approfondita dell'architettura, modelli di integrazione e guida per gli sviluppatori.",
+      "model": "translategemma:12b",
+      "timestamp": 1772037284199
+    },
+    "26c40ea238fc1ca8": {
+      "translation": "Configurazione locale con tre comandi, modelli CI e risoluzione dei problemi.",
+      "model": "translategemma:12b",
+      "timestamp": 1772037284199
+    },
+    "4816a5425de76e58": {
+      "translation": "Cronologia delle release in formato \"Keep a Changelog\".",
+      "model": "translategemma:12b",
+      "timestamp": 1772037284199
+    },
+    "dccfb3804b50e67e": {
+      "translation": "Strategia unificata per la directory degli artefatti.",
+      "model": "translategemma:12b",
+      "timestamp": 1772037284199
+    },
+    "7366a895ed53380d": {
+      "translation": "Specifiche della provenienza.",
+      "model": "translategemma:12b",
+      "timestamp": 1772037284199
+    },
+    "0870aa1dcfea97cc": {
+      "translation": "Licenza.",
+      "model": "translategemma:12b",
+      "timestamp": 1772037284199
+    },
+    "c87c0c0fca261018": {
+      "translation": "[MIT](LICENSE)",
+      "model": "translategemma:12b",
+      "timestamp": 1772037284199
+    },
+    "26546815d1ff57a6": {
+      "translation": "Seis ferramentas. Uma missão: tornar os testes de acessibilidade verificáveis, automatizados e difíceis de ignorar.",
+      "model": "translategemma:12b",
+      "timestamp": 1772037329725
+    },
+    "90ec8c1f7e335928": {
+      "translation": "Visão Geral",
+      "model": "translategemma:12b",
+      "timestamp": 1772037329725
+    },
+    "65dbdabcdb70b8cc": {
+      "translation": "A maioria das ferramentas de acessibilidade para com a informação \"você tem 12 violações\". O Accessibility Suite vai além: ele registra evidências verificáveis do que foi testado, integra-se ao seu pipeline de CI para detectar regressões e fornece orientações para correções, adaptadas para usuários com baixa visão, leitores de tela, dislexia e para aqueles com dificuldades de processamento cognitivo.",
+      "model": "translategemma:12b",
+      "timestamp": 1772037329725
+    },
+    "ab5fbdcf3e856f9d": {
+      "translation": "O conjunto de ferramentas abrange todo o ciclo de vida: analisa a saída da linha de comando em busca de padrões de acessibilidade, verifica o HTML em busca de violações das diretrizes WCAG, aplica controles de qualidade no CI e disponibiliza tudo através do MCP para que assistentes de IA possam participar do processo de correção.",
+      "model": "translategemma:12b",
+      "timestamp": 1772037329725
+    },
+    "f760d5fa474cb986": {
+      "translation": "**Princípios chave:**",
+      "model": "translategemma:12b",
+      "timestamp": 1772037329725
+    },
+    "52df9dbee259b197": {
+      "translation": "- **Evidências em vez de afirmações:** cada resultado é respaldado por um registro de rastreabilidade com digests de integridade SHA-256.\n- **Foco em usuários com baixa visão:** todas as ferramentas de linha de comando usam o contrato `[OK]/[WARN]/[FAIL] + O que/Por quê/Como corrigir`.\n- **Determinístico:** a mesma entrada sempre produz a mesma saída; não há chamadas de rede, não há aleatoriedade.\n- **Nativo para CI:** códigos de saída, JSON de scorecard e comentários de pull request projetados para pipelines automatizados.",
+      "model": "translategemma:12b",
+      "timestamp": 1772037329725
+    },
+    "1fc202d2001bc4ba": {
+      "translation": "Projetos",
+      "model": "translategemma:12b",
+      "timestamp": 1772037329725
+    },
+    "c569032881ac0857": {
+      "translation": "Projeto",
+      "model": "translategemma:12b",
+      "timestamp": 1772037329725
+    },
+    "4fe83802bbc45fcc": {
+      "translation": "Descrição.",
+      "model": "translategemma:12b",
+      "timestamp": 1772037329726
+    },
+    "f9842b8851da40ec": {
+      "translation": "Pacote",
+      "model": "translategemma:12b",
+      "timestamp": 1772037329725
+    },
+    "eeb243aa53a24f8e": {
+      "translation": "---------",
+      "model": "translategemma:12b",
+      "timestamp": 1772037329725
+    },
+    "7561209f94247c19": {
+      "translation": "-------------",
+      "model": "translategemma:12b",
+      "timestamp": 1772037329726
+    },
+    "1f04ef9e8cc1d860": {
+      "translation": "-------",
+      "model": "translategemma:12b",
+      "timestamp": 1772037329725
+    },
+    "78a8705e8f998ef7": {
+      "translation": "Analisador de acessibilidade para a saída da linha de comando: valida se as mensagens de erro seguem padrões de acessibilidade.",
+      "model": "translategemma:12b",
+      "timestamp": 1772037329725
+    },
+    "038891de68230c87": {
+      "translation": "Python 3.10+",
+      "model": "translategemma:12b",
+      "timestamp": 1772037329726
+    },
+    "4a805fd60467787f": {
+      "translation": "Controle de qualidade para scorecards de acessibilidade no CI, com detecção de regressões e listas de permissões.",
+      "model": "translategemma:12b",
+      "timestamp": 1772037329726
+    },
+    "6be18dd9edd30112": {
+      "translation": "Assistente de linha de comando focado em usuários com baixa visão, com cinco perfis de acessibilidade.",
+      "model": "translategemma:12b",
+      "timestamp": 1772037329726
+    },
+    "a532a93d45464367": {
+      "translation": "Scanner HTML sem interface gráfica com registros de rastreabilidade.",
+      "model": "translategemma:12b",
+      "timestamp": 1772037329726
+    },
+    "7537983879f0c7ad": {
+      "translation": "Node.js 18+",
+      "model": "translategemma:12b",
+      "timestamp": 1772037329726
+    },
+    "88991958928eadde": {
+      "translation": "Servidor MCP para captura e diagnóstico de evidências de acessibilidade.",
+      "model": "translategemma:12b",
+      "timestamp": 1772037329726
+    },
+    "0504c4f3c53cc75e": {
+      "translation": "Site de demonstração com violações intencionais para testes de ponta a ponta.",
+      "model": "translategemma:12b",
+      "timestamp": 1772037329726
+    },
+    "c88bcdb0dd505b6b": {
+      "translation": "Como Começar",
+      "model": "translategemma:12b",
+      "timestamp": 1772037329726
+    },
+    "c484f3006e7ca369": {
+      "translation": "Analise a saída da linha de comando em busca de padrões de acessibilidade.",
+      "model": "translategemma:12b",
+      "timestamp": 1772037329726
+    },
+    "814e58f1c3543dfb": {
+      "translation": "Integre o controle de qualidade no seu pipeline de CI para detectar regressões de acessibilidade.",
+      "model": "translategemma:12b",
+      "timestamp": 1772037329726
+    },
+    "b3f53a39d19e710b": {
+      "translation": "Verifique o HTML e capture a rastreabilidade.",
+      "model": "translategemma:12b",
+      "timestamp": 1772037329726
+    },
+    "24ede3fcb6d2c164": {
+      "translation": "Obtenha orientações para corrigir uma falha na linha de comando.",
+      "model": "translategemma:12b",
+      "timestamp": 1772037329726
+    },
+    "3d29e4afb1c0be05": {
+      "translation": "Capture evidências e diagnostique através do MCP.",
+      "model": "translategemma:12b",
+      "timestamp": 1772037329726
+    },
+    "479fde66c1bbe914": {
+      "translation": "Execute o site de demonstração de ponta a ponta.",
+      "model": "translategemma:12b",
+      "timestamp": 1772037329726
+    },
+    "57a87b809fa8de1a": {
+      "translation": "Arquitetura",
+      "model": "translategemma:12b",
+      "timestamp": 1772037329726
+    },
+    "de1bc045c0c3e83c": {
+      "translation": "As seis ferramentas formam um pipeline que vai desde a detecção até a correção:",
+      "model": "translategemma:12b",
+      "timestamp": 1772037329726
+    },
+    "4b6d13ce219ec1d6": {
+      "translation": "**Fluxo de dados:**",
+      "model": "translategemma:12b",
+      "timestamp": 1772037329726
+    },
+    "948008b66822230e": {
+      "translation": "1. **a11y-lint** analisa o texto da linha de comando em busca de padrões de mensagens de erro acessíveis e gera um scorecard.\n2. **a11y-evidence-engine** analisa arquivos HTML e gera resultados com registros de rastreabilidade.\n3. **a11y-ci** consome scorecards, aplica limites, detecta regressões e gera comentários de pull request.\n4. **a11y-mcp-tools** encapsula a captura de evidências e o diagnóstico como ferramentas MCP para integração com assistentes de IA.\n5. **a11y-assist** recebe resultados (JSON estruturados ou texto bruto) e gera orientações para correção em cinco perfis de acessibilidade.\n6. **a11y-demo-site** integra tudo em um exemplo executável com violações intencionais.",
+      "model": "translategemma:12b",
+      "timestamp": 1772037329726
+    },
+    "1cf80dc799f09c54": {
+      "translation": "**Contratos comuns:**",
+      "model": "translategemma:12b",
+      "timestamp": 1772037329726
+    },
+    "7e1e0ab004b59f2f": {
+      "translation": "- `cli.error.schema.v0.1.json` -- formato de erro estruturado para todas as ferramentas Python.\n- `evidence.bundle.schema.v0.1.json` -- pacotes de evidências com cadeias de rastreabilidade.\n- `.a11y_artifacts/` -- diretório unificado de artefatos para pipelines de CI.\n- IDs de método de rastreabilidade -- identificadores estáveis e versionados para cada etapa de rastreabilidade.",
+      "model": "translategemma:12b",
+      "timestamp": 1772037329726
+    },
+    "69b79fd314b45b0f": {
+      "translation": "Configuração do Cliente MCP",
+      "model": "translategemma:12b",
+      "timestamp": 1772037329726
+    },
+    "edc75d38a1329bb3": {
+      "translation": "Para conectar a11y-mcp-tools ao seu cliente MCP (Claude Desktop, Cursor, VS Code, etc.):",
+      "model": "translategemma:12b",
+      "timestamp": 1772037329726
+    },
+    "f9c4c81e7ae55892": {
+      "translation": "Ou, se instalado globalmente:",
+      "model": "translategemma:12b",
+      "timestamp": 1772037329726
+    },
+    "505345248678daa0": {
+      "translation": "O servidor expõe duas ferramentas:",
+      "model": "translategemma:12b",
+      "timestamp": 1772037329726
+    },
+    "93982127e708d976": {
+      "translation": "------",
+      "model": "translategemma:12b",
+      "timestamp": 1772037329726
+    },
+    "06e902173ee0a63d": {
+      "translation": "Capture de evidências com proteção contra adulteração, provenientes de HTML, logs de linha de comando ou outras fontes.",
+      "model": "translategemma:12b",
+      "timestamp": 1772037329726
+    },
+    "171f08827e6cca2a": {
+      "translation": "Execução de verificações de conformidade com as diretrizes WCAG em relação às evidências, com verificação de origem.",
+      "model": "translategemma:12b",
+      "timestamp": 1772037329726
+    },
+    "882bb8ff2dbd56f5": {
+      "translation": "Integração com CI (GitHub Actions).",
+      "model": "translategemma:12b",
+      "timestamp": 1772037329726
+    },
+    "7e98ee61dda78d1a": {
+      "translation": "Consulte o arquivo [GETTING_STARTED.md](GETTING_STARTED.md) para exemplos do Azure DevOps e informações sobre solução de problemas.",
+      "model": "translategemma:12b",
+      "timestamp": 1772037329726
+    },
+    "5da143a95bd4adb3": {
+      "translation": "Documentação.",
+      "model": "translategemma:12b",
+      "timestamp": 1772037329726
+    },
+    "9c0e0444f517fb53": {
+      "translation": "Documento.",
+      "model": "translategemma:12b",
+      "timestamp": 1772037329726
+    },
+    "f5f497abcadce090": {
+      "translation": "----------",
+      "model": "translategemma:12b",
+      "timestamp": 1772037329726
+    },
+    "55209daaf8e8efe3": {
+      "translation": "Análise aprofundada da arquitetura, padrões de integração e guia de desenvolvimento.",
+      "model": "translategemma:12b",
+      "timestamp": 1772037329726
+    },
+    "8c74ece4f34de48e": {
+      "translation": "Configuração local com três comandos, modelos de CI e solução de problemas.",
+      "model": "translategemma:12b",
+      "timestamp": 1772037329726
+    },
+    "3e01d39047f49682": {
+      "translation": "Histórico de lançamentos no formato \"Keep a Changelog\".",
+      "model": "translategemma:12b",
+      "timestamp": 1772037329726
+    },
+    "7359acf4514f1603": {
+      "translation": "Estratégia unificada para diretórios de artefatos.",
+      "model": "translategemma:12b",
+      "timestamp": 1772037329726
+    },
+    "0998b4b9abb56cc5": {
+      "translation": "Especificação de rastreabilidade (proveniência).",
+      "model": "translategemma:12b",
+      "timestamp": 1772037329726
+    },
+    "2aca9b0e72841008": {
+      "translation": "Licença.",
+      "model": "translategemma:12b",
+      "timestamp": 1772037329726
+    },
+    "8026854d56a5486a": {
+      "translation": "[MIT](LICENSE)",
+      "model": "translategemma:12b",
+      "timestamp": 1772037329726
+    }
+  }
+}

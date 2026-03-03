@@ -6,7 +6,7 @@ export const config: SiteConfig = {
   logoBadge: 'A11Y',
   brandName: 'Accessibility Suite',
   repoUrl: 'https://github.com/mcp-tool-shop-org/accessibility-suite',
-  npmUrl: 'https://www.npmjs.com/package/@mcptoolshop/accessibility-suite',
+  npmUrl: 'https://www.npmjs.com/package/@accessibility-suite/core',
   footerText: 'MIT Licensed — built by <a href="https://github.com/mcp-tool-shop-org" style="color:var(--color-muted);text-decoration:underline">mcp-tool-shop-org</a>',
 
   hero: {
@@ -23,11 +23,11 @@ export const config: SiteConfig = {
       },
       {
         label: 'Scan HTML',
-        code: '# scan HTML with cryptographic provenance\nnpm install -g @mcptoolshop/a11y-evidence-engine\na11y-engine scan ./html --out ./results\n\n# get fix guidance for a finding\npip install a11y-assist\na11y-assist explain --json error.json --profile screen-reader',
+        code: '# scan HTML with cryptographic provenance\nnpm install -g @accessibility-suite/evidence-engine\na11y-engine scan ./html --out ./results\n\n# get fix guidance for a finding\npip install a11y-assist\na11y-assist explain --json error.json --profile screen-reader',
       },
       {
         label: 'MCP config',
-        code: '// connect to Claude Desktop, Cursor, VS Code\n{\n  "mcpServers": {\n    "a11y": {\n      "command": "npx",\n      "args": ["-y", "@mcptoolshop/a11y-mcp-tools"]\n    }\n  }\n}',
+        code: '// connect to Claude Desktop, Cursor, VS Code\n{\n  "mcpServers": {\n    "a11y": {\n      "command": "npx",\n      "args": ["-y", "@accessibility-suite/mcp-tools"]\n    }\n  }\n}',
       },
     ],
   },
@@ -83,11 +83,11 @@ export const config: SiteConfig = {
         },
         {
           title: 'Scan HTML with provenance',
-          code: 'npm install -g @mcptoolshop/a11y-evidence-engine\na11y-engine scan ./html --out ./results',
+          code: 'npm install -g @accessibility-suite/evidence-engine\na11y-engine scan ./html --out ./results',
         },
         {
           title: 'MCP tools for AI assistants',
-          code: 'npm install -g @mcptoolshop/a11y-mcp-tools\na11y evidence --target page.html --out evidence.json\na11y diagnose --bundle evidence.json --verify-provenance',
+          code: 'npm install -g @accessibility-suite/mcp-tools\na11y evidence --target page.html --out evidence.json\na11y diagnose --bundle evidence.json --verify-provenance',
         },
       ],
     },

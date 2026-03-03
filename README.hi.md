@@ -8,7 +8,7 @@
 
 <p align="center">
   <a href="https://github.com/mcp-tool-shop-org/accessibility-suite/actions/workflows/ci.yml"><img src="https://github.com/mcp-tool-shop-org/accessibility-suite/actions/workflows/ci.yml/badge.svg" alt="CI"></a>
-  <a href="https://www.npmjs.com/package/@mcptoolshop/accessibility-suite"><img src="https://img.shields.io/npm/v/@mcptoolshop/accessibility-suite" alt="npm"></a>
+  <a href="https://www.npmjs.com/package/@accessibility-suite/core"><img src="https://img.shields.io/npm/v/@accessibility-suite/core" alt="npm"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue" alt="MIT License"></a>
   <a href="https://mcp-tool-shop-org.github.io/accessibility-suite/"><img src="https://img.shields.io/badge/Landing_Page-live-blue" alt="Landing Page"></a>
 </p>
@@ -37,10 +37,10 @@
 | परियोजना | विवरण | स्टैक | पैकेज |
 |---------|-------------|-------|---------|
 | [a11y-lint](src/a11y-lint/) | CLI आउटपुट के लिए एक्सेसिबिलिटी लिंटर - त्रुटि संदेशों को मान्य करता है ताकि वे सुलभ पैटर्न का पालन करें। | Python 3.10+ | [PyPI](https://pypi.org/project/a11y-lint/) |
-| [a11y-ci](src/a11y-ci/) | एक्सेसिबिलिटी स्कोरकार्ड के लिए CI गेट, जिसमें प्रतिगमन का पता लगाना और अनुमति सूची शामिल है। | Python 3.10+ | [PyPI](https://pypi.org/project/a11y-ci/) / [npm](https://www.npmjs.com/package/@mcptoolshop/a11y-ci) |
+| [a11y-ci](src/a11y-ci/) | एक्सेसिबिलिटी स्कोरकार्ड के लिए CI गेट, जिसमें प्रतिगमन का पता लगाना और अनुमति सूची शामिल है। | Python 3.10+ | [PyPI](https://pypi.org/project/a11y-ci/) / [npm](https://www.npmjs.com/package/@accessibility-suite/ci) |
 | [a11y-assist](src/a11y-assist/) | पांच एक्सेसिबिलिटी प्रोफाइल के साथ कम दृष्टि वाले उपयोगकर्ताओं के लिए CLI सहायक। | Python 3.10+ | [PyPI](https://pypi.org/project/a11y-assist/) |
-| [a11y-evidence-engine](src/a11y-evidence-engine/) | प्रमाण-आधारित रिकॉर्ड के साथ हेडलेस HTML स्कैनर। | Node.js 18+ | [npm](https://www.npmjs.com/package/@mcptoolshop/a11y-evidence-engine) |
-| [a11y-mcp-tools](src/a11y-mcp-tools/) | एक्सेसिबिलिटी प्रमाण कैप्चर और निदान के लिए MCP सर्वर। | Node.js 18+ | [npm](https://www.npmjs.com/package/@mcptoolshop/a11y-mcp-tools) |
+| [a11y-evidence-engine](src/a11y-evidence-engine/) | प्रमाण-आधारित रिकॉर्ड के साथ हेडलेस HTML स्कैनर। | Node.js 18+ | [npm](https://www.npmjs.com/package/@accessibility-suite/evidence-engine) |
+| [a11y-mcp-tools](src/a11y-mcp-tools/) | एक्सेसिबिलिटी प्रमाण कैप्चर और निदान के लिए MCP सर्वर। | Node.js 18+ | [npm](https://www.npmjs.com/package/@accessibility-suite/mcp-tools) |
 | [a11y-demo-site](examples/a11y-demo-site/) | एंड-टू-एंड परीक्षण के लिए जानबूझकर उल्लंघनों वाली डेमो साइट। | HTML | -- |
 
 ---
@@ -65,7 +65,7 @@ a11y-ci gate --artifact-dir .a11y_artifacts
 ### HTML को स्कैन करें और प्रमाण कैप्चर करें।
 
 ```bash
-npm install -g @mcptoolshop/a11y-evidence-engine
+npm install -g @accessibility-suite/evidence-engine
 a11y-engine scan ./html --out ./results
 ```
 
@@ -79,7 +79,7 @@ a11y-assist explain --json error.json --profile screen-reader
 ### MCP के माध्यम से प्रमाण कैप्चर करें और निदान करें।
 
 ```bash
-npm install -g @mcptoolshop/a11y-mcp-tools
+npm install -g @accessibility-suite/mcp-tools
 a11y evidence --target page.html --dom-snapshot --out evidence.json
 a11y diagnose --bundle evidence.json --verify-provenance --fix
 ```
@@ -149,7 +149,7 @@ cd examples/a11y-demo-site
   "mcpServers": {
     "a11y": {
       "command": "npx",
-      "args": ["-y", "@mcptoolshop/a11y-mcp-tools"]
+      "args": ["-y", "@accessibility-suite/mcp-tools"]
     }
   }
 }

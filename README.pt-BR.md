@@ -8,7 +8,7 @@
 
 <p align="center">
   <a href="https://github.com/mcp-tool-shop-org/accessibility-suite/actions/workflows/ci.yml"><img src="https://github.com/mcp-tool-shop-org/accessibility-suite/actions/workflows/ci.yml/badge.svg" alt="CI"></a>
-  <a href="https://www.npmjs.com/package/@mcptoolshop/accessibility-suite"><img src="https://img.shields.io/npm/v/@mcptoolshop/accessibility-suite" alt="npm"></a>
+  <a href="https://www.npmjs.com/package/@accessibility-suite/core"><img src="https://img.shields.io/npm/v/@accessibility-suite/core" alt="npm"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue" alt="MIT License"></a>
   <a href="https://mcp-tool-shop-org.github.io/accessibility-suite/"><img src="https://img.shields.io/badge/Landing_Page-live-blue" alt="Landing Page"></a>
 </p>
@@ -37,10 +37,10 @@ O conjunto de ferramentas abrange todo o ciclo de vida: analisa a saída da linh
 | Projeto | Descrição | Stack | Pacote |
 |---------|-------------|-------|---------|
 | [a11y-lint](src/a11y-lint/) | Analisador de acessibilidade para a saída da linha de comando: valida se as mensagens de erro seguem padrões de acessibilidade. | Python 3.10+ | [PyPI](https://pypi.org/project/a11y-lint/) |
-| [a11y-ci](src/a11y-ci/) | Controle de qualidade para scorecards de acessibilidade no CI, com detecção de regressões e listas de permissão. | Python 3.10+ | [PyPI](https://pypi.org/project/a11y-ci/) / [npm](https://www.npmjs.com/package/@mcptoolshop/a11y-ci) |
+| [a11y-ci](src/a11y-ci/) | Controle de qualidade para scorecards de acessibilidade no CI, com detecção de regressões e listas de permissão. | Python 3.10+ | [PyPI](https://pypi.org/project/a11y-ci/) / [npm](https://www.npmjs.com/package/@accessibility-suite/ci) |
 | [a11y-assist](src/a11y-assist/) | Assistente de linha de comando com foco em usuários com baixa visão, com cinco perfis de acessibilidade. | Python 3.10+ | [PyPI](https://pypi.org/project/a11y-assist/) |
-| [a11y-evidence-engine](src/a11y-evidence-engine/) | Scanner HTML sem interface gráfica, com registros de rastreabilidade. | Node.js 18+ | [npm](https://www.npmjs.com/package/@mcptoolshop/a11y-evidence-engine) |
-| [a11y-mcp-tools](src/a11y-mcp-tools/) | Servidor MCP para captura e diagnóstico de evidências de acessibilidade. | Node.js 18+ | [npm](https://www.npmjs.com/package/@mcptoolshop/a11y-mcp-tools) |
+| [a11y-evidence-engine](src/a11y-evidence-engine/) | Scanner HTML sem interface gráfica, com registros de rastreabilidade. | Node.js 18+ | [npm](https://www.npmjs.com/package/@accessibility-suite/evidence-engine) |
+| [a11y-mcp-tools](src/a11y-mcp-tools/) | Servidor MCP para captura e diagnóstico de evidências de acessibilidade. | Node.js 18+ | [npm](https://www.npmjs.com/package/@accessibility-suite/mcp-tools) |
 | [a11y-demo-site](examples/a11y-demo-site/) | Site de demonstração com violações intencionais para testes de ponta a ponta. | HTML | -- |
 
 ---
@@ -65,7 +65,7 @@ a11y-ci gate --artifact-dir .a11y_artifacts
 ### Verifique o HTML e capture a rastreabilidade
 
 ```bash
-npm install -g @mcptoolshop/a11y-evidence-engine
+npm install -g @accessibility-suite/evidence-engine
 a11y-engine scan ./html --out ./results
 ```
 
@@ -79,7 +79,7 @@ a11y-assist explain --json error.json --profile screen-reader
 ### Capture evidências e diagnostique problemas através do MCP
 
 ```bash
-npm install -g @mcptoolshop/a11y-mcp-tools
+npm install -g @accessibility-suite/mcp-tools
 a11y evidence --target page.html --dom-snapshot --out evidence.json
 a11y diagnose --bundle evidence.json --verify-provenance --fix
 ```
@@ -149,7 +149,7 @@ Para conectar a11y-mcp-tools ao seu cliente MCP (Claude Desktop, Cursor, VS Code
   "mcpServers": {
     "a11y": {
       "command": "npx",
-      "args": ["-y", "@mcptoolshop/a11y-mcp-tools"]
+      "args": ["-y", "@accessibility-suite/mcp-tools"]
     }
   }
 }

@@ -8,7 +8,7 @@
 
 <p align="center">
   <a href="https://github.com/mcp-tool-shop-org/accessibility-suite/actions/workflows/ci.yml"><img src="https://github.com/mcp-tool-shop-org/accessibility-suite/actions/workflows/ci.yml/badge.svg" alt="CI"></a>
-  <a href="https://www.npmjs.com/package/@mcptoolshop/accessibility-suite"><img src="https://img.shields.io/npm/v/@mcptoolshop/accessibility-suite" alt="npm"></a>
+  <a href="https://www.npmjs.com/package/@accessibility-suite/core"><img src="https://img.shields.io/npm/v/@accessibility-suite/core" alt="npm"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue" alt="MIT License"></a>
   <a href="https://mcp-tool-shop-org.github.io/accessibility-suite/"><img src="https://img.shields.io/badge/Landing_Page-live-blue" alt="Landing Page"></a>
 </p>
@@ -37,10 +37,10 @@ The suite spans the full lifecycle -- lint CLI output for accessible patterns, s
 | Project | Description | Stack | Package |
 |---------|-------------|-------|---------|
 | [a11y-lint](src/a11y-lint/) | Accessibility linter for CLI output -- validates error messages follow accessible patterns | Python 3.10+ | [PyPI](https://pypi.org/project/a11y-lint/) |
-| [a11y-ci](src/a11y-ci/) | CI gate for accessibility scorecards with regression detection and allowlists | Python 3.10+ | [PyPI](https://pypi.org/project/a11y-ci/) / [npm](https://www.npmjs.com/package/@mcptoolshop/a11y-ci) |
+| [a11y-ci](src/a11y-ci/) | CI gate for accessibility scorecards with regression detection and allowlists | Python 3.10+ | [PyPI](https://pypi.org/project/a11y-ci/) / [npm](https://www.npmjs.com/package/@accessibility-suite/ci) |
 | [a11y-assist](src/a11y-assist/) | Low-vision-first CLI assistant with five accessibility profiles | Python 3.10+ | [PyPI](https://pypi.org/project/a11y-assist/) |
-| [a11y-evidence-engine](src/a11y-evidence-engine/) | Headless HTML scanner with prov-spec provenance records | Node.js 18+ | [npm](https://www.npmjs.com/package/@mcptoolshop/a11y-evidence-engine) |
-| [a11y-mcp-tools](src/a11y-mcp-tools/) | MCP server for accessibility evidence capture and diagnosis | Node.js 18+ | [npm](https://www.npmjs.com/package/@mcptoolshop/a11y-mcp-tools) |
+| [a11y-evidence-engine](src/a11y-evidence-engine/) | Headless HTML scanner with prov-spec provenance records | Node.js 18+ | [npm](https://www.npmjs.com/package/@accessibility-suite/evidence-engine) |
+| [a11y-mcp-tools](src/a11y-mcp-tools/) | MCP server for accessibility evidence capture and diagnosis | Node.js 18+ | [npm](https://www.npmjs.com/package/@accessibility-suite/mcp-tools) |
 | [a11y-demo-site](examples/a11y-demo-site/) | Demo site with intentional violations for end-to-end testing | HTML | -- |
 
 ---
@@ -65,7 +65,7 @@ a11y-ci gate --artifact-dir .a11y_artifacts
 ### Scan HTML and capture provenance
 
 ```bash
-npm install -g @mcptoolshop/a11y-evidence-engine
+npm install -g @accessibility-suite/evidence-engine
 a11y-engine scan ./html --out ./results
 ```
 
@@ -79,7 +79,7 @@ a11y-assist explain --json error.json --profile screen-reader
 ### Capture evidence and diagnose via MCP
 
 ```bash
-npm install -g @mcptoolshop/a11y-mcp-tools
+npm install -g @accessibility-suite/mcp-tools
 a11y evidence --target page.html --dom-snapshot --out evidence.json
 a11y diagnose --bundle evidence.json --verify-provenance --fix
 ```
@@ -149,7 +149,7 @@ To connect a11y-mcp-tools to your MCP client (Claude Desktop, Cursor, VS Code, e
   "mcpServers": {
     "a11y": {
       "command": "npx",
-      "args": ["-y", "@mcptoolshop/a11y-mcp-tools"]
+      "args": ["-y", "@accessibility-suite/mcp-tools"]
     }
   }
 }

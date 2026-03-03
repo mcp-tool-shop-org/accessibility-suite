@@ -1,6 +1,6 @@
-# @mcptoolshop/a11y-ci
+# @accessibility-suite/ci
 
-[![npm](https://img.shields.io/npm/v/@mcptoolshop/a11y-ci)](https://www.npmjs.com/package/@mcptoolshop/a11y-ci)
+[![npm](https://img.shields.io/npm/v/@accessibility-suite/ci)](https://www.npmjs.com/package/@accessibility-suite/ci)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/mcp-tool-shop-org/accessibility-suite/blob/main/LICENSE)
 
 **npm wrapper for [a11y-ci](https://github.com/mcp-tool-shop-org/accessibility-suite/tree/main/src/a11y-ci) — CI gate for accessibility scorecards.**
@@ -8,7 +8,7 @@
 ## Install
 
 ```bash
-npm install @mcptoolshop/a11y-ci
+npm install @accessibility-suite/ci
 ```
 
 This package provides a CLI wrapper that installs and delegates to the Python `a11y-ci` tool from the [accessibility-suite](https://github.com/mcp-tool-shop-org/accessibility-suite) monorepo.
@@ -16,9 +16,9 @@ This package provides a CLI wrapper that installs and delegates to the Python `a
 ## Usage
 
 ```bash
-npx @mcptoolshop/a11y-ci --help
-npx @mcptoolshop/a11y-ci scan ./my-site
-npx @mcptoolshop/a11y-ci report --format json
+npx @accessibility-suite/ci --help
+npx @accessibility-suite/ci scan ./my-site
+npx @accessibility-suite/ci report --format json
 ```
 
 ## What is a11y-ci?
