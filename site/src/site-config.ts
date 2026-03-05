@@ -15,7 +15,7 @@ export const config: SiteConfig = {
     headlineAccent: 'with receipts.',
     description: 'Six tools. One mission: make accessibility testing verifiable, automated, and hard to ignore.',
     primaryCta: { href: '#usage', label: 'Get started' },
-    secondaryCta: { href: '#tools', label: 'See the tools' },
+    secondaryCta: { href: 'handbook/', label: 'Read the Handbook' },
     previews: [
       {
         label: 'Lint & gate',
