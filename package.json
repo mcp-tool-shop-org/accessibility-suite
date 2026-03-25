@@ -1,6 +1,6 @@
 {
   "name": "@accessibility-suite/core",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Unified monorepo for accessibility testing, evidence generation, and compliance tooling",
   "keywords": [
     "accessibility",
@@ -19,6 +19,10 @@
     "url": "git+https://github.com/mcp-tool-shop-org/accessibility-suite.git"
   },
   "homepage": "https://github.com/mcp-tool-shop-org/accessibility-suite#readme",
+  "scripts": {
+    "test": "bash scripts/verify.sh",
+    "verify": "bash scripts/verify.sh"
+  },
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org"

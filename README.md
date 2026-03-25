@@ -91,6 +91,16 @@ cd examples/a11y-demo-site
 ./scripts/a11y.sh
 ```
 
+### Run all tests locally
+
+```bash
+npm test
+# or
+./scripts/verify.sh
+```
+
+This runs pytest for the three Python projects, npm test for the two Node.js projects, and verifies handbooks.
+
 ---
 
 ## Architecture
