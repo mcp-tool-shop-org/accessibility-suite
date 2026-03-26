@@ -17,5 +17,6 @@ The Accessibility Suite is a monorepo containing six tools that form a pipeline 
 - **[MCP Integration](/accessibility-suite/handbook/mcp-integration/)** -- Connect the suite to Claude Desktop, Cursor, or VS Code
 - **[CI Integration](/accessibility-suite/handbook/ci-integration/)** -- Gate your pipeline on accessibility regressions
 - **[Reference](/accessibility-suite/handbook/reference/)** -- Full command reference, exit codes, error IDs, and schemas
+- **[For Beginners](/accessibility-suite/handbook/beginners/)** -- New to accessibility testing? Start here
 
 [Back to landing page](/accessibility-suite/)
