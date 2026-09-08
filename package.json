@@ -1,6 +1,7 @@
 {
   "name": "@accessibility-suite/core",
   "version": "1.0.1",
+  "private": true,
   "description": "Unified monorepo for accessibility testing, evidence generation, and compliance tooling",
   "keywords": [
     "accessibility",
