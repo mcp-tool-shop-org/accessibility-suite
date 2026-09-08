@@ -5,6 +5,31 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.0.2] - 2026-09-07
+
+### Fixed
+
+- **The README advertised seven packages that do not exist.** Install commands for
+  `@accessibility-suite/{core,ci,evidence-engine,mcp-tools}` and PyPI
+  `a11y-{lint,ci,assist}` all 404, and the npm version badge pointed at a package
+  with no versions. Anyone following the Quick Start got seven failures. Every
+  command now installs from this repository, the Distribution column reads
+  `source only`, and the MCP client snippet points at
+  `src/a11y-mcp-tools/bin/server.js` instead of telling clients to `npx` a package
+  that was never published. Translations regenerated to match.
+
+### Changed
+
+- **Root package is `private: true`.** It is a monorepo umbrella with no `main`,
+  `bin`, `exports` or `files`; publishing it would have shipped the entire working
+  tree -- `site/`, `docs/`, `examples/`, `pipelines/`, `tools/` and
+  `.a11y_artifacts_test/` -- as the first artifact ever to appear under the
+  `@accessibility-suite` scope.
+- **`publish.yml` no longer fires on `release: published`.** With a live `NPM_TOKEN`
+  on the repo since 2026-03-03, creating a GitHub Release ran `npm publish`. Since
+  tag `v1.0.0` had no Release, the obvious housekeeping fix was also the trigger.
+  Manual dispatch only until the suite genuinely ships.
+
 ## [1.0.1] - 2026-03-25
 
 ### Added

@@ -8,94 +8,107 @@
 
 <p align="center">
   <a href="https://github.com/mcp-tool-shop-org/accessibility-suite/actions/workflows/ci.yml"><img src="https://github.com/mcp-tool-shop-org/accessibility-suite/actions/workflows/ci.yml/badge.svg" alt="CI"></a>
-  <a href="https://www.npmjs.com/package/@accessibility-suite/core"><img src="https://img.shields.io/npm/v/@accessibility-suite/core" alt="npm"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue" alt="MIT License"></a>
   <a href="https://mcp-tool-shop-org.github.io/accessibility-suite/"><img src="https://img.shields.io/badge/Landing_Page-live-blue" alt="Landing Page"></a>
 </p>
 
-Sei strumenti. Un'unica missione: rendere i test di accessibilità verificabili, automatizzati e difficili da ignorare.
+Sei strumenti. Una missione: rendere i test di accessibilità verificabili, automatizzati e difficili da ignorare.
+
+> **Esegui dal codice sorgente.** Al momento, nulla di questa suite è pubblicato su npm o PyPI. Ogni comando
+> riportato di seguito viene installato da questo repository. I nomi dei pacchetti in `package.json` e
+> `pyproject.toml` di ciascuno strumento sono i nomi previsti per la pubblicazione, non i link che è possibile installare oggi.
 
 ---
 
-## Panoramica
+## In sintesi
 
-La maggior parte degli strumenti di accessibilità si limita a indicare "hai 12 violazioni". Accessibility Suite va oltre: registra prove verificabili di ciò che è stato testato, integra i controlli di regressione nella pipeline CI e fornisce suggerimenti per la correzione, ottimizzati per utenti con problemi di vista, lettori di schermo, dislessia e carichi cognitivi.
+La maggior parte degli strumenti di accessibilità si ferma a "hai 12 violazioni". La Suite di accessibilità va oltre: registra prove inconfutabili di ciò che è stato testato, imposta dei controlli nella pipeline CI per rilevare regressioni e fornisce indicazioni per la correzione, adattate a profili di utenti con problemi di vista, lettori di schermo, dislessia e sovraccarico cognitivo.
 
-La suite copre l'intero ciclo di vita: analizza l'output della CLI per individuare modelli di accessibilità, esamina il codice HTML per violazioni delle linee guida WCAG con informazioni sull'origine, applica controlli di qualità nella pipeline CI e rende tutto disponibile tramite MCP, in modo che gli assistenti AI possano partecipare al processo di correzione.
+La suite copre l'intero ciclo di vita: analizza l'output CLI per individuare modelli accessibili, esegue la scansione di HTML alla ricerca di violazioni WCAG con una provenienza crittografica, applica controlli di qualità nella CI ed espone tutto tramite MCP in modo che gli assistenti AI possano partecipare al processo di correzione.
 
 **Principi chiave:**
 
-- **Prove, non asserzioni:** ogni riscontro è supportato da un record di provenienza con checksum SHA-256.
-- **Priorità per utenti con problemi di vista:** tutti gli strumenti della CLI utilizzano la convenzione `[OK]/[WARN]/[FAIL] + Cosa/Perché/Come risolvere`.
-- **Determinismo:** lo stesso input produce sempre lo stesso output; non ci sono chiamate di rete, non c'è casualità.
-- **Integrazione nativa con CI:** codici di uscita, file JSON per i report e commenti per le richieste di pull, progettati per pipeline automatizzate.
+- **Prove anziché asserzioni:** ogni risultato è supportato da una registrazione della provenienza conforme alle specifiche, con digest di integrità SHA-256.
+- **Output ottimizzato per utenti con problemi di vista:** tutti gli strumenti CLI utilizzano il contratto `[OK]/[WARN]/[FAIL] + What/Why/Fix`.
+- **Deterministico:** lo stesso input produce sempre lo stesso output; non vengono effettuate chiamate di rete, non c'è casualità.
+- **Nativo per la CI:** codici di uscita, scorecard JSON e commenti PR progettati per pipeline automatizzate.
 
 ---
 
 ## Progetti
 
-| Progetto | Descrizione | Tecnologie utilizzate | Pacchetto |
-|---------|-------------|-------|---------|
-| [a11y-lint](src/a11y-lint/) | Analizzatore di accessibilità per l'output della CLI: verifica che i messaggi di errore seguano modelli di accessibilità. | Python 3.10+ | [PyPI](https://pypi.org/project/a11y-lint/) |
-| [a11y-ci](src/a11y-ci/) | Controllo di accessibilità per i report CI, con rilevamento di regressioni e liste di consentiti. | Python 3.10+ | [PyPI](https://pypi.org/project/a11y-ci/) / [npm](https://www.npmjs.com/package/@accessibility-suite/ci) |
-| [a11y-assist](src/a11y-assist/) | Assistente CLI per utenti con problemi di vista, con cinque profili di accessibilità. | Python 3.10+ | [PyPI](https://pypi.org/project/a11y-assist/) |
-| [a11y-evidence-engine](src/a11y-evidence-engine/) | Scanner HTML senza interfaccia utente, con record di provenienza. | Node.js 18+ | [npm](https://www.npmjs.com/package/@accessibility-suite/evidence-engine) |
-| [a11y-mcp-tools](src/a11y-mcp-tools/) | Server MCP per la raccolta e la diagnosi di informazioni sull'accessibilità. | Node.js 18+ | [npm](https://www.npmjs.com/package/@accessibility-suite/mcp-tools) |
-| [a11y-demo-site](examples/a11y-demo-site/) | Sito dimostrativo con violazioni intenzionali per test end-to-end. | HTML | -- |
+| Progetto | Descrizione | Stack | Distribuzione |
+|---------|-------------|-------|--------------|
+| [a11y-lint](src/a11y-lint/) | Linter di accessibilità per l'output CLI: verifica che i messaggi di errore seguano modelli accessibili. | Python 3.10+ | solo codice sorgente |
+| [a11y-ci](src/a11y-ci/) | Controllo CI per scorecard di accessibilità con rilevamento di regressioni e liste di elementi consentiti. | Python 3.10+ | solo codice sorgente |
+| [a11y-assist](src/a11y-assist/) | Assistente CLI ottimizzato per utenti con problemi di vista, con cinque profili di accessibilità. | Python 3.10+ | solo codice sorgente |
+| [a11y-evidence-engine](src/a11y-evidence-engine/) | Scanner HTML senza interfaccia utente con registrazioni della provenienza conformi alle specifiche. | Node.js 18+ | solo codice sorgente |
+| [a11y-mcp-tools](src/a11y-mcp-tools/) | Server MCP per la cattura e la diagnosi di prove di accessibilità. | Node.js 18+ | solo codice sorgente |
+| [a11y-demo-site](examples/a11y-demo-site/) | Sito di esempio con violazioni intenzionali per test end-to-end. | HTML | -- |
 
 ---
 
-## Guida rapida
+## Avvio rapido
 
-### Analizza l'output della CLI per individuare modelli di accessibilità
+### Analizza l'output CLI per individuare modelli accessibili
 
 ```bash
 pip install a11y-lint
 a11y-lint scan output.txt
 ```
 
-### Integra i controlli di accessibilità nella pipeline CI
+### Imposta dei controlli nella CI per le regressioni di accessibilità
 
 ```bash
-pip install a11y-ci
+pip install ./src/a11y-lint ./src/a11y-ci
 a11y-lint scan . --artifact-dir .a11y_artifacts
 a11y-ci gate --artifact-dir .a11y_artifacts
 ```
 
-### Scansiona il codice HTML e registra le informazioni sull'origine
+### Esegue la scansione di HTML e registra la provenienza
 
 ```bash
-npm install -g @accessibility-suite/evidence-engine
-a11y-engine scan ./html --out ./results
+npm --prefix src/a11y-evidence-engine install
+node src/a11y-evidence-engine/bin/a11y-engine.js scan ./html --out ./results
 ```
 
-### Ottieni suggerimenti per la correzione di errori nella CLI
+### Ottieni indicazioni per la correzione di un errore CLI
 
 ```bash
-pip install a11y-assist
+pip install ./src/a11y-assist
 a11y-assist explain --json error.json --profile screen-reader
 ```
 
-### Raccogli prove e diagnostica tramite MCP
+### Cattura prove ed esegui la diagnosi tramite MCP
 
 ```bash
-npm install -g @accessibility-suite/mcp-tools
-a11y evidence --target page.html --dom-snapshot --out evidence.json
-a11y diagnose --bundle evidence.json --verify-provenance --fix
+npm --prefix src/a11y-mcp-tools install
+node src/a11y-mcp-tools/bin/cli.js evidence --target page.html --dom-snapshot --out evidence.json
+node src/a11y-mcp-tools/bin/cli.js diagnose --bundle evidence.json --verify-provenance --fix
 ```
 
-### Esegui il sito dimostrativo end-to-end
+### Esegui il sito di esempio end-to-end
 
 ```bash
 cd examples/a11y-demo-site
 ./scripts/a11y.sh
 ```
 
+### Esegui tutti i test localmente
+
+```bash
+npm test
+# or
+./scripts/verify.sh
+```
+
+Questo esegue pytest per i tre progetti Python, npm test per i due progetti Node.js e verifica i manuali.
+
 ---
 
 ## Architettura
 
-I sei strumenti formano una pipeline che va dalla rilevazione alla correzione:
+I sei strumenti formano una pipeline che va dal rilevamento alla correzione:
 
 ```
                         CLI output                HTML files
@@ -124,38 +137,38 @@ I sei strumenti formano una pipeline che va dalla rilevazione alla correzione:
 
 **Flusso dei dati:**
 
-1. **a11y-lint** analizza il testo della CLI per individuare modelli di errori di accessibilità e genera un report.
-2. **a11y-evidence-engine** analizza i file HTML e segnala i problemi, registrando le informazioni sull'origine.
-3. **a11y-ci** elabora i report, applica le soglie, rileva le regressioni e genera commenti per le richieste di pull.
-4. **a11y-mcp-tools** incapsula la raccolta di prove e la diagnostica come strumenti MCP per l'integrazione con gli assistenti AI.
-5. **a11y-assist** riceve i risultati (file JSON strutturati o testo non strutturato) e genera suggerimenti per la correzione, in base a cinque profili di accessibilità.
-6. **a11y-demo-site** mette tutto insieme come un esempio funzionante con violazioni intenzionali.
+1. **a11y-lint** esegue la scansione del testo CLI alla ricerca di modelli di messaggi di errore accessibili e produce una scorecard.
+2. **a11y-evidence-engine** esegue la scansione dei file HTML ed emette risultati con registrazioni della provenienza conformi alle specifiche.
+3. **a11y-ci** utilizza le scorecard, applica le soglie, rileva le regressioni e genera commenti PR.
+4. **a11y-mcp-tools** racchiude la cattura delle prove e la diagnosi come strumenti MCP per l'integrazione con l'assistente AI.
+5. **a11y-assist** utilizza i risultati (JSON strutturato o testo non elaborato) e genera indicazioni per la correzione in cinque profili di accessibilità.
+6. **a11y-demo-site** collega tutto in un esempio eseguibile con violazioni intenzionali.
 
-**Interfacce comuni:**
+**Contratti condivisi:**
 
-- `cli.error.schema.v0.1.json` -- formato standardizzato per i messaggi di errore in tutti gli strumenti Python.
-- `evidence.bundle.schema.v0.1.json` -- pacchetti di prove con catene di informazioni sull'origine.
-- `.a11y_artifacts/` -- directory unificata per gli artefatti utilizzati nelle pipeline CI.
-- ID dei metodi di provenienza: identificatori stabili e versionati per ogni passaggio di provenienza.
+- `cli.error.schema.v0.1.json`: formato di errore strutturato utilizzato in tutti gli strumenti Python.
+- `evidence.bundle.schema.v0.1.json`: pacchetti di prove con catene di provenienza.
+- `.a11y_artifacts/`: directory di artefatti unificata per le pipeline CI.
+- ID del metodo prov-spec: identificatori stabili e con controllo delle versioni per ogni passaggio della provenienza.
 
 ---
 
 ## Configurazione del client MCP
 
-Per collegare a11y-mcp-tools al client MCP (Claude Desktop, Cursor, VS Code, ecc.):
+Per connettere a11y-mcp-tools al client MCP (Claude Desktop, Cursor, VS Code, ecc.):
 
 ```json
 {
   "mcpServers": {
     "a11y": {
-      "command": "npx",
-      "args": ["-y", "@accessibility-suite/mcp-tools"]
+      "command": "node",
+      "args": ["/absolute/path/to/accessibility-suite/src/a11y-mcp-tools/bin/server.js"]
     }
   }
 }
 ```
 
-Oppure, se installato globalmente:
+Oppure, dopo `npm --prefix src/a11y-mcp-tools link`:
 
 ```json
 {
@@ -171,12 +184,12 @@ Il server espone due strumenti:
 
 | Strumento | Descrizione |
 |------|-------------|
-| `a11y.evidence` | Raccoglie pacchetti di prove verificabili da HTML, log della CLI o altre fonti. |
-| `a11y.diagnose` | Esegue controlli delle regole WCAG sui pacchetti di prove, verificando le informazioni sull'origine. |
+| `a11y.evidence` | Cattura pacchetti di prove inconfutabili da HTML, log CLI o altri input. |
+| `a11y.diagnose` | Esegue controlli delle regole WCAG sui pacchetti di prove con verifica della provenienza. |
 
 ---
 
-## Integrazione con CI (GitHub Actions)
+## Integrazione CI (GitHub Actions)
 
 ```yaml
 jobs:
@@ -197,7 +210,7 @@ jobs:
           fail-on: serious
 ```
 
-Consultare il file [GETTING_STARTED.md](GETTING_STARTED.md) per esempi di Azure DevOps e per la risoluzione dei problemi.
+Consulta [GETTING_STARTED.md](GETTING_STARTED.md) per esempi e risoluzione dei problemi di Azure DevOps.
 
 ---
 
@@ -205,29 +218,29 @@ Consultare il file [GETTING_STARTED.md](GETTING_STARTED.md) per esempi di Azure 
 
 | Documento | Descrizione |
 |----------|-------------|
-| [HANDBOOK.md](HANDBOOK.md) | Analisi approfondita dell'architettura, modelli di integrazione e guida per gli sviluppatori. |
-| [GETTING_STARTED.md](GETTING_STARTED.md) | Configurazione locale con tre comandi, modelli CI e risoluzione dei problemi. |
-| [CHANGELOG.md](CHANGELOG.md) | Cronologia delle versioni in formato "Keep a Changelog". |
-| [docs/unified-artifacts.md](docs/unified-artifacts.md) | Strategia unificata per le directory degli artefatti. |
-| [docs/prov-spec/](docs/prov-spec/) | Specifiche di provenienza. |
+| [HANDBOOK.md](HANDBOOK.md) | Analisi approfondita dell'architettura, modelli di integrazione e guida allo sviluppo. |
+| [GETTING_STARTED.md](GETTING_STARTED.md) | Configurazione locale in tre passaggi, modelli CI e risoluzione dei problemi. |
+| [CHANGELOG.md](CHANGELOG.md) | Cronologia delle versioni in formato Keep a Changelog. |
+| [docs/unified-artifacts.md](docs/unified-artifacts.md) | Strategia di directory di artefatti unificata. |
+| [docs/prov-spec/](docs/prov-spec/) | Specifiche della provenienza. |
 
 ---
 
 ## Sicurezza e ambito dei dati
 
-- **Dati accessibili:** Legge file HTML, output della CLI e file JSON relativi alle scorecard per l'analisi dell'accessibilità. Cattura istantanee del DOM e genera pacchetti di evidenze.
-- **Dati NON accessibili:** Nessuna richiesta di rete. Nessuna telemetria. Nessun archivio di dati utente. Nessuna credenziale o token.
-- **Autorizzazioni richieste:** Accesso in lettura ai file di destinazione. Accesso in scrittura per le directory di output delle evidenze/artefatti.
+- **Dati a cui si accede:** legge i file HTML, l'output CLI e il JSON della scorecard per l'analisi dell'accessibilità. Cattura gli snapshot del DOM e genera pacchetti di prove.
+- **Dati a cui NON si accede:** non vengono effettuate richieste di rete. Non viene raccolto alcun dato di telemetria. Non vengono archiviati dati utente. Non vengono archiviati credenziali o token.
+- **Autorizzazioni richieste:** accesso in lettura ai file di destinazione. Accesso in scrittura per le directory di output delle prove/artefatti.
 
 ## Scorecard
 
-| Gate | Stato |
+| Controllo | Stato |
 |------|--------|
-| A. Baseline di sicurezza | PASS (Superato) |
-| B. Gestione degli errori | PASS (Superato) |
-| C. Documentazione per gli operatori | PASS (Superato) |
-| D. Igiene del rilascio | PASS (Superato) |
-| E. Identità | PASS (Superato) |
+| A. Baseline di sicurezza | PASSATO |
+| B. Gestione degli errori | PASSATO |
+| C. Documentazione per l'operatore | PASSATO |
+| D. Pratiche di rilascio | PASSATO |
+| E. Identità | PASSATO |
 
 ## Licenza
 
@@ -235,4 +248,4 @@ Consultare il file [GETTING_STARTED.md](GETTING_STARTED.md) per esempi di Azure 
 
 ---
 
-Creato da <a href="https://mcp-tool-shop.github.io/">MCP Tool Shop</a>
+Realizzato da <a href="https://mcp-tool-shop.github.io/">MCP Tool Shop</a>

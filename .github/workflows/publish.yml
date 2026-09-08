@@ -1,8 +1,14 @@
 name: Publish to npm
 
+# Nothing in this suite is published yet: the root package is `private: true`
+# (it is a monorepo umbrella with no main/bin/files), and none of the sub-package
+# names exist on npm or PyPI. Firing on `release: published` therefore turned every
+# GitHub Release into a guaranteed-failing npm publish -- and before the root was
+# marked private, into a whole-repo tarball published under a scope with nothing
+# in it. Manual dispatch only until the suite genuinely ships; at that point this
+# should be rewritten onto the org's OIDC trusted-publishing template and renamed
+# release.yml, which is the filename npm binds a trusted publisher to.
 on:
-  release:
-    types: [published]
   workflow_dispatch:
 
 concurrency:
