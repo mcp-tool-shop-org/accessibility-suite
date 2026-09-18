@@ -23,6 +23,9 @@ on:
       - "pyproject.toml"
       - "docs/**"
       - ".github/workflows/**"
+      - "site/package.json"
+      - "site/package-lock.json"
+      - "site/astro.config.mjs"
       - ".github/actions/**"
   pull_request:
     branches: [main]
@@ -35,6 +38,9 @@ on:
       - "pyproject.toml"
       - "docs/**"
       - ".github/workflows/**"
+      - "site/package.json"
+      - "site/package-lock.json"
+      - "site/astro.config.mjs"
       - ".github/actions/**"
   workflow_dispatch:
 
