@@ -1,0 +1,396 @@
+{
+  "authored": [
+    ".a11y_artifacts_test/",
+    ".github/",
+    "assets/",
+    "examples/",
+    "pipelines/",
+    "root",
+    "site/"
+  ],
+  "breaks": [
+    {
+      "doors": 2,
+      "importedBy": [],
+      "importedByTests": [],
+      "kind": "part",
+      "name": "a11y-assist",
+      "partLabel": "a11y-assist"
+    },
+    {
+      "doors": 2,
+      "importedBy": [],
+      "importedByTests": [],
+      "kind": "part",
+      "name": "a11y-ci",
+      "partLabel": "a11y-ci"
+    },
+    {
+      "doors": 2,
+      "importedBy": [],
+      "importedByTests": [],
+      "kind": "part",
+      "name": "a11y-lint",
+      "partLabel": "a11y-lint"
+    },
+    {
+      "doors": 2,
+      "importedBy": [],
+      "importedByTests": [],
+      "kind": "part",
+      "name": "scripts",
+      "partLabel": "scripts"
+    }
+  ],
+  "changes": {
+    "first": true
+  },
+  "changesTogether": [],
+  "changesTogetherNote": [
+    "Window: 180 days; a pair counts from 3 shared commits, since the window holds fewer than 30 qualifying commits."
+  ],
+  "changesTogetherWithTests": 0,
+  "commit": "cfd473031af46bf03580740ed960852f512b317c",
+  "defaultBranch": "main",
+  "derived": "15 parts, mostly Python (74 files), JavaScript (32) and TypeScript (2). Work enters through 7 doors; the busiest is CI, which reaches 3 parts. It publishes to npm. People run a11y-assist, a11y-ci, a11y-lint and assist-run.",
+  "doors": [
+    {
+      "checks": [],
+      "checksCount": 0,
+      "checksMore": 0,
+      "file": ".github/workflows/ci.yml",
+      "id": ".github/workflows/ci.yml",
+      "landings": [
+        "docs/baselines/a11y.scorecard.json"
+      ],
+      "name": "CI",
+      "pushes": false,
+      "reach": [
+        {
+          "boundary": "a11y-ci",
+          "depth": 0,
+          "files": 11
+        },
+        {
+          "boundary": "a11y-lint",
+          "depth": 0,
+          "files": 8
+        },
+        {
+          "boundary": "scripts",
+          "depth": 0,
+          "files": 1
+        }
+      ],
+      "runs": [
+        "scripts/verify_handbooks.py",
+        "src/a11y-ci/a11y_ci/cli.py",
+        "src/a11y-lint/a11y_lint/cli.py"
+      ],
+      "runsCount": 3,
+      "runsMore": 0,
+      "sends": [
+        "commits docs/baselines/a11y.scorecard.json and pushes when run by hand"
+      ],
+      "stages": [],
+      "triggers": [
+        "on a pull request to main touching 13 paths",
+        "on a push to main touching 13 paths",
+        "or by hand"
+      ],
+      "untracked": "src/a11y-ci/report.json, which is not tracked"
+    },
+    {
+      "checks": [],
+      "checksCount": 0,
+      "checksMore": 0,
+      "file": ".github/workflows/pages.yml",
+      "id": ".github/workflows/pages.yml",
+      "landings": [],
+      "name": "Deploy site to GitHub Pages",
+      "pushes": false,
+      "reach": [
+        {
+          "boundary": "site",
+          "depth": 0,
+          "files": 3
+        }
+      ],
+      "runs": [
+        "site/astro.config.mjs",
+        "site/src/"
+      ],
+      "runsCount": 2,
+      "runsMore": 0,
+      "sends": [
+        "deploys the site"
+      ],
+      "stages": [],
+      "triggers": [
+        "on a push to main touching 2 paths",
+        "or by hand"
+      ]
+    },
+    {
+      "checks": [],
+      "checksCount": 0,
+      "checksMore": 0,
+      "file": ".github/workflows/publish.yml",
+      "id": ".github/workflows/publish.yml",
+      "landings": [],
+      "name": "Publish to npm",
+      "pushes": false,
+      "reach": [
+        {
+          "boundary": "scripts",
+          "depth": 0,
+          "files": 2
+        }
+      ],
+      "runs": [
+        "scripts/verify.sh",
+        "scripts/verify_handbooks.py"
+      ],
+      "runsCount": 2,
+      "runsMore": 0,
+      "sends": [
+        "publishes to npm"
+      ],
+      "stages": [],
+      "triggers": [
+        "by hand"
+      ]
+    },
+    {
+      "checks": [],
+      "checksCount": 0,
+      "checksMore": 0,
+      "file": "src/a11y-assist/pyproject.toml",
+      "id": "src/a11y-assist/pyproject.toml#a11y-assist",
+      "kind": "command",
+      "landings": [],
+      "name": "a11y-assist",
+      "pushes": false,
+      "reach": [
+        {
+          "boundary": "a11y-assist",
+          "depth": 0,
+          "files": 18
+        }
+      ],
+      "runs": [
+        "src/a11y-assist/a11y_assist/cli.py"
+      ],
+      "runsCount": 1,
+      "runsMore": 0,
+      "sends": [],
+      "stages": [],
+      "triggers": []
+    },
+    {
+      "checks": [],
+      "checksCount": 0,
+      "checksMore": 0,
+      "file": "src/a11y-ci/pyproject.toml",
+      "id": "src/a11y-ci/pyproject.toml#a11y-ci",
+      "kind": "command",
+      "landings": [],
+      "name": "a11y-ci",
+      "pushes": false,
+      "reach": [
+        {
+          "boundary": "a11y-ci",
+          "depth": 0,
+          "files": 11
+        }
+      ],
+      "runs": [
+        "src/a11y-ci/a11y_ci/cli.py"
+      ],
+      "runsCount": 1,
+      "runsMore": 0,
+      "sends": [],
+      "stages": [],
+      "triggers": []
+    },
+    {
+      "checks": [],
+      "checksCount": 0,
+      "checksMore": 0,
+      "file": "src/a11y-lint/pyproject.toml",
+      "id": "src/a11y-lint/pyproject.toml#a11y-lint",
+      "kind": "command",
+      "landings": [],
+      "name": "a11y-lint",
+      "pushes": false,
+      "reach": [
+        {
+          "boundary": "a11y-lint",
+          "depth": 0,
+          "files": 8
+        }
+      ],
+      "runs": [
+        "src/a11y-lint/a11y_lint/cli.py"
+      ],
+      "runsCount": 1,
+      "runsMore": 0,
+      "sends": [],
+      "stages": [],
+      "triggers": []
+    },
+    {
+      "checks": [],
+      "checksCount": 0,
+      "checksMore": 0,
+      "file": "src/a11y-assist/pyproject.toml",
+      "id": "src/a11y-assist/pyproject.toml#assist-run",
+      "kind": "command",
+      "landings": [],
+      "name": "assist-run",
+      "pushes": false,
+      "reach": [
+        {
+          "boundary": "a11y-assist",
+          "depth": 0,
+          "files": 18
+        }
+      ],
+      "runs": [
+        "src/a11y-assist/a11y_assist/cli.py"
+      ],
+      "runsCount": 1,
+      "runsMore": 0,
+      "sends": [],
+      "stages": [],
+      "triggers": []
+    }
+  ],
+  "duplicates": [
+    {
+      "contract": true,
+      "files": [
+        "src/a11y-assist/a11y_assist/cli.py",
+        "src/a11y-ci/a11y_ci/cli.py",
+        "src/a11y-lint/a11y_lint/cli.py"
+      ],
+      "name": "main",
+      "partLabels": [
+        "a11y-assist",
+        "a11y-ci",
+        "a11y-lint"
+      ],
+      "parts": [
+        "a11y-assist",
+        "a11y-ci",
+        "a11y-lint"
+      ]
+    },
+    {
+      "files": [
+        "src/a11y-ci/a11y_ci/render.py",
+        "src/a11y-lint/a11y_lint/render.py"
+      ],
+      "name": "render",
+      "partLabels": [
+        "a11y-ci",
+        "a11y-lint"
+      ],
+      "parts": [
+        "a11y-ci",
+        "a11y-lint"
+      ]
+    }
+  ],
+  "duplicatesLead": "These are candidates from names and call order, not a judgement.",
+  "duplicatesNote": [],
+  "edges": [],
+  "generated": [
+    {
+      "place": "docs/baselines/a11y.scorecard.json",
+      "writers": [
+        ".github/workflows/ci.yml"
+      ]
+    }
+  ],
+  "generatedAt": "2026-09-25T09:57:48.057Z",
+  "limits": [
+    "6 writes and 22 reads use paths built at run time and are not named here.",
+    "1 write goes to places this repository does not track, so it is not listed as generated.",
+    "8 writes and 10 reads go to a path their caller passes, not to this repository.",
+    "1 write and 1 read go to the home directory (.a11y-assist/), not to this repository.",
+    "1 read goes to the directory the command is run in (spec/), not to this repository.",
+    "Statistics confidence is low: fewer than 30 qualifying commits in the window, and fewer than 20 source files reach 10 revisions."
+  ],
+  "mainDoor": ".github/workflows/ci.yml",
+  "partLabels": {
+    ".a11y_artifacts_test": ".a11y_artifacts_test",
+    ".github": ".github",
+    "a11y-assist": "a11y-assist",
+    "a11y-ci": "a11y-ci",
+    "a11y-evidence-engine": "a11y-evidence-engine",
+    "a11y-lint": "a11y-lint",
+    "a11y-mcp-tools": "a11y-mcp-tools",
+    "assets": "assets",
+    "docs": "docs",
+    "examples": "examples",
+    "pipelines": "pipelines",
+    "root": "the repository root",
+    "scripts": "scripts",
+    "site": "the site",
+    "tools": "tools"
+  },
+  "parts": 15,
+  "readers": [
+    {
+      "readers": [],
+      "target": "docs/baselines/a11y.scorecard.json"
+    }
+  ],
+  "repo": "mcp-tool-shop-org/accessibility-suite",
+  "sequences": [],
+  "startDoor": ".github/workflows/ci.yml",
+  "startHere": [
+    ".github/workflows/ci.yml",
+    "src/a11y-ci/a11y_ci/cli.py",
+    "src/a11y-ci/a11y_ci/__init__.py",
+    "src/a11y-ci/a11y_ci/allowlist.py",
+    "src/a11y-ci/a11y_ci/gate.py",
+    "src/a11y-ci/a11y_ci/render.py",
+    "src/a11y-ci/a11y_ci/scorecard.py",
+    "src/a11y-ci/a11y_ci/mcp_payload.py"
+  ],
+  "summary": null,
+  "summaryFrom": null,
+  "testFiles": 62,
+  "testedBy": {
+    "a11y-assist": 15,
+    "a11y-ci": 14,
+    "a11y-evidence-engine": 2,
+    "a11y-lint": 8,
+    "a11y-mcp-tools": 2,
+    "scripts": 0
+  },
+  "unnamedWrites": 6,
+  "unread": [
+    {
+      "place": "docs/baselines/a11y.scorecard.json",
+      "writers": [
+        ".github/workflows/ci.yml"
+      ]
+    }
+  ],
+  "unreadFiles": 0,
+  "unreadNote": [],
+  "untested": [
+    {
+      "part": "scripts",
+      "partLabel": "scripts",
+      "testedBy": 0
+    }
+  ],
+  "untestedNote": [
+    "36 test files run in no workflow: src/a11y-assist/tests/test_cognitive_load.py, src/a11y-assist/tests/test_dyslexia.py, src/a11y-assist/tests/test_explain.py and 33 mores."
+  ],
+  "written": 1
+}
