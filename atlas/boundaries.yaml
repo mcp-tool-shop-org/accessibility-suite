@@ -1,0 +1,62 @@
+summary: ""
+boundaries:
+  - name: .a11y_artifacts_test
+    globs:
+      - .a11y_artifacts_test/**
+    role: data
+  - name: .github
+    globs:
+      - .github/**
+    role: config
+  - name: a11y-assist
+    globs:
+      - src/a11y-assist/**
+    role: code
+  - name: a11y-ci
+    globs:
+      - src/a11y-ci/**
+    role: code
+  - name: a11y-evidence-engine
+    globs:
+      - src/a11y-evidence-engine/**
+    role: code
+  - name: a11y-lint
+    globs:
+      - src/a11y-lint/**
+    role: code
+  - name: a11y-mcp-tools
+    globs:
+      - src/a11y-mcp-tools/**
+    role: code
+  - name: assets
+    globs:
+      - assets/**
+    role: data
+  - name: docs
+    globs:
+      - docs/**
+    role: docs
+  - name: examples
+    globs:
+      - examples/**
+    role: data
+  - name: pipelines
+    globs:
+      - pipelines/**
+    role: data
+  - name: root
+    globs:
+      - "*"
+    role: config
+  - name: scripts
+    globs:
+      - scripts/**
+    role: code
+  - name: site
+    globs:
+      - site/**
+    role: site
+  - name: tools
+    globs:
+      - tools/**
+    role: code

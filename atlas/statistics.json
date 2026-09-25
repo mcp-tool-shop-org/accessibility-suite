@@ -1,0 +1,457 @@
+{
+  "authorship": {
+    "parts": [],
+    "places": []
+  },
+  "boundaries": [
+    {
+      "breakage": {
+        "coChangesOnly": [],
+        "collapsed": false,
+        "confidence": "low",
+        "importsAndCoChanges": [],
+        "importsOnly": []
+      },
+      "cohesion": null,
+      "cohesionDropped": false,
+      "confidence": "low",
+      "highWater": null,
+      "name": ".a11y_artifacts_test",
+      "qualifyingSourceCommits": 0,
+      "rebaseline": null
+    },
+    {
+      "breakage": {
+        "coChangesOnly": [],
+        "collapsed": false,
+        "confidence": "low",
+        "importsAndCoChanges": [],
+        "importsOnly": []
+      },
+      "cohesion": null,
+      "cohesionDropped": false,
+      "confidence": "low",
+      "highWater": null,
+      "name": ".github",
+      "qualifyingSourceCommits": 0,
+      "rebaseline": null
+    },
+    {
+      "breakage": {
+        "coChangesOnly": [],
+        "collapsed": false,
+        "confidence": "low",
+        "importsAndCoChanges": [],
+        "importsOnly": []
+      },
+      "cohesion": null,
+      "cohesionDropped": false,
+      "confidence": "low",
+      "highWater": null,
+      "name": "a11y-assist",
+      "qualifyingSourceCommits": 0,
+      "rebaseline": null
+    },
+    {
+      "breakage": {
+        "coChangesOnly": [],
+        "collapsed": false,
+        "confidence": "low",
+        "importsAndCoChanges": [],
+        "importsOnly": []
+      },
+      "cohesion": null,
+      "cohesionDropped": false,
+      "confidence": "low",
+      "highWater": null,
+      "name": "a11y-ci",
+      "qualifyingSourceCommits": 0,
+      "rebaseline": null
+    },
+    {
+      "breakage": {
+        "coChangesOnly": [],
+        "collapsed": false,
+        "confidence": "low",
+        "importsAndCoChanges": [],
+        "importsOnly": []
+      },
+      "cohesion": null,
+      "cohesionDropped": false,
+      "confidence": "low",
+      "highWater": null,
+      "name": "a11y-evidence-engine",
+      "qualifyingSourceCommits": 0,
+      "rebaseline": null
+    },
+    {
+      "breakage": {
+        "coChangesOnly": [],
+        "collapsed": false,
+        "confidence": "low",
+        "importsAndCoChanges": [],
+        "importsOnly": []
+      },
+      "cohesion": null,
+      "cohesionDropped": false,
+      "confidence": "low",
+      "highWater": null,
+      "name": "a11y-lint",
+      "qualifyingSourceCommits": 0,
+      "rebaseline": null
+    },
+    {
+      "breakage": {
+        "coChangesOnly": [],
+        "collapsed": false,
+        "confidence": "low",
+        "importsAndCoChanges": [],
+        "importsOnly": []
+      },
+      "cohesion": null,
+      "cohesionDropped": false,
+      "confidence": "low",
+      "highWater": null,
+      "name": "a11y-mcp-tools",
+      "qualifyingSourceCommits": 0,
+      "rebaseline": null
+    },
+    {
+      "breakage": {
+        "coChangesOnly": [],
+        "collapsed": false,
+        "confidence": "low",
+        "importsAndCoChanges": [],
+        "importsOnly": []
+      },
+      "cohesion": null,
+      "cohesionDropped": false,
+      "confidence": "low",
+      "highWater": null,
+      "name": "assets",
+      "qualifyingSourceCommits": 0,
+      "rebaseline": null
+    },
+    {
+      "breakage": {
+        "coChangesOnly": [],
+        "collapsed": false,
+        "confidence": "low",
+        "importsAndCoChanges": [],
+        "importsOnly": []
+      },
+      "cohesion": null,
+      "cohesionDropped": false,
+      "confidence": "low",
+      "highWater": null,
+      "name": "docs",
+      "qualifyingSourceCommits": 0,
+      "rebaseline": null
+    },
+    {
+      "breakage": {
+        "coChangesOnly": [],
+        "collapsed": false,
+        "confidence": "low",
+        "importsAndCoChanges": [],
+        "importsOnly": []
+      },
+      "cohesion": null,
+      "cohesionDropped": false,
+      "confidence": "low",
+      "highWater": null,
+      "name": "examples",
+      "qualifyingSourceCommits": 0,
+      "rebaseline": null
+    },
+    {
+      "breakage": {
+        "coChangesOnly": [],
+        "collapsed": false,
+        "confidence": "low",
+        "importsAndCoChanges": [],
+        "importsOnly": []
+      },
+      "cohesion": null,
+      "cohesionDropped": false,
+      "confidence": "low",
+      "highWater": null,
+      "name": "pipelines",
+      "qualifyingSourceCommits": 0,
+      "rebaseline": null
+    },
+    {
+      "breakage": {
+        "coChangesOnly": [],
+        "collapsed": false,
+        "confidence": "low",
+        "importsAndCoChanges": [],
+        "importsOnly": []
+      },
+      "cohesion": null,
+      "cohesionDropped": false,
+      "confidence": "low",
+      "highWater": null,
+      "name": "root",
+      "qualifyingSourceCommits": 0,
+      "rebaseline": null
+    },
+    {
+      "breakage": {
+        "coChangesOnly": [],
+        "collapsed": false,
+        "confidence": "low",
+        "importsAndCoChanges": [],
+        "importsOnly": []
+      },
+      "cohesion": null,
+      "cohesionDropped": false,
+      "confidence": "low",
+      "highWater": null,
+      "name": "scripts",
+      "qualifyingSourceCommits": 0,
+      "rebaseline": null
+    },
+    {
+      "breakage": {
+        "coChangesOnly": [],
+        "collapsed": false,
+        "confidence": "low",
+        "importsAndCoChanges": [],
+        "importsOnly": []
+      },
+      "cohesion": null,
+      "cohesionDropped": false,
+      "confidence": "low",
+      "highWater": null,
+      "name": "site",
+      "qualifyingSourceCommits": 1,
+      "rebaseline": null
+    },
+    {
+      "breakage": {
+        "coChangesOnly": [],
+        "collapsed": false,
+        "confidence": "low",
+        "importsAndCoChanges": [],
+        "importsOnly": []
+      },
+      "cohesion": null,
+      "cohesionDropped": false,
+      "confidence": "low",
+      "highWater": null,
+      "name": "tools",
+      "qualifyingSourceCommits": 0,
+      "rebaseline": null
+    }
+  ],
+  "churn": {
+    "definition": "commits is how many commits in the window touch the file, including merges and commits dropped from coupling. lines is added plus deleted in those commits.",
+    "files": [
+      {
+        "commits": 4,
+        "lines": 57,
+        "path": ".github/workflows/ci.yml"
+      },
+      {
+        "commits": 1,
+        "lines": 8,
+        "path": ".github/workflows/pages.yml"
+      },
+      {
+        "commits": 2,
+        "lines": 14,
+        "path": ".github/workflows/publish.yml"
+      },
+      {
+        "commits": 1,
+        "lines": 3603,
+        "path": ".polyglot-cache.json"
+      },
+      {
+        "commits": 2,
+        "lines": 33,
+        "path": "CHANGELOG.md"
+      },
+      {
+        "commits": 1,
+        "lines": 137,
+        "path": "README.es.md"
+      },
+      {
+        "commits": 1,
+        "lines": 125,
+        "path": "README.fr.md"
+      },
+      {
+        "commits": 1,
+        "lines": 143,
+        "path": "README.hi.md"
+      },
+      {
+        "commits": 1,
+        "lines": 145,
+        "path": "README.it.md"
+      },
+      {
+        "commits": 1,
+        "lines": 137,
+        "path": "README.ja.md"
+      },
+      {
+        "commits": 2,
+        "lines": 51,
+        "path": "README.md"
+      },
+      {
+        "commits": 1,
+        "lines": 141,
+        "path": "README.pt-BR.md"
+      },
+      {
+        "commits": 1,
+        "lines": 135,
+        "path": "README.zh.md"
+      },
+      {
+        "commits": 1,
+        "lines": 6,
+        "path": "docs/prov-spec/.github/workflows/ci.yml"
+      },
+      {
+        "commits": 1,
+        "lines": 8,
+        "path": "examples/a11y-demo-site/.github/workflows/a11y-artifacts.yml"
+      },
+      {
+        "commits": 1,
+        "lines": 6,
+        "path": "examples/a11y-demo-site/.github/workflows/a11y.yml"
+      },
+      {
+        "commits": 3,
+        "lines": 9,
+        "path": "package.json"
+      },
+      {
+        "commits": 1,
+        "lines": 93,
+        "path": "scripts/verify.sh"
+      },
+      {
+        "commits": 1,
+        "lines": 5,
+        "path": "site/astro.config.mjs"
+      },
+      {
+        "commits": 1,
+        "lines": 6051,
+        "path": "site/package-lock.json"
+      },
+      {
+        "commits": 1,
+        "lines": 6,
+        "path": "site/package.json"
+      },
+      {
+        "commits": 1,
+        "lines": 113,
+        "path": "site/src/content/docs/handbook/beginners.md"
+      },
+      {
+        "commits": 1,
+        "lines": 1,
+        "path": "site/src/content/docs/handbook/index.md"
+      },
+      {
+        "commits": 1,
+        "lines": 8,
+        "path": "src/a11y-assist/.github/workflows/publish.yml"
+      },
+      {
+        "commits": 1,
+        "lines": 4,
+        "path": "src/a11y-assist/.github/workflows/test.yml"
+      },
+      {
+        "commits": 1,
+        "lines": 4,
+        "path": "src/a11y-ci/.github/workflows/ci.yml"
+      },
+      {
+        "commits": 1,
+        "lines": 4,
+        "path": "src/a11y-ci/.github/workflows/test.yml"
+      },
+      {
+        "commits": 1,
+        "lines": 8,
+        "path": "src/a11y-evidence-engine/.github/workflows/ci.yml"
+      },
+      {
+        "commits": 1,
+        "lines": 4,
+        "path": "src/a11y-lint/.github/workflows/ci.yml"
+      },
+      {
+        "commits": 1,
+        "lines": 4,
+        "path": "src/a11y-lint/.github/workflows/test.yml"
+      },
+      {
+        "commits": 1,
+        "lines": 8,
+        "path": "src/a11y-mcp-tools/.github/workflows/ci.yml"
+      }
+    ]
+  },
+  "confidence": {
+    "level": "low",
+    "reason": "fewer than 30 qualifying commits in the window, and fewer than 20 source files reach 10 revisions"
+  },
+  "generatedAt": "2026-09-25T09:57:48.057Z",
+  "generatedFrom": {
+    "commit": "cfd473031af46bf03580740ed960852f512b317c"
+  },
+  "pairs": [],
+  "parameters": {
+    "appliedChangesetLimit": 50,
+    "changeset": 50,
+    "changesetFraction": 0.25,
+    "cohesionDrop": 0.2,
+    "couplingPopulation": "source",
+    "fallenShared": 3,
+    "floor": "fallen",
+    "floorHeld": false,
+    "floorTrigger": "both",
+    "headDate": "2026-09-17T18:59:31-07:00",
+    "inScopeFiles": 331,
+    "pinnedStart": null,
+    "priorFloor": null,
+    "qualifyingCommits": 8,
+    "qualifyingMinimum": 30,
+    "revisions": 5,
+    "shared": 10,
+    "sharedFloorUsed": 3,
+    "since": "2026-03-22T01:59:31.000Z",
+    "sourceExtensions": [
+      ".js",
+      ".mjs",
+      ".cjs",
+      ".jsx",
+      ".ts",
+      ".tsx",
+      ".mts",
+      ".cts",
+      ".py",
+      ".rs",
+      ".gd"
+    ],
+    "sourceFileReach": 20,
+    "sourceFileRise": 25,
+    "sourceFilesReachingStrongFloor": 0,
+    "strength": 0.5,
+    "windowDays": 180
+  },
+  "strengthDefinition": "strength is the shared qualifying commits divided by either. either is the number of qualifying commits that touch either file."
+}
