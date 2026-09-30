@@ -88,7 +88,7 @@ jobs:
 
       - name: Atlas check
         if: matrix.project == 'a11y-lint'
-        run: npx --yes @dogfood-lab/atlas@1.21.0 check
+        run: npx --yes @dogfood-lab/atlas@1.24.0 check
 
       - name: Install dependencies
         working-directory: src/${{ matrix.project }}

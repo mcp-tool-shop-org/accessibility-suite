@@ -249,8 +249,8 @@
     "definition": "commits is how many commits in the window touch the file, including merges and commits dropped from coupling. lines is added plus deleted in those commits.",
     "files": [
       {
-        "commits": 4,
-        "lines": 57,
+        "commits": 5,
+        "lines": 73,
         "path": ".github/workflows/ci.yml"
       },
       {
@@ -269,8 +269,8 @@
         "path": ".polyglot-cache.json"
       },
       {
-        "commits": 2,
-        "lines": 33,
+        "commits": 1,
+        "lines": 25,
         "path": "CHANGELOG.md"
       },
       {
@@ -299,8 +299,8 @@
         "path": "README.ja.md"
       },
       {
-        "commits": 2,
-        "lines": 51,
+        "commits": 1,
+        "lines": 41,
         "path": "README.md"
       },
       {
@@ -312,6 +312,31 @@
         "commits": 1,
         "lines": 135,
         "path": "README.zh.md"
+      },
+      {
+        "commits": 1,
+        "lines": 101,
+        "path": "atlas/README.md"
+      },
+      {
+        "commits": 1,
+        "lines": 62,
+        "path": "atlas/boundaries.yaml"
+      },
+      {
+        "commits": 1,
+        "lines": 396,
+        "path": "atlas/page.json"
+      },
+      {
+        "commits": 1,
+        "lines": 457,
+        "path": "atlas/statistics.json"
+      },
+      {
+        "commits": 1,
+        "lines": 6319,
+        "path": "atlas/structure.json"
       },
       {
         "commits": 1,
@@ -329,14 +354,9 @@
         "path": "examples/a11y-demo-site/.github/workflows/a11y.yml"
       },
       {
-        "commits": 3,
-        "lines": 9,
+        "commits": 2,
+        "lines": 3,
         "path": "package.json"
-      },
-      {
-        "commits": 1,
-        "lines": 93,
-        "path": "scripts/verify.sh"
       },
       {
         "commits": 1,
@@ -352,16 +372,6 @@
         "commits": 1,
         "lines": 6,
         "path": "site/package.json"
-      },
-      {
-        "commits": 1,
-        "lines": 113,
-        "path": "site/src/content/docs/handbook/beginners.md"
-      },
-      {
-        "commits": 1,
-        "lines": 1,
-        "path": "site/src/content/docs/handbook/index.md"
       },
       {
         "commits": 1,
@@ -407,11 +417,11 @@
   },
   "confidence": {
     "level": "low",
-    "reason": "fewer than 30 qualifying commits in the window, and fewer than 20 source files reach 10 revisions"
+    "reason": "fewer than 30 qualifying commits in the window, and fewer than 25 source files reach 10 revisions"
   },
-  "generatedAt": "2026-09-25T09:57:48.057Z",
+  "generatedAt": "2026-09-30T20:06:30.708Z",
   "generatedFrom": {
-    "commit": "cfd473031af46bf03580740ed960852f512b317c"
+    "commit": "f18e2462ddce2c0d07a47f210bdf44d8119353ee"
   },
   "pairs": [],
   "parameters": {
@@ -424,16 +434,16 @@
     "floor": "fallen",
     "floorHeld": false,
     "floorTrigger": "both",
-    "headDate": "2026-09-17T18:59:31-07:00",
-    "inScopeFiles": 331,
+    "headDate": "2026-09-25T03:02:29-07:00",
+    "inScopeFiles": 336,
     "pinnedStart": null,
-    "priorFloor": null,
-    "qualifyingCommits": 8,
+    "priorFloor": "fallen",
+    "qualifyingCommits": 7,
     "qualifyingMinimum": 30,
     "revisions": 5,
     "shared": 10,
     "sharedFloorUsed": 3,
-    "since": "2026-03-22T01:59:31.000Z",
+    "since": "2026-03-29T10:02:29.000Z",
     "sourceExtensions": [
       ".js",
       ".mjs",

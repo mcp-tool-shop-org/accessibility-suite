@@ -44,7 +44,7 @@
           "path": ".github/actions/a11y-ci/action.yml"
         },
         {
-          "hash": "a2d5787b596ec81371aac9fc00d462ad5253ea2ac5fb8ebfb6760b9955acfe3e",
+          "hash": "7f2ad78d56a74cbe30a3595b0f145b072783251685e17de9d4e9bfd10cae4a15",
           "path": ".github/workflows/ci.yml"
         },
         {
@@ -67,10 +67,10 @@
       "unresolvedSites": 0
     },
     {
-      "dynamicReads": 5,
+      "dynamicReads": 0,
       "dynamicSpawns": 0,
       "dynamicSpawnsInTests": 0,
-      "dynamicWrites": 3,
+      "dynamicWrites": 0,
       "entryPoints": [
         "src/a11y-assist/a11y_assist/cli.py"
       ],
@@ -125,6 +125,7 @@
           "path": "src/a11y-assist/RELEASE_NOTES.md"
         },
         {
+          "constantOnly": true,
           "hash": "da2833b4ac535d4c4a0efc0ee6c3d5306df230fbfae26d4bb92e3a02ce882aee",
           "path": "src/a11y-assist/a11y_assist/__init__.py"
         },
@@ -142,6 +143,103 @@
             "output_result",
             "render_with_profile_guarded",
             "triage_cmd"
+          ],
+          "failurePaths": [
+            {
+              "in": "_handle_guard_violation",
+              "kind": "raise",
+              "line": 184
+            },
+            {
+              "in": "explain_cmd",
+              "kind": "except",
+              "line": 238
+            },
+            {
+              "in": "explain_cmd",
+              "kind": "except",
+              "line": 241
+            },
+            {
+              "in": "explain_cmd",
+              "kind": "except",
+              "line": 264
+            },
+            {
+              "in": "explain_cmd",
+              "kind": "raise",
+              "line": 266
+            },
+            {
+              "in": "triage_cmd",
+              "kind": "raise",
+              "line": 298
+            },
+            {
+              "in": "triage_cmd",
+              "kind": "except",
+              "line": 356
+            },
+            {
+              "in": "last_cmd",
+              "kind": "except",
+              "line": 398
+            },
+            {
+              "in": "last_cmd",
+              "kind": "raise",
+              "line": 400
+            },
+            {
+              "in": "last_cmd",
+              "kind": "except",
+              "line": 444
+            },
+            {
+              "in": "assist_run",
+              "kind": "raise",
+              "line": 455
+            },
+            {
+              "in": "assist_run",
+              "kind": "raise",
+              "line": 472
+            },
+            {
+              "in": "ingest_cmd",
+              "kind": "except",
+              "line": 553
+            },
+            {
+              "in": "ingest_cmd",
+              "kind": "raise",
+              "line": 555
+            },
+            {
+              "in": "ingest_cmd",
+              "kind": "raise",
+              "line": 563
+            },
+            {
+              "in": "ingest_cmd",
+              "kind": "raise",
+              "line": 589
+            },
+            {
+              "in": "ingest_cmd",
+              "kind": "raise",
+              "line": 595
+            },
+            {
+              "in": "ingest_cmd",
+              "kind": "raise",
+              "line": 597
+            },
+            {
+              "in": "ingest_cmd",
+              "kind": "raise",
+              "line": 599
+            }
           ],
           "hash": "16ecd61dbdc7cb9de4ace2d6f749620ef17de6747ec7af4e29147eb0f322f412",
           "importOrder": [
@@ -1186,6 +1284,13 @@
             "assist_from_cli_error",
             "load_cli_error"
           ],
+          "failurePaths": [
+            {
+              "in": "load_cli_error",
+              "kind": "raise",
+              "line": 45
+            }
+          ],
           "hash": "d36f48eb0c3015bc7ccf71e73b6e82951cd6ec7d58df8ce8ad89288defde68b6",
           "importsFiles": [
             "src/a11y-assist/a11y_assist/methods.py",
@@ -1236,6 +1341,13 @@
             "get_guard_context",
             "validate_profile_transform"
           ],
+          "failurePaths": [
+            {
+              "in": "validate_profile_transform",
+              "kind": "raise",
+              "line": 388
+            }
+          ],
           "hash": "81ffe43da4afc77d917d59cc95071e66f25cd0872f3dff115f5430dd54eb32c1",
           "importsFiles": [
             "src/a11y-assist/a11y_assist/render.py"
@@ -1256,6 +1368,48 @@
             "verify_provenance",
             "write_advisories",
             "write_ingest_summary"
+          ],
+          "failurePaths": [
+            {
+              "in": "load_findings",
+              "kind": "raise",
+              "line": 59
+            },
+            {
+              "in": "load_findings",
+              "kind": "except",
+              "line": 64
+            },
+            {
+              "in": "load_findings",
+              "kind": "raise",
+              "line": 65
+            },
+            {
+              "in": "load_findings",
+              "kind": "raise",
+              "line": 71
+            },
+            {
+              "in": "load_findings",
+              "kind": "raise",
+              "line": 74
+            },
+            {
+              "in": "verify_provenance",
+              "kind": "except",
+              "line": 144
+            },
+            {
+              "in": "canonicalize",
+              "kind": "raise",
+              "line": 164
+            },
+            {
+              "in": "canonicalize",
+              "kind": "raise",
+              "line": 175
+            }
           ],
           "hash": "389da114289dbcb6f11818f7ea9edb18947ba7705f3bab3fe9a65fc5104196ae",
           "importsFiles": [
@@ -1662,7 +1816,8 @@
             "src/a11y-assist/a11y_assist/profiles/cognitive_load_render.py",
             "src/a11y-assist/a11y_assist/render.py"
           ],
-          "path": "src/a11y-assist/tests/test_cognitive_load.py"
+          "path": "src/a11y-assist/tests/test_cognitive_load.py",
+          "testFramework": "pytest"
         },
         {
           "exports": [
@@ -1698,14 +1853,16 @@
             "src/a11y-assist/a11y_assist/profiles/dyslexia_render.py",
             "src/a11y-assist/a11y_assist/render.py"
           ],
-          "path": "src/a11y-assist/tests/test_dyslexia.py"
+          "path": "src/a11y-assist/tests/test_dyslexia.py",
+          "testFramework": "pytest"
         },
         {
           "hash": "704a1a9d0105c1998a76f5a1afba051114731f919890640d6c05585fd052a224",
           "importsFiles": [
             "src/a11y-assist/a11y_assist/from_cli_error.py"
           ],
-          "path": "src/a11y-assist/tests/test_explain.py"
+          "path": "src/a11y-assist/tests/test_explain.py",
+          "testFramework": "pytest"
         },
         {
           "exports": [
@@ -1718,7 +1875,8 @@
             "src/a11y-assist/a11y_assist/profiles/__init__.py",
             "src/a11y-assist/a11y_assist/render.py"
           ],
-          "path": "src/a11y-assist/tests/test_golden.py"
+          "path": "src/a11y-assist/tests/test_golden.py",
+          "testFramework": "pytest"
         },
         {
           "exports": [
@@ -1758,7 +1916,8 @@
             "src/a11y-assist/a11y_assist/guard.py",
             "src/a11y-assist/a11y_assist/render.py"
           ],
-          "path": "src/a11y-assist/tests/test_guard.py"
+          "path": "src/a11y-assist/tests/test_guard.py",
+          "testFramework": "pytest"
         },
         {
           "exports": [
@@ -1791,7 +1950,8 @@
           "importsFiles": [
             "src/a11y-assist/a11y_assist/cli.py"
           ],
-          "path": "src/a11y-assist/tests/test_guard_integration.py"
+          "path": "src/a11y-assist/tests/test_guard_integration.py",
+          "testFramework": "pytest"
         },
         {
           "exports": [
@@ -1802,7 +1962,8 @@
           "importsFiles": [
             "src/a11y-assist/a11y_assist/ingest.py"
           ],
-          "path": "src/a11y-assist/tests/test_ingest.py"
+          "path": "src/a11y-assist/tests/test_ingest.py",
+          "testFramework": "pytest"
         },
         {
           "hash": "83f612c1fe85f8d525aff36cefcea9e1f10e963940774f8cc806853187d70759",
@@ -1812,7 +1973,8 @@
             "src/a11y-assist/a11y_assist/profiles/__init__.py",
             "src/a11y-assist/a11y_assist/render.py"
           ],
-          "path": "src/a11y-assist/tests/test_methods_metadata.py"
+          "path": "src/a11y-assist/tests/test_methods_metadata.py",
+          "testFramework": "pytest"
         },
         {
           "exports": [
@@ -1850,7 +2012,8 @@
             "src/a11y-assist/a11y_assist/profiles/plain_language_render.py",
             "src/a11y-assist/a11y_assist/render.py"
           ],
-          "path": "src/a11y-assist/tests/test_plain_language.py"
+          "path": "src/a11y-assist/tests/test_plain_language.py",
+          "testFramework": "pytest"
         },
         {
           "hash": "dae621f035f3bb5eb2ac26a02bac4c700e204e67c3231e375422e7be67867235",
@@ -1875,21 +2038,24 @@
             "src/a11y-assist/a11y_assist/profiles/screen_reader_render.py",
             "src/a11y-assist/a11y_assist/render.py"
           ],
-          "path": "src/a11y-assist/tests/test_screen_reader.py"
+          "path": "src/a11y-assist/tests/test_screen_reader.py",
+          "testFramework": "pytest"
         },
         {
           "hash": "7f52383c7b6d090a907e5ea370b99a6fab65e0f77b1e3e7e55249d3943f77951",
           "importsFiles": [
             "src/a11y-assist/a11y_assist/storage.py"
           ],
-          "path": "src/a11y-assist/tests/test_storage_last.py"
+          "path": "src/a11y-assist/tests/test_storage_last.py",
+          "testFramework": "pytest"
         },
         {
           "hash": "fbdcf3bd858bd1f36b14591fb8533f323d62c3fa3c14ffad318b61f9325e8e5c",
           "importsFiles": [
             "src/a11y-assist/a11y_assist/parse_raw.py"
           ],
-          "path": "src/a11y-assist/tests/test_triage.py"
+          "path": "src/a11y-assist/tests/test_triage.py",
+          "testFramework": "pytest"
         }
       ],
       "globs": [
@@ -1900,6 +2066,13 @@
       "origin": "authored",
       "outsidePlaces": [
         {
+          "reads": 6,
+          "where": [
+            "caller"
+          ],
+          "writes": 3
+        },
+        {
           "reads": 1,
           "where": [
             "home:.a11y-assist/"
@@ -1907,17 +2080,20 @@
           "writes": 1
         }
       ],
-      "outsideReads": 1,
-      "outsideWrites": 1,
+      "outsideReads": 7,
+      "outsideWrites": 4,
       "role": "code",
+      "testRunners": [
+        "pytest"
+      ],
       "testedBy": 15,
       "unresolvedSites": 0
     },
     {
-      "dynamicReads": 4,
+      "dynamicReads": 0,
       "dynamicSpawns": 0,
       "dynamicSpawnsInTests": 0,
-      "dynamicWrites": 1,
+      "dynamicWrites": 0,
       "entryPoints": [
         "src/a11y-ci/a11y_ci/cli.py"
       ],
@@ -1972,12 +2148,25 @@
           "path": "src/a11y-ci/README.md"
         },
         {
+          "constantOnly": true,
           "hash": "2f1920f09e4dc7c504ea4814efb058e756da17b341fe630c1ae8f33456c0f18e",
           "path": "src/a11y-ci/a11y_ci/__init__.py"
         },
         {
           "entry": "_load_schema",
           "entryRule": 1,
+          "failurePaths": [
+            {
+              "in": "load",
+              "kind": "raise",
+              "line": 58
+            },
+            {
+              "in": "expired_entries",
+              "kind": "except",
+              "line": 116
+            }
+          ],
           "hash": "3f4072addc1ae5f75ea20e38292be6618f7af46670084892f633a68a1f2594aa",
           "path": "src/a11y-ci/a11y_ci/allowlist.py",
           "sequences": []
@@ -1989,6 +2178,58 @@
             "comment_cmd",
             "gate_cmd",
             "main"
+          ],
+          "failurePaths": [
+            {
+              "in": "gate_cmd",
+              "kind": "raise",
+              "line": 106
+            },
+            {
+              "in": "gate_cmd",
+              "kind": "raise",
+              "line": 138
+            },
+            {
+              "in": "gate_cmd",
+              "kind": "except",
+              "line": 144
+            },
+            {
+              "in": "gate_cmd",
+              "kind": "raise",
+              "line": 157
+            },
+            {
+              "in": "gate_cmd",
+              "kind": "except",
+              "line": 158
+            },
+            {
+              "in": "gate_cmd",
+              "kind": "raise",
+              "line": 173
+            },
+            {
+              "in": "gate_cmd",
+              "kind": "except",
+              "line": 174
+            },
+            {
+              "in": "gate_cmd",
+              "kind": "raise",
+              "line": 187
+            },
+            {
+              "in": "gate_cmd",
+              "kind": "raise",
+              "line": 232
+            },
+            {
+              "in": "gate_cmd",
+              "kind": "raise",
+              "line": 242
+            }
           ],
           "hash": "cb21eef2cea44d16eb52493ea7ca9732bf314317567d5a49e85b333b21274934",
           "importOrder": [
@@ -2153,6 +2394,7 @@
           ]
         },
         {
+          "constantOnly": true,
           "hash": "c8080faf1ea389d4bba110b3d103e003e9e410fb45650a1f8d2076d19633137a",
           "path": "src/a11y-ci/a11y_ci/error_ids.py"
         },
@@ -2259,6 +2501,13 @@
           "exports": [
             "build_mcp_payload",
             "sha256_file"
+          ],
+          "failurePaths": [
+            {
+              "in": "sha256_file",
+              "kind": "except",
+              "line": 28
+            }
           ],
           "hash": "2a13d85800704819a164b0a4156e6d5bd326a30e18a846717a98e1014c160a88",
           "importsFiles": [
@@ -2515,6 +2764,13 @@
             "compute_fingerprint",
             "finding_id"
           ],
+          "failurePaths": [
+            {
+              "in": "load",
+              "kind": "except",
+              "line": 70
+            }
+          ],
           "hash": "a2c1a65033ffc58358d4ea3c5f48163c857fd5f0b4c64b24e405f4637c8ba81a",
           "importsFiles": [
             "src/a11y-ci/a11y_ci/severity.py"
@@ -2585,7 +2841,8 @@
           "importsFiles": [
             "src/a11y-ci/a11y_ci/allowlist.py"
           ],
-          "path": "src/a11y-ci/tests/test_allowlist_v2.py"
+          "path": "src/a11y-ci/tests/test_allowlist_v2.py",
+          "testFramework": "pytest"
         },
         {
           "hash": "6fe0a712b8ac7d460349a9084a0461af8d21e1b70c42c6541aa55d4c9bbf55d6",
@@ -2594,7 +2851,8 @@
             "src/a11y-ci/a11y_ci/gate.py",
             "src/a11y-ci/a11y_ci/scorecard.py"
           ],
-          "path": "src/a11y-ci/tests/test_gate.py"
+          "path": "src/a11y-ci/tests/test_gate.py",
+          "testFramework": "pytest"
         },
         {
           "exports": [
@@ -2626,7 +2884,8 @@
             "src/a11y-ci/a11y_ci/mcp_payload.py",
             "src/a11y-ci/a11y_ci/scorecard.py"
           ],
-          "path": "src/a11y-ci/tests/test_mcp_payload.py"
+          "path": "src/a11y-ci/tests/test_mcp_payload.py",
+          "testFramework": "pytest"
         },
         {
           "exports": [
@@ -2640,7 +2899,8 @@
             "src/a11y-ci/a11y_ci/cli.py",
             "src/a11y-ci/a11y_ci/pr_comment.py"
           ],
-          "path": "src/a11y-ci/tests/test_polish.py"
+          "path": "src/a11y-ci/tests/test_polish.py",
+          "testFramework": "pytest"
         },
         {
           "exports": [
@@ -2654,7 +2914,8 @@
           "importsFiles": [
             "src/a11y-ci/a11y_ci/pr_comment.py"
           ],
-          "path": "src/a11y-ci/tests/test_pr_comment.py"
+          "path": "src/a11y-ci/tests/test_pr_comment.py",
+          "testFramework": "pytest"
         },
         {
           "exports": [
@@ -2673,7 +2934,8 @@
             "src/a11y-ci/a11y_ci/help.py",
             "src/a11y-ci/a11y_ci/report.py"
           ],
-          "path": "src/a11y-ci/tests/test_rule_help.py"
+          "path": "src/a11y-ci/tests/test_rule_help.py",
+          "testFramework": "pytest"
         },
         {
           "exports": [
@@ -2686,7 +2948,8 @@
             "src/a11y-ci/a11y_ci/cli.py",
             "src/a11y-ci/a11y_ci/scorecard.py"
           ],
-          "path": "src/a11y-ci/tests/test_schema_validation.py"
+          "path": "src/a11y-ci/tests/test_schema_validation.py",
+          "testFramework": "pytest"
         },
         {
           "exports": [
@@ -2700,7 +2963,8 @@
           "importsFiles": [
             "src/a11y-ci/a11y_ci/scorecard.py"
           ],
-          "path": "src/a11y-ci/tests/test_scorecard_canonical.py"
+          "path": "src/a11y-ci/tests/test_scorecard_canonical.py",
+          "testFramework": "pytest"
         },
         {
           "exports": [
@@ -2721,7 +2985,21 @@
       "importConfidence": "full",
       "name": "a11y-ci",
       "origin": "authored",
+      "outsidePlaces": [
+        {
+          "reads": 5,
+          "where": [
+            "caller"
+          ],
+          "writes": 4
+        }
+      ],
+      "outsideReads": 5,
+      "outsideWrites": 4,
       "role": "code",
+      "testRunners": [
+        "pytest"
+      ],
       "testedBy": 14,
       "unresolvedSites": 0
     },
@@ -2799,6 +3077,13 @@
           "exports": [
             "run"
           ],
+          "failurePaths": [
+            {
+              "in": "runScan",
+              "kind": "catch",
+              "line": 68
+            }
+          ],
           "hash": "6d8fa9227a5c903dec09f7004a36b5bfe0e77741a33f91e02514a60046f7046e",
           "importsFiles": [
             "src/a11y-evidence-engine/src/scan.js"
@@ -2808,6 +3093,18 @@
         {
           "exports": [
             "canonicalize"
+          ],
+          "failurePaths": [
+            {
+              "in": "canonicalize",
+              "kind": "throw",
+              "line": 31
+            },
+            {
+              "in": "canonicalize",
+              "kind": "throw",
+              "line": 49
+            }
           ],
           "hash": "e8870e69adadca20178f7b1a1fa04b67454d16f271bd23411a96c1c043506a34",
           "path": "src/a11y-evidence-engine/src/evidence/canonicalize.js"
@@ -2835,6 +3132,23 @@
         {
           "exports": [
             "walkHtmlFiles"
+          ],
+          "failurePaths": [
+            {
+              "in": "walkHtmlFiles",
+              "kind": "throw",
+              "line": 18
+            },
+            {
+              "in": "walkHtmlFiles",
+              "kind": "throw",
+              "line": 27
+            },
+            {
+              "in": "walkHtmlFiles",
+              "kind": "throw",
+              "line": 37
+            }
           ],
           "hash": "e8c4c97744f8ceab51047c706774490508f61c09e888721a89d297f80ec27a7e",
           "path": "src/a11y-evidence-engine/src/fswalk.js"
@@ -2920,6 +3234,13 @@
           "exports": [
             "scan"
           ],
+          "failurePaths": [
+            {
+              "in": "scan",
+              "kind": "throw",
+              "line": 29
+            }
+          ],
           "hash": "715bceea490b739b659ec9a0aeb481afe361ad99954f80df207a7fff4febe1dc",
           "importOrder": [
             "src/a11y-evidence-engine/src/fswalk.js",
@@ -2942,7 +3263,8 @@
           "importsFiles": [
             "src/a11y-evidence-engine/src/scan.js"
           ],
-          "path": "src/a11y-evidence-engine/test/scan.test.js"
+          "path": "src/a11y-evidence-engine/test/scan.test.js",
+          "testFramework": "node --test"
         },
         {
           "hash": "db9ce4ceee71d008e2f402f0cff4f5e8ca291b0bcd9c5afd0d7554ceb53f330b",
@@ -2954,7 +3276,8 @@
             "src/a11y-evidence-engine/src/evidence/canonicalize.js",
             "src/a11y-evidence-engine/src/scan.js"
           ],
-          "path": "src/a11y-evidence-engine/test/vectors.test.js"
+          "path": "src/a11y-evidence-engine/test/vectors.test.js",
+          "testFramework": "node --test"
         }
       ],
       "globs": [
@@ -2975,14 +3298,17 @@
       "outsideReads": 4,
       "outsideWrites": 6,
       "role": "code",
+      "testRunners": [
+        "node --test"
+      ],
       "testedBy": 2,
       "unresolvedSites": 0
     },
     {
-      "dynamicReads": 7,
+      "dynamicReads": 1,
       "dynamicSpawns": 0,
       "dynamicSpawnsInTests": 0,
-      "dynamicWrites": 2,
+      "dynamicWrites": 0,
       "entryPoints": [
         "src/a11y-lint/a11y_lint/cli.py"
       ],
@@ -3063,6 +3389,13 @@
             "schema",
             "scorecard",
             "validate"
+          ],
+          "failurePaths": [
+            {
+              "in": "scan",
+              "kind": "except",
+              "line": 106
+            }
           ],
           "hash": "bde28dbbaa99204543ad6f79aad5ff42d4096467a1db3efcb0a2b225b7675565",
           "importOrder": [
@@ -3255,6 +3588,28 @@
           ]
         },
         {
+          "failurePaths": [
+            {
+              "in": "__post_init__",
+              "kind": "raise",
+              "line": 92
+            },
+            {
+              "in": "__post_init__",
+              "kind": "raise",
+              "line": 98
+            },
+            {
+              "in": "__post_init__",
+              "kind": "raise",
+              "line": 107
+            },
+            {
+              "in": "__post_init__",
+              "kind": "raise",
+              "line": 109
+            }
+          ],
           "hash": "fe5af4cf8c0ec1385d8db99db216f574146f575203685b807b32296a1f12dd5a",
           "path": "src/a11y-lint/a11y_lint/errors.py"
         },
@@ -3576,6 +3931,23 @@
             "validate_json_file",
             "validate_message"
           ],
+          "failurePaths": [
+            {
+              "in": "validate_json_file",
+              "kind": "except",
+              "line": 104
+            },
+            {
+              "in": "validate_json_file",
+              "kind": "except",
+              "line": 106
+            },
+            {
+              "in": "validate_and_convert",
+              "kind": "except",
+              "line": 148
+            }
+          ],
           "hash": "12099247682f63753c74902390e12cb32f8e736850fcdf06dd6a088dbd000e01",
           "importsFiles": [
             "src/a11y-lint/a11y_lint/errors.py"
@@ -3653,14 +4025,16 @@
           "importsFiles": [
             "src/a11y-lint/a11y_lint/cli.py"
           ],
-          "path": "src/a11y-lint/tests/test_cli.py"
+          "path": "src/a11y-lint/tests/test_cli.py",
+          "testFramework": "pytest"
         },
         {
           "hash": "d083dadebd4cd8d0c6899614068f533ed7e185e739f26e45b332c347f9d61a3f",
           "importsFiles": [
             "src/a11y-lint/a11y_lint/errors.py"
           ],
-          "path": "src/a11y-lint/tests/test_errors.py"
+          "path": "src/a11y-lint/tests/test_errors.py",
+          "testFramework": "pytest"
         },
         {
           "hash": "28c05c6ef9e92a4496689f4650e2ea4083a020c5980a3947f9d4282f1ff58143",
@@ -3672,7 +4046,8 @@
             "src/a11y-lint/a11y_lint/errors.py",
             "src/a11y-lint/a11y_lint/render.py"
           ],
-          "path": "src/a11y-lint/tests/test_render.py"
+          "path": "src/a11y-lint/tests/test_render.py",
+          "testFramework": "pytest"
         },
         {
           "hash": "e3cf6f4f98250d4599901aee646dc53fdb2f8f8c5bc25dc40e00f4d24fe0862c",
@@ -3686,7 +4061,8 @@
             "src/a11y-lint/a11y_lint/report_md.py",
             "src/a11y-lint/a11y_lint/scorecard.py"
           ],
-          "path": "src/a11y-lint/tests/test_report_md.py"
+          "path": "src/a11y-lint/tests/test_report_md.py",
+          "testFramework": "pytest"
         },
         {
           "hash": "b43aaf70b803e31fcc0101baacbeea88bd7748f3a3a165192ee4caa8fd65f7d5",
@@ -3698,7 +4074,8 @@
             "src/a11y-lint/a11y_lint/errors.py",
             "src/a11y-lint/a11y_lint/scan_cli_text.py"
           ],
-          "path": "src/a11y-lint/tests/test_scan_cli_text.py"
+          "path": "src/a11y-lint/tests/test_scan_cli_text.py",
+          "testFramework": "pytest"
         },
         {
           "hash": "9a660e88067c7763bbe1b742db01e5c76fa3c8788f9d925ba73a1bc6f6634671",
@@ -3710,7 +4087,8 @@
             "src/a11y-lint/a11y_lint/errors.py",
             "src/a11y-lint/a11y_lint/scorecard.py"
           ],
-          "path": "src/a11y-lint/tests/test_scorecard.py"
+          "path": "src/a11y-lint/tests/test_scorecard.py",
+          "testFramework": "pytest"
         },
         {
           "hash": "3c01fcf95abe9b9475113683fa1e598f22e4a0815337335c978e0a3f302c4049",
@@ -3722,7 +4100,8 @@
             "src/a11y-lint/a11y_lint/errors.py",
             "src/a11y-lint/a11y_lint/validate.py"
           ],
-          "path": "src/a11y-lint/tests/test_validate.py"
+          "path": "src/a11y-lint/tests/test_validate.py",
+          "testFramework": "pytest"
         }
       ],
       "globs": [
@@ -3731,7 +4110,21 @@
       "importConfidence": "full",
       "name": "a11y-lint",
       "origin": "authored",
+      "outsidePlaces": [
+        {
+          "reads": 6,
+          "where": [
+            "caller"
+          ],
+          "writes": 4
+        }
+      ],
+      "outsideReads": 6,
+      "outsideWrites": 4,
       "role": "code",
+      "testRunners": [
+        "pytest"
+      ],
       "testedBy": 8,
       "unresolvedSites": 0
     },
@@ -3776,28 +4169,399 @@
           "path": "src/a11y-mcp-tools/README.md"
         },
         {
-          "hash": "aefb6dbaf0f621ff98e323c8f132d0705e8a9e3b220fce6476d97a11cb69d188",
-          "importOrder": [
-            "src/a11y-mcp-tools/src/tools/index.js",
-            "src/a11y-mcp-tools/src/envelope.js"
+          "entry": "main",
+          "entryRule": 1,
+          "failurePaths": [
+            {
+              "in": "handleDiagnose",
+              "kind": "catch",
+              "line": 272
+            },
+            {
+              "in": "handleDiagnose",
+              "kind": "catch",
+              "line": 285
+            },
+            {
+              "in": "handleDiagnose",
+              "kind": "catch",
+              "line": 294
+            }
           ],
+          "hash": "aefb6dbaf0f621ff98e323c8f132d0705e8a9e3b220fce6476d97a11cb69d188",
           "importsFiles": [
             "src/a11y-mcp-tools/src/envelope.js",
             "src/a11y-mcp-tools/src/tools/index.js"
           ],
-          "path": "src/a11y-mcp-tools/bin/cli.js"
+          "path": "src/a11y-mcp-tools/bin/cli.js",
+          "sequences": [
+            {
+              "calls": [
+                {
+                  "line": 217,
+                  "name": "execute",
+                  "target": {
+                    "file": "src/a11y-mcp-tools/src/tools/index.js"
+                  }
+                },
+                {
+                  "line": 221,
+                  "name": "createErrorEnvelope",
+                  "target": {
+                    "file": "src/a11y-mcp-tools/src/envelope.js"
+                  }
+                },
+                {
+                  "line": 237,
+                  "name": "createResponseEnvelope",
+                  "target": {
+                    "file": "src/a11y-mcp-tools/src/envelope.js"
+                  }
+                }
+              ],
+              "exported": false,
+              "invokedAtTopLevel": false,
+              "isDefaultExport": false,
+              "name": "handleEvidence"
+            },
+            {
+              "calls": [
+                {
+                  "line": 338,
+                  "name": "execute",
+                  "target": {
+                    "file": "src/a11y-mcp-tools/src/tools/index.js"
+                  }
+                },
+                {
+                  "line": 347,
+                  "name": "createErrorEnvelope",
+                  "target": {
+                    "file": "src/a11y-mcp-tools/src/envelope.js"
+                  }
+                },
+                {
+                  "line": 365,
+                  "name": "createResponseEnvelope",
+                  "target": {
+                    "file": "src/a11y-mcp-tools/src/envelope.js"
+                  }
+                }
+              ],
+              "exported": false,
+              "invokedAtTopLevel": false,
+              "isDefaultExport": false,
+              "name": "handleDiagnose"
+            },
+            {
+              "calls": [
+                {
+                  "line": 217,
+                  "name": "execute",
+                  "target": {
+                    "file": "src/a11y-mcp-tools/src/tools/index.js"
+                  },
+                  "via": "handleEvidence"
+                },
+                {
+                  "line": 221,
+                  "name": "createErrorEnvelope",
+                  "target": {
+                    "file": "src/a11y-mcp-tools/src/envelope.js"
+                  },
+                  "via": "handleEvidence"
+                },
+                {
+                  "line": 237,
+                  "name": "createResponseEnvelope",
+                  "target": {
+                    "file": "src/a11y-mcp-tools/src/envelope.js"
+                  },
+                  "via": "handleEvidence"
+                },
+                {
+                  "line": 338,
+                  "name": "execute",
+                  "target": {
+                    "file": "src/a11y-mcp-tools/src/tools/index.js"
+                  },
+                  "via": "handleDiagnose"
+                },
+                {
+                  "line": 347,
+                  "name": "createErrorEnvelope",
+                  "target": {
+                    "file": "src/a11y-mcp-tools/src/envelope.js"
+                  },
+                  "via": "handleDiagnose"
+                },
+                {
+                  "line": 365,
+                  "name": "createResponseEnvelope",
+                  "target": {
+                    "file": "src/a11y-mcp-tools/src/envelope.js"
+                  },
+                  "via": "handleDiagnose"
+                }
+              ],
+              "exported": false,
+              "invokedAtTopLevel": true,
+              "isDefaultExport": false,
+              "name": "main"
+            }
+          ]
         },
         {
-          "hash": "cf755334f84b80332622eb6acd5842b8cdd61749f8744d42eeeaf9884b0a4002",
-          "importOrder": [
-            "src/a11y-mcp-tools/src/tools/index.js",
-            "src/a11y-mcp-tools/src/envelope.js"
+          "entry": "main",
+          "entryRule": 1,
+          "failurePaths": [
+            {
+              "in": "handleRequest",
+              "kind": "catch",
+              "line": 78
+            },
+            {
+              "in": "handleToolCall",
+              "kind": "catch",
+              "line": 183
+            },
+            {
+              "in": "main",
+              "kind": "catch",
+              "line": 225
+            }
           ],
+          "hash": "cf755334f84b80332622eb6acd5842b8cdd61749f8744d42eeeaf9884b0a4002",
           "importsFiles": [
             "src/a11y-mcp-tools/src/envelope.js",
             "src/a11y-mcp-tools/src/tools/index.js"
           ],
-          "path": "src/a11y-mcp-tools/bin/server.js"
+          "path": "src/a11y-mcp-tools/bin/server.js",
+          "sequences": [
+            {
+              "calls": [
+                {
+                  "line": 57,
+                  "name": "map",
+                  "target": {
+                    "file": "src/a11y-mcp-tools/src/tools/index.js"
+                  }
+                },
+                {
+                  "line": 97,
+                  "name": "normalizeRequest",
+                  "target": {
+                    "file": "src/a11y-mcp-tools/src/envelope.js"
+                  },
+                  "via": "handleToolCall"
+                },
+                {
+                  "line": 98,
+                  "name": "generateRequestId",
+                  "target": {
+                    "file": "src/a11y-mcp-tools/src/envelope.js"
+                  },
+                  "via": "handleToolCall"
+                },
+                {
+                  "line": 107,
+                  "name": "execute",
+                  "target": {
+                    "file": "src/a11y-mcp-tools/src/tools/index.js"
+                  },
+                  "via": "handleToolCall"
+                },
+                {
+                  "line": 113,
+                  "name": "createResponseEnvelope",
+                  "target": {
+                    "file": "src/a11y-mcp-tools/src/envelope.js"
+                  },
+                  "via": "handleToolCall"
+                },
+                {
+                  "line": 117,
+                  "name": "createErrorEnvelope",
+                  "target": {
+                    "file": "src/a11y-mcp-tools/src/envelope.js"
+                  },
+                  "via": "handleToolCall"
+                },
+                {
+                  "line": 144,
+                  "name": "execute",
+                  "target": {
+                    "file": "src/a11y-mcp-tools/src/tools/index.js"
+                  },
+                  "via": "handleToolCall"
+                },
+                {
+                  "line": 146,
+                  "name": "createResponseEnvelope",
+                  "target": {
+                    "file": "src/a11y-mcp-tools/src/envelope.js"
+                  },
+                  "via": "handleToolCall"
+                },
+                {
+                  "line": 150,
+                  "name": "createErrorEnvelope",
+                  "target": {
+                    "file": "src/a11y-mcp-tools/src/envelope.js"
+                  },
+                  "via": "handleToolCall"
+                }
+              ],
+              "exported": false,
+              "invokedAtTopLevel": false,
+              "isDefaultExport": false,
+              "name": "handleRequest"
+            },
+            {
+              "calls": [
+                {
+                  "line": 97,
+                  "name": "normalizeRequest",
+                  "target": {
+                    "file": "src/a11y-mcp-tools/src/envelope.js"
+                  }
+                },
+                {
+                  "line": 98,
+                  "name": "generateRequestId",
+                  "target": {
+                    "file": "src/a11y-mcp-tools/src/envelope.js"
+                  }
+                },
+                {
+                  "line": 107,
+                  "name": "execute",
+                  "target": {
+                    "file": "src/a11y-mcp-tools/src/tools/index.js"
+                  }
+                },
+                {
+                  "line": 113,
+                  "name": "createResponseEnvelope",
+                  "target": {
+                    "file": "src/a11y-mcp-tools/src/envelope.js"
+                  }
+                },
+                {
+                  "line": 117,
+                  "name": "createErrorEnvelope",
+                  "target": {
+                    "file": "src/a11y-mcp-tools/src/envelope.js"
+                  }
+                },
+                {
+                  "line": 144,
+                  "name": "execute",
+                  "target": {
+                    "file": "src/a11y-mcp-tools/src/tools/index.js"
+                  }
+                },
+                {
+                  "line": 146,
+                  "name": "createResponseEnvelope",
+                  "target": {
+                    "file": "src/a11y-mcp-tools/src/envelope.js"
+                  }
+                },
+                {
+                  "line": 150,
+                  "name": "createErrorEnvelope",
+                  "target": {
+                    "file": "src/a11y-mcp-tools/src/envelope.js"
+                  }
+                }
+              ],
+              "exported": false,
+              "invokedAtTopLevel": false,
+              "isDefaultExport": false,
+              "name": "handleToolCall"
+            },
+            {
+              "calls": [
+                {
+                  "line": 57,
+                  "name": "map",
+                  "target": {
+                    "file": "src/a11y-mcp-tools/src/tools/index.js"
+                  },
+                  "via": "handleRequest"
+                },
+                {
+                  "line": 97,
+                  "name": "normalizeRequest",
+                  "target": {
+                    "file": "src/a11y-mcp-tools/src/envelope.js"
+                  },
+                  "via": "handleToolCall"
+                },
+                {
+                  "line": 98,
+                  "name": "generateRequestId",
+                  "target": {
+                    "file": "src/a11y-mcp-tools/src/envelope.js"
+                  },
+                  "via": "handleToolCall"
+                },
+                {
+                  "line": 107,
+                  "name": "execute",
+                  "target": {
+                    "file": "src/a11y-mcp-tools/src/tools/index.js"
+                  },
+                  "via": "handleToolCall"
+                },
+                {
+                  "line": 113,
+                  "name": "createResponseEnvelope",
+                  "target": {
+                    "file": "src/a11y-mcp-tools/src/envelope.js"
+                  },
+                  "via": "handleToolCall"
+                },
+                {
+                  "line": 117,
+                  "name": "createErrorEnvelope",
+                  "target": {
+                    "file": "src/a11y-mcp-tools/src/envelope.js"
+                  },
+                  "via": "handleToolCall"
+                },
+                {
+                  "line": 144,
+                  "name": "execute",
+                  "target": {
+                    "file": "src/a11y-mcp-tools/src/tools/index.js"
+                  },
+                  "via": "handleToolCall"
+                },
+                {
+                  "line": 146,
+                  "name": "createResponseEnvelope",
+                  "target": {
+                    "file": "src/a11y-mcp-tools/src/envelope.js"
+                  },
+                  "via": "handleToolCall"
+                },
+                {
+                  "line": 150,
+                  "name": "createErrorEnvelope",
+                  "target": {
+                    "file": "src/a11y-mcp-tools/src/envelope.js"
+                  },
+                  "via": "handleToolCall"
+                }
+              ],
+              "exported": false,
+              "invokedAtTopLevel": true,
+              "isDefaultExport": false,
+              "name": "main"
+            }
+          ]
         },
         {
           "hash": "cfa3a30cbde09c3c9b4f18f825b976ec66e0fb5971f9b7dbf29a92f775160c30",
@@ -3835,6 +4599,13 @@
             "generateRequestId",
             "normalizeRequest",
             "withEnvelope"
+          ],
+          "failurePaths": [
+            {
+              "in": "withEnvelope",
+              "kind": "catch",
+              "line": 152
+            }
           ],
           "hash": "fd0dc373dae616ff9e88efcea01a4f36b1857e3346d6e1f13a13943b19aedca8",
           "path": "src/a11y-mcp-tools/src/envelope.js"
@@ -3921,6 +4692,23 @@
             "diagnose",
             "execute"
           ],
+          "failurePaths": [
+            {
+              "in": "execute",
+              "kind": "catch",
+              "line": 78
+            },
+            {
+              "in": "diagnose",
+              "kind": "throw",
+              "line": 106
+            },
+            {
+              "in": "parseDomArtifact",
+              "kind": "catch",
+              "line": 211
+            }
+          ],
           "hash": "6cf587523a1e3004f7df3483d7f39a6d9796ba9ef58fd6caa01154cb9fa7ee9f",
           "importsFiles": [
             "src/a11y-mcp-tools/src/schemas/index.js"
@@ -3933,6 +4721,28 @@
             "captureEvidence",
             "createDomSnapshot",
             "execute"
+          ],
+          "failurePaths": [
+            {
+              "in": "execute",
+              "kind": "catch",
+              "line": 34
+            },
+            {
+              "in": "captureEvidence",
+              "kind": "throw",
+              "line": 71
+            },
+            {
+              "in": "captureFile",
+              "kind": "throw",
+              "line": 119
+            },
+            {
+              "in": "captureCliLog",
+              "kind": "throw",
+              "line": 182
+            }
           ],
           "hash": "4daaa1fd3bc45eb8215e4de5c6ff1b0bfedaafa4bb3ed829b79a00737ad3e2e9",
           "importsFiles": [
@@ -3954,25 +4764,29 @@
         },
         {
           "hash": "dc4dfeca5b1fade22c4cc7ec9d73c4f6e32bb0a02c688428305b22c3bf7a3e45",
-          "path": "src/a11y-mcp-tools/test/contract.test.mjs"
+          "path": "src/a11y-mcp-tools/test/contract.test.mjs",
+          "testFramework": "node --test"
         },
         {
           "hash": "6807b36e35eacccf6c0af44f96aacb9e23a8e2221f6592c14bf4892e7fd701de",
           "importsFiles": [
             "src/a11y-mcp-tools/src/tools/diagnose.js"
           ],
-          "path": "src/a11y-mcp-tools/test/diagnose.test.js"
+          "path": "src/a11y-mcp-tools/test/diagnose.test.js",
+          "testFramework": "node --test"
         },
         {
           "hash": "a932fdbb317971e8d2521541fd8c08a9ff8932a522b5601cef436d435728050b",
           "importsFiles": [
             "src/a11y-mcp-tools/src/tools/evidence.js"
           ],
-          "path": "src/a11y-mcp-tools/test/evidence.test.js"
+          "path": "src/a11y-mcp-tools/test/evidence.test.js",
+          "testFramework": "node --test"
         },
         {
           "hash": "74593243e3fdc37cad3462a199398bb68221ce5ffc648d698214699b573a2062",
-          "path": "src/a11y-mcp-tools/test/schema.test.js"
+          "path": "src/a11y-mcp-tools/test/schema.test.js",
+          "testFramework": "node --test"
         }
       ],
       "globs": [
@@ -3993,6 +4807,9 @@
       "outsideReads": 6,
       "outsideWrites": 2,
       "role": "code",
+      "testRunners": [
+        "node --test"
+      ],
       "testedBy": 2,
       "unresolvedSites": 0
     },
@@ -4024,7 +4841,7 @@
       "unresolvedSites": 0
     },
     {
-      "dynamicReads": 1,
+      "dynamicReads": 0,
       "dynamicSpawns": 0,
       "dynamicSpawnsInTests": 0,
       "dynamicWrites": 0,
@@ -4319,12 +5136,20 @@
         {
           "reads": 1,
           "where": [
+            "caller",
+            "cwd:spec/"
+          ],
+          "writes": 0
+        },
+        {
+          "reads": 1,
+          "where": [
             "cwd:spec/"
           ],
           "writes": 0
         }
       ],
-      "outsideReads": 1,
+      "outsideReads": 2,
       "role": "docs",
       "testedBy": 0,
       "unresolvedSites": 0
@@ -4507,11 +5332,12 @@
       "name": "root",
       "origin": "authored",
       "role": "config",
-      "testedBy": 0,
+      "testedBy": 1,
+      "testedByScript": true,
       "unresolvedSites": 0
     },
     {
-      "dynamicReads": 1,
+      "dynamicReads": 0,
       "dynamicSpawns": 0,
       "dynamicSpawnsInTests": 0,
       "dynamicWrites": 0,
@@ -4604,6 +5430,14 @@
         },
         {
           "hash": "391533713539035d3c92282579d43de0f137067867fdb502d7eaea3c74601d2a",
+          "importOrder": [
+            "site/src/styles/global.css",
+            "site/src/site-config.ts"
+          ],
+          "importsFiles": [
+            "site/src/site-config.ts",
+            "site/src/styles/global.css"
+          ],
           "path": "site/src/pages/index.astro"
         },
         {
@@ -4663,129 +5497,216 @@
       "checksCount": 0,
       "commands": [
         {
+          "dir": "",
           "job": "python",
-          "step": "Atlas check",
-          "text": "npx --yes @dogfood-lab/atlas@1.21.0 check"
+          "programs": [
+            "npx"
+          ],
+          "step": "Atlas check"
         },
         {
           "job": "python",
-          "step": "Install dependencies",
-          "text": "pip install -e .\npip install pytest\n"
+          "programs": [
+            "pip"
+          ],
+          "step": "Install dependencies"
         },
         {
           "job": "python",
-          "step": "Run tests",
-          "text": "pytest --collect-only > /dev/null 2>&1\nEXIT_CODE=$?\nif [ $EXIT_CODE -eq 5 ]; then\n  echo \"::warning::No tests found for ${{ matrix.project }}.\"\n  exit 0\nelif [ $EXIT_CODE -ne 0 ]; then\n  echo \"::error::Error collecting tests.\"\n  exit 1\nfi\npytest -v\n"
+          "programs": [
+            "1",
+            "echo",
+            "pytest"
+          ],
+          "step": "Run tests"
         },
         {
           "job": "nodejs",
-          "step": "Install dependencies",
-          "text": "npm ci"
+          "programs": [
+            "npm"
+          ],
+          "step": "Install dependencies"
         },
         {
           "job": "nodejs",
-          "step": "Run tests",
-          "text": "npm test"
+          "programs": [
+            "npm"
+          ],
+          "step": "Run tests"
         },
         {
+          "dir": "src/a11y-ci",
           "job": "gate-verification",
-          "step": "Install a11y-ci",
-          "text": "pip install ."
+          "programs": [
+            "pip"
+          ],
+          "step": "Install a11y-ci"
         },
         {
+          "dir": "src/a11y-ci",
           "job": "gate-verification",
-          "step": "Gate Pass Check",
-          "text": "a11y-ci gate --current tests/fixtures/current_ok.json"
+          "programs": [
+            "a11y-ci"
+          ],
+          "step": "Gate Pass Check"
         },
         {
+          "dir": "src/a11y-ci",
           "job": "gate-verification",
-          "step": "Gate Fail Check (JSON Report)",
-          "text": "set +e\na11y-ci gate --current tests/fixtures/current_fail.json --format json > report.json\nEXIT_CODE=$?\nset -e\n\necho \"Exit Code: $EXIT_CODE\"\nif [ $EXIT_CODE -ne 3 ]; then\n  echo \"::error::Expected exit code 3 for partial failure, got $EXIT_CODE\"\n  exit 1\nfi\n\necho \"::group::JSON Report\"\ncat report.json\necho \"::endgroup::\"\n"
+          "programs": [
+            "a11y-ci",
+            "cat",
+            "echo"
+          ],
+          "step": "Gate Fail Check (JSON Report)"
         },
         {
+          "dir": "",
           "job": "a11y-gate",
-          "step": "Install Tools (Local)",
-          "text": "pip install ./src/a11y-lint\npip install ./src/a11y-ci\n"
+          "programs": [
+            "pip"
+          ],
+          "step": "Install Tools (Local)"
         },
         {
+          "dir": "",
           "job": "a11y-gate",
-          "step": "Generate Scorecard (Scan)",
-          "text": "mkdir -p .a11y_artifacts\na11y-lint scan docs --artifact-dir .a11y_artifacts\necho \"Generated scorecard in .a11y_artifacts/\"\n"
+          "programs": [
+            "a11y-lint",
+            "echo",
+            "mkdir"
+          ],
+          "step": "Generate Scorecard (Scan)"
         },
         {
+          "dir": "",
           "job": "a11y-gate",
-          "step": "Run Accessibility Gate",
-          "text": "# 1. Setup Artifacts\nARTIFACT_DIR=\"${{ inputs.artifact-dir }}\"\nmkdir -p \"$ARTIFACT_DIR\"\necho \"Using artifact directory: $ARTIFACT_DIR\"\n\n# 2. Construct Arguments\nARGS=\"gate --artifact-dir $ARTIFACT_DIR\"\n\nif [ -n \"${{ inputs.current }}\" ]; then\n  ARGS=\"$ARGS --current ${{ inputs.current }}\"\nfi\n\nif [ -n \"${{ inputs.baseline }}\" ]; then\n  ARGS=\"$ARGS --baseline ${{ inputs.baseline }}\"\nfi\n\nif [ -n \"${{ inputs.allowlist }}\" ]; then\n  ARGS=\"$ARGS --allowlist ${{ inputs.allowlist }}\"\nfi\n\nARGS=\"$ARGS --fail-on ${{ inputs.fail-on }}\"\nARGS=\"$ARGS --top ${{ inputs.top }}\"\n\n# 3. Run Gate\necho \"Running: a11y-ci $ARGS\"\n\n# Run and capture exit code, but don't fail immediately so we can process artifacts\nset +e\na11y-ci $ARGS\nEXIT_CODE=$?\nset -e\n\necho \"Gate Exit Code: $EXIT_CODE\"\necho \"exit_code=$EXIT_CODE\" >> $GITHUB_OUTPUT\n\n# 4. Generate Comment (if requested and evidence exists)\nEVIDENCE_JSON=\"$ARTIFACT_DIR/evidence.json\"\nCOMMENT_MD=\"$ARTIFACT_DIR/comment.md\"\nGATE_RESULT=\"$ARTIFACT_DIR/gate-result.json\"\n\nif [ \"${{ inputs.post-comment }}\" = \"true\" ] && [ -f \"$EVIDENCE_JSON\" ]; then\n   echo \"Generating PR Comment...\"\n   a11y-ci comment --mcp \"$EVIDENCE_JSON\" --platform \"${{ inputs.platform }}\" --top \"${{ inputs.top }}\" > \"$COMMENT_MD\"\n   echo \"comment_path=$COMMENT_MD\" >> $GITHUB_OUTPUT\nfi\n\n# 5. Set Outputs\necho \"evidence_path=$EVIDENCE_JSON\" >> $GITHUB_OUTPUT\necho \"gate_result_path=$GATE_RESULT\" >> $GITHUB_OUTPUT\n\n# 6. Exit with code\nexit $EXIT_CODE\n"
+          "programs": [
+            "a11y-ci",
+            "echo",
+            "mkdir"
+          ],
+          "step": "Run Accessibility Gate"
         },
         {
+          "dir": "",
           "job": "test-a11y-action-pass",
-          "step": "Install a11y-ci",
-          "text": "pip install ./src/a11y-ci"
+          "programs": [
+            "pip"
+          ],
+          "step": "Install a11y-ci"
         },
         {
+          "dir": "",
           "job": "test-a11y-action-pass",
-          "step": "Create Passing Scorecard",
-          "text": "echo '{\"meta\": {\"tool\": \"test\", \"version\": \"1\"}, \"findings\": []}' > pass.json\n"
+          "programs": [
+            "echo"
+          ],
+          "step": "Create Passing Scorecard"
         },
         {
+          "dir": "",
           "job": "test-a11y-action-pass",
-          "step": "Run Accessibility Gate",
-          "text": "# 1. Setup Artifacts\nARTIFACT_DIR=\"${{ inputs.artifact-dir }}\"\nmkdir -p \"$ARTIFACT_DIR\"\necho \"Using artifact directory: $ARTIFACT_DIR\"\n\n# 2. Construct Arguments\nARGS=\"gate --artifact-dir $ARTIFACT_DIR\"\n\nif [ -n \"${{ inputs.current }}\" ]; then\n  ARGS=\"$ARGS --current ${{ inputs.current }}\"\nfi\n\nif [ -n \"${{ inputs.baseline }}\" ]; then\n  ARGS=\"$ARGS --baseline ${{ inputs.baseline }}\"\nfi\n\nif [ -n \"${{ inputs.allowlist }}\" ]; then\n  ARGS=\"$ARGS --allowlist ${{ inputs.allowlist }}\"\nfi\n\nARGS=\"$ARGS --fail-on ${{ inputs.fail-on }}\"\nARGS=\"$ARGS --top ${{ inputs.top }}\"\n\n# 3. Run Gate\necho \"Running: a11y-ci $ARGS\"\n\n# Run and capture exit code, but don't fail immediately so we can process artifacts\nset +e\na11y-ci $ARGS\nEXIT_CODE=$?\nset -e\n\necho \"Gate Exit Code: $EXIT_CODE\"\necho \"exit_code=$EXIT_CODE\" >> $GITHUB_OUTPUT\n\n# 4. Generate Comment (if requested and evidence exists)\nEVIDENCE_JSON=\"$ARTIFACT_DIR/evidence.json\"\nCOMMENT_MD=\"$ARTIFACT_DIR/comment.md\"\nGATE_RESULT=\"$ARTIFACT_DIR/gate-result.json\"\n\nif [ \"${{ inputs.post-comment }}\" = \"true\" ] && [ -f \"$EVIDENCE_JSON\" ]; then\n   echo \"Generating PR Comment...\"\n   a11y-ci comment --mcp \"$EVIDENCE_JSON\" --platform \"${{ inputs.platform }}\" --top \"${{ inputs.top }}\" > \"$COMMENT_MD\"\n   echo \"comment_path=$COMMENT_MD\" >> $GITHUB_OUTPUT\nfi\n\n# 5. Set Outputs\necho \"evidence_path=$EVIDENCE_JSON\" >> $GITHUB_OUTPUT\necho \"gate_result_path=$GATE_RESULT\" >> $GITHUB_OUTPUT\n\n# 6. Exit with code\nexit $EXIT_CODE\n"
+          "programs": [
+            "a11y-ci",
+            "echo",
+            "mkdir"
+          ],
+          "step": "Run Accessibility Gate"
         },
         {
+          "dir": "",
           "job": "test-a11y-action-pass",
-          "step": "Assert Outcomes",
-          "text": "echo \"Expected exit code 0, got ${{ steps.gate.outputs.exit_code }}\"\nexit 1\n"
+          "programs": [
+            "echo"
+          ],
+          "step": "Assert Outcomes"
         },
         {
+          "dir": "",
           "job": "test-a11y-action-pass",
-          "step": "Assert Artifacts",
-          "text": "if [ ! -f \"${{ steps.gate.outputs.gate_result_path }}\" ]; then echo \"Missing gate_result_path\"; exit 1; fi\nif [ ! -f \"${{ steps.gate.outputs.evidence_path }}\" ]; then echo \"Missing evidence_path\"; exit 1; fi\nif [ ! -f \"${{ steps.gate.outputs.comment_path }}\" ]; then echo \"Missing comment_path\"; exit 1; fi\n\nif ! grep -q \"Accessibility Gate: PASS\" \"${{ steps.gate.outputs.comment_path }}\"; then\n  echo \"Comment does not indicate PASS\"\n  cat \"${{ steps.gate.outputs.comment_path }}\"\n  exit 1\nfi\n"
+          "programs": [
+            "cat",
+            "echo",
+            "grep"
+          ],
+          "step": "Assert Artifacts"
         },
         {
+          "dir": "",
           "job": "test-a11y-action-fail",
-          "step": "Install a11y-ci",
-          "text": "pip install ./src/a11y-ci"
+          "programs": [
+            "pip"
+          ],
+          "step": "Install a11y-ci"
         },
         {
+          "dir": "",
           "job": "test-a11y-action-fail",
-          "step": "Create Failing Scorecard",
-          "text": "echo '{\"meta\": {\"tool\": \"test\", \"version\": \"1\"}, \"findings\": [{\"id\": \"FAIL\", \"severity\": \"serious\", \"message\": \"fail\"}]}' > fail.json\n"
+          "programs": [
+            "echo"
+          ],
+          "step": "Create Failing Scorecard"
         },
         {
+          "dir": "",
           "job": "test-a11y-action-fail",
-          "step": "Run Accessibility Gate",
-          "text": "# 1. Setup Artifacts\nARTIFACT_DIR=\"${{ inputs.artifact-dir }}\"\nmkdir -p \"$ARTIFACT_DIR\"\necho \"Using artifact directory: $ARTIFACT_DIR\"\n\n# 2. Construct Arguments\nARGS=\"gate --artifact-dir $ARTIFACT_DIR\"\n\nif [ -n \"${{ inputs.current }}\" ]; then\n  ARGS=\"$ARGS --current ${{ inputs.current }}\"\nfi\n\nif [ -n \"${{ inputs.baseline }}\" ]; then\n  ARGS=\"$ARGS --baseline ${{ inputs.baseline }}\"\nfi\n\nif [ -n \"${{ inputs.allowlist }}\" ]; then\n  ARGS=\"$ARGS --allowlist ${{ inputs.allowlist }}\"\nfi\n\nARGS=\"$ARGS --fail-on ${{ inputs.fail-on }}\"\nARGS=\"$ARGS --top ${{ inputs.top }}\"\n\n# 3. Run Gate\necho \"Running: a11y-ci $ARGS\"\n\n# Run and capture exit code, but don't fail immediately so we can process artifacts\nset +e\na11y-ci $ARGS\nEXIT_CODE=$?\nset -e\n\necho \"Gate Exit Code: $EXIT_CODE\"\necho \"exit_code=$EXIT_CODE\" >> $GITHUB_OUTPUT\n\n# 4. Generate Comment (if requested and evidence exists)\nEVIDENCE_JSON=\"$ARTIFACT_DIR/evidence.json\"\nCOMMENT_MD=\"$ARTIFACT_DIR/comment.md\"\nGATE_RESULT=\"$ARTIFACT_DIR/gate-result.json\"\n\nif [ \"${{ inputs.post-comment }}\" = \"true\" ] && [ -f \"$EVIDENCE_JSON\" ]; then\n   echo \"Generating PR Comment...\"\n   a11y-ci comment --mcp \"$EVIDENCE_JSON\" --platform \"${{ inputs.platform }}\" --top \"${{ inputs.top }}\" > \"$COMMENT_MD\"\n   echo \"comment_path=$COMMENT_MD\" >> $GITHUB_OUTPUT\nfi\n\n# 5. Set Outputs\necho \"evidence_path=$EVIDENCE_JSON\" >> $GITHUB_OUTPUT\necho \"gate_result_path=$GATE_RESULT\" >> $GITHUB_OUTPUT\n\n# 6. Exit with code\nexit $EXIT_CODE\n"
+          "programs": [
+            "a11y-ci",
+            "echo",
+            "mkdir"
+          ],
+          "step": "Run Accessibility Gate"
         },
         {
+          "dir": "",
           "job": "test-a11y-action-fail",
-          "step": "Assert Outcomes",
-          "text": "echo \"Expected exit code 3, got ${{ steps.gate.outputs.exit_code }}\"\nexit 1\n"
+          "programs": [
+            "echo"
+          ],
+          "step": "Assert Outcomes"
         },
         {
+          "dir": "",
           "job": "test-a11y-action-fail",
-          "step": "Assert Comment Content",
-          "text": "if ! grep -q \"Accessibility Gate: FAIL\" \"${{ steps.gate.outputs.comment_path }}\"; then\n  echo \"Comment does not indicate FAIL\"\n  exit 1\nfi\n"
+          "programs": [
+            "echo",
+            "grep"
+          ],
+          "step": "Assert Comment Content"
         },
         {
+          "dir": "",
           "job": "verify-docs",
-          "step": "Verify Handbooks",
-          "text": "python scripts/verify_handbooks.py"
+          "programs": [
+            "python"
+          ],
+          "step": "Verify Handbooks"
         },
         {
+          "dir": "",
           "job": "update-baseline",
-          "step": "Install Tools (Local)",
-          "text": "pip install ./src/a11y-lint\npip install ./src/a11y-ci\n"
+          "programs": [
+            "pip"
+          ],
+          "step": "Install Tools (Local)"
         },
         {
+          "dir": "",
           "job": "update-baseline",
-          "step": "Generate Scorecard (Scan)",
-          "text": "a11y-lint scan docs --format json > docs/baselines/a11y.scorecard.json\n"
+          "programs": [
+            "a11y-lint"
+          ],
+          "step": "Generate Scorecard (Scan)"
         },
         {
+          "dir": "",
           "job": "update-baseline",
-          "step": "Commit Baseline",
-          "text": "git config --global user.name 'a11y-ci-bot'\ngit config --global user.email 'a11y-ci-bot@users.noreply.github.com'\n\nif git diff --quiet docs/baselines/a11y.scorecard.json; then\n  echo \"No changes in baseline.\"\nelse\n  git add docs/baselines/a11y.scorecard.json\n  git commit -m \"chore(baseline): update a11y baseline\"\n  git push\n  echo \"Baseline updated.\"\nfi\n"
+          "programs": [
+            "echo",
+            "git"
+          ],
+          "step": "Commit Baseline"
         }
       ],
       "elsewhere": [],
@@ -4805,10 +5726,267 @@
           }
         }
       ],
+      "jobs": [
+        {
+          "basis": "declared",
+          "name": "python",
+          "runsOn": [
+            {
+              "labels": [
+                "ubuntu-latest"
+              ],
+              "platform": {
+                "cpu": "x64",
+                "libc": "glibc",
+                "os": "linux"
+              }
+            }
+          ],
+          "setup": [
+            {
+              "ranges": [
+                {
+                  "from": "3.11",
+                  "range": ">=3.11.0 <3.12.0-0"
+                }
+              ],
+              "step": "Setup Python",
+              "uses": "actions/setup-python",
+              "version": "3.11"
+            },
+            {
+              "ranges": [
+                {
+                  "from": "22",
+                  "range": ">=22.0.0 <23.0.0-0"
+                }
+              ],
+              "step": "Set up Node for Atlas",
+              "uses": "actions/setup-node",
+              "version": "22"
+            }
+          ]
+        },
+        {
+          "basis": "declared",
+          "name": "nodejs",
+          "runsOn": [
+            {
+              "labels": [
+                "ubuntu-latest"
+              ],
+              "platform": {
+                "cpu": "x64",
+                "libc": "glibc",
+                "os": "linux"
+              }
+            }
+          ],
+          "setup": [
+            {
+              "ranges": [
+                {
+                  "from": "20",
+                  "range": ">=20.0.0 <21.0.0-0"
+                }
+              ],
+              "step": "Setup Node.js",
+              "uses": "actions/setup-node",
+              "version": "20"
+            }
+          ]
+        },
+        {
+          "basis": "declared",
+          "name": "gate-verification",
+          "runsOn": [
+            {
+              "labels": [
+                "ubuntu-latest"
+              ],
+              "platform": {
+                "cpu": "x64",
+                "libc": "glibc",
+                "os": "linux"
+              }
+            }
+          ],
+          "setup": [
+            {
+              "ranges": [
+                {
+                  "from": "3.11",
+                  "range": ">=3.11.0 <3.12.0-0"
+                }
+              ],
+              "step": "1",
+              "uses": "actions/setup-python",
+              "version": "3.11"
+            }
+          ]
+        },
+        {
+          "basis": "declared",
+          "name": "a11y-gate",
+          "runsOn": [
+            {
+              "labels": [
+                "ubuntu-latest"
+              ],
+              "platform": {
+                "cpu": "x64",
+                "libc": "glibc",
+                "os": "linux"
+              }
+            }
+          ],
+          "setup": [
+            {
+              "ranges": [
+                {
+                  "from": "3.11",
+                  "range": ">=3.11.0 <3.12.0-0"
+                }
+              ],
+              "step": "Setup Python",
+              "uses": "actions/setup-python",
+              "version": "3.11"
+            }
+          ]
+        },
+        {
+          "basis": "declared",
+          "name": "test-a11y-action-pass",
+          "runsOn": [
+            {
+              "labels": [
+                "ubuntu-latest"
+              ],
+              "platform": {
+                "cpu": "x64",
+                "libc": "glibc",
+                "os": "linux"
+              }
+            }
+          ],
+          "setup": [
+            {
+              "ranges": [
+                {
+                  "from": "3.11",
+                  "range": ">=3.11.0 <3.12.0-0"
+                }
+              ],
+              "step": "1",
+              "uses": "actions/setup-python",
+              "version": "3.11"
+            }
+          ]
+        },
+        {
+          "basis": "declared",
+          "name": "test-a11y-action-fail",
+          "runsOn": [
+            {
+              "labels": [
+                "ubuntu-latest"
+              ],
+              "platform": {
+                "cpu": "x64",
+                "libc": "glibc",
+                "os": "linux"
+              }
+            }
+          ],
+          "setup": [
+            {
+              "ranges": [
+                {
+                  "from": "3.11",
+                  "range": ">=3.11.0 <3.12.0-0"
+                }
+              ],
+              "step": "1",
+              "uses": "actions/setup-python",
+              "version": "3.11"
+            }
+          ]
+        },
+        {
+          "basis": "declared",
+          "name": "verify-docs",
+          "runsOn": [
+            {
+              "labels": [
+                "ubuntu-latest"
+              ],
+              "platform": {
+                "cpu": "x64",
+                "libc": "glibc",
+                "os": "linux"
+              }
+            }
+          ],
+          "setup": [
+            {
+              "ranges": [
+                {
+                  "from": "3.11",
+                  "range": ">=3.11.0 <3.12.0-0"
+                }
+              ],
+              "step": "Set up Python",
+              "uses": "actions/setup-python",
+              "version": "3.11"
+            }
+          ]
+        },
+        {
+          "basis": "declared",
+          "name": "update-baseline",
+          "runsOn": [
+            {
+              "labels": [
+                "ubuntu-latest"
+              ],
+              "platform": {
+                "cpu": "x64",
+                "libc": "glibc",
+                "os": "linux"
+              }
+            }
+          ],
+          "setup": [
+            {
+              "ranges": [
+                {
+                  "from": "3.11",
+                  "range": ">=3.11.0 <3.12.0-0"
+                }
+              ],
+              "step": "Setup Python",
+              "uses": "actions/setup-python",
+              "version": "3.11"
+            }
+          ]
+        }
+      ],
+      "landingGates": [
+        {
+          "target": "docs/baselines/a11y.scorecard.json",
+          "when": {
+            "event": "workflow_dispatch"
+          }
+        }
+      ],
       "landings": [
         "docs/baselines/a11y.scorecard.json"
       ],
       "mentions": [
+        {
+          "job": "a11y-gate",
+          "path": "docs/baselines/a11y.scorecard.json"
+        },
         {
           "job": "update-baseline",
           "path": "docs/baselines/a11y.scorecard.json"
@@ -4832,14 +6010,29 @@
       "pushes": false,
       "reach": [
         {
+          "boundary": "a11y-assist",
+          "depth": 0,
+          "files": 32
+        },
+        {
           "boundary": "a11y-ci",
           "depth": 0,
-          "files": 11
+          "files": 22
+        },
+        {
+          "boundary": "a11y-evidence-engine",
+          "depth": 0,
+          "files": 13
         },
         {
           "boundary": "a11y-lint",
           "depth": 0,
-          "files": 8
+          "files": 16
+        },
+        {
+          "boundary": "a11y-mcp-tools",
+          "depth": 0,
+          "files": 10
         },
         {
           "boundary": "scripts",
@@ -4847,12 +6040,26 @@
           "files": 1
         }
       ],
-      "readers": [],
+      "readers": [
+        {
+          "by": ".github/workflows/ci.yml",
+          "confidence": "config",
+          "target": "docs/baselines/a11y.scorecard.json"
+        }
+      ],
       "runs": [
         {
           "job": "verify-docs",
           "path": "scripts/verify_handbooks.py",
           "runKind": "executes"
+        },
+        {
+          "directory": true,
+          "job": "python",
+          "matched": true,
+          "path": "src/a11y-assist/tests/",
+          "runKind": "executes",
+          "via": "pytest src/a11y-assist/pyproject.toml"
         },
         {
           "job": "a11y-gate",
@@ -4875,6 +6082,21 @@
           "runKind": "executes"
         },
         {
+          "directory": true,
+          "job": "python",
+          "matched": true,
+          "path": "src/a11y-ci/tests/",
+          "runKind": "executes",
+          "via": "pytest src/a11y-ci/pyproject.toml"
+        },
+        {
+          "directory": true,
+          "job": "nodejs",
+          "matched": true,
+          "path": "src/a11y-evidence-engine/test/",
+          "runKind": "executes"
+        },
+        {
           "job": "a11y-gate",
           "path": "src/a11y-lint/a11y_lint/cli.py",
           "runKind": "executes"
@@ -4886,9 +6108,41 @@
           "when": {
             "event": "workflow_dispatch"
           }
+        },
+        {
+          "directory": true,
+          "job": "python",
+          "matched": true,
+          "path": "src/a11y-lint/tests/",
+          "runKind": "executes",
+          "via": "pytest src/a11y-lint/pyproject.toml"
+        },
+        {
+          "job": "nodejs",
+          "matched": true,
+          "path": "src/a11y-mcp-tools/test/contract.test.mjs",
+          "runKind": "executes"
+        },
+        {
+          "job": "nodejs",
+          "matched": true,
+          "path": "src/a11y-mcp-tools/test/diagnose.test.js",
+          "runKind": "executes"
+        },
+        {
+          "job": "nodejs",
+          "matched": true,
+          "path": "src/a11y-mcp-tools/test/evidence.test.js",
+          "runKind": "executes"
+        },
+        {
+          "job": "nodejs",
+          "matched": true,
+          "path": "src/a11y-mcp-tools/test/schema.test.js",
+          "runKind": "executes"
         }
       ],
-      "runsCount": 3,
+      "runsCount": 11,
       "secrets": [],
       "sends": {
         "deploysPages": false,
@@ -4901,6 +6155,52 @@
         "releases": false
       },
       "stages": [],
+      "tests": [
+        {
+          "config": "src/a11y-assist/pyproject.toml",
+          "dir": "src/a11y-assist",
+          "files": 14,
+          "job": "python",
+          "runner": "pytest",
+          "step": "Run tests"
+        },
+        {
+          "config": "src/a11y-ci/pyproject.toml",
+          "dir": "src/a11y-ci",
+          "files": 11,
+          "job": "python",
+          "runner": "pytest",
+          "step": "Run tests"
+        },
+        {
+          "config": "src/a11y-lint/pyproject.toml",
+          "dir": "src/a11y-lint",
+          "files": 8,
+          "job": "python",
+          "runner": "pytest",
+          "step": "Run tests"
+        },
+        {
+          "dir": "src/a11y-evidence-engine",
+          "files": 2,
+          "job": "nodejs",
+          "runner": "node --test",
+          "step": "Run tests",
+          "through": [
+            "npm test (src/a11y-evidence-engine)"
+          ]
+        },
+        {
+          "dir": "src/a11y-mcp-tools",
+          "files": 4,
+          "job": "nodejs",
+          "runner": "node --test",
+          "step": "Run tests",
+          "through": [
+            "npm test (src/a11y-mcp-tools)"
+          ]
+        }
+      ],
       "triggers": [
         {
           "branches": [
@@ -4964,18 +6264,74 @@
       "checksCount": 0,
       "commands": [
         {
+          "dir": "site",
           "job": "build",
-          "step": "Install site dependencies",
-          "text": "npm ci"
+          "programs": [
+            "npm"
+          ],
+          "step": "Install site dependencies"
         },
         {
+          "dir": "site",
           "job": "build",
-          "step": "Build site",
-          "text": "npm run build"
+          "programs": [
+            "npm"
+          ],
+          "step": "Build site"
         }
       ],
       "elsewhere": [],
       "file": ".github/workflows/pages.yml",
+      "jobs": [
+        {
+          "basis": "declared",
+          "name": "build",
+          "runsOn": [
+            {
+              "labels": [
+                "ubuntu-latest"
+              ],
+              "platform": {
+                "cpu": "x64",
+                "libc": "glibc",
+                "os": "linux"
+              }
+            }
+          ],
+          "setup": [
+            {
+              "ranges": [
+                {
+                  "from": "22",
+                  "range": ">=22.0.0 <23.0.0-0"
+                }
+              ],
+              "step": "1",
+              "uses": "actions/setup-node",
+              "version": "22"
+            }
+          ]
+        },
+        {
+          "basis": "declared",
+          "environment": {
+            "name": "github-pages"
+          },
+          "name": "deploy",
+          "runsOn": [
+            {
+              "labels": [
+                "ubuntu-latest"
+              ],
+              "platform": {
+                "cpu": "x64",
+                "libc": "glibc",
+                "os": "linux"
+              }
+            }
+          ]
+        }
+      ],
       "landings": [],
       "mentions": [],
       "name": "Deploy site to GitHub Pages",
@@ -4989,7 +6345,7 @@
         {
           "boundary": "site",
           "depth": 0,
-          "files": 3
+          "files": 5
         }
       ],
       "readers": [],
@@ -5050,28 +6406,72 @@
       "checksCount": 0,
       "commands": [
         {
+          "dir": "",
           "job": "publish",
-          "step": "Install dependencies",
-          "text": "if [ -f package-lock.json ]; then\n  npm ci\nelse\n  npm install\nfi\n"
+          "programs": [
+            "npm"
+          ],
+          "step": "Install dependencies"
         },
         {
+          "dir": "",
           "job": "publish",
-          "step": "3",
-          "text": "npm run build --if-present"
+          "programs": [
+            "npm"
+          ],
+          "step": "3"
         },
         {
+          "dir": "",
           "job": "publish",
-          "step": "4",
-          "text": "npm test --if-present"
+          "programs": [
+            "npm"
+          ],
+          "step": "4"
         },
         {
+          "dir": "",
           "job": "publish",
-          "step": "Publish to npm",
-          "text": "if [ -z \"$NODE_AUTH_TOKEN\" ]; then\n  echo \"::warning::NPM_TOKEN secret not set — skipping npm publish\"\n  exit 0\nfi\nnpm publish --provenance --access public\n"
+          "programs": [
+            "echo",
+            "npm"
+          ],
+          "step": "Publish to npm"
         }
       ],
       "elsewhere": [],
       "file": ".github/workflows/publish.yml",
+      "jobs": [
+        {
+          "basis": "declared",
+          "name": "publish",
+          "runsOn": [
+            {
+              "labels": [
+                "ubuntu-latest"
+              ],
+              "platform": {
+                "cpu": "x64",
+                "libc": "glibc",
+                "os": "linux"
+              }
+            }
+          ],
+          "setup": [
+            {
+              "ranges": [
+                {
+                  "from": "22",
+                  "range": ">=22.0.0 <23.0.0-0"
+                }
+              ],
+              "step": "1",
+              "uses": "actions/setup-node",
+              "version": "22"
+            }
+          ]
+        }
+      ],
       "landings": [],
       "mentions": [],
       "name": "Publish to npm",
@@ -5111,13 +6511,26 @@
         "opensIssues": false,
         "opensIssuesOnFailure": false,
         "opensPullRequests": false,
-        "publishes": true,
-        "publishesTo": [
-          "npm"
-        ],
+        "publishes": false,
+        "publishesTo": [],
         "releases": false
       },
       "stages": [],
+      "tests": [
+        {
+          "job": "publish",
+          "ran": [
+            "scripts/verify.sh",
+            "scripts/verify_handbooks.py"
+          ],
+          "runner": null,
+          "step": "4",
+          "through": [
+            "npm test",
+            "scripts/verify.sh"
+          ]
+        }
+      ],
       "triggers": [
         {
           "event": "workflow_dispatch"
@@ -5259,6 +6672,48 @@
       "checksCount": 0,
       "commands": [],
       "elsewhere": [],
+      "file": "src/a11y-evidence-engine/package.json",
+      "kind": "command",
+      "landings": [],
+      "mentions": [],
+      "name": "a11y-engine",
+      "permissions": [],
+      "pushes": false,
+      "reach": [
+        {
+          "boundary": "a11y-evidence-engine",
+          "depth": 0,
+          "files": 13
+        }
+      ],
+      "readers": [],
+      "runs": [
+        {
+          "path": "src/a11y-evidence-engine/bin/a11y-engine.js",
+          "runKind": "executes"
+        }
+      ],
+      "runsCount": 1,
+      "secrets": [],
+      "sends": {
+        "deploysPages": false,
+        "dispatchesTo": [],
+        "opensIssues": false,
+        "opensIssuesOnFailure": false,
+        "opensPullRequests": false,
+        "publishes": false,
+        "publishesTo": [],
+        "releases": false
+      },
+      "stages": [],
+      "triggers": [],
+      "uses": [],
+      "usesWorkflowToken": false
+    },
+    {
+      "checksCount": 0,
+      "commands": [],
+      "elsewhere": [],
       "file": "src/a11y-lint/pyproject.toml",
       "kind": "command",
       "landings": [],
@@ -5296,11 +6751,96 @@
       "triggers": [],
       "uses": [],
       "usesWorkflowToken": false
+    },
+    {
+      "checksCount": 0,
+      "commands": [],
+      "elsewhere": [],
+      "file": "src/a11y-mcp-tools/package.json",
+      "kind": "command",
+      "landings": [],
+      "mentions": [],
+      "name": "a11y",
+      "permissions": [],
+      "pushes": false,
+      "reach": [
+        {
+          "boundary": "a11y-mcp-tools",
+          "depth": 0,
+          "files": 9
+        }
+      ],
+      "readers": [],
+      "runs": [
+        {
+          "path": "src/a11y-mcp-tools/bin/cli.js",
+          "runKind": "executes"
+        }
+      ],
+      "runsCount": 1,
+      "secrets": [],
+      "sends": {
+        "deploysPages": false,
+        "dispatchesTo": [],
+        "opensIssues": false,
+        "opensIssuesOnFailure": false,
+        "opensPullRequests": false,
+        "publishes": false,
+        "publishesTo": [],
+        "releases": false
+      },
+      "stages": [],
+      "triggers": [],
+      "uses": [],
+      "usesWorkflowToken": false
+    },
+    {
+      "checksCount": 0,
+      "commands": [],
+      "elsewhere": [],
+      "file": "src/a11y-mcp-tools/package.json",
+      "kind": "command",
+      "landings": [],
+      "mentions": [],
+      "name": "a11y-mcp",
+      "permissions": [],
+      "pushes": false,
+      "reach": [
+        {
+          "boundary": "a11y-mcp-tools",
+          "depth": 0,
+          "files": 9
+        }
+      ],
+      "readers": [],
+      "runs": [
+        {
+          "path": "src/a11y-mcp-tools/bin/server.js",
+          "runKind": "executes"
+        }
+      ],
+      "runsCount": 1,
+      "secrets": [],
+      "sends": {
+        "deploysPages": false,
+        "dispatchesTo": [],
+        "opensIssues": false,
+        "opensIssuesOnFailure": false,
+        "opensPullRequests": false,
+        "publishes": false,
+        "publishesTo": [],
+        "releases": false
+      },
+      "stages": [],
+      "triggers": [],
+      "uses": [],
+      "usesWorkflowToken": false
     }
   ],
   "edges": [],
+  "engine": "1.24.0",
   "generatedFrom": {
-    "commit": "cfd473031af46bf03580740ed960852f512b317c",
+    "commit": "f18e2462ddce2c0d07a47f210bdf44d8119353ee",
     "tracked": 331
   },
   "landings": [
@@ -5310,17 +6850,28 @@
           "by": "scripts/verify_handbooks.py",
           "call": "literal",
           "confidence": "weak"
+        },
+        {
+          "by": "scripts/verify_handbooks.py",
+          "call": "open",
+          "confidence": "weak"
         }
       ],
       "target": "HANDBOOK.md",
       "writers": []
     },
     {
-      "readers": [],
+      "readers": [
+        {
+          "by": ".github/workflows/ci.yml",
+          "confidence": "config"
+        }
+      ],
       "target": "docs/baselines/a11y.scorecard.json",
       "writers": [
         {
-          "by": ".github/workflows/ci.yml"
+          "by": ".github/workflows/ci.yml",
+          "confidence": "config"
         }
       ]
     },
@@ -5329,6 +6880,11 @@
         {
           "by": "scripts/verify_handbooks.py",
           "call": "literal",
+          "confidence": "ast"
+        },
+        {
+          "by": "scripts/verify_handbooks.py",
+          "call": "open",
           "confidence": "ast"
         }
       ],
@@ -5340,6 +6896,11 @@
         {
           "by": "scripts/verify_handbooks.py",
           "call": "literal",
+          "confidence": "ast"
+        },
+        {
+          "by": "scripts/verify_handbooks.py",
+          "call": "open",
           "confidence": "ast"
         }
       ],
@@ -5533,6 +7094,12 @@
           "call": "literal",
           "confidence": "ast",
           "fromTests": true
+        },
+        {
+          "by": "src/a11y-assist/tests/test_golden.py",
+          "call": "read_text",
+          "confidence": "ast",
+          "fromTests": true
         }
       ],
       "target": "src/a11y-assist/tests/fixtures/expected/cognitive_load_high.txt",
@@ -5543,6 +7110,12 @@
         {
           "by": "src/a11y-assist/tests/test_golden.py",
           "call": "literal",
+          "confidence": "ast",
+          "fromTests": true
+        },
+        {
+          "by": "src/a11y-assist/tests/test_golden.py",
+          "call": "read_text",
           "confidence": "ast",
           "fromTests": true
         }
@@ -5557,6 +7130,12 @@
           "call": "literal",
           "confidence": "ast",
           "fromTests": true
+        },
+        {
+          "by": "src/a11y-assist/tests/test_golden.py",
+          "call": "read_text",
+          "confidence": "ast",
+          "fromTests": true
         }
       ],
       "target": "src/a11y-assist/tests/fixtures/expected/lowvision_high.txt",
@@ -5569,6 +7148,12 @@
           "call": "literal",
           "confidence": "ast",
           "fromTests": true
+        },
+        {
+          "by": "src/a11y-assist/tests/test_golden.py",
+          "call": "read_text",
+          "confidence": "ast",
+          "fromTests": true
         }
       ],
       "target": "src/a11y-assist/tests/fixtures/expected/plain_language_high.txt",
@@ -5579,6 +7164,12 @@
         {
           "by": "src/a11y-assist/tests/test_golden.py",
           "call": "literal",
+          "confidence": "ast",
+          "fromTests": true
+        },
+        {
+          "by": "src/a11y-assist/tests/test_golden.py",
+          "call": "read_text",
           "confidence": "ast",
           "fromTests": true
         }
@@ -5650,7 +7241,8 @@
       "tracked": false,
       "writers": [
         {
-          "by": ".github/workflows/ci.yml"
+          "by": ".github/workflows/ci.yml",
+          "confidence": "config"
         }
       ]
     },
@@ -5734,7 +7326,8 @@
     {
       "readers": [
         {
-          "by": ".github/workflows/ci.yml"
+          "by": ".github/workflows/ci.yml",
+          "confidence": "config"
         },
         {
           "by": "src/a11y-ci/tests/test_gate.py",
@@ -5761,7 +7354,8 @@
     {
       "readers": [
         {
-          "by": ".github/workflows/ci.yml"
+          "by": ".github/workflows/ci.yml",
+          "confidence": "config"
         },
         {
           "by": "src/a11y-ci/tests/test_gate.py",
