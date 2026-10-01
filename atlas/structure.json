@@ -44,7 +44,7 @@
           "path": ".github/actions/a11y-ci/action.yml"
         },
         {
-          "hash": "7f2ad78d56a74cbe30a3595b0f145b072783251685e17de9d4e9bfd10cae4a15",
+          "hash": "50b1803997aa5b6429e9171f8a31260c4c8aadb48b705b63179e722e7d912f6f",
           "path": ".github/workflows/ci.yml"
         },
         {
@@ -6206,22 +6206,7 @@
           "branches": [
             "main"
           ],
-          "event": "pull_request",
-          "paths": [
-            "**/*.js",
-            "**/*.py",
-            "**/*.ts",
-            ".github/actions/**",
-            ".github/workflows/**",
-            "atlas/**",
-            "docs/**",
-            "package.json",
-            "pyproject.toml",
-            "site/astro.config.mjs",
-            "site/package-lock.json",
-            "site/package.json",
-            "src/**"
-          ]
+          "event": "pull_request"
         },
         {
           "branches": [
@@ -6840,7 +6825,7 @@
   "edges": [],
   "engine": "1.24.0",
   "generatedFrom": {
-    "commit": "f18e2462ddce2c0d07a47f210bdf44d8119353ee",
+    "commit": "3b49cbb47484cee054e7e71f606e0a56c34f475c",
     "tracked": 331
   },
   "landings": [

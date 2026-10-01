@@ -1,23 +1,19 @@
 # accessibility-suite: how it works
 
-Mapped at 2026-09-30 from commit f18e246 by Atlas 1.24.0.
+Mapped at 2026-10-01 from commit 3b49cbb by Atlas 1.24.0.
 
 ## What this is
 
 15 parts, mostly Python (74 files), JavaScript (32), HTML (7), CSS (2), TypeScript (2), shell (2), Astro (1) and PowerShell (1). Work enters through 10 doors; the busiest is CI, which reaches 6 parts. It deploys a site to GitHub Pages. People run a11y, a11y-assist, a11y-ci, a11y-engine, a11y-lint, a11y-mcp and assist-run.
 
-## What changed since 2026-09-25 (cfd4730)
+## What changed since 2026-09-30 (f18e246)
 
-- CI now also runs src/a11y-assist/tests/, src/a11y-ci/tests/, src/a11y-evidence-engine/test/ and 5 more.
-- a11y-engine (src/a11y-evidence-engine/package.json) is a new command. It runs src/a11y-evidence-engine/bin/a11y-engine.js.
-- a11y (src/a11y-mcp-tools/package.json) is a new command. It runs src/a11y-mcp-tools/bin/cli.js.
-- And 1 more change to a door.
-- docs/baselines/a11y.scorecard.json is now read by .github/workflows/ci.yml.
+- CI's pull request trigger no longer names `**/*.js`, `**/*.py`, `**/*.ts`, `.github/actions/**`, `.github/workflows/**`, `atlas/**`, `docs/**`, `package.json`, `pyproject.toml`, `site/astro.config.mjs`, `site/package-lock.json`, `site/package.json` and `src/**`.
 - 1 file changed content, across 1 part.
 
 ## What comes in
 
-1. **CI.** On a pull request to main touching 13 paths; on a push to main touching 13 paths; or by hand. Runs scripts/verify_handbooks.py, src/a11y-ci/a11y_ci/cli.py, src/a11y-lint/a11y_lint/cli.py and 39 more.
+1. **CI.** On a pull request to main; on a push to main touching 13 paths; or by hand. Runs scripts/verify_handbooks.py, src/a11y-ci/a11y_ci/cli.py, src/a11y-lint/a11y_lint/cli.py and 39 more.
 2. **Deploy site to GitHub Pages.** On a push to main touching 2 paths; or by hand. Runs site/astro.config.mjs and site/src/.
 3. **Publish to npm.** By hand. Runs scripts/verify.sh and scripts/verify_handbooks.py.
 4. **a11y** (a command people run). Runs src/a11y-mcp-tools/bin/cli.js.
