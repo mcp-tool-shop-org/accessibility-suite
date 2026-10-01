@@ -69,45 +69,8 @@
     "items": [
       {
         "kind": "door",
-        "sentence": "CI now also runs src/a11y-assist/tests/, src/a11y-ci/tests/, src/a11y-evidence-engine/test/ and 5 more.",
+        "sentence": "CI's pull request trigger no longer names `**/*.js`, `**/*.py`, `**/*.ts`, `.github/actions/**`, `.github/workflows/**`, `atlas/**`, `docs/**`, `package.json`, `pyproject.toml`, `site/astro.config.mjs`, `site/package-lock.json`, `site/package.json` and `src/**`.",
         "subjects": [
-          ".github/workflows/ci.yml",
-          "src/a11y-assist/tests/",
-          "src/a11y-ci/tests/",
-          "src/a11y-evidence-engine/test/",
-          "src/a11y-lint/tests/",
-          "src/a11y-mcp-tools/test/contract.test.mjs",
-          "src/a11y-mcp-tools/test/diagnose.test.js",
-          "src/a11y-mcp-tools/test/evidence.test.js",
-          "src/a11y-mcp-tools/test/schema.test.js"
-        ]
-      },
-      {
-        "kind": "door",
-        "sentence": "a11y-engine (src/a11y-evidence-engine/package.json) is a new command. It runs src/a11y-evidence-engine/bin/a11y-engine.js.",
-        "subjects": [
-          "src/a11y-evidence-engine/package.json",
-          "src/a11y-evidence-engine/bin/a11y-engine.js"
-        ]
-      },
-      {
-        "kind": "door",
-        "sentence": "a11y (src/a11y-mcp-tools/package.json) is a new command. It runs src/a11y-mcp-tools/bin/cli.js.",
-        "subjects": [
-          "src/a11y-mcp-tools/package.json",
-          "src/a11y-mcp-tools/bin/cli.js"
-        ]
-      },
-      {
-        "kind": "door",
-        "sentence": "And 1 more change to a door.",
-        "subjects": []
-      },
-      {
-        "kind": "landing",
-        "sentence": "docs/baselines/a11y.scorecard.json is now read by .github/workflows/ci.yml.",
-        "subjects": [
-          "docs/baselines/a11y.scorecard.json",
           ".github/workflows/ci.yml"
         ]
       },
@@ -118,8 +81,8 @@
       }
     ],
     "since": {
-      "commit": "cfd473031af46bf03580740ed960852f512b317c",
-      "generatedAt": "2026-09-25T09:57:48.057Z"
+      "commit": "f18e2462ddce2c0d07a47f210bdf44d8119353ee",
+      "generatedAt": "2026-09-30T20:06:30.708Z"
     },
     "unchanged": false
   },
@@ -128,7 +91,7 @@
     "Window: 180 days; a pair counts from 3 shared commits, since the window holds fewer than 30 qualifying commits."
   ],
   "changesTogetherWithTests": 0,
-  "commit": "f18e2462ddce2c0d07a47f210bdf44d8119353ee",
+  "commit": "3b49cbb47484cee054e7e71f606e0a56c34f475c",
   "defaultBranch": "main",
   "derived": "15 parts, mostly Python (74 files), JavaScript (32), HTML (7), CSS (2), TypeScript (2), shell (2), Astro (1) and PowerShell (1). Work enters through 10 doors; the busiest is CI, which reaches 6 parts. It deploys a site to GitHub Pages. People run a11y, a11y-assist, a11y-ci, a11y-engine, a11y-lint, a11y-mcp and assist-run.",
   "doors": [
@@ -202,7 +165,7 @@
       ],
       "stages": [],
       "triggers": [
-        "on a pull request to main touching 13 paths",
+        "on a pull request to main",
         "on a push to main touching 13 paths",
         "or by hand"
       ],
@@ -498,7 +461,7 @@
       ]
     }
   ],
-  "generatedAt": "2026-09-30T20:06:30.708Z",
+  "generatedAt": "2026-10-01T02:13:00.827Z",
   "limits": [
     "5 reads use paths built at run time and are not named here.",
     "1 write goes to places this repository does not track, so it is not listed as generated.",
