@@ -4584,7 +4584,7 @@
           "path": "src/a11y-mcp-tools/fixtures/responses/a11y.evidence.ok.json"
         },
         {
-          "hash": "b54159ab08f1b7ce7578c8cefced59ec2698ffa9474e2123fd2e84d36cea43d4",
+          "hash": "2e1d8e01c34b690fddf0dcc088f79fde1f14ce0dd45b66667246ea3d819b8f44",
           "path": "src/a11y-mcp-tools/package-lock.json"
         },
         {
@@ -5384,7 +5384,7 @@
           "path": "site/astro.config.mjs"
         },
         {
-          "hash": "af5d4f54dca60686724d306eb58759fb25b6f5ba4d66559ab84a968112a184e5",
+          "hash": "0607a19c4f60b635244a906c7ad2424359b50e20c4a83bc140f202abce4a941e",
           "path": "site/package-lock.json"
         },
         {
@@ -6825,7 +6825,7 @@
   "edges": [],
   "engine": "1.24.0",
   "generatedFrom": {
-    "commit": "3b49cbb47484cee054e7e71f606e0a56c34f475c",
+    "commit": "7bd5f988a0f102dbb8cd746a141b6332bbfe32f8",
     "tracked": 331
   },
   "landings": [
