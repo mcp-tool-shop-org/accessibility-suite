@@ -314,8 +314,8 @@
         "path": "README.zh.md"
       },
       {
-        "commits": 5,
-        "lines": 247,
+        "commits": 6,
+        "lines": 254,
         "path": "atlas/README.md"
       },
       {
@@ -324,18 +324,18 @@
         "path": "atlas/boundaries.yaml"
       },
       {
-        "commits": 5,
-        "lines": 982,
+        "commits": 6,
+        "lines": 1005,
         "path": "atlas/page.json"
       },
       {
-        "commits": 5,
-        "lines": 661,
+        "commits": 6,
+        "lines": 695,
         "path": "atlas/statistics.json"
       },
       {
-        "commits": 5,
-        "lines": 10177,
+        "commits": 6,
+        "lines": 10183,
         "path": "atlas/structure.json"
       },
       {
@@ -412,6 +412,11 @@
         "commits": 1,
         "lines": 8,
         "path": "src/a11y-mcp-tools/.github/workflows/ci.yml"
+      },
+      {
+        "commits": 1,
+        "lines": 20,
+        "path": "src/a11y-mcp-tools/package-lock.json"
       }
     ]
   },
@@ -419,9 +424,9 @@
     "level": "low",
     "reason": "fewer than 30 qualifying commits in the window, and fewer than 25 source files reach 10 revisions"
   },
-  "generatedAt": "2026-10-15T03:09:21.109Z",
+  "generatedAt": "2026-10-15T03:33:33.861Z",
   "generatedFrom": {
-    "commit": "7bd5f988a0f102dbb8cd746a141b6332bbfe32f8"
+    "commit": "a6a0e203aaf596be20c26885df4d74ed48e0fb78"
   },
   "pairs": [],
   "parameters": {
@@ -434,16 +439,16 @@
     "floor": "fallen",
     "floorHeld": false,
     "floorTrigger": "both",
-    "headDate": "2026-10-01T13:36:11-07:00",
+    "headDate": "2026-10-14T23:09:24-04:00",
     "inScopeFiles": 336,
     "pinnedStart": null,
     "priorFloor": "fallen",
-    "qualifyingCommits": 10,
+    "qualifyingCommits": 11,
     "qualifyingMinimum": 30,
     "revisions": 5,
     "shared": 10,
     "sharedFloorUsed": 3,
-    "since": "2026-04-04T20:36:11.000Z",
+    "since": "2026-04-18T03:09:24.000Z",
     "sourceExtensions": [
       ".js",
       ".mjs",

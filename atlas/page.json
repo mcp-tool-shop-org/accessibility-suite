@@ -61,21 +61,21 @@
   "changes": {
     "fileCounts": {
       "added": 0,
-      "changed": 2,
+      "changed": 1,
       "moved": 0,
-      "parts": 2,
+      "parts": 1,
       "removed": 0
     },
     "items": [
       {
         "kind": "counts",
-        "sentence": "Nothing structural changed since 2026-10-01; 2 files changed content.",
+        "sentence": "Nothing structural changed since 2026-10-15; 1 file changed content.",
         "subjects": []
       }
     ],
     "since": {
-      "commit": "3b49cbb47484cee054e7e71f606e0a56c34f475c",
-      "generatedAt": "2026-10-01T02:13:00.827Z"
+      "commit": "7bd5f988a0f102dbb8cd746a141b6332bbfe32f8",
+      "generatedAt": "2026-10-15T03:09:21.109Z"
     },
     "unchanged": true
   },
@@ -84,7 +84,7 @@
     "Window: 180 days; a pair counts from 3 shared commits, since the window holds fewer than 30 qualifying commits."
   ],
   "changesTogetherWithTests": 0,
-  "commit": "7bd5f988a0f102dbb8cd746a141b6332bbfe32f8",
+  "commit": "a6a0e203aaf596be20c26885df4d74ed48e0fb78",
   "defaultBranch": "main",
   "derived": "15 parts, mostly Python (74 files), JavaScript (32), HTML (7), CSS (2), TypeScript (2), shell (2), Astro (1) and PowerShell (1). Work enters through 10 doors; the busiest is CI, which reaches 6 parts. It deploys a site to GitHub Pages. People run a11y, a11y-assist, a11y-ci, a11y-engine, a11y-lint, a11y-mcp and assist-run.",
   "doors": [
@@ -454,7 +454,7 @@
       ]
     }
   ],
-  "generatedAt": "2026-10-15T03:09:21.109Z",
+  "generatedAt": "2026-10-15T03:33:33.861Z",
   "limits": [
     "5 reads use paths built at run time and are not named here.",
     "1 write goes to places this repository does not track, so it is not listed as generated.",
