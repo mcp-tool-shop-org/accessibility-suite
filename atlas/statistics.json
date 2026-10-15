@@ -249,8 +249,8 @@
     "definition": "commits is how many commits in the window touch the file, including merges and commits dropped from coupling. lines is added plus deleted in those commits.",
     "files": [
       {
-        "commits": 7,
-        "lines": 77,
+        "commits": 9,
+        "lines": 113,
         "path": ".github/workflows/ci.yml"
       },
       {
@@ -314,8 +314,8 @@
         "path": "README.zh.md"
       },
       {
-        "commits": 3,
-        "lines": 223,
+        "commits": 5,
+        "lines": 247,
         "path": "atlas/README.md"
       },
       {
@@ -324,18 +324,18 @@
         "path": "atlas/boundaries.yaml"
       },
       {
-        "commits": 3,
-        "lines": 884,
+        "commits": 5,
+        "lines": 982,
         "path": "atlas/page.json"
       },
       {
-        "commits": 3,
-        "lines": 601,
+        "commits": 5,
+        "lines": 661,
         "path": "atlas/statistics.json"
       },
       {
-        "commits": 3,
-        "lines": 10135,
+        "commits": 5,
+        "lines": 10177,
         "path": "atlas/structure.json"
       },
       {
@@ -364,8 +364,8 @@
         "path": "site/astro.config.mjs"
       },
       {
-        "commits": 1,
-        "lines": 6051,
+        "commits": 3,
+        "lines": 6063,
         "path": "site/package-lock.json"
       },
       {
@@ -419,9 +419,9 @@
     "level": "low",
     "reason": "fewer than 30 qualifying commits in the window, and fewer than 25 source files reach 10 revisions"
   },
-  "generatedAt": "2026-10-01T02:13:00.827Z",
+  "generatedAt": "2026-10-15T02:50:44.530Z",
   "generatedFrom": {
-    "commit": "3b49cbb47484cee054e7e71f606e0a56c34f475c"
+    "commit": "7bd5f988a0f102dbb8cd746a141b6332bbfe32f8"
   },
   "pairs": [],
   "parameters": {
@@ -434,16 +434,16 @@
     "floor": "fallen",
     "floorHeld": false,
     "floorTrigger": "both",
-    "headDate": "2026-09-30T13:26:45-07:00",
+    "headDate": "2026-10-01T13:36:11-07:00",
     "inScopeFiles": 336,
     "pinnedStart": null,
     "priorFloor": "fallen",
-    "qualifyingCommits": 8,
+    "qualifyingCommits": 10,
     "qualifyingMinimum": 30,
     "revisions": 5,
     "shared": 10,
     "sharedFloorUsed": 3,
-    "since": "2026-04-03T20:26:45.000Z",
+    "since": "2026-04-04T20:36:11.000Z",
     "sourceExtensions": [
       ".js",
       ".mjs",

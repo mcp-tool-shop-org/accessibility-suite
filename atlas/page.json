@@ -68,30 +68,23 @@
     },
     "items": [
       {
-        "kind": "door",
-        "sentence": "CI's pull request trigger no longer names `**/*.js`, `**/*.py`, `**/*.ts`, `.github/actions/**`, `.github/workflows/**`, `atlas/**`, `docs/**`, `package.json`, `pyproject.toml`, `site/astro.config.mjs`, `site/package-lock.json`, `site/package.json` and `src/**`.",
-        "subjects": [
-          ".github/workflows/ci.yml"
-        ]
-      },
-      {
         "kind": "counts",
-        "sentence": "1 file changed content, across 1 part.",
+        "sentence": "Nothing structural changed since 2026-10-01; 1 file changed content.",
         "subjects": []
       }
     ],
     "since": {
-      "commit": "f18e2462ddce2c0d07a47f210bdf44d8119353ee",
-      "generatedAt": "2026-09-30T20:06:30.708Z"
+      "commit": "3b49cbb47484cee054e7e71f606e0a56c34f475c",
+      "generatedAt": "2026-10-01T02:13:00.827Z"
     },
-    "unchanged": false
+    "unchanged": true
   },
   "changesTogether": [],
   "changesTogetherNote": [
     "Window: 180 days; a pair counts from 3 shared commits, since the window holds fewer than 30 qualifying commits."
   ],
   "changesTogetherWithTests": 0,
-  "commit": "3b49cbb47484cee054e7e71f606e0a56c34f475c",
+  "commit": "7bd5f988a0f102dbb8cd746a141b6332bbfe32f8",
   "defaultBranch": "main",
   "derived": "15 parts, mostly Python (74 files), JavaScript (32), HTML (7), CSS (2), TypeScript (2), shell (2), Astro (1) and PowerShell (1). Work enters through 10 doors; the busiest is CI, which reaches 6 parts. It deploys a site to GitHub Pages. People run a11y, a11y-assist, a11y-ci, a11y-engine, a11y-lint, a11y-mcp and assist-run.",
   "doors": [
@@ -461,7 +454,7 @@
       ]
     }
   ],
-  "generatedAt": "2026-10-01T02:13:00.827Z",
+  "generatedAt": "2026-10-15T02:50:44.530Z",
   "limits": [
     "5 reads use paths built at run time and are not named here.",
     "1 write goes to places this repository does not track, so it is not listed as generated.",
