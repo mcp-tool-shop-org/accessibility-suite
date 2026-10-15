@@ -4584,7 +4584,7 @@
           "path": "src/a11y-mcp-tools/fixtures/responses/a11y.evidence.ok.json"
         },
         {
-          "hash": "b54159ab08f1b7ce7578c8cefced59ec2698ffa9474e2123fd2e84d36cea43d4",
+          "hash": "2e1d8e01c34b690fddf0dcc088f79fde1f14ce0dd45b66667246ea3d819b8f44",
           "path": "src/a11y-mcp-tools/package-lock.json"
         },
         {
@@ -6825,7 +6825,7 @@
   "edges": [],
   "engine": "1.24.0",
   "generatedFrom": {
-    "commit": "7bd5f988a0f102dbb8cd746a141b6332bbfe32f8",
+    "commit": "a6a0e203aaf596be20c26885df4d74ed48e0fb78",
     "tracked": 331
   },
   "landings": [
