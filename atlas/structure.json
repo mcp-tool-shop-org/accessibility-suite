@@ -44,7 +44,7 @@
           "path": ".github/actions/a11y-ci/action.yml"
         },
         {
-          "hash": "50b1803997aa5b6429e9171f8a31260c4c8aadb48b705b63179e722e7d912f6f",
+          "hash": "26e1ca599c5793fc4d9840bd162b6ef5e07af0897458c80bdaba8eb649a59070",
           "path": ".github/workflows/ci.yml"
         },
         {
@@ -3305,7 +3305,7 @@
       "unresolvedSites": 0
     },
     {
-      "dynamicReads": 1,
+      "dynamicReads": 0,
       "dynamicSpawns": 0,
       "dynamicSpawnsInTests": 0,
       "dynamicWrites": 0,
@@ -4112,14 +4112,14 @@
       "origin": "authored",
       "outsidePlaces": [
         {
-          "reads": 6,
+          "reads": 7,
           "where": [
             "caller"
           ],
           "writes": 4
         }
       ],
-      "outsideReads": 6,
+      "outsideReads": 7,
       "outsideWrites": 4,
       "role": "code",
       "testRunners": [
@@ -5384,11 +5384,11 @@
           "path": "site/astro.config.mjs"
         },
         {
-          "hash": "1be0148ea2a3b47ec21f091b74d4135dbd06aa34d69b5643bb4fe65d8dad4b64",
+          "hash": "01b4c7259256650c2f468783bdaf2d5edbf6ac868174322bc113e2b7667c47bb",
           "path": "site/package-lock.json"
         },
         {
-          "hash": "17ed487ab5049bb52f8c5e35f77f21be7da639f1fb6a3fa70e9b02ffabfe7be6",
+          "hash": "f70476bbf956f26e144852469081483b247f4867786b127be7c97ffdc39cfb39",
           "path": "site/package.json"
         },
         {
@@ -6823,9 +6823,9 @@
     }
   ],
   "edges": [],
-  "engine": "1.24.0",
+  "engine": "1.26.0",
   "generatedFrom": {
-    "commit": "a6a0e203aaf596be20c26885df4d74ed48e0fb78",
+    "commit": "82394a2500f6a9b07e5b4db9dff2e632fd53ad8e",
     "tracked": 331
   },
   "landings": [
