@@ -314,8 +314,8 @@
         "path": "README.zh.md"
       },
       {
-        "commits": 6,
-        "lines": 254,
+        "commits": 7,
+        "lines": 260,
         "path": "atlas/README.md"
       },
       {
@@ -324,18 +324,18 @@
         "path": "atlas/boundaries.yaml"
       },
       {
-        "commits": 6,
-        "lines": 1005,
+        "commits": 7,
+        "lines": 1011,
         "path": "atlas/page.json"
       },
       {
-        "commits": 6,
-        "lines": 695,
+        "commits": 7,
+        "lines": 726,
         "path": "atlas/statistics.json"
       },
       {
-        "commits": 6,
-        "lines": 10183,
+        "commits": 7,
+        "lines": 10185,
         "path": "atlas/structure.json"
       },
       {
@@ -364,13 +364,13 @@
         "path": "site/astro.config.mjs"
       },
       {
-        "commits": 3,
-        "lines": 6063,
+        "commits": 5,
+        "lines": 6329,
         "path": "site/package-lock.json"
       },
       {
-        "commits": 1,
-        "lines": 6,
+        "commits": 2,
+        "lines": 9,
         "path": "site/package.json"
       },
       {
@@ -424,11 +424,54 @@
     "level": "low",
     "reason": "fewer than 30 qualifying commits in the window, and fewer than 25 source files reach 10 revisions"
   },
-  "generatedAt": "2026-10-15T03:33:33.861Z",
+  "generatedAt": "2026-11-11T22:02:06.489Z",
   "generatedFrom": {
-    "commit": "a6a0e203aaf596be20c26885df4d74ed48e0fb78"
+    "commit": "82394a2500f6a9b07e5b4db9dff2e632fd53ad8e"
   },
-  "pairs": [],
+  "pairs": [
+    {
+      "a": "atlas/README.md",
+      "b": "atlas/page.json",
+      "either": 5,
+      "shared": 5,
+      "strength": 1
+    },
+    {
+      "a": "atlas/README.md",
+      "b": "atlas/statistics.json",
+      "either": 5,
+      "shared": 5,
+      "strength": 1
+    },
+    {
+      "a": "atlas/README.md",
+      "b": "atlas/structure.json",
+      "either": 5,
+      "shared": 5,
+      "strength": 1
+    },
+    {
+      "a": "atlas/page.json",
+      "b": "atlas/statistics.json",
+      "either": 5,
+      "shared": 5,
+      "strength": 1
+    },
+    {
+      "a": "atlas/page.json",
+      "b": "atlas/structure.json",
+      "either": 5,
+      "shared": 5,
+      "strength": 1
+    },
+    {
+      "a": "atlas/statistics.json",
+      "b": "atlas/structure.json",
+      "either": 5,
+      "shared": 5,
+      "strength": 1
+    }
+  ],
   "parameters": {
     "appliedChangesetLimit": 50,
     "changeset": 50,
@@ -439,16 +482,16 @@
     "floor": "fallen",
     "floorHeld": false,
     "floorTrigger": "both",
-    "headDate": "2026-10-14T23:09:24-04:00",
+    "headDate": "2026-10-15T01:18:50-07:00",
     "inScopeFiles": 336,
     "pinnedStart": null,
     "priorFloor": "fallen",
-    "qualifyingCommits": 11,
+    "qualifyingCommits": 13,
     "qualifyingMinimum": 30,
     "revisions": 5,
     "shared": 10,
     "sharedFloorUsed": 3,
-    "since": "2026-04-18T03:09:24.000Z",
+    "since": "2026-04-18T08:18:50.000Z",
     "sourceExtensions": [
       ".js",
       ".mjs",

@@ -1,14 +1,14 @@
 # accessibility-suite: how it works
 
-Mapped at 2026-10-15 from commit a6a0e20 by Atlas 1.24.0.
+Mapped at 2026-11-11 from commit 82394a2 by Atlas 1.26.0.
 
 ## What this is
 
 15 parts, mostly Python (74 files), JavaScript (32), HTML (7), CSS (2), TypeScript (2), shell (2), Astro (1) and PowerShell (1). Work enters through 10 doors; the busiest is CI, which reaches 6 parts. It deploys a site to GitHub Pages. People run a11y, a11y-assist, a11y-ci, a11y-engine, a11y-lint, a11y-mcp and assist-run.
 
-## What changed since 2026-10-15 (7bd5f98)
+## What changed since 2026-10-15 (a6a0e20)
 
-Nothing structural changed since 2026-10-15; 1 file changed content.
+Nothing structural changed since 2026-10-15; 3 files changed content.
 
 ## What comes in
 
@@ -104,9 +104,9 @@ Read those in order to follow one pull request end to end.
 
 ## What this map cannot see
 
-- 5 reads use paths built at run time and are not named here.
+- 4 reads use paths built at run time and are not named here.
 - 1 write goes to places this repository does not track, so it is not listed as generated.
-- 19 writes and 27 reads go to a path their caller passes, not to this repository.
+- 19 writes and 28 reads go to a path their caller passes, not to this repository.
 - 1 write and 1 read go to the home directory (.a11y-assist/), not to this repository.
 - 1 read goes to the directory the command is run in (spec/) or a path its caller passes, not to this repository.
 - 1 read goes to the directory the command is run in (spec/), not to this repository.
